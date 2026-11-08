@@ -1,0 +1,29 @@
+name: Generic joint clearance (public fixtures only)
+
+on:
+  pull_request:
+    paths:
+      - "projects/korosuke/generic-kinematics/**"
+      - ".github/workflows/korosuke-generic-clearance.yml"
+  push:
+    branches: [main]
+    paths:
+      - "projects/korosuke/generic-kinematics/**"
+      - ".github/workflows/korosuke-generic-clearance.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  unit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Run neutral rectangle screening tests
+        run: python -m unittest discover -s projects/korosuke/generic-kinematics -v
+      - name: Run neutral example
+        run: python projects/korosuke/generic-kinematics/sweep.py projects/korosuke/generic-kinematics/example-neutral.json
