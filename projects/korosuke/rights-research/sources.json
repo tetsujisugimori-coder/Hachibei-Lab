@@ -1,0 +1,261 @@
+{
+  "schema_version": 1,
+  "sources": [
+    {
+      "id": "S01",
+      "publisher": "小学館",
+      "title": "作品紹介",
+      "url": "https://www.shogakukan.co.jp/pr/fzenshu/lineup/kiteretsu/",
+      "evidence_type": "OFFICIAL",
+      "read_status": "DIRECT",
+      "checked_at": "2026-11-08 UTC / 2026-11-09 JST",
+      "limits": "原作作品・刊行確認。フッターは作品別契約を証明しない"
+    },
+    {
+      "id": "S02",
+      "publisher": "ADKエモーションズ",
+      "title": "キテレツ大百科",
+      "url": "https://www.adkem.jp/works02/キテレツ大百科/",
+      "evidence_type": "OFFICIAL",
+      "read_status": "DIRECT",
+      "checked_at": "2026-11-08 UTC / 2026-11-09 JST",
+      "limits": "権利表記と制作情報。権利持分・許諾権限の全容不明"
+    },
+    {
+      "id": "S03",
+      "publisher": "小学館",
+      "title": "著作権・画像等使用",
+      "url": "https://www.shogakukan.co.jp/picture/",
+      "evidence_type": "OFFICIAL_POLICY",
+      "read_status": "DIRECT",
+      "checked_at": "2026-11-08 UTC / 2026-11-09 JST",
+      "limits": "個人のキャラクター許諾を行わない方針。法定例外とは区別"
+    },
+    {
+      "id": "S04",
+      "publisher": "藤子プロ・小学館",
+      "title": "ドラえもんチャンネル利用規約",
+      "url": "https://dora-world.com/terms",
+      "evidence_type": "OFFICIAL_POLICY",
+      "read_status": "DIRECT",
+      "checked_at": "2026-11-08 UTC / 2026-11-09 JST",
+      "limits": "サイト素材と企画送付の方針。コロ助CAD全体の規約ではない"
+    },
+    {
+      "id": "S05",
+      "publisher": "ADKエモーションズ",
+      "title": "CONTACT",
+      "url": "https://www.adkem.jp/contact/",
+      "evidence_type": "OFFICIAL",
+      "read_status": "DIRECT",
+      "checked_at": "2026-11-08 UTC / 2026-11-09 JST",
+      "limits": "窓口存在のみ。個人案件受付・回答は未確認、未送信"
+    },
+    {
+      "id": "L01",
+      "publisher": "e-Gov",
+      "title": "著作権法",
+      "url": "https://laws.e-gov.go.jp/law/345AC0000000048",
+      "evidence_type": "LAW",
+      "read_status": "SEARCH_EXCERPT",
+      "checked_at": "2026-11-08 UTC / 2026-11-09 JST",
+      "limits": "条文検索本文確認。直接ページの全文抽出不可。現行47条の6を使用"
+    },
+    {
+      "id": "L02",
+      "publisher": "文化庁",
+      "title": "著作権これってOK?NG?",
+      "url": "https://www.bunka.go.jp/seisaku/chosakuken/taisetsu/point/",
+      "evidence_type": "PUBLIC_GUIDANCE",
+      "read_status": "DELEGATED_DIRECT",
+      "checked_at": "2026-11-08 UTC / 2026-11-09 JST",
+      "limits": "個人的二次創作とSNS公開、人格権の区別"
+    },
+    {
+      "id": "L03",
+      "publisher": "文化審議会",
+      "title": "2015年クラウド関連報告",
+      "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/chosakuken/bunkakai/41/pdf/shiryo_4_3.pdf",
+      "evidence_type": "PUBLIC_REPORT",
+      "read_status": "DELEGATED_DIRECT",
+      "checked_at": "2026-11-08 UTC / 2026-11-09 JST",
+      "limits": "冊子13-15頁/PDF16-18頁。本人アップロード保存の見解。AI処理への直接適用未確認"
+    },
+    {
+      "id": "L04",
+      "publisher": "文化庁",
+      "title": "令和8年度著作権テキスト",
+      "url": "https://www.bunka.go.jp/seisaku/chosakuken/seidokaisetsu/pdf/94383901_01.pdf",
+      "evidence_type": "PUBLIC_GUIDANCE",
+      "read_status": "DELEGATED_DIRECT",
+      "checked_at": "2026-11-08 UTC / 2026-11-09 JST",
+      "limits": "現行制度の補助解説。個別CAD適法性判断でない"
+    },
+    {
+      "id": "L05",
+      "publisher": "文化庁",
+      "title": "平成30年改正解説",
+      "url": "https://www.bunka.go.jp/seisaku/chosakuken/hokaisei/h30_hokaisei/pdf/r1406693_11.pdf",
+      "evidence_type": "PUBLIC_GUIDANCE",
+      "read_status": "DELEGATED_DIRECT",
+      "checked_at": "2026-11-08 UTC / 2026-11-09 JST",
+      "limits": "旧43条との条番号混同防止"
+    },
+    {
+      "id": "L06",
+      "publisher": "特許庁",
+      "title": "商標とは",
+      "url": "https://www.jpo.go.jp/system/trademark/gaiyo/seidogaiyo/chizai07.html",
+      "evidence_type": "PUBLIC_GUIDANCE",
+      "read_status": "DELEGATED_DIRECT",
+      "checked_at": "2026-11-08 UTC / 2026-11-09 JST",
+      "limits": "商標一般。対象の登録検索未実施"
+    },
+    {
+      "id": "C01",
+      "publisher": "日本同人誌印刷業組合・全国同人誌即売会連絡会",
+      "title": "二次創作の取扱いについて 2026-04-28",
+      "url": "https://www.doujin.gr.jp/information/文化庁著作権課の広報活動におけるいわゆるパロ",
+      "evidence_type": "INDUSTRY_POSITION",
+      "read_status": "DIRECT",
+      "checked_at": "2026-11-08 UTC / 2026-11-09 JST",
+      "limits": "黙認文化に関する当事者見解。法的許諾でない"
+    },
+    {
+      "id": "C02",
+      "publisher": "クリプトン",
+      "title": "キャラクター利用ガイドライン",
+      "url": "https://piapro.jp/license/character_guideline",
+      "evidence_type": "OFFICIAL_LICENSE",
+      "read_status": "DELEGATED_DIRECT",
+      "checked_at": "2026-11-08 UTC / 2026-11-09 JST",
+      "limits": "対象キャラクター限定。非営利無償3D配布条件。コロ助へ適用不可"
+    },
+    {
+      "id": "C03",
+      "publisher": "上海アリス幻樂団",
+      "title": "東方Project二次創作ガイドライン",
+      "url": "https://touhou-project.news/guideline/",
+      "evidence_type": "OFFICIAL_POLICY",
+      "read_status": "DIRECT",
+      "checked_at": "2026-11-08 UTC / 2026-11-09 JST",
+      "limits": "ファン活動許容と流通・素材等の条件"
+    },
+    {
+      "id": "C04",
+      "publisher": "WF実行委員会",
+      "title": "当日版権申請商品の媒体告知",
+      "url": "https://wonfes.jp/info/3568/",
+      "evidence_type": "OFFICIAL_EVENT_POLICY",
+      "read_status": "DIRECT",
+      "checked_at": "2026-11-08 UTC / 2026-11-09 JST",
+      "limits": "2020-04-02の制度説明。現在の作品別条件・データ配布許諾は別確認"
+    },
+    {
+      "id": "C05",
+      "publisher": "Game*Spark",
+      "title": "AM2R公開停止 2016-08-09",
+      "url": "https://www.gamespark.jp/article/2016/08/09/67847.html",
+      "evidence_type": "SECONDARY_REPORT",
+      "read_status": "DIRECT",
+      "checked_at": "2026-11-08 UTC / 2026-11-09 JST",
+      "limits": "報道。通知原本・非営利会計・裁判判断未確認"
+    },
+    {
+      "id": "C06",
+      "publisher": "GitHub DMCA公開記録/Nintendo代理人",
+      "title": "MIMPUT通知 2020-09-17",
+      "url": "https://github.com/github/dmca/blob/master/2020/09/2020-09-17-Nintendo.md",
+      "evidence_type": "RIGHTSHOLDER_NOTICE",
+      "read_status": "DELEGATED_DIRECT",
+      "checked_at": "2026-11-08 UTC / 2026-11-09 JST",
+      "limits": "削除要求の一次記録。司法認定でも非営利性の証明でもない"
+    },
+    {
+      "id": "G01",
+      "publisher": "GitHub",
+      "title": "Terms of Service",
+      "url": "https://docs.github.com/en/site-policy/github-terms/github-terms-of-service",
+      "evidence_type": "PLATFORM_TERMS",
+      "read_status": "DELEGATED_DIRECT",
+      "checked_at": "2026-11-08 UTC / 2026-11-09 JST",
+      "limits": "C/D/E。public fork、private機密性・例外、AI入力は保管と別"
+    },
+    {
+      "id": "G02",
+      "publisher": "GitHub",
+      "title": "DMCA Takedown Policy",
+      "url": "https://docs.github.com/en/site-policy/content-removal-policies/dmca-takedown-policy",
+      "evidence_type": "PLATFORM_POLICY",
+      "read_status": "DELEGATED_DIRECT",
+      "checked_at": "2026-11-08 UTC / 2026-11-09 JST",
+      "limits": "削除通知手続。日本法司法判定と別"
+    },
+    {
+      "id": "G03",
+      "publisher": "GitHub",
+      "title": "Large files",
+      "url": "https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github",
+      "evidence_type": "PLATFORM_DOC",
+      "read_status": "DELEGATED_DIRECT",
+      "checked_at": "2026-11-08 UTC / 2026-11-09 JST",
+      "limits": "100MiB超通常Git制限。将来再確認"
+    },
+    {
+      "id": "G04",
+      "publisher": "GitHub",
+      "title": "Git LFS",
+      "url": "https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-git-large-file-storage",
+      "evidence_type": "PLATFORM_DOC",
+      "read_status": "DELEGATED_DIRECT",
+      "checked_at": "2026-11-08 UTC / 2026-11-09 JST",
+      "limits": "pointerと実体、プラン別上限。契約・費用別確認"
+    },
+    {
+      "id": "G05",
+      "publisher": "GitHub",
+      "title": "Backup",
+      "url": "https://docs.github.com/en/repositories/archiving-a-github-repository/backing-up-a-repository",
+      "evidence_type": "PLATFORM_DOC",
+      "read_status": "DELEGATED_DIRECT",
+      "checked_at": "2026-11-08 UTC / 2026-11-09 JST",
+      "limits": "mirrorとLFS全実体。復元確認が必要"
+    },
+    {
+      "id": "G06",
+      "publisher": "OpenAI",
+      "title": "Codex with ChatGPT plan",
+      "url": "https://help.openai.com/en/articles/11369540-using-codex-with-your-chatgpt-plan",
+      "evidence_type": "PLATFORM_DOC",
+      "read_status": "DELEGATED_DIRECT",
+      "checked_at": "2026-11-08 UTC / 2026-11-09 JST",
+      "limits": "プラン別学習設定。個別ユーザー設定未確認"
+    },
+    {
+      "id": "G07",
+      "publisher": "OpenAI",
+      "title": "Using Codex Cloud",
+      "url": "https://help.openai.com/en/articles/20001545-using-codex-cloud",
+      "evidence_type": "PLATFORM_DOC",
+      "read_status": "DELEGATED_DIRECT",
+      "checked_at": "2026-11-08 UTC / 2026-11-09 JST",
+      "limits": "OpenAI管理環境、privateはlocal-onlyでない"
+    },
+    {
+      "id": "G08",
+      "publisher": "GitHub",
+      "title": "LFS billing",
+      "url": "https://docs.github.com/en/billing/concepts/product-billing/git-lfs",
+      "evidence_type": "PLATFORM_DOC",
+      "read_status": "DELEGATED_DIRECT",
+      "checked_at": "2026-11-08 UTC / 2026-11-09 JST",
+      "limits": "変更版実体が保存量を消費。利用プラン未確認"
+    }
+  ],
+  "search_limits": [
+    "藤子プロ独自ドメイン取得失敗",
+    "コロ助3D/CAD包括許諾未確認。探索は報告記載範囲、網羅保証なし",
+    "判例の個別本文監査・登録商標調査未実施",
+    "DELEGATED_DIRECTは調査担当の実読報告、主担当再実読とは区別"
+  ]
+}
