@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "status": "PROPOSAL_NOT_LEGAL_CLEARANCE",
+  "decisions": [
+    {
+      "id": "U01",
+      "use": "本人が私的に制作・ローカル保存",
+      "decision": "CONDITIONAL",
+      "conditions": "30条・47条の6等の要件確認、人格権別評価",
+      "sources": [
+        "L01",
+        "L02"
+      ]
+    },
+    {
+      "id": "U02",
+      "use": "本人限定クラウド保管",
+      "decision": "CASE_SPECIFIC",
+      "conditions": "利用主体とサービス態様を確認、一般公開より流通限定",
+      "sources": [
+        "L03",
+        "G01"
+      ]
+    },
+    {
+      "id": "U03",
+      "use": "privateで第三者と共同制作",
+      "decision": "HOLD_PENDING_SCOPE",
+      "conditions": "共有者・目的・関係・AI処理を確認。privateだけで私的利用断定しない",
+      "sources": [
+        "L01",
+        "L03",
+        "G01"
+      ]
+    },
+    {
+      "id": "U04",
+      "use": "忠実外観の画像動画公開",
+      "decision": "HOLD_PENDING_RIGHTS",
+      "conditions": "許諾または法定例外の個別確認",
+      "sources": [
+        "S03",
+        "L01",
+        "L02"
+      ]
+    },
+    {
+      "id": "U05",
+      "use": "CAD/STEP/GLB/生成コードの一般配布",
+      "decision": "HOLD_PENDING_RIGHTS",
+      "conditions": "編集可能データの複製翻案送信と再利用範囲を確認",
+      "sources": [
+        "L01",
+        "G01"
+      ]
+    },
+    {
+      "id": "U06",
+      "use": "有償頒布・商品化",
+      "decision": "HOLD_PENDING_PERMISSION",
+      "conditions": "商業・立体化・商標等の対象別許諾",
+      "sources": [
+        "S03",
+        "L06"
+      ]
+    },
+    {
+      "id": "U07",
+      "use": "独立した機構回路・汎用コード公開",
+      "decision": "CANDIDATE_AFTER_REVIEW",
+      "conditions": "固有外観表現と第三者素材を含まないことを独立確認",
+      "sources": [
+        "L01",
+        "G01"
+      ]
+    },
+    {
+      "id": "U08",
+      "use": "非営利研究・教育という名称で全公開",
+      "decision": "NOT_A_BLANKET_EXCEPTION",
+      "conditions": "個別例外の要件が必要",
+      "sources": [
+        "L01",
+        "L02"
+      ]
+    },
+    {
+      "id": "U09",
+      "use": "CADをAIクラウドへ入力",
+      "decision": "CASE_SPECIFIC",
+      "conditions": "元データ権利、処理主体、権限、学習・保存設定を確認",
+      "sources": [
+        "L03",
+        "G06",
+        "G07"
+      ]
+    }
+  ]
+}
