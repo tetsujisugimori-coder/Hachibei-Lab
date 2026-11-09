@@ -1,0 +1,57 @@
+{
+  "head": "e5079db255403134d1864fc8b4ed8b3e8418350d",
+  "base": "03a05c06243def8aed338b1568ece66897148300",
+  "head_tree": "8e6e7719ed6ddf69607346bfd10c526eb091e30c",
+  "changed_files": [
+    {
+      "path": ".github/workflows/korosuke-generic-clearance.yml",
+      "bytes": 863,
+      "sha256": "8115ca8ee8c1ce2190c9974a998cffcc70656978142ce893fc7574544bf2066a",
+      "pattern_hits": []
+    },
+    {
+      "path": "projects/korosuke/generic-kinematics/README.md",
+      "bytes": 2915,
+      "sha256": "398d8505cf2bd68695dac61a11916f940089082f03e935fd62d23cf19178957b",
+      "pattern_hits": []
+    },
+    {
+      "path": "projects/korosuke/generic-kinematics/example-neutral.json",
+      "bytes": 809,
+      "sha256": "a3a66676887b62728ea836e655bd104ce3e0a31032486ea24bd2e118432a8c44",
+      "pattern_hits": []
+    },
+    {
+      "path": "projects/korosuke/generic-kinematics/sweep.py",
+      "bytes": 7959,
+      "sha256": "8f61135bb7feef58519c70e459a260ea9db51865b9245eedf73e5f991ab42833",
+      "pattern_hits": []
+    },
+    {
+      "path": "projects/korosuke/generic-kinematics/test_dense_sampling.py",
+      "bytes": 1498,
+      "sha256": "cd3a1ae58f01dddfa4ef2b5f1563f3c0498bd48670a950b457646e7f9b6059e6",
+      "pattern_hits": []
+    },
+    {
+      "path": "projects/korosuke/generic-kinematics/test_sweep.py",
+      "bytes": 2741,
+      "sha256": "0775a4336a63ecaaf03c1e97cd05da1eafe535dbb0f16d3b750d2d955204ac36",
+      "pattern_hits": []
+    }
+  ],
+  "file_count": 6,
+  "scope": "All six changed text files; code/fixtures manually reviewed. No existing private Space or CAD opened. No negative keyword finding constitutes a legal/security guarantee.",
+  "manual_review": {
+    "private_CAD_images_models": false,
+    "character_reconstruction_geometry_or_code": false,
+    "third_party_assets": false,
+    "known_secrets_or_private_space_identifiers": false,
+    "all_geometry": "synthetic generic rectangles; no source robot dimensions found"
+  },
+  "unchanged_protected_scope": {
+    "issue4_and_PR5": "not changed",
+    "private_originals": "not accessed or modified"
+  },
+  "AGENTS_md": "not present in checkout at evaluated HEAD"
+}

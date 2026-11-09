@@ -1,0 +1,85 @@
+{
+  "evaluated_head": "e5079db255403134d1864fc8b4ed8b3e8418350d",
+  "files": {
+    "MATH_AUDIT.md": {
+      "bytes": 8303,
+      "sha256": "49d8af778c546297e1469708cc99643970943ea92c1ad9472a15a88cec6f3e55"
+    },
+    "REVIEW.md": {
+      "bytes": 12394,
+      "sha256": "af15431ba244cf860e4c827ee3da7394f91f7c8424b705a4a855aed6a904f4cf"
+    },
+    "ci-record.json": {
+      "bytes": 936,
+      "sha256": "3d558e5805a58c58503202f44dcfdf7f466d885446145881cc8610d6c8efa114"
+    },
+    "existing-tests.log": {
+      "bytes": 901,
+      "sha256": "a08d9a22b37600f62063f710e75bb9c028206df8e9dc8d39fe9bddfd18b1ee4e"
+    },
+    "false-clear-results.json": {
+      "bytes": 12818,
+      "sha256": "250bd87b2ef3403509f5ab4335808881e627824bb72f71e72d9680f5c2138a32"
+    },
+    "false-clear-run.log": {
+      "bytes": 226,
+      "sha256": "c802e9d86a01a360903171de7e062251b2f74f4506e9be0ec8aa88730d6ab025"
+    },
+    "huge-angle-52.json": {
+      "bytes": 500,
+      "sha256": "fb526e9432a0823396d8bdb5ab89f4cbf8632c8c40eaac72cc68f526e1f936aa"
+    },
+    "huge-angle-trig-only.json": {
+      "bytes": 499,
+      "sha256": "82e91fb6b11178d253240231d6fb628729e960156b498b9b76fe36405a51d64f"
+    },
+    "huge-pivot.json": {
+      "bytes": 455,
+      "sha256": "d467217d5ac210b45a24651a75eb2b4146f195ca7f78648f472baa19c8b0c808"
+    },
+    "independent-results.json": {
+      "bytes": 261504,
+      "sha256": "63ebff9a0ccbad75f4043ad6ba2188d1f3a35bae43a8cd6e276c596533c25712"
+    },
+    "independent-run.log": {
+      "bytes": 717,
+      "sha256": "3dc7c499fc2d0de74a5d5ae3da000bc01a349fef456e3ea8b5a47ad5d9c4b770"
+    },
+    "independent_checks.py": {
+      "bytes": 7297,
+      "sha256": "ebfa8f0233428b7fd6244d8b7d4da042ed172005a027b47316507f0b06350394"
+    },
+    "moderate-tiny-boundary.json": {
+      "bytes": 485,
+      "sha256": "f83ba08d5529098f858a633b2a197b0da97f25ed8769e7b92736b00ee6273cbb"
+    },
+    "neutral-result.json": {
+      "bytes": 1316,
+      "sha256": "19412839ad2a1ba7894c7f2f1e27ba3fc200d94cf255ebb5028dbaf2aed3994e"
+    },
+    "public-safety.json": {
+      "bytes": 2151,
+      "sha256": "6de1041e1e426dcb870f249b6ab8560deb23c84fba0f4ed549ac78a6dfb2e506"
+    },
+    "reproduce_false_clear.py": {
+      "bytes": 6579,
+      "sha256": "bf8a7024753ed991a81836f36f00ecf9531702cb312d27926ad841b81f04ee72"
+    },
+    "run-metadata.json": {
+      "bytes": 1449,
+      "sha256": "e88691cd3844f6ccb56ea0c969827bf783cf9d85c87740c0f86b40d86af40518"
+    },
+    "stress-run.log": {
+      "bytes": 479,
+      "sha256": "86bbbb6372b431850796616bf2a632fda6423372cd9bd2fd30159ad3ccc1cd69"
+    },
+    "stress_tiny_boundaries.py": {
+      "bytes": 2473,
+      "sha256": "c600f318204358d3fe2193ecb670dd87674495675818fb055d8bbc18d33f525b"
+    },
+    "tiny-boundary-stress-results.json": {
+      "bytes": 6084,
+      "sha256": "2064fccea87ac401f2de0679a99e532d43a4d7f5d4df0f125b761e898c27a0e5"
+    }
+  }
+}

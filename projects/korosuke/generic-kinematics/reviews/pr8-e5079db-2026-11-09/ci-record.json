@@ -1,0 +1,21 @@
+{
+  "evaluated_head": "e5079db255403134d1864fc8b4ed8b3e8418350d",
+  "base": "03a05c06243def8aed338b1568ece66897148300",
+  "workflow": "Generic joint clearance (public fixtures only)",
+  "run_id": 42535095790,
+  "run_number": 2,
+  "job_id": 128897528936,
+  "status": "completed",
+  "conclusion": "success",
+  "checkout_commit": "15d54668787aa0360b13ec9ce0b1a9d152d00c3a",
+  "checkout_kind": "pull request synthetic merge commit",
+  "python": "3.11.18",
+  "os": "Ubuntu 26.04.1",
+  "tests": 9,
+  "neutral_example_clear_pairs": 4,
+  "evidence_read": ["workflow run metadata", "job metadata", "job step logs", "workflow source"],
+  "artifacts": "No upload-artifact step; no original ZIP claimed",
+  "independent_review_ci": "NOT_RUN: independent review scripts executed locally against exact submitted HEAD",
+  "run_url": "https://github.com/tetsujisugimori-coder/Hachibei-Lab/actions/runs/42535095790",
+  "review_date_jst": "2026-11-09"
+}

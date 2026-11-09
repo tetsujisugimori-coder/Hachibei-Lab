@@ -1,0 +1,13 @@
+{
+  "evaluated_head": "e5079db255403134d1864fc8b4ed8b3e8418350d",
+  "source_sha256": "8f61135bb7feef58519c70e459a260ea9db51865b9245eedf73e5f991ab42833",
+  "python": "3.12.14",
+  "oracle": "Independent rotated-center/basis construction, edge-segment intersection plus convex containment; no target corners/intersects used",
+  "limitations": [
+    "240 randomized finite moderate-coordinate cases and 721 discrete angles per CLEAR case are not exhaustive or a continuous proof.",
+    "Extreme numeric cases are evaluated separately with high-precision arithmetic.",
+    "No original/private robot CAD or 3D evaluation."
+  ],
+  "baseline_suite_pass": true
+}
+Random CLEAR 227 samples 163667 mirror differences 0 faults 4

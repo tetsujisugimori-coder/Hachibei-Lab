@@ -1,0 +1,35 @@
+{
+  "evaluated_head": "e5079db255403134d1864fc8b4ed8b3e8418350d",
+  "evaluated_tree": "8e6e7719ed6ddf69607346bfd10c526eb091e30c",
+  "python": "3.12.14",
+  "system": "Linux",
+  "machine": "x86_64",
+  "mpmath": "1.3.0",
+  "commands": [
+    {
+      "command": "python -m unittest discover -s projects/korosuke/generic-kinematics -v",
+      "exit": 0,
+      "result": "9/9 success"
+    },
+    {
+      "command": "python projects/korosuke/generic-kinematics/sweep.py projects/korosuke/generic-kinematics/example-neutral.json",
+      "exit": 0,
+      "result": "4 CLEAR pairs; synthetic neutral example only"
+    },
+    {
+      "command": "python independent_checks.py --source projects/korosuke/generic-kinematics/sweep.py --output independent-results.json",
+      "exit": 0,
+      "result": "independent moderate-coordinate suite passed; not all-input acceptance"
+    },
+    {
+      "command": "python reproduce_false_clear.py --source projects/korosuke/generic-kinematics/sweep.py --output false-clear-results.json --regression-gate",
+      "exit": 1,
+      "result": "4/4 proven-overlap fixtures incorrectly CLEAR; acceptance gate failed"
+    },
+    {
+      "command": "python stress_tiny_boundaries.py --source projects/korosuke/generic-kinematics/sweep.py --output tiny-boundary-stress-results.json",
+      "exit": 0,
+      "result": "exploration completed; 140 false CLEAR among 18000 adversarial constructed overlaps, not target PASS"
+    }
+  ]
+}
