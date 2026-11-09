@@ -73,7 +73,8 @@ def measure_pair(a, b, *, units_a='mm', units_b='mm', policy=Policy()):
     Tiny positive boolean volumes are retained, never rounded into separation.
     """
     out = {'status': 'UNRESOLVED', 'continuous_motion': 'NOT_PROVEN', 'method': 'OCC_BREP',
-           'unit': 'mm', 'volume_unit': 'mm3', 'physical_safety': 'NOT_TESTED'}
+           'unit': 'mm', 'volume_unit': 'mm3', 'physical_safety': 'NOT_TESTED',
+           'manufacturing_clearance': 'UNRESOLVED'}
     try:
         policy.validate()
         if units_a != 'mm' or units_b != 'mm':
@@ -103,12 +104,44 @@ def measure_pair(a, b, *, units_a='mm', units_b='mm', policy=Policy()):
             out['status'] = 'CONTACT_OR_WITHIN_TOLERANCE'
         else:
             out['status'] = 'SEPARATED_AT_POSE'
-        out['manufacturing_clearance'] = ('NOT_SPECIFIED' if policy.required_clearance_mm is None else
-             'MEASURED_BELOW_REQUIREMENT' if distance < policy.required_clearance_mm else 'MEASURED_AT_OR_ABOVE_REQUIREMENT')
+        out['manufacturing_clearance'] = clearance_result(volume, distance, linear, policy.required_clearance_mm)
         out['numerical_guarantee'] = 'NO_CERTIFIED_BOUND; kernel tolerance is not a rigorous error bound'
     except Exception as exc:
+        out['status'] = 'UNRESOLVED'
+        out['manufacturing_clearance'] = 'UNRESOLVED'
         out['error'] = type(exc).__name__ + ': ' + str(exc)
     return out
+
+
+def clearance_result(volume, distance, tolerance, required):
+    """Conservative reporting band, not a certified OCC error enclosure.
+
+    Intersection always outranks the unsigned minimum distance. Contact does
+    not establish manufacturing clearance, even for a zero requirement.
+    """
+    if any(type(x) not in (int, float) or not math.isfinite(x) or x < 0
+           for x in (volume, distance, tolerance)):
+        raise ValueError('invalid clearance measurements')
+    if required is not None and (type(required) not in (int, float) or
+                                not math.isfinite(required) or required < 0):
+        raise ValueError('invalid clearance requirement')
+    if volume > 0 and distance > tolerance:
+        raise ValueError('contradictory intersection and separation')
+    if required is None:
+        return 'NOT_SPECIFIED'
+    if volume > 0:
+        return 'INTERFERENCE'
+    if distance <= tolerance:
+        return 'CONTACT_OR_WITHIN_TOLERANCE'
+    # Compare rounded endpoints outwards. Near the requirement, do not promote
+    # an uncertain boundary to a successful clearance classification.
+    lower = math.nextafter(distance - tolerance, -math.inf)
+    upper = math.nextafter(distance + tolerance, math.inf)
+    if lower > required:
+        return 'MEASURED_AT_OR_ABOVE_REQUIREMENT'
+    if upper < required:
+        return 'MEASURED_BELOW_REQUIREMENT'
+    return 'UNRESOLVED'
 
 
 def fourbar_pose(input_center, output_center, crank, coupler, rocker, input_degrees, branch=1):

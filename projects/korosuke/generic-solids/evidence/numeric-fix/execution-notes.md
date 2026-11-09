@@ -1,0 +1,1 @@
+The first local reproducer imported Part before FreeCAD and terminated with SIGSEGV (139), without a result. This execution is not counted as PASS. The corrected bootstrap imports FreeCAD first, as the existing suite does; before.json and after.json are actual subsequent measurements of identical neutral boxes. No private CAD was used.

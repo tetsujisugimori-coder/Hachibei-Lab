@@ -21,6 +21,7 @@ jobs:
         with:
           ref: ${{ github.event.pull_request.head.sha }}
       - name: Unit, isolated process and analytic negative controls
+        id: tests
         env:
           PYTHONPATH: /usr/lib/freecad/lib:/usr/lib/freecad-python3/lib
         run: |
@@ -34,11 +35,22 @@ jobs:
           /usr/bin/python3 -m unittest discover -s projects/korosuke/generic-kinematics -v 2>&1 | tee solid-results/stage3a-regression.log
       - name: Bind evidence
         if: always()
+        env:
+          TEST_OUTCOME: ${{ steps.tests.outcome }}
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha }}
         run: |
+          set -euo pipefail
+          id
+          stat -c 'checkout-owner=%u:%g path=%n' "$GITHUB_WORKSPACE" "$GITHUB_WORKSPACE/.git"
+          printf 'HOME=%s\n' "$HOME"
+          git config --show-origin --get-all safe.directory || test "$?" -eq 1
           python3 - <<'PY'
           import hashlib,json,os,pathlib,subprocess
           p=pathlib.Path('solid-results');p.mkdir(exist_ok=True)
-          record={'head':subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),'tree':subprocess.check_output(['git','rev-parse','HEAD^{tree}'],text=True).strip(),'run':os.environ['GITHUB_RUN_ID'],'attempt':os.environ['GITHUB_RUN_ATTEMPT'],'private_models':'NOT_PRESENT'}
+          git=['git','-c','safe.directory='+os.environ['GITHUB_WORKSPACE'],'rev-parse']
+          head=subprocess.check_output(git+['HEAD'],text=True).strip()
+          if head != os.environ['EXPECTED_HEAD']: raise RuntimeError('checkout HEAD differs from requested PR head')
+          record={'head':head,'tree':subprocess.check_output(git+['HEAD^{tree}'],text=True).strip(),'run':os.environ['GITHUB_RUN_ID'],'attempt':os.environ['GITHUB_RUN_ATTEMPT'],'private_models':'NOT_PRESENT','test_outcome':os.environ['TEST_OUTCOME'],'evidence_complete':os.environ['TEST_OUTCOME']=='success'}
           (p/'identity.json').write_text(json.dumps(record,indent=2)+'\n')
           (p/'SHA256SUMS.json').write_text(json.dumps({str(f.relative_to(p)):hashlib.sha256(f.read_bytes()).hexdigest() for f in sorted(p.rglob('*')) if f.is_file() and f.name!='SHA256SUMS.json'},indent=2)+'\n')
           PY

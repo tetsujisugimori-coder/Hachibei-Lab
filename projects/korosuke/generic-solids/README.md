@@ -59,3 +59,9 @@ Finite-pose results cannot certify the entire motion. No material removal, joint
 - Overall Stage 3B remains PARTIAL because continuous motion and physical engineering are not certified. Five-pair interference detection is separate from interference resolution.
 
 No third-party images/models/materials are added. FreeCAD/OCC are external dependencies and retain their upstream licenses; this repository does not redistribute their binaries. This work does not decide the separate legal status of character-specific assets.
+
+## Numeric reacceptance: manufacturing clearance
+
+Positive reported volume always returns `INTERFERENCE` when a clearance requirement is supplied, including 0 mm. Contact or distance within effective BRep/reporting tolerance returns `CONTACT_OR_WITHIN_TOLERANCE`, never manufacturing clearance achieved. Zero-volume separation below the requirement outside the tolerance band returns `MEASURED_BELOW_REQUIREMENT`; above the band returns `MEASURED_AT_OR_ABOVE_REQUIREMENT`. The band and exact boundary return `UNRESOLVED`. No requirement returns `NOT_SPECIFIED`; invalid or contradictory calculations fail closed. The band uses outward-nextafter endpoints but OCC tolerance is not a certified measurement-error enclosure: this is still an empirical pose report, not a clearance guarantee.
+
+CI binds the actual explicitly checked-out PR HEAD and tree using a command-local safe.directory for exactly GITHUB_WORKSPACE. Global/system ownership protection is unchanged. identity.json records test_outcome and evidence_complete; artifacts from failed tests or failed identity binding are diagnostic only, never successful acceptance.
