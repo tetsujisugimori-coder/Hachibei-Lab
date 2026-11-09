@@ -9,13 +9,17 @@ permissions:
 jobs:
   solids:
     runs-on: ubuntu-24.04
-    timeout-minutes: 15
+    container: debian:trixie
+    defaults:
+      run:
+        shell: bash
+    timeout-minutes: 20
     steps:
+      - name: Install distribution FreeCAD and Git
+        run: apt-get update && apt-get install -y --no-install-recommends freecad-python3 git ca-certificates
       - uses: actions/checkout@v4
         with:
           ref: ${{ github.event.pull_request.head.sha }}
-      - name: Install distribution FreeCAD
-        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends freecad
       - name: Unit, isolated process and analytic negative controls
         env:
           PYTHONPATH: /usr/lib/freecad/lib:/usr/lib/freecad-python3/lib

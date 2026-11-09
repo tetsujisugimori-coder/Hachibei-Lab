@@ -1,0 +1,32 @@
+{
+  "same_forged_row": {
+    "id": "known-overlap",
+    "a": [
+      0,
+      0,
+      0
+    ],
+    "b": [
+      0.5,
+      0,
+      0
+    ],
+    "size_a": [
+      1,
+      1,
+      1
+    ],
+    "size_b": [
+      1,
+      1,
+      1
+    ],
+    "expected_volume_mm3": 0.0,
+    "measured_volume_mm3": 0.0,
+    "expected_distance_mm": 5.0,
+    "measured_distance_mm": 5.0,
+    "status": "SEPARATED_AT_POSE"
+  },
+  "incorrectly_accepted": false,
+  "reason": "forged expectation"
+}

@@ -3391,6 +3391,14 @@
     {
       "mutation": "wrong_distance",
       "result": "REJECTED"
+    },
+    {
+      "mutation": "forged_expectation_and_measurement",
+      "result": "REJECTED"
+    },
+    {
+      "mutation": "changed_input_geometry",
+      "result": "REJECTED"
     }
   ],
   "python": "3.13.5 (main, Aug 10 2026, 12:06:59) [GCC 14.2.0]",

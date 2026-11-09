@@ -26,7 +26,7 @@ Default linear tolerance is 1e-6 mm; micro-volume marker is 1e-6 mm³. These are
 
 ## Reproduce public verification
 
-Use an existing FreeCAD Python interpreter, or your distribution's FreeCAD Python module. No Python bindings or CAD binaries are vendored. CI uses Ubuntu 24.04 distribution packages; local evidence records its actual FreeCAD/OCC versions. The optional 3D tool does not introduce dependencies into the standard-library-only Stage 3A runtime.
+Use an existing FreeCAD Python interpreter, or your distribution's FreeCAD Python module. No Python bindings or CAD binaries are vendored. CI uses a Debian 13 (trixie) container with its distribution FreeCAD package; local evidence records its actual FreeCAD/OCC versions. The optional 3D tool does not introduce dependencies into the standard-library-only Stage 3A runtime.
 
 ```sh
 export PYTHONPATH=/usr/lib/freecad/lib:/usr/lib/freecad-python3/lib
