@@ -1,0 +1,36 @@
+{
+  "passed": true,
+  "source_sha256": {
+    "certified.py": "760ec2f4af0a964293fe136e03101374240f6b2a5afc7b1f52fff54eb77da88d",
+    "sweep.py": "706152341bd033feab526a9861c2d96350486739247d8679d634fa67fce8923c"
+  },
+  "seed": 202611090753,
+  "mpmath_version": "1.3.0",
+  "mpmath_digits": 740,
+  "counts": {
+    "exact_rational_arithmetic_cases": 2500,
+    "pi_enclosure_checks": 1,
+    "trig_and_exact_periodicity_cases": 1561,
+    "motion_upper_enclosure_cases": 1000,
+    "high_precision_pose_cases": 720,
+    "independent_corner_overlap_witnesses": 360,
+    "translation_and_periodicity_scenes": 120,
+    "extreme_center_overlap_cases": 10,
+    "opposite_max_coordinate_cases": 10,
+    "ordinary_and_scaled_clear_controls": 5,
+    "explicit_invalid_input_rejections": 4,
+    "continuous_screen_scenes": 60,
+    "clear_angle_and_tolerance_samples": 3575
+  },
+  "classification_counts": {
+    "constructed_overlap:PROJECTED_OVERLAP": 273,
+    "constructed_overlap:UNRESOLVED_2D": 87,
+    "center_overlap_extreme:PROJECTED_OVERLAP": 10,
+    "opposite_max_coordinates:PROJECTED_CLEAR": 10,
+    "continuous_scene:PROJECTED_CLEAR": 55,
+    "continuous_scene:UNRESOLVED_2D": 2,
+    "continuous_scene:PROJECTED_OVERLAP": 3
+  },
+  "elapsed_seconds": 12.936,
+  "limits": "Deterministic finite checks supplement the separate source proof review. They are not exhaustive or a statistical error-rate estimate. No private CAD used."
+}

@@ -1,0 +1,260 @@
+{
+  "base": "e5079db255403134d1864fc8b4ed8b3e8418350d",
+  "files": [
+    {
+      "path": ".github/workflows/korosuke-generic-clearance.yml",
+      "bytes": 2996,
+      "sha256": "e12f63bd30897a0260a51087c3cfa19f5281e892307038ca4997df128328534b",
+      "pattern_hits": []
+    },
+    {
+      "path": "projects/korosuke/generic-kinematics/NUMERICS.md",
+      "bytes": 8905,
+      "sha256": "c3460555ac99aa35ecf72e505c24cf0675a78a8832de6fdb7857a82dbdb93e9d",
+      "pattern_hits": []
+    },
+    {
+      "path": "projects/korosuke/generic-kinematics/README.md",
+      "bytes": 3499,
+      "sha256": "2babe0ff2cb502434dafdd2c1da4a26d23d5a6491c88d737850a8ed36dfef08d",
+      "pattern_hits": []
+    },
+    {
+      "path": "projects/korosuke/generic-kinematics/certified.py",
+      "bytes": 4709,
+      "sha256": "760ec2f4af0a964293fe136e03101374240f6b2a5afc7b1f52fff54eb77da88d",
+      "pattern_hits": []
+    },
+    {
+      "path": "projects/korosuke/generic-kinematics/numeric-validation/README.md",
+      "bytes": 2648,
+      "sha256": "dcb4fc128c4e4a6a58515d5e99ef2e62526cdb51dbab392121b0009d341ff745",
+      "pattern_hits": []
+    },
+    {
+      "path": "projects/korosuke/generic-kinematics/numeric-validation/RESULTS.md",
+      "bytes": 3171,
+      "sha256": "534e1bd5a5054340e008a58d5cccd82498e63acd6e400ac18a37d3b4b6d4ece3",
+      "pattern_hits": []
+    },
+    {
+      "path": "projects/korosuke/generic-kinematics/numeric-validation/evidence/local-2026-11-09/SHA256SUMS.json",
+      "bytes": 1195,
+      "sha256": "881a31c134c0615733788338ab0d040f047d0068eb78063728f173bd554a66e0",
+      "pattern_hits": []
+    },
+    {
+      "path": "projects/korosuke/generic-kinematics/numeric-validation/evidence/local-2026-11-09/after-boundary18000.json",
+      "bytes": 792,
+      "sha256": "4378599686d9798fa5b519ece30b82a59b60c97d34098ac552378d2996ddc87a",
+      "pattern_hits": []
+    },
+    {
+      "path": "projects/korosuke/generic-kinematics/numeric-validation/evidence/local-2026-11-09/after-boundary18000.log",
+      "bytes": 734,
+      "sha256": "c87a18b4fa4c6ed185c4f74e6341925455e2afe6d6543b9297ad553f0523e817",
+      "pattern_hits": []
+    },
+    {
+      "path": "projects/korosuke/generic-kinematics/numeric-validation/evidence/local-2026-11-09/after-four.json",
+      "bytes": 13713,
+      "sha256": "78b7e0196113b0bc276d0c7c10bf41d9e6aab9571d851b8b519d8817819f31b6",
+      "pattern_hits": []
+    },
+    {
+      "path": "projects/korosuke/generic-kinematics/numeric-validation/evidence/local-2026-11-09/after-four.log",
+      "bytes": 225,
+      "sha256": "dbcab7809e59fcc9a297d0ffb4c16a9c2ff3bc2b2a0a694c6f42202d53c2bdb4",
+      "pattern_hits": []
+    },
+    {
+      "path": "projects/korosuke/generic-kinematics/numeric-validation/evidence/local-2026-11-09/after-ordinary.json",
+      "bytes": 261977,
+      "sha256": "f7ad3cb15f91d91217dcc2315c551733d010cef87ac85583b39de54329af3a4b",
+      "pattern_hits": []
+    },
+    {
+      "path": "projects/korosuke/generic-kinematics/numeric-validation/evidence/local-2026-11-09/after-ordinary.log",
+      "bytes": 717,
+      "sha256": "e6409f51c66de85ea43cc49a2426e03be2337ac8797c2b784946dc89668a5ba1",
+      "pattern_hits": []
+    },
+    {
+      "path": "projects/korosuke/generic-kinematics/numeric-validation/evidence/local-2026-11-09/before-boundary18000.json",
+      "bytes": 6391,
+      "sha256": "5950e77bbd2f5cbb847c883879d7d680b0b020604ca7ceb60e87a08a0663d0d2",
+      "pattern_hits": []
+    },
+    {
+      "path": "projects/korosuke/generic-kinematics/numeric-validation/evidence/local-2026-11-09/before-boundary18000.log",
+      "bytes": 780,
+      "sha256": "0ec218684133361dc48514cc7b52aaf88ead3fec2c444e4a8bab8c49cdf6b1c7",
+      "pattern_hits": []
+    },
+    {
+      "path": "projects/korosuke/generic-kinematics/numeric-validation/evidence/local-2026-11-09/before-four.json",
+      "bytes": 12818,
+      "sha256": "250bd87b2ef3403509f5ab4335808881e627824bb72f71e72d9680f5c2138a32",
+      "pattern_hits": []
+    },
+    {
+      "path": "projects/korosuke/generic-kinematics/numeric-validation/evidence/local-2026-11-09/before-four.log",
+      "bytes": 226,
+      "sha256": "c802e9d86a01a360903171de7e062251b2f74f4506e9be0ec8aa88730d6ab025",
+      "pattern_hits": []
+    },
+    {
+      "path": "projects/korosuke/generic-kinematics/numeric-validation/evidence/local-2026-11-09/neutral.json",
+      "bytes": 1812,
+      "sha256": "5584ee9a23cbc400dd02119ebe88a3a1ee74ea13b9f4af0f1486fda8b853ac54",
+      "pattern_hits": []
+    },
+    {
+      "path": "projects/korosuke/generic-kinematics/numeric-validation/evidence/local-2026-11-09/run-metadata.json",
+      "bytes": 6292,
+      "sha256": "f9d09bb912b2f6af42c74bb6f7e8843b4b02d558e717baf691ebda3257618273",
+      "pattern_hits": []
+    },
+    {
+      "path": "projects/korosuke/generic-kinematics/numeric-validation/evidence/local-2026-11-09/unit.log",
+      "bytes": 2069,
+      "sha256": "a5fc3dcf4e9dac37a1752b6a205304124735c6beec9be2d21139f74c5e818736",
+      "pattern_hits": []
+    },
+    {
+      "path": "projects/korosuke/generic-kinematics/numeric-validation/independent/REVIEW.md",
+      "bytes": 8101,
+      "sha256": "ff6418d62567d2bfaf604e3381b65e4955e9acbc4132a9412bb6cdd5531d8af4",
+      "pattern_hits": []
+    },
+    {
+      "path": "projects/korosuke/generic-kinematics/numeric-validation/independent/SHA256SUMS.json",
+      "bytes": 476,
+      "sha256": "b3295a35268a1ee89f7ef3f2fcbdc47d4bb8fbd1882725fd2630ade9b07d8ad6",
+      "pattern_hits": []
+    },
+    {
+      "path": "projects/korosuke/generic-kinematics/numeric-validation/independent/checks.log",
+      "bytes": 1425,
+      "sha256": "65eab9d02e4a90eb2e747710f4e845cf6de71813e0588817bdb1c5098b8aa2e9",
+      "pattern_hits": []
+    },
+    {
+      "path": "projects/korosuke/generic-kinematics/numeric-validation/independent/independent-results.json",
+      "bytes": 1425,
+      "sha256": "65eab9d02e4a90eb2e747710f4e845cf6de71813e0588817bdb1c5098b8aa2e9",
+      "pattern_hits": []
+    },
+    {
+      "path": "projects/korosuke/generic-kinematics/numeric-validation/independent/independent_numeric_checks.py",
+      "bytes": 13432,
+      "sha256": "dec68e99c924de28c6d90fd9a05b55aa36abc2be6ecb9531b3aa6a4590225cfb",
+      "pattern_hits": []
+    },
+    {
+      "path": "projects/korosuke/generic-kinematics/numeric-validation/independent/reported-overlap-witnesses.json",
+      "bytes": 917,
+      "sha256": "359e3eb9123f6139916b6bc40c433f747a4584ca6f379f545bae7389506642d3",
+      "pattern_hits": []
+    },
+    {
+      "path": "projects/korosuke/generic-kinematics/numeric-validation/original/IMMUTABLE.json",
+      "bytes": 1139,
+      "sha256": "91cb0f49e785ee63170b654fa3d5c4116a14b92cf020c6a1fb08a6725b10d042",
+      "pattern_hits": []
+    },
+    {
+      "path": "projects/korosuke/generic-kinematics/numeric-validation/original/false-clear-results.json",
+      "bytes": 12818,
+      "sha256": "250bd87b2ef3403509f5ab4335808881e627824bb72f71e72d9680f5c2138a32",
+      "pattern_hits": []
+    },
+    {
+      "path": "projects/korosuke/generic-kinematics/numeric-validation/original/huge-angle-52.json",
+      "bytes": 500,
+      "sha256": "fb526e9432a0823396d8bdb5ab89f4cbf8632c8c40eaac72cc68f526e1f936aa",
+      "pattern_hits": []
+    },
+    {
+      "path": "projects/korosuke/generic-kinematics/numeric-validation/original/huge-angle-trig-only.json",
+      "bytes": 499,
+      "sha256": "82e91fb6b11178d253240231d6fb628729e960156b498b9b76fe36405a51d64f",
+      "pattern_hits": []
+    },
+    {
+      "path": "projects/korosuke/generic-kinematics/numeric-validation/original/huge-pivot.json",
+      "bytes": 455,
+      "sha256": "d467217d5ac210b45a24651a75eb2b4146f195ca7f78648f472baa19c8b0c808",
+      "pattern_hits": []
+    },
+    {
+      "path": "projects/korosuke/generic-kinematics/numeric-validation/original/independent_checks.py",
+      "bytes": 7297,
+      "sha256": "ebfa8f0233428b7fd6244d8b7d4da042ed172005a027b47316507f0b06350394",
+      "pattern_hits": []
+    },
+    {
+      "path": "projects/korosuke/generic-kinematics/numeric-validation/original/moderate-tiny-boundary.json",
+      "bytes": 485,
+      "sha256": "f83ba08d5529098f858a633b2a197b0da97f25ed8769e7b92736b00ee6273cbb",
+      "pattern_hits": []
+    },
+    {
+      "path": "projects/korosuke/generic-kinematics/numeric-validation/original/reproduce_false_clear.py",
+      "bytes": 6579,
+      "sha256": "bf8a7024753ed991a81836f36f00ecf9531702cb312d27926ad841b81f04ee72",
+      "pattern_hits": []
+    },
+    {
+      "path": "projects/korosuke/generic-kinematics/numeric-validation/original/stress_tiny_boundaries.py",
+      "bytes": 2473,
+      "sha256": "c600f318204358d3fe2193ecb670dd87674495675818fb055d8bbc18d33f525b",
+      "pattern_hits": []
+    },
+    {
+      "path": "projects/korosuke/generic-kinematics/numeric-validation/original/sweep-e5079db.py",
+      "bytes": 7959,
+      "sha256": "8f61135bb7feef58519c70e459a260ea9db51865b9245eedf73e5f991ab42833",
+      "pattern_hits": []
+    },
+    {
+      "path": "projects/korosuke/generic-kinematics/numeric-validation/original/tiny-boundary-stress-results.json",
+      "bytes": 6084,
+      "sha256": "2064fccea87ac401f2de0679a99e532d43a4d7f5d4df0f125b761e898c27a0e5",
+      "pattern_hits": []
+    },
+    {
+      "path": "projects/korosuke/generic-kinematics/numeric-validation/run.py",
+      "bytes": 5391,
+      "sha256": "c093b60f167c17f91a1341afb7cd7aeb996c397ae7e671be43af25bf67bd60a8",
+      "pattern_hits": []
+    },
+    {
+      "path": "projects/korosuke/generic-kinematics/numeric-validation/stress_with_hashes.py",
+      "bytes": 2944,
+      "sha256": "1a03a1283e8074aa326aa0b55b77a245a8a1e899eb86af9c8ae3e458d653a343",
+      "pattern_hits": []
+    },
+    {
+      "path": "projects/korosuke/generic-kinematics/sweep.py",
+      "bytes": 8846,
+      "sha256": "706152341bd033feab526a9861c2d96350486739247d8679d634fa67fce8923c",
+      "pattern_hits": []
+    },
+    {
+      "path": "projects/korosuke/generic-kinematics/test_certified.py",
+      "bytes": 4414,
+      "sha256": "b63289fc1d90a5e040288017e7c78353c0c14f2b5009cc173cc47f4f4b233294",
+      "pattern_hits": []
+    }
+  ],
+  "scope": "Changed public text code, generic fixtures, docs and numerical evidence; manual content and origin check in addition to limited patterns. Not a legal or exhaustive secret audit.",
+  "manual_review": {
+    "nonpublic_originals_accessed": false,
+    "character_specific_geometry_or_dimensions": false,
+    "third_party_assets": false,
+    "private_space_direct_references": false
+  },
+  "protected_scope": "Issue4 PR5 and nonpublic originals unchanged; all changes scoped to generic-kinematics and its CI workflow",
+  "pass": true
+}

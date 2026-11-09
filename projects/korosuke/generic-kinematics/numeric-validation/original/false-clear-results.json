@@ -1,0 +1,393 @@
+{
+  "regression_gate_requested": true,
+  "regression_gate_passed": false,
+  "regression_gate_failures": [
+    "huge-angle-52",
+    "huge-angle-trig-only",
+    "huge-pivot",
+    "moderate-tiny-boundary"
+  ],
+  "source_sha256": "8f61135bb7feef58519c70e459a260ea9db51865b9245eedf73e5f991ab42833",
+  "mpmath_version": "1.3.0",
+  "mpmath_decimal_digits": [
+    100,
+    160
+  ],
+  "reports": [
+    {
+      "fixture": "huge-angle-52",
+      "fixture_sha256": "fb526e9432a0823396d8bdb5ab89f4cbf8632c8c40eaac72cc68f526e1f936aa",
+      "input": {
+        "schema_version": 1,
+        "joint": {
+          "pivot_mm": [
+            0,
+            0
+          ],
+          "start_deg": 4503599627370496.0,
+          "end_deg": 4503599627370497.0
+        },
+        "moving": [
+          {
+            "id": "m",
+            "center_mm": [
+              1,
+              0
+            ],
+            "size_mm": [
+              1e-06,
+              1e-06
+            ]
+          }
+        ],
+        "fixed": [
+          {
+            "id": "f",
+            "center_mm": [
+              0.9563047559630354,
+              0.29237170472273677
+            ],
+            "size_mm": [
+              1e-06,
+              1e-06
+            ]
+          }
+        ]
+      },
+      "candidate": {
+        "moving_id": "m",
+        "fixed_id": "f",
+        "status": "PROJECTED_CLEAR",
+        "first_observed_overlap_deg": null,
+        "sample_count": 1,
+        "certified_intervals": 1,
+        "unresolved_intervals": 0
+      },
+      "computed_midpoint": 4503599627370496.0,
+      "midpoint_is_strict_interior": false,
+      "independent_overlap_witness": {
+        "angle_deg_exact": "4503599627370497.0",
+        "moving_local_witness": [
+          "1.0",
+          "0.0"
+        ],
+        "witness_relative_to_fixed": [
+          "0.0000000000000000458321811773965141626672548874482541157339483017030853064894",
+          "-0.0000000000000000412576827140225524417818765345205004582803356303989498918425"
+        ],
+        "strict_fixed_interior_margins_mm": [
+          "0.000000499999999954167796196659398780462087919521107729669961381524",
+          "0.000000499999999958742294660033360501347466272448861387123574052829"
+        ],
+        "proof": "Witness belongs to moving rectangle and lies strictly inside fixed rectangle."
+      },
+      "computed_gap_mm": 0.01877958244890119,
+      "computed_motion_bound_mm": 0.008726650623295869,
+      "independent_overlap_witness_at_160_digits": {
+        "angle_deg_exact": "4503599627370497.0",
+        "moving_local_witness": [
+          "1.0",
+          "0.0"
+        ],
+        "witness_relative_to_fixed": [
+          "0.0000000000000000458321811773965141626672548874482541157339483017030853064894",
+          "-0.0000000000000000412576827140225524417818765345205004582803356303989498918425"
+        ],
+        "strict_fixed_interior_margins_mm": [
+          "0.000000499999999954167796196659398780462087919521107729669961381524",
+          "0.000000499999999958742294660033360501347466272448861387123574052829"
+        ],
+        "proof": "Witness belongs to moving rectangle and lies strictly inside fixed rectangle."
+      },
+      "100_and_160_digit_runs_agree_to_60_significant_digits": true,
+      "equivalent_small_angle_candidate": {
+        "moving_id": "m",
+        "fixed_id": "f",
+        "status": "UNRESOLVED_2D",
+        "first_observed_overlap_deg": null,
+        "sample_count": 5,
+        "certified_intervals": 2,
+        "unresolved_intervals": 1
+      }
+    },
+    {
+      "fixture": "huge-angle-trig-only",
+      "fixture_sha256": "82e91fb6b11178d253240231d6fb628729e960156b498b9b76fe36405a51d64f",
+      "input": {
+        "schema_version": 1,
+        "joint": {
+          "pivot_mm": [
+            0,
+            0
+          ],
+          "start_deg": 4503599627370496.0,
+          "end_deg": 4503599627370498.0
+        },
+        "moving": [
+          {
+            "id": "m",
+            "center_mm": [
+              1,
+              0
+            ],
+            "size_mm": [
+              1e-06,
+              1e-06
+            ]
+          }
+        ],
+        "fixed": [
+          {
+            "id": "f",
+            "center_mm": [
+              0.9510565162951535,
+              0.3090169943749474
+            ],
+            "size_mm": [
+              1e-06,
+              1e-06
+            ]
+          }
+        ]
+      },
+      "candidate": {
+        "moving_id": "m",
+        "fixed_id": "f",
+        "status": "PROJECTED_CLEAR",
+        "first_observed_overlap_deg": null,
+        "sample_count": 1,
+        "certified_intervals": 1,
+        "unresolved_intervals": 0
+      },
+      "computed_midpoint": 4503599627370497.0,
+      "midpoint_is_strict_interior": true,
+      "independent_overlap_witness": {
+        "angle_deg_exact": "4503599627370498.0",
+        "moving_local_witness": [
+          "1.0",
+          "0.0"
+        ],
+        "witness_relative_to_fixed": [
+          "0.0000000000000000409345009000872931132590998182077814724473056444301531700852",
+          "0.0000000000000000283505752128452976026781515686626470560677243113526302314095"
+        ],
+        "strict_fixed_interior_margins_mm": [
+          "0.000000499999999959065476473968619829870242988761580372956604038797",
+          "0.000000499999999971649402161210615340451191238306714789336185371875"
+        ],
+        "proof": "Witness belongs to moving rectangle and lies strictly inside fixed rectangle."
+      },
+      "computed_gap_mm": 0.02060776731530173,
+      "computed_motion_bound_mm": 0.017453301246591738,
+      "independent_overlap_witness_at_160_digits": {
+        "angle_deg_exact": "4503599627370498.0",
+        "moving_local_witness": [
+          "1.0",
+          "0.0"
+        ],
+        "witness_relative_to_fixed": [
+          "0.0000000000000000409345009000872931132590998182077814724473056444301531700852",
+          "0.0000000000000000283505752128452976026781515686626470560677243113526302314095"
+        ],
+        "strict_fixed_interior_margins_mm": [
+          "0.000000499999999959065476473968619829870242988761580372956604038797",
+          "0.000000499999999971649402161210615340451191238306714789336185371875"
+        ],
+        "proof": "Witness belongs to moving rectangle and lies strictly inside fixed rectangle."
+      },
+      "100_and_160_digit_runs_agree_to_60_significant_digits": true,
+      "equivalent_small_angle_candidate": {
+        "moving_id": "m",
+        "fixed_id": "f",
+        "status": "UNRESOLVED_2D",
+        "first_observed_overlap_deg": null,
+        "sample_count": 7,
+        "certified_intervals": 3,
+        "unresolved_intervals": 1
+      }
+    },
+    {
+      "fixture": "huge-pivot",
+      "fixture_sha256": "d467217d5ac210b45a24651a75eb2b4146f195ca7f78648f472baa19c8b0c808",
+      "input": {
+        "schema_version": 1,
+        "joint": {
+          "pivot_mm": [
+            1e+16,
+            0
+          ],
+          "start_deg": 45,
+          "end_deg": 45.1
+        },
+        "moving": [
+          {
+            "id": "m",
+            "center_mm": [
+              1.2,
+              -1.2
+            ],
+            "size_mm": [
+              0.01,
+              0.01
+            ]
+          }
+        ],
+        "fixed": [
+          {
+            "id": "f",
+            "center_mm": [
+              1.0000000000000002e+16,
+              0
+            ],
+            "size_mm": [
+              1,
+              1
+            ]
+          }
+        ]
+      },
+      "candidate": {
+        "moving_id": "m",
+        "fixed_id": "f",
+        "status": "PROJECTED_CLEAR",
+        "first_observed_overlap_deg": null,
+        "sample_count": 1,
+        "certified_intervals": 1,
+        "unresolved_intervals": 0
+      },
+      "computed_midpoint": 45.05,
+      "midpoint_is_strict_interior": true,
+      "independent_overlap_witness": {
+        "angle_deg_exact": "45.0499999999999971578290569595992565155029296875",
+        "moving_local_witness": [
+          "1.1999999999999999555910790149937383830547332763671875",
+          "-1.1999999999999999555910790149937383830547332763671875"
+        ],
+        "witness_relative_to_fixed": [
+          "-0.302944371343374591804569447837212298648165476592246348785811",
+          "0.00148096079141666485810656769626940350278551270824424567557685"
+        ],
+        "strict_fixed_interior_margins_mm": [
+          "0.197055628656625408195430552162787701351834523407753651214189",
+          "0.498519039208583335141893432303730596497214487291755754324423"
+        ],
+        "proof": "Witness belongs to moving rectangle and lies strictly inside fixed rectangle."
+      },
+      "computed_gap_mm": 2.0,
+      "computed_motion_bound_mm": 0.0014871316501335852,
+      "independent_overlap_witness_at_160_digits": {
+        "angle_deg_exact": "45.0499999999999971578290569595992565155029296875",
+        "moving_local_witness": [
+          "1.1999999999999999555910790149937383830547332763671875",
+          "-1.1999999999999999555910790149937383830547332763671875"
+        ],
+        "witness_relative_to_fixed": [
+          "-0.302944371343374591804569447837212298648165476592246348785811",
+          "0.00148096079141666485810656769626940350278551270824424567557685"
+        ],
+        "strict_fixed_interior_margins_mm": [
+          "0.197055628656625408195430552162787701351834523407753651214189",
+          "0.498519039208583335141893432303730596497214487291755754324423"
+        ],
+        "proof": "Witness belongs to moving rectangle and lies strictly inside fixed rectangle."
+      },
+      "100_and_160_digit_runs_agree_to_60_significant_digits": true,
+      "equivalent_translated_candidate": {
+        "moving_id": "m",
+        "fixed_id": "f",
+        "status": "PROJECTED_OVERLAP",
+        "first_observed_overlap_deg": 45.05,
+        "sample_count": 1,
+        "certified_intervals": 0,
+        "unresolved_intervals": 0
+      }
+    },
+    {
+      "fixture": "moderate-tiny-boundary",
+      "fixture_sha256": "f83ba08d5529098f858a633b2a197b0da97f25ed8769e7b92736b00ee6273cbb",
+      "input": {
+        "schema_version": 1,
+        "joint": {
+          "pivot_mm": [
+            0,
+            0
+          ],
+          "start_deg": 0.3,
+          "end_deg": 0.300000000000005
+        },
+        "moving": [
+          {
+            "id": "m",
+            "center_mm": [
+              1,
+              0
+            ],
+            "size_mm": [
+              1,
+              1
+            ]
+          }
+        ],
+        "fixed": [
+          {
+            "id": "f",
+            "center_mm": [
+              1.5025978971240082,
+              -0.492139200376584
+            ],
+            "size_mm": [
+              9.5367431640625e-07,
+              1
+            ]
+          }
+        ]
+      },
+      "candidate": {
+        "moving_id": "m",
+        "fixed_id": "f",
+        "status": "PROJECTED_CLEAR",
+        "first_observed_overlap_deg": null,
+        "sample_count": 1,
+        "certified_intervals": 1,
+        "unresolved_intervals": 0
+      },
+      "computed_midpoint": 0.3000000000000025,
+      "midpoint_is_strict_interior": true,
+      "independent_overlap_witness": {
+        "angle_deg_exact": "0.3000000000000024868995751603506505489349365234375",
+        "moving_local_witness": [
+          "1.5",
+          "-0.5"
+        ],
+        "witness_relative_to_fixed": [
+          "-0.000000476837158152313217806928239297812081572101545829832553110128",
+          "0.0000000000000000241116213022364174982434701205299106268326557354533876594201"
+        ],
+        "strict_fixed_interior_margins_mm": [
+          "0.0000000000000000508117821930717607021879184278984541701674468898715380100322",
+          "0.499999999999999975888378697763582501756529879470089373167344"
+        ],
+        "proof": "Witness belongs to moving rectangle and lies strictly inside fixed rectangle."
+      },
+      "computed_gap_mm": 2.220446049250313e-16,
+      "computed_motion_bound_mm": 6.893505395536085e-17,
+      "independent_overlap_witness_at_160_digits": {
+        "angle_deg_exact": "0.3000000000000024868995751603506505489349365234375",
+        "moving_local_witness": [
+          "1.5",
+          "-0.5"
+        ],
+        "witness_relative_to_fixed": [
+          "-0.000000476837158152313217806928239297812081572101545829832553110128",
+          "0.0000000000000000241116213022364174982434701205299106268326557354533876594201"
+        ],
+        "strict_fixed_interior_margins_mm": [
+          "0.0000000000000000508117821930717607021879184278984541701674468898715380100322",
+          "0.499999999999999975888378697763582501756529879470089373167344"
+        ],
+        "proof": "Witness belongs to moving rectangle and lies strictly inside fixed rectangle."
+      },
+      "100_and_160_digit_runs_agree_to_60_significant_digits": true
+    }
+  ]
+}
