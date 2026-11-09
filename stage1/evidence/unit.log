@@ -1,0 +1,19 @@
+test_duplicate_id (test_inventory.InventoryTests.test_duplicate_id) ... ok
+test_false_current (test_inventory.InventoryTests.test_false_current) ... ok
+test_forged_hash (test_inventory.InventoryTests.test_forged_hash) ... ok
+test_invented_coverage (test_inventory.InventoryTests.test_invented_coverage) ... ok
+test_invented_version (test_inventory.InventoryTests.test_invented_version) ... ok
+test_missing_domain (test_inventory.InventoryTests.test_missing_domain) ... ok
+test_missing_required (test_inventory.InventoryTests.test_missing_required) ... ok
+test_plan_as_original (test_inventory.InventoryTests.test_plan_as_original) ... ok
+test_private_claim_public (test_inventory.InventoryTests.test_private_claim_public) ... ok
+test_private_row (test_inventory.InventoryTests.test_private_row) ... ok
+test_timestamp_as_revision (test_inventory.InventoryTests.test_timestamp_as_revision) ... ok
+test_unknown_origin (test_inventory.InventoryTests.test_unknown_origin) ... ok
+test_valid_fixture (test_inventory.InventoryTests.test_valid_fixture) ... ok
+test_wrong_domain_count (test_inventory.InventoryTests.test_wrong_domain_count) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.196s
+
+OK

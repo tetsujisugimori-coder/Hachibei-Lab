@@ -1,0 +1,82 @@
+{
+  "schema_version": "1.0",
+  "visibility": "PUBLIC",
+  "sources": [
+    {
+      "source_id": "PUB-001",
+      "title": "Stage 1：八兵衛（dot）の研究範囲・能力評価・6リポジトリ実績の横断台帳を設計する",
+      "classification": "RESEARCH_PLAN",
+      "domains": [
+        "EDOBEN",
+        "PHILOSOPHY",
+        "BEHAVIOR",
+        "CONSTITUTION",
+        "RULES_OPERATIONS"
+      ],
+      "publication_status": "PUBLIC",
+      "publication_evidence": "https://github.com/tetsujisugimori-coder/Hachibei-Lab/issues/1",
+      "original_location": "https://github.com/tetsujisugimori-coder/Hachibei-Lab/issues/1",
+      "original_copy_relationship": "SOURCE_AT_CANONICAL_PUBLIC_URL; snapshot is a dated copy, not a replacement",
+      "document_version": "UNKNOWN",
+      "document_revised_at": "UNKNOWN",
+      "service_revision": "UNKNOWN",
+      "service_updated_at": "2026-11-07T22:32:55Z",
+      "body_check_status": "VERIFIED_BODY",
+      "body_evidence": "evidence/public-issues.json#ISSUE-1-CURRENT",
+      "body_sha256": "e7da6d651fd92a901d97acd217e3e02a597f9186243e476b98df7633682d04a3",
+      "approval_history_status": "NOT_TESTED",
+      "approval_evidence": "UNKNOWN",
+      "effective_from": "UNKNOWN",
+      "effective_until": "UNKNOWN",
+      "application_state": "NOT_A_RULE",
+      "application_evidence": "Public Issue describes a research plan; it does not enact a formal behavior rule",
+      "duplicate_candidates": "NOT_TESTED",
+      "conflict_candidates": "NOT_TESTED",
+      "unknowns": [
+        "Document version and revision date are not declared.",
+        "GitHub updated_at is not a service revision identifier.",
+        "Formal approval history and corpus completeness have not been established."
+      ],
+      "last_verified_at": "2026-11-09T22:50:13Z",
+      "verification_method": "Read public GitHub Issue body; retain dated snapshot and SHA-256; keep document existence separate from rule adoption."
+    },
+    {
+      "source_id": "PUB-002",
+      "title": "Stage 1：既存資料の棚卸しと現行版候補の整理",
+      "classification": "RESEARCH_PLAN",
+      "domains": [
+        "EDOBEN",
+        "PHILOSOPHY",
+        "BEHAVIOR",
+        "CONSTITUTION",
+        "RULES_OPERATIONS"
+      ],
+      "publication_status": "PUBLIC",
+      "publication_evidence": "https://github.com/tetsujisugimori-coder/Hachibei-Lab/issues/2",
+      "original_location": "https://github.com/tetsujisugimori-coder/Hachibei-Lab/issues/2",
+      "original_copy_relationship": "SOURCE_AT_CANONICAL_PUBLIC_URL; snapshot is a dated copy, not a replacement",
+      "document_version": "UNKNOWN",
+      "document_revised_at": "UNKNOWN",
+      "service_revision": "UNKNOWN",
+      "service_updated_at": "2026-11-09T22:48:49Z",
+      "body_check_status": "VERIFIED_BODY",
+      "body_evidence": "evidence/public-issues.json#ISSUE-2-CURRENT",
+      "body_sha256": "69ab0cd101f08f9293c15fd139050fedabd51444a161a99c7cc1661291106388",
+      "approval_history_status": "NOT_TESTED",
+      "approval_evidence": "UNKNOWN",
+      "effective_from": "UNKNOWN",
+      "effective_until": "UNKNOWN",
+      "application_state": "NOT_A_RULE",
+      "application_evidence": "Public Issue describes a research plan; it does not enact a formal behavior rule",
+      "duplicate_candidates": "NOT_TESTED",
+      "conflict_candidates": "NOT_TESTED",
+      "unknowns": [
+        "Document version and revision date are not declared.",
+        "GitHub updated_at is not a service revision identifier.",
+        "Formal approval history and corpus completeness have not been established."
+      ],
+      "last_verified_at": "2026-11-09T22:50:13Z",
+      "verification_method": "Read public GitHub Issue body; retain dated snapshot and SHA-256; keep document existence separate from rule adoption."
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "result": "PASS",
+  "scope": "Public structure and bounded checks only",
+  "checks": [
+    "schema_and_required_fields",
+    "unique_stable_ids",
+    "public_source_provenance",
+    "snapshot_hashes",
+    "version_and_application_separation",
+    "issue2_history_preserved",
+    "five_domain_public_counts",
+    "empty_private_template",
+    "bounded_public_pattern_scan",
+    "old_conflicts_preserved",
+    "readme_unchanged",
+    "scope_limited_to_stage1_and_sole_ci",
+    "immutable_public_evidence"
+  ],
+  "scanned_files": [
+    "stage1/.gitignore",
+    "stage1/ci-audit.md",
+    "stage1/conflicts.md",
+    "stage1/current-versions.md",
+    "stage1/domain-summary.json",
+    "stage1/evidence/baseline.json",
+    "stage1/evidence/ci-preparation/local-unit.log",
+    "stage1/evidence/conflicts-before.md",
+    "stage1/evidence/public-issues.json",
+    "stage1/evidence/unit.log",
+    "stage1/evidence/validation.json",
+    "stage1/governance-map.md",
+    "stage1/inventory.md",
+    "stage1/ledger-format.md",
+    "stage1/ledger.schema.json",
+    "stage1/private-ledger-template.json",
+    "stage1/public-index.json",
+    "stage1/source-map.md",
+    "stage1/stage2-proposal.md",
+    "stage1/tools/bind_ci_evidence.py",
+    "stage1/tools/test_inventory.py",
+    "stage1/tools/validate_inventory.py",
+    "stage1/verification.md",
+    ".github/workflows/stage1-inventory.yml"
+  ],
+  "immutable_files": [
+    "README.md",
+    "stage1/evidence/baseline.json",
+    "stage1/evidence/conflicts-before.md",
+    "stage1/evidence/public-issues.json",
+    "stage1/evidence/unit.log",
+    "stage1/evidence/validation.json"
+  ],
+  "not_proven": [
+    "Corpus completeness",
+    "Current-rule adoption",
+    "Private ledger body or ACL",
+    "Absence of every possible secret",
+    "CI success",
+    "Final remote HEAD match"
+  ]
+}

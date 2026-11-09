@@ -1,0 +1,55 @@
+name: Stage 1 public inventory
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    paths:
+      - 'stage1/**'
+      - '.github/workflows/stage1-inventory.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  public-inventory:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      EXPECTED_HEAD: ${{ github.event.pull_request.head.sha }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install public schema validator
+        run: python -m pip install jsonschema==4.26.0
+      - name: Validate public inventory and immutable evidence
+        id: checks
+        env:
+          EVIDENCE_DIR: ${{ runner.temp }}/stage1-evidence
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$EVIDENCE_DIR"
+          test "$(git rev-parse HEAD)" = "$EXPECTED_HEAD"
+          python -m unittest discover -s stage1/tools -v 2>&1 | tee "$EVIDENCE_DIR/unit.log"
+          python stage1/tools/validate_inventory.py | tee "$EVIDENCE_DIR/validation.json"
+          git diff --check 48f5fe96aa6df48de64272f2eabd0bad66d92a5a...HEAD 2>&1 | tee "$EVIDENCE_DIR/diff-check.log"
+          git diff --check
+      - name: Bind logs to the exact commit
+        if: always()
+        env:
+          EVIDENCE_DIR: ${{ runner.temp }}/stage1-evidence
+          CHECK_OUTCOME: ${{ steps.checks.outcome }}
+        run: python stage1/tools/bind_ci_evidence.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: stage1-public-evidence-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/stage1-evidence/
+          if-no-files-found: error

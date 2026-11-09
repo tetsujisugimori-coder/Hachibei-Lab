@@ -1,0 +1,39 @@
+{
+  "snapshot_format": "1",
+  "visibility": "PUBLIC",
+  "records": [
+    {
+      "id": "ISSUE-1-CURRENT",
+      "url": "https://github.com/tetsujisugimori-coder/Hachibei-Lab/issues/1",
+      "title": "Stage 1：八兵衛（dot）の研究範囲・能力評価・6リポジトリ実績の横断台帳を設計する",
+      "created_at": "2026-11-07T22:32:55Z",
+      "updated_at": "2026-11-07T22:32:55Z",
+      "body": "# 目的\nHachibei-Labを、八兵衛（dot）の言語・哲学・自律性・実務能力・プログラミング能力・ツール利用能力を、根拠に基づいて評価する研究拠点として整備する。既存プロジェクトの正本や秘密情報は移動・複製しない。本Issueは初期の研究範囲と評価設計を定義するもので、実装済み能力の認定ではない。\n\n## 研究対象\n1. 江戸弁・自然な感情表現、語彙、文献根拠、会話実験\n2. 哲学・読解・論理学・判断の根拠と別解\n3. 好奇心・余暇・先回りリサーチ・長期的な疑問の継続\n4. dotの公式機能：継続タスク、専用クラウドコンピューター、ブラウザ操作、接続アプリ、記憶、スケジュール、委任、ユーザー承認\n5. コーディング：仕様理解、設計、実装、デバッグ、テスト、CI、独立レビュー、保守\n6. ツール：GitHub、Codex Cloud、MCP/プラグイン、CLI、ブラウザ、CAD/3D/地理情報ツール\n7. 運用：Issue→branch→Draft PR→独立レビュー→人間の最終判断\n8. 安全・限界：実行権限、認証、情報公開、実機制約、UNKNOWN/HOLD、復旧可能性\n\n## 実装実績の初期参照先（6リポジトリ）\n各リポジトリから固定commit/PR・ソース差分・テスト・CI原証拠を取り、八兵衛が実際に担当した工程と他の担当/環境による工程を区別する。\n- [calculator-memo](https://github.com/tetsujisugimori-coder/calculator-memo)：TypeScript、保存安全性、計算処理、合成データの負対照、Vitest、Playwright。例：[PR #137](https://github.com/tetsujisugimori-coder/calculator-memo/pull/137)（未受入／HOLD）。\n- [intelligence-ui-museum](https://github.com/tetsujisugimori-coder/intelligence-ui-museum)：UI・WebKit・キーボード、再現試験、計測・原因調査。例：[PR #29](https://github.com/tetsujisugimori-coder/intelligence-ui-museum/pull/29)（Stage 3 HOLD／根因UNKNOWN）。\n- [yamanaka-historical-terrain](https://github.com/tetsujisugimori-coder/yamanaka-historical-terrain)：Three.js、QGIS、Blender、GLB、地形形状・座標・ブラウザ検証。例：[PR #22](https://github.com/tetsujisugimori-coder/yamanaka-historical-terrain/pull/22)（技術限定受入と歴史的確証を区別）。\n- [gemini-toranomaki](https://github.com/tetsujisugimori-coder/gemini-toranomaki)：React/TypeScript、教材UI、Playwright、アクセシビリティ検証、状態保全。例：[PR #26](https://github.com/tetsujisugimori-coder/gemini-toranomaki/pull/26)（実Google連携は別扱い）。\n- [historical-source-atlas](https://github.com/tetsujisugimori-coder/historical-source-atlas)：Python、SQLite、JSON、暦換算、出典と推定の分離。例：[PR #17](https://github.com/tetsujisugimori-coder/historical-source-atlas/pull/17)（学術確証は未完）。\n- [castle-3d-parts](https://github.com/tetsujisugimori-coder/castle-3d-parts)：部品パラメータ、Three.js、史料台帳・JSON Schema、FreeCAD/Blender/OpenSCAD/QGISの利用経路検証。例：[PR #5](https://github.com/tetsujisugimori-coder/castle-3d-parts/pull/5)。ツールの記載と実行成功を混同しない。\n\n## dot機能の一次資料\n- [dot スタートガイド（OpenAI）](https://help.openai.com/ja-jp/articles/20001530-getting-started-with-your-dot)\n- [dots のご紹介（OpenAI）](https://openai.com/ja-JP/index/introducing-dots/)\n公式仕様で提供される機能と、**このユーザーの八兵衛に実際に接続・許可・実行できる機能**を分ける。先回りリサーチの読取専用制限も別欄で管理。時点と環境を必ず記録。\n\n## 評価台帳の最低項目\n- 能力ID、領域、対象操作、利用ツールと版、必要権限、環境（クラウド/Windows/iPhone/CI）、検証日時（JST）\n- 公式仕様上の可否、実接続の有無、実操作を行った証拠、コード差分・commit・PR、CI/log/成果物、独立再現\n- 判定：PASS / PARTIAL / FAIL / BLOCKED / NOT_TESTED / UNKNOWN（根拠と未確認事項を必須）\n- 失敗条件、危険な副作用の有無、再実行方法、回避・復旧条件、見直し予定\n- 評価軸：正確性、再現性、テスト設計、自己修正、独立検証、ツール選択、所要時間/負荷（測定値がある場合のみ）\n\n## 初期工程\n- [ ] 公開可能性・既存ガバナンス・秘匿情報の確認。Hachibei-LabがPublicであることを前提に非秘密の研究成果だけを記録\n- [ ] README/AGENTS.mdに研究領域・正式運用規則と研究仮説の境界を定義\n- [ ] 江戸弁・哲学・自律性・余暇の既存記録を所在台帳で整理（原本は移動しない）\n- [ ] 6リポジトリの固定PR/commit/テスト証拠を横断収集し、機能別能力マトリクスを作成\n- [ ] 接続済みツールと実行可能ツールの現況棚卸し（公式ドキュメント・実接続・実行成功を分離）\n- [ ] 同一の簡潔な実験課題で、仕様→実装→RED/GREEN→CI→独立再レビューの手順を検証\n- [ ] 確認済み能力と未確認能力の一覧・再検証ルールを作成し、Draft PRで提出\n\n## 境界と禁止事項\n- 本Issueをもって権限拡張・PC接続・自動実行・他プロジェクトの変更を許可しない。\n- 6リポジトリは**証拠参照元**であり、Hachibei-Labにコードを複製せず、各実装の開発運用は元リポジトリで継続する。\n- 研究結果から権限・憲法・正式な行動規則を自動変更しない。提案と採用決定を分離する。\n- テスト件数の多さや自己申告だけで総合PASSとしない。実機・本番・外部サービスの未検証を明示する。\n- 秘密・個人情報・非公開会話の原文・鍵・トークン・内部プロンプトなどをPublicリポジトリへ記録しない。\n\n## 完了条件\n初期文書と能力台帳のスキーマができ、各研究領域への入口・6リポジトリへの証拠リンク・未検証項目・独立レビュー手順が揃い、Draft PRが人間のレビュー待ちになっていること。実際のdot能力の完全解明を本Issueの完了と取り違えない。\n",
+      "retrieved_at": "2026-11-09T22:50:13Z",
+      "method": "GitHub connector fetch_issue / update_issue response; public repository metadata verified",
+      "body_sha256": "e7da6d651fd92a901d97acd217e3e02a597f9186243e476b98df7633682d04a3"
+    },
+    {
+      "id": "ISSUE-2-CURRENT",
+      "url": "https://github.com/tetsujisugimori-coder/Hachibei-Lab/issues/2",
+      "title": "Stage 1：既存資料の棚卸しと現行版候補の整理",
+      "created_at": "2026-11-07T23:38:27Z",
+      "updated_at": "2026-11-09T22:48:49Z",
+      "body": "## 範囲\n江戸弁・哲学・行動研究・憲法・規則運用の5領域について、資料の所在、版、確認状態を整理する。文書の最新版と実際の適用状態を区別する。能力評価は既存 #1 の将来工程とし、今回は実施しない。\n\n## 成果物\nstage1/inventory.md、current-versions.md、source-map.md、conflicts.md、governance-map.md、stage2-proposal.md。\n\n## 境界\n原本、設定、定期タスク、実験は変更しない。非公開資料の内容・識別リンク・秘密はPublicリポジトリへ転載しない。公開できる情報だけを提出し、不明点をUNKNOWNとして残す。main直接push、マージ、Draft解除は行わない。\n\n## 過去の提出阻害（2026-11-07 記録、現在は解消済み）\n初回確認でリポジトリはPublic、GitHub contents APIは空リポジトリと応答。PRのbaseとなるcommitが確認できないため、初期baseの扱いを確認するまでGitへの書込みは行わない。Issue作成と、公開安全な文書の準備を先行する。\n\n## 受入\n5領域の確認範囲と未確認事項を明記し、資料の正式採用を推測しない。独立レビューとDraft PR提出は、実施結果を別々に記録する。\n\n## 履歴追記：README 初期化と現在状態\n\n- 発生日時：UNKNOWN。上の初回観測は Issue 作成時刻 2026-11-07T23:38:27Z までに記録されたもので、障害発生時刻そのものではない。\n- 解消証拠：[README 初期化 commit 6a3088a329df5384a3091c8f1e7338c4d855648f](https://github.com/tetsujisugimori-coder/Hachibei-Lab/commit/6a3088a329df5384a3091c8f1e7338c4d855648f) の記録時刻は 2026-11-08T00:39:33Z。少なくともこの時点で PR の base commit が存在する。\n- 追加証拠：[Draft PR #3](https://github.com/tetsujisugimori-coder/Hachibei-Lab/pull/3) は 2026-11-08T00:43:16Z に作成済み。\n- 現在状態：初期 base 不在による提出阻害は RESOLVED。2026-11-09T22:48:29Z に main と PR HEAD を再取得し、README blob ce416436b7acb6ec2158ae7675e0bfbf765d8c26 の一致を確認した。過去の記録は削除していない。\n- 現在の残件：資料単位の詳細台帳、公開・非公開の分離、5領域の採用証拠と集計根拠。P2 の完成条件不足と P3 の履歴表示の誤りは別の問題として扱う。\n- Stage 1 は PARTIAL を維持する。main 更新、Draft 解除、マージ、規則変更、能力評価はこの履歴修正に含めない。\n",
+      "retrieved_at": "2026-11-09T22:50:13Z",
+      "method": "GitHub connector fetch_issue / update_issue response; public repository metadata verified",
+      "body_sha256": "69ab0cd101f08f9293c15fd139050fedabd51444a161a99c7cc1661291106388"
+    },
+    {
+      "id": "ISSUE-2-BEFORE",
+      "url": "https://github.com/tetsujisugimori-coder/Hachibei-Lab/issues/2",
+      "title": "Stage 1：既存資料の棚卸しと現行版候補の整理",
+      "created_at": "2026-11-07T23:38:27Z",
+      "updated_at": "2026-11-07T23:38:27Z",
+      "body": "## 範囲\n江戸弁・哲学・行動研究・憲法・規則運用の5領域について、資料の所在、版、確認状態を整理する。文書の最新版と実際の適用状態を区別する。能力評価は既存 #1 の将来工程とし、今回は実施しない。\n\n## 成果物\nstage1/inventory.md、current-versions.md、source-map.md、conflicts.md、governance-map.md、stage2-proposal.md。\n\n## 境界\n原本、設定、定期タスク、実験は変更しない。非公開資料の内容・識別リンク・秘密はPublicリポジトリへ転載しない。公開できる情報だけを提出し、不明点をUNKNOWNとして残す。main直接push、マージ、Draft解除は行わない。\n\n## 現在の提出阻害\n初回確認でリポジトリはPublic、GitHub contents APIは空リポジトリと応答。PRのbaseとなるcommitが確認できないため、初期baseの扱いを確認するまでGitへの書込みは行わない。Issue作成と、公開安全な文書の準備を先行する。\n\n## 受入\n5領域の確認範囲と未確認事項を明記し、資料の正式採用を推測しない。独立レビューとDraft PR提出は、実施結果を別々に記録する。",
+      "retrieved_at": "2026-11-09T22:50:13Z",
+      "method": "GitHub connector fetch_issue / update_issue response; public repository metadata verified",
+      "body_sha256": "57742e6a45da61cd65c9da388a44ad9d6792db0938a56015539494d42960e720"
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "format_version": "1.0",
+  "scope": "Public plan-reference counts only; private detailed counts require owner-only ledger evidence.",
+  "counting_rule": "Each plan source is counted once in every declared domain. Do not sum overlapping domains or count plans as research originals.",
+  "domains": [
+    {
+      "domain": "EDOBEN",
+      "label": "江戸弁",
+      "public_plan_references": 2,
+      "public_research_originals_verified": 0,
+      "body_verified": "PRIVATE_EVIDENCE_ONLY",
+      "unverified": "PRIVATE_EVIDENCE_ONLY",
+      "duplicate_candidates": "PRIVATE_EVIDENCE_ONLY",
+      "conflict_candidates": "PRIVATE_EVIDENCE_ONLY",
+      "corpus_total": "UNKNOWN",
+      "coverage_ratio": "UNKNOWN",
+      "rule_adoption": "UNKNOWN"
+    },
+    {
+      "domain": "PHILOSOPHY",
+      "label": "哲学",
+      "public_plan_references": 2,
+      "public_research_originals_verified": 0,
+      "body_verified": "PRIVATE_EVIDENCE_ONLY",
+      "unverified": "PRIVATE_EVIDENCE_ONLY",
+      "duplicate_candidates": "PRIVATE_EVIDENCE_ONLY",
+      "conflict_candidates": "PRIVATE_EVIDENCE_ONLY",
+      "corpus_total": "UNKNOWN",
+      "coverage_ratio": "UNKNOWN",
+      "rule_adoption": "UNKNOWN"
+    },
+    {
+      "domain": "BEHAVIOR",
+      "label": "行動研究",
+      "public_plan_references": 2,
+      "public_research_originals_verified": 0,
+      "body_verified": "PRIVATE_EVIDENCE_ONLY",
+      "unverified": "PRIVATE_EVIDENCE_ONLY",
+      "duplicate_candidates": "PRIVATE_EVIDENCE_ONLY",
+      "conflict_candidates": "PRIVATE_EVIDENCE_ONLY",
+      "corpus_total": "UNKNOWN",
+      "coverage_ratio": "UNKNOWN",
+      "rule_adoption": "UNKNOWN"
+    },
+    {
+      "domain": "CONSTITUTION",
+      "label": "憲法",
+      "public_plan_references": 2,
+      "public_research_originals_verified": 0,
+      "body_verified": "PRIVATE_EVIDENCE_ONLY",
+      "unverified": "PRIVATE_EVIDENCE_ONLY",
+      "duplicate_candidates": "PRIVATE_EVIDENCE_ONLY",
+      "conflict_candidates": "PRIVATE_EVIDENCE_ONLY",
+      "corpus_total": "UNKNOWN",
+      "coverage_ratio": "UNKNOWN",
+      "rule_adoption": "UNKNOWN"
+    },
+    {
+      "domain": "RULES_OPERATIONS",
+      "label": "規則運用",
+      "public_plan_references": 2,
+      "public_research_originals_verified": 0,
+      "body_verified": "PRIVATE_EVIDENCE_ONLY",
+      "unverified": "PRIVATE_EVIDENCE_ONLY",
+      "duplicate_candidates": "PRIVATE_EVIDENCE_ONLY",
+      "conflict_candidates": "PRIVATE_EVIDENCE_ONLY",
+      "corpus_total": "UNKNOWN",
+      "coverage_ratio": "UNKNOWN",
+      "rule_adoption": "UNKNOWN"
+    }
+  ]
+}
