@@ -1,0 +1,19 @@
+{
+  "runs": [
+    {
+      "id": 42597382913,
+      "head": "d313591055a4cbe90400e2e25bd2388535a71de3",
+      "result": "FAIL",
+      "reason": "Ubuntu 24.04 has no freecad-python3 package; tests NOT_RUN",
+      "artifact_id": 13663687839,
+      "artifact_sha256": "31261717e7456bf0a6ae57c2e2bb5c6ace134ffdb826840494f2e0c156ec4e3b"
+    },
+    {
+      "id": 42598301091,
+      "head": "9f7edc28fdf2a96aa0a8c81e4943476f18cb8206",
+      "result": "FAIL",
+      "reason": "Ubuntu 24.04 freecad has no installation candidate; tests NOT_RUN",
+      "correction": "Use Debian trixie official FreeCAD package inside a container. https://packages.debian.org/trixie/freecad-python3"
+    }
+  ]
+}

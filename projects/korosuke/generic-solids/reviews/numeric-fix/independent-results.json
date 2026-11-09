@@ -1,0 +1,1649 @@
+{
+  "fixed": {
+    "before": {
+      "status": "VOLUME_OVERLAP",
+      "continuous_motion": "NOT_PROVEN",
+      "method": "OCC_BREP",
+      "unit": "mm",
+      "volume_unit": "mm3",
+      "physical_safety": "NOT_TESTED",
+      "a": {
+        "solids": 1,
+        "volume_mm3": 7.999999999999998,
+        "max_brep_tolerance_mm": 1e-07,
+        "bbox_mm": [
+          0.0,
+          0.0,
+          0.0,
+          2.0,
+          2.0,
+          2.0
+        ],
+        "placement": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "b": {
+        "solids": 1,
+        "volume_mm3": 7.999999999999998,
+        "max_brep_tolerance_mm": 1e-07,
+        "bbox_mm": [
+          1.0,
+          0.0,
+          0.0,
+          3.0,
+          2.0,
+          2.0
+        ],
+        "placement": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "policy": {
+        "linear_tolerance_mm": 1e-06,
+        "micro_volume_mm3": 1e-06,
+        "required_clearance_mm": 0
+      },
+      "effective_linear_tolerance_mm": 1e-06,
+      "intersection_volume_mm3": 3.999999999999999,
+      "minimum_distance_mm": 0.0,
+      "nearest_points_mm": [
+        [
+          [
+            2.0,
+            0.0,
+            2.0
+          ],
+          [
+            2.0,
+            0.0,
+            2.0
+          ]
+        ],
+        [
+          [
+            2.0,
+            0.0,
+            0.0
+          ],
+          [
+            2.0,
+            0.0,
+            0.0
+          ]
+        ],
+        [
+          [
+            2.0,
+            2.0,
+            2.0
+          ],
+          [
+            2.0,
+            2.0,
+            2.0
+          ]
+        ],
+        [
+          [
+            2.0,
+            2.0,
+            0.0
+          ],
+          [
+            2.0,
+            2.0,
+            0.0
+          ]
+        ],
+        [
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.0,
+            0.0
+          ]
+        ],
+        [
+          [
+            1.0,
+            0.0,
+            2.0
+          ],
+          [
+            1.0,
+            0.0,
+            2.0
+          ]
+        ],
+        [
+          [
+            1.0,
+            2.0,
+            0.0
+          ],
+          [
+            1.0,
+            2.0,
+            0.0
+          ]
+        ],
+        [
+          [
+            1.0,
+            2.0,
+            2.0
+          ],
+          [
+            1.0,
+            2.0,
+            2.0
+          ]
+        ]
+      ],
+      "intersection_bbox_mm": [
+        1.0,
+        0.0,
+        0.0,
+        2.0,
+        2.0,
+        2.0
+      ],
+      "intersection_center_mm": [
+        1.5000000000000002,
+        1.0,
+        1.0
+      ],
+      "manufacturing_clearance": "MEASURED_AT_OR_ABOVE_REQUIREMENT",
+      "numerical_guarantee": "NO_CERTIFIED_BOUND; kernel tolerance is not a rigorous error bound"
+    },
+    "after": {
+      "status": "VOLUME_OVERLAP",
+      "continuous_motion": "NOT_PROVEN",
+      "method": "OCC_BREP",
+      "unit": "mm",
+      "volume_unit": "mm3",
+      "physical_safety": "NOT_TESTED",
+      "manufacturing_clearance": "INTERFERENCE",
+      "a": {
+        "solids": 1,
+        "volume_mm3": 7.999999999999998,
+        "max_brep_tolerance_mm": 1e-07,
+        "bbox_mm": [
+          0.0,
+          0.0,
+          0.0,
+          2.0,
+          2.0,
+          2.0
+        ],
+        "placement": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "b": {
+        "solids": 1,
+        "volume_mm3": 7.999999999999998,
+        "max_brep_tolerance_mm": 1e-07,
+        "bbox_mm": [
+          1.0,
+          0.0,
+          0.0,
+          3.0,
+          2.0,
+          2.0
+        ],
+        "placement": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "policy": {
+        "linear_tolerance_mm": 1e-06,
+        "micro_volume_mm3": 1e-06,
+        "required_clearance_mm": 0
+      },
+      "effective_linear_tolerance_mm": 1e-06,
+      "intersection_volume_mm3": 3.999999999999999,
+      "minimum_distance_mm": 0.0,
+      "nearest_points_mm": [
+        [
+          [
+            2.0,
+            0.0,
+            2.0
+          ],
+          [
+            2.0,
+            0.0,
+            2.0
+          ]
+        ],
+        [
+          [
+            2.0,
+            0.0,
+            0.0
+          ],
+          [
+            2.0,
+            0.0,
+            0.0
+          ]
+        ],
+        [
+          [
+            2.0,
+            2.0,
+            2.0
+          ],
+          [
+            2.0,
+            2.0,
+            2.0
+          ]
+        ],
+        [
+          [
+            2.0,
+            2.0,
+            0.0
+          ],
+          [
+            2.0,
+            2.0,
+            0.0
+          ]
+        ],
+        [
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.0,
+            0.0
+          ]
+        ],
+        [
+          [
+            1.0,
+            0.0,
+            2.0
+          ],
+          [
+            1.0,
+            0.0,
+            2.0
+          ]
+        ],
+        [
+          [
+            1.0,
+            2.0,
+            0.0
+          ],
+          [
+            1.0,
+            2.0,
+            0.0
+          ]
+        ],
+        [
+          [
+            1.0,
+            2.0,
+            2.0
+          ],
+          [
+            1.0,
+            2.0,
+            2.0
+          ]
+        ]
+      ],
+      "intersection_bbox_mm": [
+        1.0,
+        0.0,
+        0.0,
+        2.0,
+        2.0,
+        2.0
+      ],
+      "intersection_center_mm": [
+        1.5000000000000002,
+        1.0,
+        1.0
+      ],
+      "numerical_guarantee": "NO_CERTIFIED_BOUND; kernel tolerance is not a rigorous error bound"
+    }
+  },
+  "analytic_cases": [
+    {
+      "x": -2.0,
+      "requirement": 0.0,
+      "analytic_volume": 0.0,
+      "analytic_distance": 0.0,
+      "expected": "CONTACT_OR_WITHIN_TOLERANCE",
+      "actual": "CONTACT_OR_WITHIN_TOLERANCE"
+    },
+    {
+      "x": -2.0,
+      "requirement": 0.5,
+      "analytic_volume": 0.0,
+      "analytic_distance": 0.0,
+      "expected": "CONTACT_OR_WITHIN_TOLERANCE",
+      "actual": "CONTACT_OR_WITHIN_TOLERANCE"
+    },
+    {
+      "x": -2.0,
+      "requirement": 1.0,
+      "analytic_volume": 0.0,
+      "analytic_distance": 0.0,
+      "expected": "CONTACT_OR_WITHIN_TOLERANCE",
+      "actual": "CONTACT_OR_WITHIN_TOLERANCE"
+    },
+    {
+      "x": -2.0,
+      "requirement": 2.0,
+      "analytic_volume": 0.0,
+      "analytic_distance": 0.0,
+      "expected": "CONTACT_OR_WITHIN_TOLERANCE",
+      "actual": "CONTACT_OR_WITHIN_TOLERANCE"
+    },
+    {
+      "x": -1.75,
+      "requirement": 0.0,
+      "analytic_volume": 1.0,
+      "analytic_distance": 0.0,
+      "expected": "INTERFERENCE",
+      "actual": "INTERFERENCE"
+    },
+    {
+      "x": -1.75,
+      "requirement": 0.5,
+      "analytic_volume": 1.0,
+      "analytic_distance": 0.0,
+      "expected": "INTERFERENCE",
+      "actual": "INTERFERENCE"
+    },
+    {
+      "x": -1.75,
+      "requirement": 1.0,
+      "analytic_volume": 1.0,
+      "analytic_distance": 0.0,
+      "expected": "INTERFERENCE",
+      "actual": "INTERFERENCE"
+    },
+    {
+      "x": -1.75,
+      "requirement": 2.0,
+      "analytic_volume": 1.0,
+      "analytic_distance": 0.0,
+      "expected": "INTERFERENCE",
+      "actual": "INTERFERENCE"
+    },
+    {
+      "x": -1.5,
+      "requirement": 0.0,
+      "analytic_volume": 2.0,
+      "analytic_distance": 0.0,
+      "expected": "INTERFERENCE",
+      "actual": "INTERFERENCE"
+    },
+    {
+      "x": -1.5,
+      "requirement": 0.5,
+      "analytic_volume": 2.0,
+      "analytic_distance": 0.0,
+      "expected": "INTERFERENCE",
+      "actual": "INTERFERENCE"
+    },
+    {
+      "x": -1.5,
+      "requirement": 1.0,
+      "analytic_volume": 2.0,
+      "analytic_distance": 0.0,
+      "expected": "INTERFERENCE",
+      "actual": "INTERFERENCE"
+    },
+    {
+      "x": -1.5,
+      "requirement": 2.0,
+      "analytic_volume": 2.0,
+      "analytic_distance": 0.0,
+      "expected": "INTERFERENCE",
+      "actual": "INTERFERENCE"
+    },
+    {
+      "x": -1.25,
+      "requirement": 0.0,
+      "analytic_volume": 3.0,
+      "analytic_distance": 0.0,
+      "expected": "INTERFERENCE",
+      "actual": "INTERFERENCE"
+    },
+    {
+      "x": -1.25,
+      "requirement": 0.5,
+      "analytic_volume": 3.0,
+      "analytic_distance": 0.0,
+      "expected": "INTERFERENCE",
+      "actual": "INTERFERENCE"
+    },
+    {
+      "x": -1.25,
+      "requirement": 1.0,
+      "analytic_volume": 3.0,
+      "analytic_distance": 0.0,
+      "expected": "INTERFERENCE",
+      "actual": "INTERFERENCE"
+    },
+    {
+      "x": -1.25,
+      "requirement": 2.0,
+      "analytic_volume": 3.0,
+      "analytic_distance": 0.0,
+      "expected": "INTERFERENCE",
+      "actual": "INTERFERENCE"
+    },
+    {
+      "x": -1.0,
+      "requirement": 0.0,
+      "analytic_volume": 4.0,
+      "analytic_distance": 0.0,
+      "expected": "INTERFERENCE",
+      "actual": "INTERFERENCE"
+    },
+    {
+      "x": -1.0,
+      "requirement": 0.5,
+      "analytic_volume": 4.0,
+      "analytic_distance": 0.0,
+      "expected": "INTERFERENCE",
+      "actual": "INTERFERENCE"
+    },
+    {
+      "x": -1.0,
+      "requirement": 1.0,
+      "analytic_volume": 4.0,
+      "analytic_distance": 0.0,
+      "expected": "INTERFERENCE",
+      "actual": "INTERFERENCE"
+    },
+    {
+      "x": -1.0,
+      "requirement": 2.0,
+      "analytic_volume": 4.0,
+      "analytic_distance": 0.0,
+      "expected": "INTERFERENCE",
+      "actual": "INTERFERENCE"
+    },
+    {
+      "x": -0.75,
+      "requirement": 0.0,
+      "analytic_volume": 5.0,
+      "analytic_distance": 0.0,
+      "expected": "INTERFERENCE",
+      "actual": "INTERFERENCE"
+    },
+    {
+      "x": -0.75,
+      "requirement": 0.5,
+      "analytic_volume": 5.0,
+      "analytic_distance": 0.0,
+      "expected": "INTERFERENCE",
+      "actual": "INTERFERENCE"
+    },
+    {
+      "x": -0.75,
+      "requirement": 1.0,
+      "analytic_volume": 5.0,
+      "analytic_distance": 0.0,
+      "expected": "INTERFERENCE",
+      "actual": "INTERFERENCE"
+    },
+    {
+      "x": -0.75,
+      "requirement": 2.0,
+      "analytic_volume": 5.0,
+      "analytic_distance": 0.0,
+      "expected": "INTERFERENCE",
+      "actual": "INTERFERENCE"
+    },
+    {
+      "x": -0.5,
+      "requirement": 0.0,
+      "analytic_volume": 6.0,
+      "analytic_distance": 0.0,
+      "expected": "INTERFERENCE",
+      "actual": "INTERFERENCE"
+    },
+    {
+      "x": -0.5,
+      "requirement": 0.5,
+      "analytic_volume": 6.0,
+      "analytic_distance": 0.0,
+      "expected": "INTERFERENCE",
+      "actual": "INTERFERENCE"
+    },
+    {
+      "x": -0.5,
+      "requirement": 1.0,
+      "analytic_volume": 6.0,
+      "analytic_distance": 0.0,
+      "expected": "INTERFERENCE",
+      "actual": "INTERFERENCE"
+    },
+    {
+      "x": -0.5,
+      "requirement": 2.0,
+      "analytic_volume": 6.0,
+      "analytic_distance": 0.0,
+      "expected": "INTERFERENCE",
+      "actual": "INTERFERENCE"
+    },
+    {
+      "x": -0.25,
+      "requirement": 0.0,
+      "analytic_volume": 7.0,
+      "analytic_distance": 0.0,
+      "expected": "INTERFERENCE",
+      "actual": "INTERFERENCE"
+    },
+    {
+      "x": -0.25,
+      "requirement": 0.5,
+      "analytic_volume": 7.0,
+      "analytic_distance": 0.0,
+      "expected": "INTERFERENCE",
+      "actual": "INTERFERENCE"
+    },
+    {
+      "x": -0.25,
+      "requirement": 1.0,
+      "analytic_volume": 7.0,
+      "analytic_distance": 0.0,
+      "expected": "INTERFERENCE",
+      "actual": "INTERFERENCE"
+    },
+    {
+      "x": -0.25,
+      "requirement": 2.0,
+      "analytic_volume": 7.0,
+      "analytic_distance": 0.0,
+      "expected": "INTERFERENCE",
+      "actual": "INTERFERENCE"
+    },
+    {
+      "x": 0.0,
+      "requirement": 0.0,
+      "analytic_volume": 8.0,
+      "analytic_distance": 0.0,
+      "expected": "INTERFERENCE",
+      "actual": "INTERFERENCE"
+    },
+    {
+      "x": 0.0,
+      "requirement": 0.5,
+      "analytic_volume": 8.0,
+      "analytic_distance": 0.0,
+      "expected": "INTERFERENCE",
+      "actual": "INTERFERENCE"
+    },
+    {
+      "x": 0.0,
+      "requirement": 1.0,
+      "analytic_volume": 8.0,
+      "analytic_distance": 0.0,
+      "expected": "INTERFERENCE",
+      "actual": "INTERFERENCE"
+    },
+    {
+      "x": 0.0,
+      "requirement": 2.0,
+      "analytic_volume": 8.0,
+      "analytic_distance": 0.0,
+      "expected": "INTERFERENCE",
+      "actual": "INTERFERENCE"
+    },
+    {
+      "x": 0.25,
+      "requirement": 0.0,
+      "analytic_volume": 7.0,
+      "analytic_distance": 0.0,
+      "expected": "INTERFERENCE",
+      "actual": "INTERFERENCE"
+    },
+    {
+      "x": 0.25,
+      "requirement": 0.5,
+      "analytic_volume": 7.0,
+      "analytic_distance": 0.0,
+      "expected": "INTERFERENCE",
+      "actual": "INTERFERENCE"
+    },
+    {
+      "x": 0.25,
+      "requirement": 1.0,
+      "analytic_volume": 7.0,
+      "analytic_distance": 0.0,
+      "expected": "INTERFERENCE",
+      "actual": "INTERFERENCE"
+    },
+    {
+      "x": 0.25,
+      "requirement": 2.0,
+      "analytic_volume": 7.0,
+      "analytic_distance": 0.0,
+      "expected": "INTERFERENCE",
+      "actual": "INTERFERENCE"
+    },
+    {
+      "x": 0.5,
+      "requirement": 0.0,
+      "analytic_volume": 6.0,
+      "analytic_distance": 0.0,
+      "expected": "INTERFERENCE",
+      "actual": "INTERFERENCE"
+    },
+    {
+      "x": 0.5,
+      "requirement": 0.5,
+      "analytic_volume": 6.0,
+      "analytic_distance": 0.0,
+      "expected": "INTERFERENCE",
+      "actual": "INTERFERENCE"
+    },
+    {
+      "x": 0.5,
+      "requirement": 1.0,
+      "analytic_volume": 6.0,
+      "analytic_distance": 0.0,
+      "expected": "INTERFERENCE",
+      "actual": "INTERFERENCE"
+    },
+    {
+      "x": 0.5,
+      "requirement": 2.0,
+      "analytic_volume": 6.0,
+      "analytic_distance": 0.0,
+      "expected": "INTERFERENCE",
+      "actual": "INTERFERENCE"
+    },
+    {
+      "x": 0.75,
+      "requirement": 0.0,
+      "analytic_volume": 5.0,
+      "analytic_distance": 0.0,
+      "expected": "INTERFERENCE",
+      "actual": "INTERFERENCE"
+    },
+    {
+      "x": 0.75,
+      "requirement": 0.5,
+      "analytic_volume": 5.0,
+      "analytic_distance": 0.0,
+      "expected": "INTERFERENCE",
+      "actual": "INTERFERENCE"
+    },
+    {
+      "x": 0.75,
+      "requirement": 1.0,
+      "analytic_volume": 5.0,
+      "analytic_distance": 0.0,
+      "expected": "INTERFERENCE",
+      "actual": "INTERFERENCE"
+    },
+    {
+      "x": 0.75,
+      "requirement": 2.0,
+      "analytic_volume": 5.0,
+      "analytic_distance": 0.0,
+      "expected": "INTERFERENCE",
+      "actual": "INTERFERENCE"
+    },
+    {
+      "x": 1.0,
+      "requirement": 0.0,
+      "analytic_volume": 4.0,
+      "analytic_distance": 0.0,
+      "expected": "INTERFERENCE",
+      "actual": "INTERFERENCE"
+    },
+    {
+      "x": 1.0,
+      "requirement": 0.5,
+      "analytic_volume": 4.0,
+      "analytic_distance": 0.0,
+      "expected": "INTERFERENCE",
+      "actual": "INTERFERENCE"
+    },
+    {
+      "x": 1.0,
+      "requirement": 1.0,
+      "analytic_volume": 4.0,
+      "analytic_distance": 0.0,
+      "expected": "INTERFERENCE",
+      "actual": "INTERFERENCE"
+    },
+    {
+      "x": 1.0,
+      "requirement": 2.0,
+      "analytic_volume": 4.0,
+      "analytic_distance": 0.0,
+      "expected": "INTERFERENCE",
+      "actual": "INTERFERENCE"
+    },
+    {
+      "x": 1.25,
+      "requirement": 0.0,
+      "analytic_volume": 3.0,
+      "analytic_distance": 0.0,
+      "expected": "INTERFERENCE",
+      "actual": "INTERFERENCE"
+    },
+    {
+      "x": 1.25,
+      "requirement": 0.5,
+      "analytic_volume": 3.0,
+      "analytic_distance": 0.0,
+      "expected": "INTERFERENCE",
+      "actual": "INTERFERENCE"
+    },
+    {
+      "x": 1.25,
+      "requirement": 1.0,
+      "analytic_volume": 3.0,
+      "analytic_distance": 0.0,
+      "expected": "INTERFERENCE",
+      "actual": "INTERFERENCE"
+    },
+    {
+      "x": 1.25,
+      "requirement": 2.0,
+      "analytic_volume": 3.0,
+      "analytic_distance": 0.0,
+      "expected": "INTERFERENCE",
+      "actual": "INTERFERENCE"
+    },
+    {
+      "x": 1.5,
+      "requirement": 0.0,
+      "analytic_volume": 2.0,
+      "analytic_distance": 0.0,
+      "expected": "INTERFERENCE",
+      "actual": "INTERFERENCE"
+    },
+    {
+      "x": 1.5,
+      "requirement": 0.5,
+      "analytic_volume": 2.0,
+      "analytic_distance": 0.0,
+      "expected": "INTERFERENCE",
+      "actual": "INTERFERENCE"
+    },
+    {
+      "x": 1.5,
+      "requirement": 1.0,
+      "analytic_volume": 2.0,
+      "analytic_distance": 0.0,
+      "expected": "INTERFERENCE",
+      "actual": "INTERFERENCE"
+    },
+    {
+      "x": 1.5,
+      "requirement": 2.0,
+      "analytic_volume": 2.0,
+      "analytic_distance": 0.0,
+      "expected": "INTERFERENCE",
+      "actual": "INTERFERENCE"
+    },
+    {
+      "x": 1.75,
+      "requirement": 0.0,
+      "analytic_volume": 1.0,
+      "analytic_distance": 0.0,
+      "expected": "INTERFERENCE",
+      "actual": "INTERFERENCE"
+    },
+    {
+      "x": 1.75,
+      "requirement": 0.5,
+      "analytic_volume": 1.0,
+      "analytic_distance": 0.0,
+      "expected": "INTERFERENCE",
+      "actual": "INTERFERENCE"
+    },
+    {
+      "x": 1.75,
+      "requirement": 1.0,
+      "analytic_volume": 1.0,
+      "analytic_distance": 0.0,
+      "expected": "INTERFERENCE",
+      "actual": "INTERFERENCE"
+    },
+    {
+      "x": 1.75,
+      "requirement": 2.0,
+      "analytic_volume": 1.0,
+      "analytic_distance": 0.0,
+      "expected": "INTERFERENCE",
+      "actual": "INTERFERENCE"
+    },
+    {
+      "x": 2.0,
+      "requirement": 0.0,
+      "analytic_volume": 0.0,
+      "analytic_distance": 0.0,
+      "expected": "CONTACT_OR_WITHIN_TOLERANCE",
+      "actual": "CONTACT_OR_WITHIN_TOLERANCE"
+    },
+    {
+      "x": 2.0,
+      "requirement": 0.5,
+      "analytic_volume": 0.0,
+      "analytic_distance": 0.0,
+      "expected": "CONTACT_OR_WITHIN_TOLERANCE",
+      "actual": "CONTACT_OR_WITHIN_TOLERANCE"
+    },
+    {
+      "x": 2.0,
+      "requirement": 1.0,
+      "analytic_volume": 0.0,
+      "analytic_distance": 0.0,
+      "expected": "CONTACT_OR_WITHIN_TOLERANCE",
+      "actual": "CONTACT_OR_WITHIN_TOLERANCE"
+    },
+    {
+      "x": 2.0,
+      "requirement": 2.0,
+      "analytic_volume": 0.0,
+      "analytic_distance": 0.0,
+      "expected": "CONTACT_OR_WITHIN_TOLERANCE",
+      "actual": "CONTACT_OR_WITHIN_TOLERANCE"
+    },
+    {
+      "x": 2.25,
+      "requirement": 0.0,
+      "analytic_volume": 0.0,
+      "analytic_distance": 0.25,
+      "expected": "MEASURED_AT_OR_ABOVE_REQUIREMENT",
+      "actual": "MEASURED_AT_OR_ABOVE_REQUIREMENT"
+    },
+    {
+      "x": 2.25,
+      "requirement": 0.5,
+      "analytic_volume": 0.0,
+      "analytic_distance": 0.25,
+      "expected": "MEASURED_BELOW_REQUIREMENT",
+      "actual": "MEASURED_BELOW_REQUIREMENT"
+    },
+    {
+      "x": 2.25,
+      "requirement": 1.0,
+      "analytic_volume": 0.0,
+      "analytic_distance": 0.25,
+      "expected": "MEASURED_BELOW_REQUIREMENT",
+      "actual": "MEASURED_BELOW_REQUIREMENT"
+    },
+    {
+      "x": 2.25,
+      "requirement": 2.0,
+      "analytic_volume": 0.0,
+      "analytic_distance": 0.25,
+      "expected": "MEASURED_BELOW_REQUIREMENT",
+      "actual": "MEASURED_BELOW_REQUIREMENT"
+    },
+    {
+      "x": 2.5,
+      "requirement": 0.0,
+      "analytic_volume": 0.0,
+      "analytic_distance": 0.5,
+      "expected": "MEASURED_AT_OR_ABOVE_REQUIREMENT",
+      "actual": "MEASURED_AT_OR_ABOVE_REQUIREMENT"
+    },
+    {
+      "x": 2.5,
+      "requirement": 0.5,
+      "analytic_volume": 0.0,
+      "analytic_distance": 0.5,
+      "expected": "UNRESOLVED",
+      "actual": "UNRESOLVED"
+    },
+    {
+      "x": 2.5,
+      "requirement": 1.0,
+      "analytic_volume": 0.0,
+      "analytic_distance": 0.5,
+      "expected": "MEASURED_BELOW_REQUIREMENT",
+      "actual": "MEASURED_BELOW_REQUIREMENT"
+    },
+    {
+      "x": 2.5,
+      "requirement": 2.0,
+      "analytic_volume": 0.0,
+      "analytic_distance": 0.5,
+      "expected": "MEASURED_BELOW_REQUIREMENT",
+      "actual": "MEASURED_BELOW_REQUIREMENT"
+    },
+    {
+      "x": 2.75,
+      "requirement": 0.0,
+      "analytic_volume": 0.0,
+      "analytic_distance": 0.75,
+      "expected": "MEASURED_AT_OR_ABOVE_REQUIREMENT",
+      "actual": "MEASURED_AT_OR_ABOVE_REQUIREMENT"
+    },
+    {
+      "x": 2.75,
+      "requirement": 0.5,
+      "analytic_volume": 0.0,
+      "analytic_distance": 0.75,
+      "expected": "MEASURED_AT_OR_ABOVE_REQUIREMENT",
+      "actual": "MEASURED_AT_OR_ABOVE_REQUIREMENT"
+    },
+    {
+      "x": 2.75,
+      "requirement": 1.0,
+      "analytic_volume": 0.0,
+      "analytic_distance": 0.75,
+      "expected": "MEASURED_BELOW_REQUIREMENT",
+      "actual": "MEASURED_BELOW_REQUIREMENT"
+    },
+    {
+      "x": 2.75,
+      "requirement": 2.0,
+      "analytic_volume": 0.0,
+      "analytic_distance": 0.75,
+      "expected": "MEASURED_BELOW_REQUIREMENT",
+      "actual": "MEASURED_BELOW_REQUIREMENT"
+    },
+    {
+      "x": 3.0,
+      "requirement": 0.0,
+      "analytic_volume": 0.0,
+      "analytic_distance": 1.0,
+      "expected": "MEASURED_AT_OR_ABOVE_REQUIREMENT",
+      "actual": "MEASURED_AT_OR_ABOVE_REQUIREMENT"
+    },
+    {
+      "x": 3.0,
+      "requirement": 0.5,
+      "analytic_volume": 0.0,
+      "analytic_distance": 1.0,
+      "expected": "MEASURED_AT_OR_ABOVE_REQUIREMENT",
+      "actual": "MEASURED_AT_OR_ABOVE_REQUIREMENT"
+    },
+    {
+      "x": 3.0,
+      "requirement": 1.0,
+      "analytic_volume": 0.0,
+      "analytic_distance": 1.0,
+      "expected": "UNRESOLVED",
+      "actual": "UNRESOLVED"
+    },
+    {
+      "x": 3.0,
+      "requirement": 2.0,
+      "analytic_volume": 0.0,
+      "analytic_distance": 1.0,
+      "expected": "MEASURED_BELOW_REQUIREMENT",
+      "actual": "MEASURED_BELOW_REQUIREMENT"
+    },
+    {
+      "x": 3.25,
+      "requirement": 0.0,
+      "analytic_volume": 0.0,
+      "analytic_distance": 1.25,
+      "expected": "MEASURED_AT_OR_ABOVE_REQUIREMENT",
+      "actual": "MEASURED_AT_OR_ABOVE_REQUIREMENT"
+    },
+    {
+      "x": 3.25,
+      "requirement": 0.5,
+      "analytic_volume": 0.0,
+      "analytic_distance": 1.25,
+      "expected": "MEASURED_AT_OR_ABOVE_REQUIREMENT",
+      "actual": "MEASURED_AT_OR_ABOVE_REQUIREMENT"
+    },
+    {
+      "x": 3.25,
+      "requirement": 1.0,
+      "analytic_volume": 0.0,
+      "analytic_distance": 1.25,
+      "expected": "MEASURED_AT_OR_ABOVE_REQUIREMENT",
+      "actual": "MEASURED_AT_OR_ABOVE_REQUIREMENT"
+    },
+    {
+      "x": 3.25,
+      "requirement": 2.0,
+      "analytic_volume": 0.0,
+      "analytic_distance": 1.25,
+      "expected": "MEASURED_BELOW_REQUIREMENT",
+      "actual": "MEASURED_BELOW_REQUIREMENT"
+    },
+    {
+      "x": 3.5,
+      "requirement": 0.0,
+      "analytic_volume": 0.0,
+      "analytic_distance": 1.5,
+      "expected": "MEASURED_AT_OR_ABOVE_REQUIREMENT",
+      "actual": "MEASURED_AT_OR_ABOVE_REQUIREMENT"
+    },
+    {
+      "x": 3.5,
+      "requirement": 0.5,
+      "analytic_volume": 0.0,
+      "analytic_distance": 1.5,
+      "expected": "MEASURED_AT_OR_ABOVE_REQUIREMENT",
+      "actual": "MEASURED_AT_OR_ABOVE_REQUIREMENT"
+    },
+    {
+      "x": 3.5,
+      "requirement": 1.0,
+      "analytic_volume": 0.0,
+      "analytic_distance": 1.5,
+      "expected": "MEASURED_AT_OR_ABOVE_REQUIREMENT",
+      "actual": "MEASURED_AT_OR_ABOVE_REQUIREMENT"
+    },
+    {
+      "x": 3.5,
+      "requirement": 2.0,
+      "analytic_volume": 0.0,
+      "analytic_distance": 1.5,
+      "expected": "MEASURED_BELOW_REQUIREMENT",
+      "actual": "MEASURED_BELOW_REQUIREMENT"
+    },
+    {
+      "x": 3.75,
+      "requirement": 0.0,
+      "analytic_volume": 0.0,
+      "analytic_distance": 1.75,
+      "expected": "MEASURED_AT_OR_ABOVE_REQUIREMENT",
+      "actual": "MEASURED_AT_OR_ABOVE_REQUIREMENT"
+    },
+    {
+      "x": 3.75,
+      "requirement": 0.5,
+      "analytic_volume": 0.0,
+      "analytic_distance": 1.75,
+      "expected": "MEASURED_AT_OR_ABOVE_REQUIREMENT",
+      "actual": "MEASURED_AT_OR_ABOVE_REQUIREMENT"
+    },
+    {
+      "x": 3.75,
+      "requirement": 1.0,
+      "analytic_volume": 0.0,
+      "analytic_distance": 1.75,
+      "expected": "MEASURED_AT_OR_ABOVE_REQUIREMENT",
+      "actual": "MEASURED_AT_OR_ABOVE_REQUIREMENT"
+    },
+    {
+      "x": 3.75,
+      "requirement": 2.0,
+      "analytic_volume": 0.0,
+      "analytic_distance": 1.75,
+      "expected": "MEASURED_BELOW_REQUIREMENT",
+      "actual": "MEASURED_BELOW_REQUIREMENT"
+    },
+    {
+      "x": 4.0,
+      "requirement": 0.0,
+      "analytic_volume": 0.0,
+      "analytic_distance": 2.0,
+      "expected": "MEASURED_AT_OR_ABOVE_REQUIREMENT",
+      "actual": "MEASURED_AT_OR_ABOVE_REQUIREMENT"
+    },
+    {
+      "x": 4.0,
+      "requirement": 0.5,
+      "analytic_volume": 0.0,
+      "analytic_distance": 2.0,
+      "expected": "MEASURED_AT_OR_ABOVE_REQUIREMENT",
+      "actual": "MEASURED_AT_OR_ABOVE_REQUIREMENT"
+    },
+    {
+      "x": 4.0,
+      "requirement": 1.0,
+      "analytic_volume": 0.0,
+      "analytic_distance": 2.0,
+      "expected": "MEASURED_AT_OR_ABOVE_REQUIREMENT",
+      "actual": "MEASURED_AT_OR_ABOVE_REQUIREMENT"
+    },
+    {
+      "x": 4.0,
+      "requirement": 2.0,
+      "analytic_volume": 0.0,
+      "analytic_distance": 2.0,
+      "expected": "UNRESOLVED",
+      "actual": "UNRESOLVED"
+    },
+    {
+      "x": 4.25,
+      "requirement": 0.0,
+      "analytic_volume": 0.0,
+      "analytic_distance": 2.25,
+      "expected": "MEASURED_AT_OR_ABOVE_REQUIREMENT",
+      "actual": "MEASURED_AT_OR_ABOVE_REQUIREMENT"
+    },
+    {
+      "x": 4.25,
+      "requirement": 0.5,
+      "analytic_volume": 0.0,
+      "analytic_distance": 2.25,
+      "expected": "MEASURED_AT_OR_ABOVE_REQUIREMENT",
+      "actual": "MEASURED_AT_OR_ABOVE_REQUIREMENT"
+    },
+    {
+      "x": 4.25,
+      "requirement": 1.0,
+      "analytic_volume": 0.0,
+      "analytic_distance": 2.25,
+      "expected": "MEASURED_AT_OR_ABOVE_REQUIREMENT",
+      "actual": "MEASURED_AT_OR_ABOVE_REQUIREMENT"
+    },
+    {
+      "x": 4.25,
+      "requirement": 2.0,
+      "analytic_volume": 0.0,
+      "analytic_distance": 2.25,
+      "expected": "MEASURED_AT_OR_ABOVE_REQUIREMENT",
+      "actual": "MEASURED_AT_OR_ABOVE_REQUIREMENT"
+    },
+    {
+      "x": 4.5,
+      "requirement": 0.0,
+      "analytic_volume": 0.0,
+      "analytic_distance": 2.5,
+      "expected": "MEASURED_AT_OR_ABOVE_REQUIREMENT",
+      "actual": "MEASURED_AT_OR_ABOVE_REQUIREMENT"
+    },
+    {
+      "x": 4.5,
+      "requirement": 0.5,
+      "analytic_volume": 0.0,
+      "analytic_distance": 2.5,
+      "expected": "MEASURED_AT_OR_ABOVE_REQUIREMENT",
+      "actual": "MEASURED_AT_OR_ABOVE_REQUIREMENT"
+    },
+    {
+      "x": 4.5,
+      "requirement": 1.0,
+      "analytic_volume": 0.0,
+      "analytic_distance": 2.5,
+      "expected": "MEASURED_AT_OR_ABOVE_REQUIREMENT",
+      "actual": "MEASURED_AT_OR_ABOVE_REQUIREMENT"
+    },
+    {
+      "x": 4.5,
+      "requirement": 2.0,
+      "analytic_volume": 0.0,
+      "analytic_distance": 2.5,
+      "expected": "MEASURED_AT_OR_ABOVE_REQUIREMENT",
+      "actual": "MEASURED_AT_OR_ABOVE_REQUIREMENT"
+    },
+    {
+      "x": 4.75,
+      "requirement": 0.0,
+      "analytic_volume": 0.0,
+      "analytic_distance": 2.75,
+      "expected": "MEASURED_AT_OR_ABOVE_REQUIREMENT",
+      "actual": "MEASURED_AT_OR_ABOVE_REQUIREMENT"
+    },
+    {
+      "x": 4.75,
+      "requirement": 0.5,
+      "analytic_volume": 0.0,
+      "analytic_distance": 2.75,
+      "expected": "MEASURED_AT_OR_ABOVE_REQUIREMENT",
+      "actual": "MEASURED_AT_OR_ABOVE_REQUIREMENT"
+    },
+    {
+      "x": 4.75,
+      "requirement": 1.0,
+      "analytic_volume": 0.0,
+      "analytic_distance": 2.75,
+      "expected": "MEASURED_AT_OR_ABOVE_REQUIREMENT",
+      "actual": "MEASURED_AT_OR_ABOVE_REQUIREMENT"
+    },
+    {
+      "x": 4.75,
+      "requirement": 2.0,
+      "analytic_volume": 0.0,
+      "analytic_distance": 2.75,
+      "expected": "MEASURED_AT_OR_ABOVE_REQUIREMENT",
+      "actual": "MEASURED_AT_OR_ABOVE_REQUIREMENT"
+    },
+    {
+      "x": 5.0,
+      "requirement": 0.0,
+      "analytic_volume": 0.0,
+      "analytic_distance": 3.0,
+      "expected": "MEASURED_AT_OR_ABOVE_REQUIREMENT",
+      "actual": "MEASURED_AT_OR_ABOVE_REQUIREMENT"
+    },
+    {
+      "x": 5.0,
+      "requirement": 0.5,
+      "analytic_volume": 0.0,
+      "analytic_distance": 3.0,
+      "expected": "MEASURED_AT_OR_ABOVE_REQUIREMENT",
+      "actual": "MEASURED_AT_OR_ABOVE_REQUIREMENT"
+    },
+    {
+      "x": 5.0,
+      "requirement": 1.0,
+      "analytic_volume": 0.0,
+      "analytic_distance": 3.0,
+      "expected": "MEASURED_AT_OR_ABOVE_REQUIREMENT",
+      "actual": "MEASURED_AT_OR_ABOVE_REQUIREMENT"
+    },
+    {
+      "x": 5.0,
+      "requirement": 2.0,
+      "analytic_volume": 0.0,
+      "analytic_distance": 3.0,
+      "expected": "MEASURED_AT_OR_ABOVE_REQUIREMENT",
+      "actual": "MEASURED_AT_OR_ABOVE_REQUIREMENT"
+    },
+    {
+      "x": 5.25,
+      "requirement": 0.0,
+      "analytic_volume": 0.0,
+      "analytic_distance": 3.25,
+      "expected": "MEASURED_AT_OR_ABOVE_REQUIREMENT",
+      "actual": "MEASURED_AT_OR_ABOVE_REQUIREMENT"
+    },
+    {
+      "x": 5.25,
+      "requirement": 0.5,
+      "analytic_volume": 0.0,
+      "analytic_distance": 3.25,
+      "expected": "MEASURED_AT_OR_ABOVE_REQUIREMENT",
+      "actual": "MEASURED_AT_OR_ABOVE_REQUIREMENT"
+    },
+    {
+      "x": 5.25,
+      "requirement": 1.0,
+      "analytic_volume": 0.0,
+      "analytic_distance": 3.25,
+      "expected": "MEASURED_AT_OR_ABOVE_REQUIREMENT",
+      "actual": "MEASURED_AT_OR_ABOVE_REQUIREMENT"
+    },
+    {
+      "x": 5.25,
+      "requirement": 2.0,
+      "analytic_volume": 0.0,
+      "analytic_distance": 3.25,
+      "expected": "MEASURED_AT_OR_ABOVE_REQUIREMENT",
+      "actual": "MEASURED_AT_OR_ABOVE_REQUIREMENT"
+    },
+    {
+      "x": 5.5,
+      "requirement": 0.0,
+      "analytic_volume": 0.0,
+      "analytic_distance": 3.5,
+      "expected": "MEASURED_AT_OR_ABOVE_REQUIREMENT",
+      "actual": "MEASURED_AT_OR_ABOVE_REQUIREMENT"
+    },
+    {
+      "x": 5.5,
+      "requirement": 0.5,
+      "analytic_volume": 0.0,
+      "analytic_distance": 3.5,
+      "expected": "MEASURED_AT_OR_ABOVE_REQUIREMENT",
+      "actual": "MEASURED_AT_OR_ABOVE_REQUIREMENT"
+    },
+    {
+      "x": 5.5,
+      "requirement": 1.0,
+      "analytic_volume": 0.0,
+      "analytic_distance": 3.5,
+      "expected": "MEASURED_AT_OR_ABOVE_REQUIREMENT",
+      "actual": "MEASURED_AT_OR_ABOVE_REQUIREMENT"
+    },
+    {
+      "x": 5.5,
+      "requirement": 2.0,
+      "analytic_volume": 0.0,
+      "analytic_distance": 3.5,
+      "expected": "MEASURED_AT_OR_ABOVE_REQUIREMENT",
+      "actual": "MEASURED_AT_OR_ABOVE_REQUIREMENT"
+    },
+    {
+      "x": 5.75,
+      "requirement": 0.0,
+      "analytic_volume": 0.0,
+      "analytic_distance": 3.75,
+      "expected": "MEASURED_AT_OR_ABOVE_REQUIREMENT",
+      "actual": "MEASURED_AT_OR_ABOVE_REQUIREMENT"
+    },
+    {
+      "x": 5.75,
+      "requirement": 0.5,
+      "analytic_volume": 0.0,
+      "analytic_distance": 3.75,
+      "expected": "MEASURED_AT_OR_ABOVE_REQUIREMENT",
+      "actual": "MEASURED_AT_OR_ABOVE_REQUIREMENT"
+    },
+    {
+      "x": 5.75,
+      "requirement": 1.0,
+      "analytic_volume": 0.0,
+      "analytic_distance": 3.75,
+      "expected": "MEASURED_AT_OR_ABOVE_REQUIREMENT",
+      "actual": "MEASURED_AT_OR_ABOVE_REQUIREMENT"
+    },
+    {
+      "x": 5.75,
+      "requirement": 2.0,
+      "analytic_volume": 0.0,
+      "analytic_distance": 3.75,
+      "expected": "MEASURED_AT_OR_ABOVE_REQUIREMENT",
+      "actual": "MEASURED_AT_OR_ABOVE_REQUIREMENT"
+    },
+    {
+      "x": 6.0,
+      "requirement": 0.0,
+      "analytic_volume": 0.0,
+      "analytic_distance": 4.0,
+      "expected": "MEASURED_AT_OR_ABOVE_REQUIREMENT",
+      "actual": "MEASURED_AT_OR_ABOVE_REQUIREMENT"
+    },
+    {
+      "x": 6.0,
+      "requirement": 0.5,
+      "analytic_volume": 0.0,
+      "analytic_distance": 4.0,
+      "expected": "MEASURED_AT_OR_ABOVE_REQUIREMENT",
+      "actual": "MEASURED_AT_OR_ABOVE_REQUIREMENT"
+    },
+    {
+      "x": 6.0,
+      "requirement": 1.0,
+      "analytic_volume": 0.0,
+      "analytic_distance": 4.0,
+      "expected": "MEASURED_AT_OR_ABOVE_REQUIREMENT",
+      "actual": "MEASURED_AT_OR_ABOVE_REQUIREMENT"
+    },
+    {
+      "x": 6.0,
+      "requirement": 2.0,
+      "analytic_volume": 0.0,
+      "analytic_distance": 4.0,
+      "expected": "MEASURED_AT_OR_ABOVE_REQUIREMENT",
+      "actual": "MEASURED_AT_OR_ABOVE_REQUIREMENT"
+    }
+  ],
+  "analytic_count": 132,
+  "boundary_count": 5,
+  "micro": {
+    "status": "MICRO_OVERLAP_REPORTED",
+    "continuous_motion": "NOT_PROVEN",
+    "method": "OCC_BREP",
+    "unit": "mm",
+    "volume_unit": "mm3",
+    "physical_safety": "NOT_TESTED",
+    "manufacturing_clearance": "INTERFERENCE",
+    "a": {
+      "solids": 1,
+      "volume_mm3": 7.999999999999998,
+      "max_brep_tolerance_mm": 1e-07,
+      "bbox_mm": [
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        2.0,
+        2.0
+      ],
+      "placement": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    "b": {
+      "solids": 1,
+      "volume_mm3": 7.999999999999999,
+      "max_brep_tolerance_mm": 1e-07,
+      "bbox_mm": [
+        1.9999,
+        0.0,
+        0.0,
+        3.9999000000000002,
+        2.0,
+        2.0
+      ],
+      "placement": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    "policy": {
+      "linear_tolerance_mm": 1e-06,
+      "micro_volume_mm3": 0.01,
+      "required_clearance_mm": 0
+    },
+    "effective_linear_tolerance_mm": 1e-06,
+    "intersection_volume_mm3": 0.00039999999999995595,
+    "minimum_distance_mm": 0.0,
+    "nearest_points_mm": [
+      [
+        [
+          2.0,
+          0.0,
+          2.0
+        ],
+        [
+          2.0,
+          0.0,
+          2.0
+        ]
+      ],
+      [
+        [
+          2.0,
+          0.0,
+          0.0
+        ],
+        [
+          2.0,
+          0.0,
+          0.0
+        ]
+      ],
+      [
+        [
+          2.0,
+          2.0,
+          2.0
+        ],
+        [
+          2.0,
+          2.0,
+          2.0
+        ]
+      ],
+      [
+        [
+          2.0,
+          2.0,
+          0.0
+        ],
+        [
+          2.0,
+          2.0,
+          0.0
+        ]
+      ],
+      [
+        [
+          1.9999,
+          0.0,
+          0.0
+        ],
+        [
+          1.9999,
+          0.0,
+          0.0
+        ]
+      ],
+      [
+        [
+          1.9999,
+          0.0,
+          2.0
+        ],
+        [
+          1.9999,
+          0.0,
+          2.0
+        ]
+      ],
+      [
+        [
+          1.9999,
+          2.0,
+          0.0
+        ],
+        [
+          1.9999,
+          2.0,
+          0.0
+        ]
+      ],
+      [
+        [
+          1.9999,
+          2.0,
+          2.0
+        ],
+        [
+          1.9999,
+          2.0,
+          2.0
+        ]
+      ]
+    ],
+    "intersection_bbox_mm": [
+      1.9999,
+      0.0,
+      0.0,
+      2.0,
+      2.0,
+      2.0
+    ],
+    "intersection_center_mm": [
+      1.9999499999999997,
+      1.0,
+      1.0
+    ],
+    "numerical_guarantee": "NO_CERTIFIED_BOUND; kernel tolerance is not a rigorous error bound"
+  },
+  "python": "3.13.5",
+  "freecad": [
+    "1",
+    "0",
+    "0",
+    "",
+    "https://code.launchpad.net/~vcs-imports/freecad/trunk",
+    "2026/08/25 11:49:11"
+  ],
+  "source_sha256": "34c1cd45668518678c35c03879fc064f5b00d28047ab984afc95ad2f82205dc5",
+  "status": "PASS",
+  "limitation": "independent interval formulas for boxes; same OCC runtime, no certified kernel error guarantee"
+}

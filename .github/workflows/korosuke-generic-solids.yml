@@ -1,0 +1,62 @@
+name: Generic solid pose measurements
+on:
+  pull_request:
+    paths:
+      - 'projects/korosuke/generic-solids/**'
+      - '.github/workflows/korosuke-generic-solids.yml'
+permissions:
+  contents: read
+jobs:
+  solids:
+    runs-on: ubuntu-24.04
+    container: debian:trixie
+    defaults:
+      run:
+        shell: bash
+    timeout-minutes: 20
+    steps:
+      - name: Install distribution FreeCAD and Git
+        run: apt-get update && apt-get install -y --no-install-recommends freecad-python3 git ca-certificates
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+      - name: Unit, isolated process and analytic negative controls
+        id: tests
+        env:
+          PYTHONPATH: /usr/lib/freecad/lib:/usr/lib/freecad-python3/lib
+        run: |
+          set -euo pipefail
+          mkdir -p solid-results
+          /usr/bin/python3 -m unittest discover -s projects/korosuke/generic-solids -v 2>&1 | tee solid-results/unit.log
+          /usr/bin/python3 projects/korosuke/generic-solids/run_analytic.py solid-results
+          /usr/bin/python3 projects/korosuke/generic-solids/reviews/stage3b/independent_cases.py > solid-results/independent-cases.json
+          /usr/bin/python3 projects/korosuke/generic-solids/reviews/stage3b/acceptance_retest.py > solid-results/independent-acceptance.json
+          /usr/bin/python3 projects/korosuke/generic-solids/reviews/stage3b/runner_timeout.py > solid-results/independent-timeout.json
+          /usr/bin/python3 -m unittest discover -s projects/korosuke/generic-kinematics -v 2>&1 | tee solid-results/stage3a-regression.log
+      - name: Bind evidence
+        if: always()
+        env:
+          TEST_OUTCOME: ${{ steps.tests.outcome }}
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha }}
+        run: |
+          set -euo pipefail
+          id
+          stat -c 'checkout-owner=%u:%g path=%n' "$GITHUB_WORKSPACE" "$GITHUB_WORKSPACE/.git"
+          printf 'HOME=%s\n' "$HOME"
+          git config --show-origin --get-all safe.directory || test "$?" -eq 1
+          python3 - <<'PY'
+          import hashlib,json,os,pathlib,subprocess
+          p=pathlib.Path('solid-results');p.mkdir(exist_ok=True)
+          git=['git','-c','safe.directory='+os.environ['GITHUB_WORKSPACE'],'rev-parse']
+          head=subprocess.check_output(git+['HEAD'],text=True).strip()
+          if head != os.environ['EXPECTED_HEAD']: raise RuntimeError('checkout HEAD differs from requested PR head')
+          record={'head':head,'tree':subprocess.check_output(git+['HEAD^{tree}'],text=True).strip(),'run':os.environ['GITHUB_RUN_ID'],'attempt':os.environ['GITHUB_RUN_ATTEMPT'],'private_models':'NOT_PRESENT','test_outcome':os.environ['TEST_OUTCOME'],'evidence_complete':os.environ['TEST_OUTCOME']=='success'}
+          (p/'identity.json').write_text(json.dumps(record,indent=2)+'\n')
+          (p/'SHA256SUMS.json').write_text(json.dumps({str(f.relative_to(p)):hashlib.sha256(f.read_bytes()).hexdigest() for f in sorted(p.rglob('*')) if f.is_file() and f.name!='SHA256SUMS.json'},indent=2)+'\n')
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: generic-solid-evidence-${{ github.run_id }}-${{ github.run_attempt }}
+          path: solid-results/
+          if-no-files-found: error

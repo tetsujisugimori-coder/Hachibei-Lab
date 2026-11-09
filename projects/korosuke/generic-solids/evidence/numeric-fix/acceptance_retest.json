@@ -1,0 +1,21 @@
+{
+  "pass": true,
+  "controls": [
+    {
+      "control": "forged-both-oracle-and-result",
+      "result": "REJECTED"
+    },
+    {
+      "control": "forged-input",
+      "result": "REJECTED"
+    },
+    {
+      "control": "erased-positive-micro-volume",
+      "result": "REJECTED"
+    },
+    {
+      "control": "invented-positive-micro-volume",
+      "result": "REJECTED"
+    }
+  ]
+}

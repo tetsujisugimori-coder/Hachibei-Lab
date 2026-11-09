@@ -1,0 +1,31 @@
+test_ids_not_trusted_geometry (test_evidence_validator.EvidenceTests.test_ids_not_trusted_geometry) ... ok
+test_independent_review_false_accept (test_evidence_validator.EvidenceTests.test_independent_review_false_accept) ... ok
+test_input_not_evidence_oracle (test_evidence_validator.EvidenceTests.test_input_not_evidence_oracle) ... ok
+test_micro_sign_not_lost (test_evidence_validator.EvidenceTests.test_micro_sign_not_lost) ... ok
+test_normal_and_micro (test_evidence_validator.EvidenceTests.test_normal_and_micro) ... ok
+test_spurious_micro_not_contact (test_evidence_validator.EvidenceTests.test_spurious_micro_not_contact) ... ok
+test_bound_model_and_hash_rejection (test_run_pose.RunnerTests.test_bound_model_and_hash_rejection) ... ok
+test_process_failure_not_success (test_run_pose.RunnerTests.test_process_failure_not_success) ... ok
+test_bad_transform (test_solid_check.SolidTests.test_bad_transform) ... ok
+test_clearance_separate (test_solid_check.SolidTests.test_clearance_separate) ... ok
+test_contact (test_solid_check.SolidTests.test_contact) ... ok
+test_copy_preserved (test_solid_check.SolidTests.test_copy_preserved) ... ok
+test_fourbar_closure (test_solid_check.SolidTests.test_fourbar_closure) ... ok
+test_fourbar_reject (test_solid_check.SolidTests.test_fourbar_reject) ... ok
+test_invalid_policy (test_solid_check.SolidTests.test_invalid_policy) ... ok
+test_invalid_shape (test_solid_check.SolidTests.test_invalid_shape) ... ok
+test_invalid_units (test_solid_check.SolidTests.test_invalid_units) ... ok
+test_known_distance (test_solid_check.SolidTests.test_known_distance) ... ok
+test_known_volume (test_solid_check.SolidTests.test_known_volume) ... ok
+test_micro_overlap_not_clear (test_solid_check.SolidTests.test_micro_overlap_not_clear) ... ok
+test_mixed_shape_rejected (test_solid_check.SolidTests.test_mixed_shape_rejected) ... ok
+test_multiple_solids (test_solid_check.SolidTests.test_multiple_solids) ... ok
+test_near_contact_not_clear (test_solid_check.SolidTests.test_near_contact_not_clear) ... ok
+test_rotation_translation (test_solid_check.SolidTests.test_rotation_translation) ... ok
+test_sweep_midpoint (test_solid_check.SolidTests.test_sweep_midpoint) ... ok
+test_tiny_overlap_retained (test_solid_check.SolidTests.test_tiny_overlap_retained) ... ok
+
+----------------------------------------------------------------------
+Ran 26 tests in 1.500s
+
+OK

@@ -1,0 +1,8 @@
+{
+  "baseline": "7f0342d39871f3b10717a9a1ac5c52def78d6484",
+  "baseline_count": 52,
+  "changed_baseline_paths": [],
+  "public_paths_scanned": 49,
+  "sensitive_pattern_hits": [],
+  "limits": "pattern scan plus manual code review, not proof of absence of all secrets; no private originals copied or modified"
+}
