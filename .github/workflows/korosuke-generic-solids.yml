@@ -15,11 +15,12 @@ jobs:
         with:
           ref: ${{ github.event.pull_request.head.sha }}
       - name: Install distribution FreeCAD
-        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends freecad-python3
+        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends freecad
       - name: Unit, isolated process and analytic negative controls
         env:
           PYTHONPATH: /usr/lib/freecad/lib:/usr/lib/freecad-python3/lib
         run: |
+          set -euo pipefail
           mkdir -p solid-results
           /usr/bin/python3 -m unittest discover -s projects/korosuke/generic-solids -v 2>&1 | tee solid-results/unit.log
           /usr/bin/python3 projects/korosuke/generic-solids/run_analytic.py solid-results
