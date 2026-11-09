@@ -1,0 +1,65 @@
+{
+  "checks": [
+    {
+      "name": "face",
+      "status": "CONTACT_OR_WITHIN_TOLERANCE",
+      "volume": 0.0,
+      "distance": 0.0
+    },
+    {
+      "name": "edge",
+      "status": "CONTACT_OR_WITHIN_TOLERANCE",
+      "volume": 0.0,
+      "distance": 0.0
+    },
+    {
+      "name": "vertex",
+      "status": "CONTACT_OR_WITHIN_TOLERANCE",
+      "volume": 0.0,
+      "distance": 0.0
+    },
+    {
+      "name": "diagonal",
+      "status": "SEPARATED_AT_POSE",
+      "volume": 0.0,
+      "distance": 3.0
+    },
+    {
+      "name": "real-micro-overlap",
+      "status": "MICRO_OVERLAP_REPORTED",
+      "volume": 1.0000000000000009e-07,
+      "distance": 0.0
+    },
+    {
+      "name": "non-origin-transform",
+      "status": "VOLUME_OVERLAP",
+      "volume": 0.9999999999999998,
+      "distance": 0.0
+    },
+    {
+      "name": "units-rejected",
+      "status": "UNRESOLVED",
+      "volume": null,
+      "distance": null
+    },
+    {
+      "name": "kernel-exception",
+      "status": "UNRESOLVED",
+      "volume": null,
+      "distance": null
+    },
+    {
+      "name": "spheres-gap",
+      "status": "SEPARATED_AT_POSE",
+      "volume": 0.0,
+      "distance": 2.0
+    },
+    {
+      "name": "spheres-contained",
+      "status": "VOLUME_OVERLAP",
+      "volume": 4.188790204786391,
+      "distance": 0.0
+    }
+  ],
+  "pass_count": 10
+}

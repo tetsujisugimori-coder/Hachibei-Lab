@@ -1,0 +1,25 @@
+test_arithmetic_enclosures (test_certified.CertifiedTests.test_arithmetic_enclosures) ... ok
+test_cardinals_huge_and_negative (test_certified.CertifiedTests.test_cardinals_huge_and_negative) ... ok
+test_exact_adjacent_midpoint_and_motion (test_certified.CertifiedTests.test_exact_adjacent_midpoint_and_motion) ... ok
+test_exact_coordinate_cancellation (test_certified.CertifiedTests.test_exact_coordinate_cancellation) ... ok
+test_inexact_integer_rejected (test_certified.CertifiedTests.test_inexact_integer_rejected) ... ok
+test_interval_negative_extrema (test_certified.CertifiedTests.test_interval_negative_extrema) ... ok
+test_multi_pairs_and_depth_fail_closed (test_certified.CertifiedTests.test_multi_pairs_and_depth_fail_closed) ... ok
+test_overflow_difference_is_not_float_infinity (test_certified.CertifiedTests.test_overflow_difference_is_not_float_infinity) ... ok
+test_overflow_integer_rejected (test_certified.CertifiedTests.test_overflow_integer_rejected) ... ok
+test_signed_rounding (test_certified.CertifiedTests.test_signed_rounding) ... ok
+test_subnormal_overlap_never_clear (test_certified.CertifiedTests.test_subnormal_overlap_never_clear) ... ok
+test_certified_clear_has_no_sampled_overlap (test_dense_sampling.DenseSamplingTest.test_certified_clear_has_no_sampled_overlap) ... ok
+test_clear (test_sweep.ScreeningTests.test_clear) ... ok
+test_deterministic_and_no_mutation (test_sweep.ScreeningTests.test_deterministic_and_no_mutation) ... ok
+test_hidden_midrange_overlap_detected (test_sweep.ScreeningTests.test_hidden_midrange_overlap_detected) ... ok
+test_many_pairs (test_sweep.ScreeningTests.test_many_pairs) ... ok
+test_obvious_overlap (test_sweep.ScreeningTests.test_obvious_overlap) ... ok
+test_overlap_on_touch (test_sweep.ScreeningTests.test_overlap_on_touch) ... ok
+test_strict_validation (test_sweep.ScreeningTests.test_strict_validation) ... ok
+test_unresolved_is_not_pass (test_sweep.ScreeningTests.test_unresolved_is_not_pass) ... ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 1.095s
+
+OK

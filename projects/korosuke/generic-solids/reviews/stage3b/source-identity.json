@@ -1,0 +1,31 @@
+{
+  "source_head": "7611be01a3246757ca1769fb435ccdd94d69c346",
+  "source_tree": "3bc045abcb94cbd6381ad7f1bc2b25086d365e7f",
+  "sources": {
+    "run_analytic.py": "1966281c406c1ed0306638329d56f8a69065bcf861f539b16c0a03aefa5de5bb",
+    "run_pose.py": "2042fb891a028b427e3f118e7cd11681491729657359d401bc01b59a9c6e39c1",
+    "solid_check.py": "ec9afe635f2018449a1a39e8008fbd88a185ba0553d676d13eeab326b90e8d80",
+    "test_evidence_validator.py": "71d13f667cdaf9832e8e5e6427e8e93c5d93066a97b033455b76aa25003ff9a5",
+    "test_run_pose.py": "056928f005d24c0f17b4f80cb94568a406821238828b6df5798560d4e5b060fd",
+    "test_solid_check.py": "1d89e410d3a3de11195bde294f95a0f03dbcb97852aaabc9e8ba925037ce6660",
+    "validate_fixture_results.py": "293f138db9851c2faa1320ddfcb06e5260ea65090388d85dc279ec28f7384dbf"
+  },
+  "freecad": [
+    "1",
+    "0",
+    "0",
+    "",
+    "https://code.launchpad.net/~vcs-imports/freecad/trunk",
+    "2026/08/25 11:49:11"
+  ],
+  "occ": "7.8.1",
+  "python": "3.13.5 (main, Aug 10 2026, 12:06:59) [GCC 14.2.0]",
+  "os": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "unit_tests": 26,
+  "analytic_cases": 120,
+  "analytic_corruptions_rejected": 9,
+  "regression_tests": 20,
+  "supplemental_geometry_controls": 10,
+  "supplemental_acceptance_controls": 4,
+  "timeout_control": "PASS"
+}

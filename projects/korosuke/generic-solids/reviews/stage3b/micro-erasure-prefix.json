@@ -1,0 +1,31 @@
+{
+  "row": {
+    "id": "micro",
+    "a": [
+      0,
+      0,
+      0
+    ],
+    "b": [
+      0.99999999,
+      0,
+      0
+    ],
+    "size_a": [
+      1,
+      1,
+      1
+    ],
+    "size_b": [
+      1,
+      1,
+      1
+    ],
+    "expected_volume_mm3": 1.0000000050247593e-08,
+    "measured_volume_mm3": 0,
+    "expected_distance_mm": 0,
+    "measured_distance_mm": 0,
+    "status": "MICRO_OVERLAP_REPORTED"
+  },
+  "accepted": true
+}

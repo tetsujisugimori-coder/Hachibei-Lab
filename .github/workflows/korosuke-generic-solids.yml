@@ -28,6 +28,9 @@ jobs:
           mkdir -p solid-results
           /usr/bin/python3 -m unittest discover -s projects/korosuke/generic-solids -v 2>&1 | tee solid-results/unit.log
           /usr/bin/python3 projects/korosuke/generic-solids/run_analytic.py solid-results
+          /usr/bin/python3 projects/korosuke/generic-solids/reviews/stage3b/independent_cases.py > solid-results/independent-cases.json
+          /usr/bin/python3 projects/korosuke/generic-solids/reviews/stage3b/acceptance_retest.py > solid-results/independent-acceptance.json
+          /usr/bin/python3 projects/korosuke/generic-solids/reviews/stage3b/runner_timeout.py > solid-results/independent-timeout.json
           /usr/bin/python3 -m unittest discover -s projects/korosuke/generic-kinematics -v 2>&1 | tee solid-results/stage3a-regression.log
       - name: Bind evidence
         if: always()
