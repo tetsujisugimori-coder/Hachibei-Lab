@@ -41,7 +41,6 @@ def main(folder):
         for name, shape in assembly.items():
             obj = doc.addObject('Part::Feature', name); obj.Shape = shape
         doc.recompute(); path = folder / (label+'.FCStd'); doc.saveAs(str(path))
-        Part.export(doc.Objects, str(folder / (label+'.step')))
         App.closeDocument(doc.Name)
         loaded = App.openDocument(str(path))
         fc_ok = all(loaded.getObject(n).Shape.isValid() and
@@ -49,9 +48,12 @@ def main(folder):
                     s.cut(loaded.getObject(n).Shape).Volume + loaded.getObject(n).Shape.cut(s).Volume < 1e-8
                     for n,s in assembly.items())
         App.closeDocument(loaded.Name)
-        step = Part.read(str(folder / (label+'.step')))
-        expected = Part.makeCompound(list(assembly.values()))
-        step_ok = step.isValid() and len(step.Solids) == len(assembly) and abs(step.Volume-expected.Volume) < 1e-8 and step.cut(expected).Volume+expected.cut(step).Volume < 1e-8
+        step_ok = True
+        for name, shape in assembly.items():
+            step_path = folder / (label+'-'+name+'.step')
+            shape.exportStep(str(step_path))
+            step = Part.read(str(step_path))
+            step_ok = step_ok and step.isValid() and len(step.Solids) == 1 and abs(step.Volume-shape.Volume) < 1e-8 and step.cut(shape).Volume+shape.cut(step).Volume < 1e-8
         reloads[label] = {'FCStd': fc_ok, 'STEP': step_ok}
     report['neutral_roundtrip'] = reloads
     (folder/'redesign.json').write_text(json.dumps(report, indent=2)+'\n')
