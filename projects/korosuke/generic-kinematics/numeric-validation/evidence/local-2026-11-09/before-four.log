@@ -1,0 +1,1 @@
+{"source_sha256": "8f61135bb7feef58519c70e459a260ea9db51865b9245eedf73e5f991ab42833", "fixtures_checked": 4, "false_clear_witnesses": 4, "regression_gate_passed": false, "mode": "regression_gate", "precision_agreement": true}

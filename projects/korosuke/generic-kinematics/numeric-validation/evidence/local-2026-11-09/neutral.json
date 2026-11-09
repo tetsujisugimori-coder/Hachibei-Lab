@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "method": "planar_rectangles_integer_interval_rotation",
+  "limitations": "2D synthetic projection only; not a 3D CAD, strength, torque or manufacturing acceptance",
+  "pair_count": 4,
+  "counts": {
+    "PROJECTED_OVERLAP": 0,
+    "UNRESOLVED_2D": 0,
+    "PROJECTED_CLEAR": 4
+  },
+  "pairs": [
+    {
+      "moving_id": "generic_arm_link",
+      "fixed_id": "far_guard",
+      "status": "PROJECTED_CLEAR",
+      "first_observed_overlap_deg": null,
+      "first_observed_overlap_deg_exact": null,
+      "certificate_method": "exact_rational_angles_integer_interval_1e60",
+      "sample_count": 1,
+      "certified_intervals": 1,
+      "unresolved_intervals": 0
+    },
+    {
+      "moving_id": "generic_arm_link",
+      "fixed_id": "far_housing",
+      "status": "PROJECTED_CLEAR",
+      "first_observed_overlap_deg": null,
+      "first_observed_overlap_deg_exact": null,
+      "certificate_method": "exact_rational_angles_integer_interval_1e60",
+      "sample_count": 1,
+      "certified_intervals": 1,
+      "unresolved_intervals": 0
+    },
+    {
+      "moving_id": "generic_mount",
+      "fixed_id": "far_guard",
+      "status": "PROJECTED_CLEAR",
+      "first_observed_overlap_deg": null,
+      "first_observed_overlap_deg_exact": null,
+      "certificate_method": "exact_rational_angles_integer_interval_1e60",
+      "sample_count": 1,
+      "certified_intervals": 1,
+      "unresolved_intervals": 0
+    },
+    {
+      "moving_id": "generic_mount",
+      "fixed_id": "far_housing",
+      "status": "PROJECTED_CLEAR",
+      "first_observed_overlap_deg": null,
+      "first_observed_overlap_deg_exact": null,
+      "certificate_method": "exact_rational_angles_integer_interval_1e60",
+      "sample_count": 1,
+      "certified_intervals": 1,
+      "unresolved_intervals": 0
+    }
+  ]
+}

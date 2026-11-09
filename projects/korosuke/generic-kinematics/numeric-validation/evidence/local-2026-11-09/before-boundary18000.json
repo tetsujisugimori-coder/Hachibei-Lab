@@ -1,0 +1,262 @@
+{
+  "source_sha256": "8f61135bb7feef58519c70e459a260ea9db51865b9245eedf73e5f991ab42833",
+  "input_corpus_sha256": "09ad0281ddc24ad8366fb81e155aba9b03785e2a8c3fd8a82bba43692dfbcc00",
+  "case_results_sha256": "87ecd026f6d818ed12815870c558881c826f1a202dba71eaff34e64436d9628a",
+  "canonical_serialization": "UTF-8 json.dumps(sort_keys=True,separators=(comma,colon)) + newline, original loop order",
+  "description": "Adversarial constructed strict-corner overlaps, ordinary angles 0.01 through 60 degrees at 0.01 spacing, interval spans 2/4/90 angle ULPs. Not a statistical accuracy estimate.",
+  "mpmath_digits": 100,
+  "total_cases": 18000,
+  "all_cases_have_independent_strict_overlap_witness": true,
+  "candidate_counts": {
+    "PROJECTED_OVERLAP": 17731,
+    "PROJECTED_CLEAR": 140,
+    "UNRESOLVED_2D": 129
+  },
+  "false_clear_examples": [
+    {
+      "input": {
+        "schema_version": 1,
+        "joint": {
+          "pivot_mm": [
+            0,
+            0
+          ],
+          "start_deg": 0.29,
+          "end_deg": 0.2900000000000001
+        },
+        "moving": [
+          {
+            "id": "m",
+            "center_mm": [
+              1,
+              0
+            ],
+            "size_mm": [
+              1,
+              1
+            ]
+          }
+        ],
+        "fixed": [
+          {
+            "id": "f",
+            "center_mm": [
+              1.5025119797443298,
+              -0.4924014456027037
+            ],
+            "size_mm": [
+              9.5367431640625e-07,
+              1
+            ]
+          }
+        ]
+      },
+      "result": {
+        "moving_id": "m",
+        "fixed_id": "f",
+        "status": "PROJECTED_CLEAR",
+        "first_observed_overlap_deg": null,
+        "sample_count": 1,
+        "certified_intervals": 1,
+        "unresolved_intervals": 0
+      },
+      "strict_corner_x_penetration_mm": "0.00000000000000001335623669338732334447140038129378658865934611100969392542"
+    },
+    {
+      "input": {
+        "schema_version": 1,
+        "joint": {
+          "pivot_mm": [
+            0,
+            0
+          ],
+          "start_deg": 0.29,
+          "end_deg": 0.2900000000000002
+        },
+        "moving": [
+          {
+            "id": "m",
+            "center_mm": [
+              1,
+              0
+            ],
+            "size_mm": [
+              1,
+              1
+            ]
+          }
+        ],
+        "fixed": [
+          {
+            "id": "f",
+            "center_mm": [
+              1.5025119797443298,
+              -0.4924014456027037
+            ],
+            "size_mm": [
+              9.5367431640625e-07,
+              1
+            ]
+          }
+        ]
+      },
+      "result": {
+        "moving_id": "m",
+        "fixed_id": "f",
+        "status": "PROJECTED_CLEAR",
+        "first_observed_overlap_deg": null,
+        "sample_count": 1,
+        "certified_intervals": 1,
+        "unresolved_intervals": 0
+      },
+      "strict_corner_x_penetration_mm": "0.0000000000000000138333009963016514740924183773704844385000746277189335502143"
+    },
+    {
+      "input": {
+        "schema_version": 1,
+        "joint": {
+          "pivot_mm": [
+            0,
+            0
+          ],
+          "start_deg": 0.29,
+          "end_deg": 0.290000000000005
+        },
+        "moving": [
+          {
+            "id": "m",
+            "center_mm": [
+              1,
+              0
+            ],
+            "size_mm": [
+              1,
+              1
+            ]
+          }
+        ],
+        "fixed": [
+          {
+            "id": "f",
+            "center_mm": [
+              1.5025119797443298,
+              -0.49240144560270366
+            ],
+            "size_mm": [
+              9.5367431640625e-07,
+              1
+            ]
+          }
+        ]
+      },
+      "result": {
+        "moving_id": "m",
+        "fixed_id": "f",
+        "status": "PROJECTED_CLEAR",
+        "first_observed_overlap_deg": null,
+        "sample_count": 1,
+        "certified_intervals": 1,
+        "unresolved_intervals": 0
+      },
+      "strict_corner_x_penetration_mm": "0.0000000000000000343470660216177597135863334357570909556296530956607047865848"
+    },
+    {
+      "input": {
+        "schema_version": 1,
+        "joint": {
+          "pivot_mm": [
+            0,
+            0
+          ],
+          "start_deg": 0.3,
+          "end_deg": 0.3000000000000001
+        },
+        "moving": [
+          {
+            "id": "m",
+            "center_mm": [
+              1,
+              0
+            ],
+            "size_mm": [
+              1,
+              1
+            ]
+          }
+        ],
+        "fixed": [
+          {
+            "id": "f",
+            "center_mm": [
+              1.5025978971240082,
+              -0.49213920037658404
+            ],
+            "size_mm": [
+              9.5367431640625e-07,
+              1
+            ]
+          }
+        ]
+      },
+      "result": {
+        "moving_id": "m",
+        "fixed_id": "f",
+        "status": "PROJECTED_CLEAR",
+        "first_observed_overlap_deg": null,
+        "sample_count": 1,
+        "certified_intervals": 1,
+        "unresolved_intervals": 0
+      },
+      "strict_corner_x_penetration_mm": "0.0000000000000000298321322487216534087755713896606827762463992663744184941877"
+    },
+    {
+      "input": {
+        "schema_version": 1,
+        "joint": {
+          "pivot_mm": [
+            0,
+            0
+          ],
+          "start_deg": 0.3,
+          "end_deg": 0.3000000000000002
+        },
+        "moving": [
+          {
+            "id": "m",
+            "center_mm": [
+              1,
+              0
+            ],
+            "size_mm": [
+              1,
+              1
+            ]
+          }
+        ],
+        "fixed": [
+          {
+            "id": "f",
+            "center_mm": [
+              1.5025978971240082,
+              -0.49213920037658404
+            ],
+            "size_mm": [
+              9.5367431640625e-07,
+              1
+            ]
+          }
+        ]
+      },
+      "result": {
+        "moving_id": "m",
+        "fixed_id": "f",
+        "status": "PROJECTED_CLEAR",
+        "first_observed_overlap_deg": null,
+        "sample_count": 1,
+        "certified_intervals": 1,
+        "unresolved_intervals": 0
+      },
+      "strict_corner_x_penetration_mm": "0.0000000000000000303089424747296104230414463733040306854134813977272505482816"
+    }
+  ]
+}

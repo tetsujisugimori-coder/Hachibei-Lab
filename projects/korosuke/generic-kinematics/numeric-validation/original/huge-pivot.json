@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "joint": {
+    "pivot_mm": [
+      1e+16,
+      0
+    ],
+    "start_deg": 45,
+    "end_deg": 45.1
+  },
+  "moving": [
+    {
+      "id": "m",
+      "center_mm": [
+        1.2,
+        -1.2
+      ],
+      "size_mm": [
+        0.01,
+        0.01
+      ]
+    }
+  ],
+  "fixed": [
+    {
+      "id": "f",
+      "center_mm": [
+        1.0000000000000002e+16,
+        0
+      ],
+      "size_mm": [
+        1,
+        1
+      ]
+    }
+  ]
+}

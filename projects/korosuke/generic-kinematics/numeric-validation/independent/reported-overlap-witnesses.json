@@ -1,0 +1,24 @@
+{
+  "source_report_sha256": "78b7e0196113b0bc276d0c7c10bf41d9e6aab9571d851b8b519d8817819f31b6",
+  "mpmath_digits": 740,
+  "witnesses": [
+    {
+      "fixture": "huge-pivot",
+      "certified_angle_exact": "12680447700815053/281474976710656",
+      "float_display_difference_deg_exact": "-1/281474976710656",
+      "independent_strict_interior_margins_mm": [
+        "0.197055628656625408103601281208684569490521366814710423246932",
+        "0.498519039208583229913326915687221553504627632469520565735412"
+      ]
+    },
+    {
+      "fixture": "moderate-tiny-boundary",
+      "certified_angle_exact": "168884986026395/562949953421312",
+      "float_display_difference_deg_exact": "0",
+      "independent_strict_interior_margins_mm": [
+        "0.0000000000000000508117821930717607021879184278984541701674468898715380100322",
+        "0.499999999999999975888378697763582501756529879470089373167344"
+      ]
+    }
+  ]
+}

@@ -9,6 +9,9 @@ from __future__ import annotations
 import argparse
 import json
 import math
+from fractions import Fraction
+
+from certified import I, local_rectangle, pose, motion_upper
 from pathlib import Path
 from typing import Any
 
@@ -20,7 +23,12 @@ class InputError(ValueError):
 def number(value: Any, label: str) -> float:
     if isinstance(value, bool) or not isinstance(value, (int, float)):
         raise InputError(f"{label} must be a finite number")
-    result = float(value)
+    try:
+        result = float(value)
+    except OverflowError as exc:
+        raise InputError(f"{label} must be representable as finite binary64") from exc
+    if isinstance(value, int) and math.isfinite(result) and int(result) != value:
+        raise InputError(f"{label} integer must be exactly representable as binary64")
     if not math.isfinite(result):
         raise InputError(f"{label} must be a finite number")
     return result
@@ -44,7 +52,7 @@ def read_input(raw: Any) -> dict[str, Any]:
     pivot = pair(joint.get("pivot_mm"), "joint.pivot_mm")
     begin = number(joint.get("start_deg"), "joint.start_deg")
     end = number(joint.get("end_deg"), "joint.end_deg")
-    if end <= begin or end - begin > 360:
+    if end <= begin or Fraction(end) - Fraction(begin) > 360:
         raise InputError("joint angle range must be increasing and at most 360 degrees")
     tolerance = number(raw.get("tolerance_mm", 0), "tolerance_mm")
     min_interval = number(raw.get("min_interval_deg", 0.25), "min_interval_deg")
@@ -76,6 +84,7 @@ def read_input(raw: Any) -> dict[str, Any]:
 
 
 def corners(part: dict[str, Any], angle_deg: float = 0, pivot: tuple[float, float] = (0, 0)) -> list[tuple[float, float]]:
+    # Legacy binary64 diagnostic only, never used by the safety certificate.
     cx, cy = part["center"]
     w, h = part["size"]
     radians = math.radians(angle_deg)
@@ -86,7 +95,7 @@ def corners(part: dict[str, Any], angle_deg: float = 0, pivot: tuple[float, floa
 
 
 def intersects(a: list[tuple[float, float]], b: list[tuple[float, float]]) -> bool:
-    """Separating-axis test for convex rectangles; touching counts as overlap."""
+    """Legacy approximate SAT diagnostic; not the certified overlap predicate."""
     for polygon in (a, b):
         for index, (x, y) in enumerate(polygon):
             nx, ny = polygon[(index + 1) % len(polygon)]
@@ -99,7 +108,7 @@ def intersects(a: list[tuple[float, float]], b: list[tuple[float, float]]) -> bo
 
 
 def bbox_gap(a: list[tuple[float, float]], b: list[tuple[float, float]]) -> float:
-    """Lower bound on Euclidean polygon separation, not actual clearance."""
+    """Legacy approximate diagnostic; NOT a guaranteed lower bound in binary64."""
     ax = [p[0] for p in a]
     ay = [p[1] for p in a]
     bx = [p[0] for p in b]
@@ -110,37 +119,40 @@ def bbox_gap(a: list[tuple[float, float]], b: list[tuple[float, float]]) -> floa
 
 
 def screen_pair(cfg: dict[str, Any], moving: dict[str, Any], fixed: dict[str, Any]) -> dict[str, Any]:
-    obstacle = corners(fixed)
-    # Moving rectangles have joint-local coordinates. Derive their bounding radius
-    # in that local frame, not from the world pivot.
-    cx, cy = moving["center"]
-    w, h = moving["size"]
-    radius = max(math.hypot(cx + sx * w / 2, cy + sy * h / 2)
-                 for sx in (-1, 1) for sy in (-1, 1))
+    """Exact dyadic subdivision, outward interval pose and motion certificate."""
+    moving_local = local_rectangle(moving)
+    obstacle_local = local_rectangle(fixed, cfg["pivot"])
+    cx, cy = map(Fraction, moving["center"])
+    w, h = map(Fraction, moving["size"])
+    radius_l1 = abs(cx) + abs(cy) + w/2 + h/2
+    tolerance_upper = I.exact(cfg["tolerance"]).hi
     stats = {"sample_count": 0, "certified_intervals": 0, "unresolved_intervals": 0}
-    first_overlap: float | None = None
+    first_overlap = None
 
-    def examine(lo: float, hi: float, level: int) -> None:
+    def examine(lo: Fraction, hi: Fraction, level: int) -> None:
         nonlocal first_overlap
         if first_overlap is not None:
             return
-        midpoint = (lo + hi) / 2
-        moving_poly = corners(moving, midpoint, cfg["pivot"])
-        stats["sample_count"] += 1
-        if intersects(moving_poly, obstacle):
-            first_overlap = midpoint
-            return
-        conservative_motion = radius * math.radians((hi - lo) / 2)
-        if bbox_gap(moving_poly, obstacle) > conservative_motion + cfg["tolerance"]:
-            stats["certified_intervals"] += 1
-            return
-        if level >= cfg["depth"] or hi - lo <= cfg["interval"]:
+        midpoint = (lo + hi) / 2  # exact, never rounded to an endpoint
+        if not lo < midpoint < hi:
             stats["unresolved_intervals"] += 1
             return
-        examine(lo, midpoint, level + 1)
-        examine(midpoint, hi, level + 1)
+        overlap, gap_lower = pose(moving_local, obstacle_local, midpoint)
+        stats["sample_count"] += 1
+        if overlap:
+            first_overlap = midpoint
+            return
+        motion = motion_upper(radius_l1, max(midpoint-lo, hi-midpoint))
+        if gap_lower > motion + tolerance_upper:
+            stats["certified_intervals"] += 1
+            return
+        if level >= cfg["depth"] or hi-lo <= Fraction(cfg["interval"]):
+            stats["unresolved_intervals"] += 1
+            return
+        examine(lo, midpoint, level+1)
+        examine(midpoint, hi, level+1)
 
-    examine(cfg["start"], cfg["end"], 0)
+    examine(Fraction(cfg["start"]), Fraction(cfg["end"]), 0)
     if first_overlap is not None:
         status = "PROJECTED_OVERLAP"
     elif stats["unresolved_intervals"]:
@@ -148,7 +160,10 @@ def screen_pair(cfg: dict[str, Any], moving: dict[str, Any], fixed: dict[str, An
     else:
         status = "PROJECTED_CLEAR"
     return {"moving_id": moving["id"], "fixed_id": fixed["id"], "status": status,
-            "first_observed_overlap_deg": first_overlap, **stats}
+            "first_observed_overlap_deg": float(first_overlap) if first_overlap is not None else None,
+            "first_observed_overlap_deg_exact": str(first_overlap) if first_overlap is not None else None,
+            "certificate_method": "exact_rational_angles_integer_interval_1e60",
+            **stats}
 
 
 def screen(raw: Any) -> dict[str, Any]:
@@ -157,7 +172,7 @@ def screen(raw: Any) -> dict[str, Any]:
                for moving in cfg["moving"] for fixed in cfg["fixed"]]
     counts = {status: sum(item["status"] == status for item in results)
               for status in ("PROJECTED_OVERLAP", "UNRESOLVED_2D", "PROJECTED_CLEAR")}
-    return {"schema_version": 1, "method": "planar_rectangles_conservative_rotation",
+    return {"schema_version": 1, "method": "planar_rectangles_integer_interval_rotation",
             "limitations": "2D synthetic projection only; not a 3D CAD, strength, torque or manufacturing acceptance",
             "pair_count": len(results), "counts": counts, "pairs": results}
 
