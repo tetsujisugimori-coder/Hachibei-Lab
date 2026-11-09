@@ -11,6 +11,11 @@ from jsonschema import Draft202012Validator, FormatChecker
 
 ROOT = Path(__file__).resolve().parents[2]
 PUBLIC_PREFIX = 'https://github.com/tetsujisugimori-coder/Hachibei-Lab/'
+CI_PATH = '.github/workflows/stage1-inventory.yml'
+IMMUTABLE_BASE = '48f5fe96aa6df48de64272f2eabd0bad66d92a5a'
+PROTECTED_FILES = ('README.md', 'stage1/evidence/baseline.json',
+                   'stage1/evidence/conflicts-before.md', 'stage1/evidence/public-issues.json',
+                   'stage1/evidence/unit.log', 'stage1/evidence/validation.json')
 DOMAINS = {'EDOBEN', 'PHILOSOPHY', 'BEHAVIOR', 'CONSTITUTION', 'RULES_OPERATIONS'}
 
 def require(condition, message):
@@ -62,28 +67,47 @@ def validate_data(index, schema, snapshots, summary):
             'snapshot_hashes', 'version_and_application_separation', 'issue2_history_preserved',
             'five_domain_public_counts']
 
+def allowed_change(path):
+    return path.startswith('stage1/') or path == CI_PATH
+
+
+def validate_scope(paths):
+    require(all(allowed_change(p) for p in paths), 'change outside Stage 1 and its sole CI workflow')
+
+
 def scan_public_files(root):
     findings = []
     allowed_hosts = {'github.com', 'help.openai.com', 'openai.com', 'json-schema.org'}
-    for p in sorted((root / 'stage1').rglob('*')):
+    candidates = sorted((root / 'stage1').rglob('*')) + [root / CI_PATH]
+    patterns = (
+        r'(?i)(?:sk-[a-z0-9]{20,}|gh[pousr]_[a-z0-9]{20,})',
+        r'(?i)-----BEGIN [A-Z ]*PRIVATE KEY-----',
+        r'(?i)[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}',
+        r'(?i)(?:file|sediment|library-file|project-file)://',
+        r'(?i)(?:page_|libfile_|file_)[0-9a-f]{16,}',
+        r'(?i)/work' + r'space/|/ho' + r'me/|/Us' + r'ers/',
+        r'(?i)[a-z]:[\\/]' + r'Users[\\/]',
+    )
+    for p in candidates:
         if not p.is_file() or '__pycache__' in p.parts or p.suffix == '.pyc':
             continue
         text = p.read_text()
-        # Code contains detector patterns; executable scripts never contain source rows.
-        if p.suffix == '.py':
-            continue
-        for url in re.findall(r'https?://[^\s<>"\)]+', text):
+        for url in re.findall(r"https?://[A-Za-z0-9][^\s<>\"'\)]+", text):
             parsed = urlparse(url.rstrip('.,'))
             require(parsed.hostname in allowed_hosts, f'unapproved URL host in {p.relative_to(root)}')
             require(not parsed.query, f'URL query in {p.relative_to(root)}')
-        for pattern in (r'(?i)(?:sk-[a-z0-9]{20,}|gh[pousr]_[a-z0-9]{20,})',
-                        r'(?i)-----BEGIN [A-Z ]*PRIVATE KEY-----',
-                        r'(?i)[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}',
-                        r'(?i)(?:file|sediment|library-file|project-file)://',
-                        r'(?i)/workspace/|/home/|/Users/|C:\\\\Users\\\\'):
+        for pattern in patterns:
             require(not re.search(pattern, text), f'sensitive-pattern candidate in {p.relative_to(root)}')
         findings.append(str(p.relative_to(root)))
     return findings
+
+
+def validate_immutable_files(root):
+    for name in PROTECTED_FILES:
+        expected = subprocess.check_output(['git', '-C', str(root), 'show', IMMUTABLE_BASE + ':' + name])
+        require((root / name).read_bytes() == expected, 'immutable public evidence changed: ' + name)
+    return list(PROTECTED_FILES)
+
 
 def run(root=ROOT):
     read = lambda name: json.loads((root / 'stage1' / name).read_text())
@@ -101,11 +125,12 @@ def run(root=ROOT):
     require(git('hash-object', 'README.md') == baseline['readme_blob'], 'README changed')
     changed = git('diff','--name-only',baseline['previous_review_head']).splitlines()
     untracked = git('ls-files','--others','--exclude-standard').splitlines()
-    require(all(n.startswith('stage1/') for n in changed + untracked), 'change outside Stage 1')
+    validate_scope(changed + untracked)
+    protected = validate_immutable_files(root)
     require('RESOLVED' in (root/'stage1/conflicts.md').read_text(), 'resolution absent')
-    passed += ['old_conflicts_preserved', 'readme_unchanged', 'scope_limited_to_stage1']
+    passed += ['old_conflicts_preserved', 'readme_unchanged', 'scope_limited_to_stage1_and_sole_ci', 'immutable_public_evidence']
     return {'result':'PASS', 'scope':'Public structure and bounded checks only', 'checks':passed,
-            'scanned_files':files,
+            'scanned_files':files, 'immutable_files':protected,
             'not_proven':['Corpus completeness', 'Current-rule adoption', 'Private ledger body or ACL',
                           'Absence of every possible secret', 'CI success', 'Final remote HEAD match']}
 
