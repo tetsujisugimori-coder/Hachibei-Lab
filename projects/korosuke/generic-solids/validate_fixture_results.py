@@ -26,9 +26,12 @@ def validate(rows, trusted_cases):
         for key in ['expected_volume_mm3','expected_distance_mm','measured_volume_mm3','measured_distance_mm']:
             if type(r.get(key)) not in (int,float) or not math.isfinite(r[key]) or r[key]<0:raise ValueError('invalid numeric evidence')
         if r['expected_volume_mm3']!=volume or r['expected_distance_mm']!=distance:raise ValueError('forged expectation')
+        if (volume>0)!=(r['measured_volume_mm3']>0):raise ValueError('intersection sign mismatch')
         if abs(volume-r['measured_volume_mm3'])>1e-7:raise ValueError('volume mismatch')
         if abs(distance-r['measured_distance_mm'])>1e-7:raise ValueError('distance mismatch')
         expected=('VOLUME_OVERLAP' if volume>1e-6 else 'MICRO_OVERLAP_REPORTED' if volume>0 else
                   'CONTACT_OR_WITHIN_TOLERANCE' if distance<=1e-6 else 'SEPARATED_AT_POSE')
-        if r['status']!=expected:raise ValueError('classification mismatch')
+        measured=('VOLUME_OVERLAP' if r['measured_volume_mm3']>1e-6 else 'MICRO_OVERLAP_REPORTED' if r['measured_volume_mm3']>0 else
+                  'CONTACT_OR_WITHIN_TOLERANCE' if r['measured_distance_mm']<=1e-6 else 'SEPARATED_AT_POSE')
+        if r['status']!=expected or r['status']!=measured:raise ValueError('classification mismatch')
     return True

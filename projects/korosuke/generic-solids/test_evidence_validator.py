@@ -14,6 +14,12 @@ class EvidenceTests(unittest.TestCase):
  def test_input_not_evidence_oracle(self):
   row,trusted=self.fixture();row['b']=[5,0,0]
   with self.assertRaises(ValueError):validate([row],trusted)
+ def test_micro_sign_not_lost(self):
+  row,trusted=self.fixture(1-1e-8);row['measured_volume_mm3']=0
+  with self.assertRaises(ValueError):validate([row],trusted)
+ def test_spurious_micro_not_contact(self):
+  row,trusted=self.fixture(1);row.update(status='CONTACT_OR_WITHIN_TOLERANCE',measured_volume_mm3=1e-8)
+  with self.assertRaises(ValueError):validate([row],trusted)
  def test_ids_not_trusted_geometry(self):
   row,_=self.fixture()
   with self.assertRaises(ValueError):validate([row],['known-overlap'])
