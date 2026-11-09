@@ -1,0 +1,42 @@
+name: Generic solid pose measurements
+on:
+  pull_request:
+    paths:
+      - 'projects/korosuke/generic-solids/**'
+      - '.github/workflows/korosuke-generic-solids.yml'
+permissions:
+  contents: read
+jobs:
+  solids:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+      - name: Install distribution FreeCAD
+        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends freecad-python3
+      - name: Unit, isolated process and analytic negative controls
+        env:
+          PYTHONPATH: /usr/lib/freecad/lib:/usr/lib/freecad-python3/lib
+        run: |
+          mkdir -p solid-results
+          /usr/bin/python3 -m unittest discover -s projects/korosuke/generic-solids -v 2>&1 | tee solid-results/unit.log
+          /usr/bin/python3 projects/korosuke/generic-solids/run_analytic.py solid-results
+          /usr/bin/python3 -m unittest discover -s projects/korosuke/generic-kinematics -v 2>&1 | tee solid-results/stage3a-regression.log
+      - name: Bind evidence
+        if: always()
+        run: |
+          python3 - <<'PY'
+          import hashlib,json,os,pathlib,subprocess
+          p=pathlib.Path('solid-results');p.mkdir(exist_ok=True)
+          record={'head':subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),'tree':subprocess.check_output(['git','rev-parse','HEAD^{tree}'],text=True).strip(),'run':os.environ['GITHUB_RUN_ID'],'attempt':os.environ['GITHUB_RUN_ATTEMPT'],'private_models':'NOT_PRESENT'}
+          (p/'identity.json').write_text(json.dumps(record,indent=2)+'\n')
+          (p/'SHA256SUMS.json').write_text(json.dumps({str(f.relative_to(p)):hashlib.sha256(f.read_bytes()).hexdigest() for f in sorted(p.rglob('*')) if f.is_file() and f.name!='SHA256SUMS.json'},indent=2)+'\n')
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: generic-solid-evidence-${{ github.run_id }}-${{ github.run_attempt }}
+          path: solid-results/
+          if-no-files-found: error
