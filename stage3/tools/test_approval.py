@@ -17,6 +17,20 @@ def state(data): return evaluate(data)['results'][0]['decision']['status']
 
 
 class ApprovalTests(unittest.TestCase):
+    def test_reject_corrupt_nullable_timestamps(self):
+        for value in (False, 0, '', [], {}):
+            with self.subTest(value=value):
+                d=fixture(); d['decisions'][0]['decided_at']='2026-01-02T12:00:00Z'
+                d['approvals'][0]['events'][0]['expires_at']=value
+                with self.assertRaises(ValueError): evaluate(d)
+                d=fixture(); d['history_complete_through']=value
+                with self.assertRaises(ValueError): evaluate(d)
+
+    def test_reject_invalid_offset_components(self):
+        for offset in ('+00:99','-00:60','+24:00','+99:00'):
+            with self.subTest(offset=offset):
+                with self.assertRaises(ValueError): instant('2026-01-01T12:00:00'+offset)
+
     def test_valid(self): self.assertEqual(state(fixture()),'VALID')
     def test_no_side_effect_input(self):
         d=fixture(); old=copy.deepcopy(d); evaluate(d); self.assertEqual(d,old)

@@ -11,6 +11,8 @@ STATES = ('VALID', 'OUT_OF_SCOPE', 'NOT_YET_EFFECTIVE', 'EXPIRED', 'REVOKED',
 def instant(value):
     if not isinstance(value, str) or not re.fullmatch(r'\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d{1,6})?(?:Z|[+-]\d{2}:\d{2})', value):
         raise ValueError('timestamp requires explicit timezone and seconds')
+    if value[-1] != 'Z' and (int(value[-5:-3]) > 23 or int(value[-2:]) > 59):
+        raise ValueError('invalid timezone offset components')
     return datetime.fromisoformat(value.replace('Z', '+00:00')).astimezone(timezone.utc)
 
 
@@ -28,7 +30,7 @@ def validate(data):
     if data['schema_version'] != '1.0' or data['evidence_kind'] not in ('SYNTHETIC', 'OBSERVED', 'DESIGN_ONLY'):
         raise ValueError('unsupported schema or evidence kind')
     observed = instant(data['observed_at'])
-    through = instant(data['history_complete_through']) if data['history_complete_through'] else None
+    through = instant(data['history_complete_through']) if data['history_complete_through'] is not None else None
     if through and through > observed:
         raise ValueError('coverage beyond observation')
     if not isinstance(data['approvals'], list) or not isinstance(data['decisions'], list):
@@ -59,7 +61,7 @@ def validate(data):
             recorded, effective = instant(e['recorded_at']), instant(e['effective_at'])
             if recorded > observed:
                 raise ValueError('future evidence')
-            if e['expires_at'] and instant(e['expires_at']) <= effective:
+            if e['expires_at'] is not None and instant(e['expires_at']) <= effective:
                 raise ValueError('nonpositive validity interval')
             if not strings(e['actions']) or not strings(e['targets']) or not isinstance(e['conditions'], dict):
                 raise ValueError('scope invalid (exact IDs only)')
@@ -113,7 +115,7 @@ def approval_at(a, d, when, coverage):
     e = applicable[-1]
     if e['kind']=='REVOKE':
         return 'REVOKED', ['revocation effective at or before evaluation']
-    if e['expires_at'] and when >= instant(e['expires_at']):
+    if e['expires_at'] is not None and when >= instant(e['expires_at']):
         return 'EXPIRED', ['half-open validity interval ended']
     if d['action'] not in e['actions'] or d['target'] not in e['targets']:
         return 'OUT_OF_SCOPE', ['exact action/target mismatch']
@@ -128,7 +130,7 @@ def approval_at(a, d, when, coverage):
 def at(data, d, when):
     refs = d['approval_ids']
     by_id = {a['id']:a for a in data['approvals']}
-    coverage = instant(data['history_complete_through']) if data['history_complete_through'] else None
+    coverage = instant(data['history_complete_through']) if data['history_complete_through'] is not None else None
     results=[]
     for ref in refs:
         a=by_id.get(ref)
