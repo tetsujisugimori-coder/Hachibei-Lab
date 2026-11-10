@@ -1,0 +1,13 @@
+{
+  "schema_version": "2.0",
+  "visibility": "PRIVATE",
+  "scope": "EMPTY_TEMPLATE_NOT_EVIDENCE",
+  "corpus_total": "UNKNOWN",
+  "coverage_ratio": "UNKNOWN",
+  "sources": [],
+  "rules": [],
+  "relations": [],
+  "conflicts": [],
+  "proposals": [],
+  "scenarios": []
+}

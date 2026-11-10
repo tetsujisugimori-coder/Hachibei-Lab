@@ -1,0 +1,657 @@
+{
+  "schema_version": "2.0",
+  "visibility": "PUBLIC",
+  "scope": "Stage 1公開研究計画2件の記述対応のみ。本人限定実照合とは別集合。",
+  "corpus_total": "UNKNOWN",
+  "coverage_ratio": "UNKNOWN",
+  "sources": [
+    {
+      "source_id": "PUB-001",
+      "stage1_ref": "stage1/public-index.json#PUB-001",
+      "title": "Stage 1：八兵衛（dot）の研究範囲・能力評価・6リポジトリ実績の横断台帳を設計する",
+      "author": "tetsujisugimori-coder（公開Issueの記録者。規則制定権限の認定ではない）",
+      "edition": "UNKNOWN",
+      "location": "https://github.com/tetsujisugimori-coder/Hachibei-Lab/issues/1",
+      "body_check": "VERIFIED_BODY",
+      "check_scope": "Stage 1固定snapshotの全本文。現行外部ページ全改訂の保証ではない。",
+      "publication_status": "PUBLIC",
+      "classification": "RESEARCH_PLAN"
+    },
+    {
+      "source_id": "PUB-002",
+      "stage1_ref": "stage1/public-index.json#PUB-002",
+      "title": "Stage 1：既存資料の棚卸しと現行版候補の整理",
+      "author": "tetsujisugimori-coder（公開Issueの記録者。規則制定権限の認定ではない）",
+      "edition": "UNKNOWN",
+      "location": "https://github.com/tetsujisugimori-coder/Hachibei-Lab/issues/2",
+      "body_check": "VERIFIED_BODY",
+      "check_scope": "Stage 1固定snapshotの全本文。現行外部ページ全改訂の保証ではない。",
+      "publication_status": "PUBLIC",
+      "classification": "RESEARCH_PLAN"
+    }
+  ],
+  "rules": [
+    {
+      "rule_id": "PLAN-001",
+      "source_id": "PUB-001",
+      "citation": {
+        "source_id": "PUB-001",
+        "snapshot_id": "ISSUE-1-CURRENT",
+        "quote": "本Issueをもって権限拡張・PC接続・自動実行・他プロジェクトの変更を許可しない。",
+        "start_line": 45,
+        "end_line": 45,
+        "body_sha256": "e7da6d651fd92a901d97acd217e3e02a597f9186243e476b98df7633682d04a3"
+      },
+      "authority_category": "RESEARCH_PLAN",
+      "document_status": "RESEARCH_ONLY",
+      "application_state": "NOT_A_RULE",
+      "set_by": "公開Issue記録者。正式制定者はUNKNOWN",
+      "set_at": "2026-11-07T22:32:55Z",
+      "authority_basis": "既存公開研究計画の境界条項。時刻はIssue作成日時で、正式規則の制定日時ではない。",
+      "approval_evidence": "UNKNOWN",
+      "effective_from": "UNKNOWN",
+      "effective_until": "UNKNOWN",
+      "scope": "公開研究計画内の記述照合だけ。現行正式規則として採用しない。",
+      "runtime_verification": "NOT_TESTED",
+      "adopted_by_stage2": false
+    },
+    {
+      "rule_id": "PLAN-002",
+      "source_id": "PUB-001",
+      "citation": {
+        "source_id": "PUB-001",
+        "snapshot_id": "ISSUE-1-CURRENT",
+        "quote": "研究結果から権限・憲法・正式な行動規則を自動変更しない。提案と採用決定を分離する。",
+        "start_line": 47,
+        "end_line": 47,
+        "body_sha256": "e7da6d651fd92a901d97acd217e3e02a597f9186243e476b98df7633682d04a3"
+      },
+      "authority_category": "RESEARCH_PLAN",
+      "document_status": "RESEARCH_ONLY",
+      "application_state": "NOT_A_RULE",
+      "set_by": "公開Issue記録者。正式制定者はUNKNOWN",
+      "set_at": "2026-11-07T22:32:55Z",
+      "authority_basis": "既存公開研究計画の境界条項。時刻はIssue作成日時で、正式規則の制定日時ではない。",
+      "approval_evidence": "UNKNOWN",
+      "effective_from": "UNKNOWN",
+      "effective_until": "UNKNOWN",
+      "scope": "公開研究計画内の記述照合だけ。現行正式規則として採用しない。",
+      "runtime_verification": "NOT_TESTED",
+      "adopted_by_stage2": false
+    },
+    {
+      "rule_id": "PLAN-003",
+      "source_id": "PUB-001",
+      "citation": {
+        "source_id": "PUB-001",
+        "snapshot_id": "ISSUE-1-CURRENT",
+        "quote": "秘密・個人情報・非公開会話の原文・鍵・トークン・内部プロンプトなどをPublicリポジトリへ記録しない。",
+        "start_line": 49,
+        "end_line": 49,
+        "body_sha256": "e7da6d651fd92a901d97acd217e3e02a597f9186243e476b98df7633682d04a3"
+      },
+      "authority_category": "RESEARCH_PLAN",
+      "document_status": "RESEARCH_ONLY",
+      "application_state": "NOT_A_RULE",
+      "set_by": "公開Issue記録者。正式制定者はUNKNOWN",
+      "set_at": "2026-11-07T22:32:55Z",
+      "authority_basis": "既存公開研究計画の境界条項。時刻はIssue作成日時で、正式規則の制定日時ではない。",
+      "approval_evidence": "UNKNOWN",
+      "effective_from": "UNKNOWN",
+      "effective_until": "UNKNOWN",
+      "scope": "公開研究計画内の記述照合だけ。現行正式規則として採用しない。",
+      "runtime_verification": "NOT_TESTED",
+      "adopted_by_stage2": false
+    },
+    {
+      "rule_id": "PLAN-004",
+      "source_id": "PUB-001",
+      "citation": {
+        "source_id": "PUB-001",
+        "snapshot_id": "ISSUE-1-CURRENT",
+        "quote": "テスト件数の多さや自己申告だけで総合PASSとしない。実機・本番・外部サービスの未検証を明示する。",
+        "start_line": 48,
+        "end_line": 48,
+        "body_sha256": "e7da6d651fd92a901d97acd217e3e02a597f9186243e476b98df7633682d04a3"
+      },
+      "authority_category": "RESEARCH_PLAN",
+      "document_status": "RESEARCH_ONLY",
+      "application_state": "NOT_A_RULE",
+      "set_by": "公開Issue記録者。正式制定者はUNKNOWN",
+      "set_at": "2026-11-07T22:32:55Z",
+      "authority_basis": "既存公開研究計画の境界条項。時刻はIssue作成日時で、正式規則の制定日時ではない。",
+      "approval_evidence": "UNKNOWN",
+      "effective_from": "UNKNOWN",
+      "effective_until": "UNKNOWN",
+      "scope": "公開研究計画内の記述照合だけ。現行正式規則として採用しない。",
+      "runtime_verification": "NOT_TESTED",
+      "adopted_by_stage2": false
+    }
+  ],
+  "relations": [
+    {
+      "relation_id": "REL-PUB-001",
+      "source_id": "PUB-002",
+      "rule_id": "PLAN-001",
+      "citation": {
+        "source_id": "PUB-002",
+        "snapshot_id": "ISSUE-2-CURRENT",
+        "quote": "原本、設定、定期タスク、実験は変更しない。",
+        "start_line": 8,
+        "end_line": 8,
+        "body_sha256": "69ab0cd101f08f9293c15fd139050fedabd51444a161a99c7cc1661291106388"
+      },
+      "source_claim": "原本、設定、定期タスク、実験は変更しない。",
+      "interpretation": "変更対象を限定する計画上の境界が共通するが、禁止対象と工程は同一ではない。",
+      "kind": "INDIRECT",
+      "strength": "INTERPRETIVE",
+      "limitations": [
+        "研究計画同士の記述照合であり、哲学・文学原典の科学的根拠ではない。",
+        "正式規則の現行適用や承認履歴をこの対応から認定しない。"
+      ],
+      "cautions": [
+        "直接対応は限定した命題の対応であり、文書全体や権限の同一性ではない。"
+      ],
+      "next_questions": [
+        "本人限定原本の対応と承認範囲を別証拠で照合する。"
+      ],
+      "normative_effect": "NONE",
+      "proposal_id": null
+    },
+    {
+      "relation_id": "REL-PUB-002",
+      "source_id": "PUB-002",
+      "rule_id": "PLAN-002",
+      "citation": {
+        "source_id": "PUB-002",
+        "snapshot_id": "ISSUE-2-CURRENT",
+        "quote": "5領域の確認範囲と未確認事項を明記し、資料の正式採用を推測しない。",
+        "start_line": 14,
+        "end_line": 14,
+        "body_sha256": "69ab0cd101f08f9293c15fd139050fedabd51444a161a99c7cc1661291106388"
+      },
+      "source_claim": "5領域の確認範囲と未確認事項を明記し、資料の正式採用を推測しない。",
+      "interpretation": "資料の存在・調査と正式採用の区別という限定命題に対応する。",
+      "kind": "DIRECT",
+      "strength": "TEXT_MATCH",
+      "limitations": [
+        "研究計画同士の記述照合であり、哲学・文学原典の科学的根拠ではない。",
+        "正式規則の現行適用や承認履歴をこの対応から認定しない。"
+      ],
+      "cautions": [
+        "直接対応は限定した命題の対応であり、文書全体や権限の同一性ではない。"
+      ],
+      "next_questions": [
+        "本人限定原本の対応と承認範囲を別証拠で照合する。"
+      ],
+      "normative_effect": "NONE",
+      "proposal_id": null
+    },
+    {
+      "relation_id": "REL-PUB-003",
+      "source_id": "PUB-002",
+      "rule_id": "PLAN-003",
+      "citation": {
+        "source_id": "PUB-002",
+        "snapshot_id": "ISSUE-2-CURRENT",
+        "quote": "非公開資料の内容・識別リンク・秘密はPublicリポジトリへ転載しない。",
+        "start_line": 8,
+        "end_line": 8,
+        "body_sha256": "69ab0cd101f08f9293c15fd139050fedabd51444a161a99c7cc1661291106388"
+      },
+      "source_claim": "非公開資料の内容・識別リンク・秘密はPublicリポジトリへ転載しない。",
+      "interpretation": "公開禁止対象を保持する点で直接対応。列挙の差を同一文面と称さない。",
+      "kind": "DIRECT",
+      "strength": "TEXT_MATCH",
+      "limitations": [
+        "研究計画同士の記述照合であり、哲学・文学原典の科学的根拠ではない。",
+        "正式規則の現行適用や承認履歴をこの対応から認定しない。"
+      ],
+      "cautions": [
+        "直接対応は限定した命題の対応であり、文書全体や権限の同一性ではない。"
+      ],
+      "next_questions": [
+        "本人限定原本の対応と承認範囲を別証拠で照合する。"
+      ],
+      "normative_effect": "NONE",
+      "proposal_id": null
+    },
+    {
+      "relation_id": "REL-PUB-004",
+      "source_id": "PUB-002",
+      "rule_id": "PLAN-004",
+      "citation": {
+        "source_id": "PUB-002",
+        "snapshot_id": "ISSUE-2-CURRENT",
+        "quote": "独立レビューとDraft PR提出は、実施結果を別々に記録する。",
+        "start_line": 14,
+        "end_line": 14,
+        "body_sha256": "69ab0cd101f08f9293c15fd139050fedabd51444a161a99c7cc1661291106388"
+      },
+      "source_claim": "独立レビューとDraft PR提出は、実施結果を別々に記録する。",
+      "interpretation": "検証段階を分離する補助例。テスト品質や実機検証の代替ではない。",
+      "kind": "INDIRECT",
+      "strength": "INTERPRETIVE",
+      "limitations": [
+        "研究計画同士の記述照合であり、哲学・文学原典の科学的根拠ではない。",
+        "正式規則の現行適用や承認履歴をこの対応から認定しない。"
+      ],
+      "cautions": [
+        "直接対応は限定した命題の対応であり、文書全体や権限の同一性ではない。"
+      ],
+      "next_questions": [
+        "本人限定原本の対応と承認範囲を別証拠で照合する。"
+      ],
+      "normative_effect": "NONE",
+      "proposal_id": null
+    }
+  ],
+  "conflicts": [
+    {
+      "conflict_id": "OPEN-001",
+      "topic": "自律的行動と利用者の承認",
+      "source_ids": [
+        "PUB-001",
+        "PUB-002"
+      ],
+      "rule_ids": [
+        "PLAN-001",
+        "PLAN-002"
+      ],
+      "interpretations": [
+        "許可範囲内の調査を進める",
+        "自律性を新しい操作権限と読む"
+      ],
+      "existing_decision": "公開計画は権限拡張・研究成果の自動採用を認めない。個々の非公開決定は本人限定で照合。",
+      "unresolved": "個別資料間の対立が実在するか、承認範囲・現行適用を含めて判断。対立の説明は検討枠で、自動解消ではない。",
+      "impact": "誤って実行可能・正式採用と認定するおそれ。",
+      "hold_reason": "承認範囲・期限・対象が確かでない操作を保留する",
+      "options": [
+        "個別操作ごとに承認範囲を表示する設計を検証",
+        "原文・採用証拠を追加確認して利用者判断に返す。"
+      ],
+      "state": "OPEN",
+      "auto_resolved": false
+    },
+    {
+      "conflict_id": "OPEN-002",
+      "topic": "好奇心による探索と優先任務",
+      "source_ids": [
+        "PUB-001",
+        "PUB-002"
+      ],
+      "rule_ids": [
+        "PLAN-001",
+        "PLAN-002"
+      ],
+      "interpretations": [
+        "好奇心を題材選択の材料にする",
+        "好奇心を優先任務より上位に置く"
+      ],
+      "existing_decision": "公開計画は権限拡張・研究成果の自動採用を認めない。個々の非公開決定は本人限定で照合。",
+      "unresolved": "個別資料間の対立が実在するか、承認範囲・現行適用を含めて判断。対立の説明は検討枠で、自動解消ではない。",
+      "impact": "誤って実行可能・正式採用と認定するおそれ。",
+      "hold_reason": "優先任務の実状態と残時間が不明なため",
+      "options": [
+        "任務確認範囲と割込み時の保存点を比較",
+        "原文・採用証拠を追加確認して利用者判断に返す。"
+      ],
+      "state": "OPEN",
+      "auto_resolved": false
+    },
+    {
+      "conflict_id": "OPEN-003",
+      "topic": "江戸弁の自然さと正確さ",
+      "source_ids": [
+        "PUB-001",
+        "PUB-002"
+      ],
+      "rule_ids": [
+        "PLAN-001",
+        "PLAN-002"
+      ],
+      "interpretations": [
+        "場面適応を改善する",
+        "語尾や割合を満たすため重要情報を崩す"
+      ],
+      "existing_decision": "公開計画は権限拡張・研究成果の自動採用を認めない。個々の非公開決定は本人限定で照合。",
+      "unresolved": "個別資料間の対立が実在するか、承認範囲・現行適用を含めて判断。対立の説明は検討枠で、自動解消ではない。",
+      "impact": "誤って実行可能・正式採用と認定するおそれ。",
+      "hold_reason": "自然さの評価と正確性の観測を混同できないため",
+      "options": [
+        "数値・固有名詞を保った対話比較",
+        "原文・採用証拠を追加確認して利用者判断に返す。"
+      ],
+      "state": "OPEN",
+      "auto_resolved": false
+    },
+    {
+      "conflict_id": "OPEN-004",
+      "topic": "哲学的判断と実行可能な規則",
+      "source_ids": [
+        "PUB-001",
+        "PUB-002"
+      ],
+      "rule_ids": [
+        "PLAN-001",
+        "PLAN-002"
+      ],
+      "interpretations": [
+        "前提・反論を検討する参考資料にする",
+        "哲学の原理をそのまま必須の行動命令にする"
+      ],
+      "existing_decision": "公開計画は権限拡張・研究成果の自動採用を認めない。個々の非公開決定は本人限定で照合。",
+      "unresolved": "個別資料間の対立が実在するか、承認範囲・現行適用を含めて判断。対立の説明は検討枠で、自動解消ではない。",
+      "impact": "誤って実行可能・正式採用と認定するおそれ。",
+      "hold_reason": "論証の妥当性と操作権限は別だから",
+      "options": [
+        "適用条件・反例・価値対立を同一事例に並べる",
+        "原文・採用証拠を追加確認して利用者判断に返す。"
+      ],
+      "state": "OPEN",
+      "auto_resolved": false
+    },
+    {
+      "conflict_id": "OPEN-005",
+      "topic": "自発的な提案と無断操作",
+      "source_ids": [
+        "PUB-001",
+        "PUB-002"
+      ],
+      "rule_ids": [
+        "PLAN-001",
+        "PLAN-002"
+      ],
+      "interpretations": [
+        "候補を提示して判断を求める",
+        "提案の有用性を送信・実装の許可とみなす"
+      ],
+      "existing_decision": "公開計画は権限拡張・研究成果の自動採用を認めない。個々の非公開決定は本人限定で照合。",
+      "unresolved": "個別資料間の対立が実在するか、承認範囲・現行適用を含めて判断。対立の説明は検討枠で、自動解消ではない。",
+      "impact": "誤って実行可能・正式採用と認定するおそれ。",
+      "hold_reason": "新対象・送信・公開の権限が未確定だから",
+      "options": [
+        "提案文と実行指示の境界の負対照",
+        "原文・採用証拠を追加確認して利用者判断に返す。"
+      ],
+      "state": "OPEN",
+      "auto_resolved": false
+    },
+    {
+      "conflict_id": "OPEN-006",
+      "topic": "余暇と安全・資源制約",
+      "source_ids": [
+        "PUB-001",
+        "PUB-002"
+      ],
+      "rule_ids": [
+        "PLAN-001",
+        "PLAN-002"
+      ],
+      "interpretations": [
+        "承認された期間と予算内で選択する",
+        "過去の限定試験を恒久許可とみなす"
+      ],
+      "existing_decision": "公開計画は権限拡張・研究成果の自動採用を認めない。個々の非公開決定は本人限定で照合。",
+      "unresolved": "個別資料間の対立が実在するか、承認範囲・現行適用を含めて判断。対立の説明は検討枠で、自動解消ではない。",
+      "impact": "誤って実行可能・正式採用と認定するおそれ。",
+      "hold_reason": "期限・残予算・実起動が別の確認を要するため",
+      "options": [
+        "期間外・重複・不明時の非実行を合成検証",
+        "原文・採用証拠を追加確認して利用者判断に返す。"
+      ],
+      "state": "OPEN",
+      "auto_resolved": false
+    },
+    {
+      "conflict_id": "OPEN-007",
+      "topic": "継続学習と規則の安定性",
+      "source_ids": [
+        "PUB-001",
+        "PUB-002"
+      ],
+      "rule_ids": [
+        "PLAN-001",
+        "PLAN-002"
+      ],
+      "interpretations": [
+        "知識や研究記録を更新する",
+        "資料の追記を正式規則の改訂とみなす"
+      ],
+      "existing_decision": "公開計画は権限拡張・研究成果の自動採用を認めない。個々の非公開決定は本人限定で照合。",
+      "unresolved": "個別資料間の対立が実在するか、承認範囲・現行適用を含めて判断。対立の説明は検討枠で、自動解消ではない。",
+      "impact": "誤って実行可能・正式採用と認定するおそれ。",
+      "hold_reason": "変更・承認・実適用を別に追跡する必要があるため",
+      "options": [
+        "版と採用差分の管理方法を検討",
+        "原文・採用証拠を追加確認して利用者判断に返す。"
+      ],
+      "state": "OPEN",
+      "auto_resolved": false
+    }
+  ],
+  "proposals": [
+    {
+      "proposal_id": "S3-001",
+      "title": "個別操作ごとに承認範囲を表示する設計を検証",
+      "status": "UNAPPROVED",
+      "rule_ids": [
+        "PLAN-001",
+        "PLAN-002"
+      ],
+      "question": "自律的行動と利用者の承認",
+      "required_evidence": [
+        "変更前後の対象・範囲・リスクを限定した計画",
+        "必要な承認",
+        "同一条件の正常系・負対照・独立確認"
+      ],
+      "adoption": false
+    },
+    {
+      "proposal_id": "S3-002",
+      "title": "任務確認範囲と割込み時の保存点を比較",
+      "status": "UNAPPROVED",
+      "rule_ids": [
+        "PLAN-001",
+        "PLAN-002"
+      ],
+      "question": "好奇心による探索と優先任務",
+      "required_evidence": [
+        "変更前後の対象・範囲・リスクを限定した計画",
+        "必要な承認",
+        "同一条件の正常系・負対照・独立確認"
+      ],
+      "adoption": false
+    },
+    {
+      "proposal_id": "S3-003",
+      "title": "数値・固有名詞を保った対話比較",
+      "status": "UNAPPROVED",
+      "rule_ids": [
+        "PLAN-001",
+        "PLAN-002"
+      ],
+      "question": "江戸弁の自然さと正確さ",
+      "required_evidence": [
+        "変更前後の対象・範囲・リスクを限定した計画",
+        "必要な承認",
+        "同一条件の正常系・負対照・独立確認"
+      ],
+      "adoption": false
+    },
+    {
+      "proposal_id": "S3-004",
+      "title": "適用条件・反例・価値対立を同一事例に並べる",
+      "status": "UNAPPROVED",
+      "rule_ids": [
+        "PLAN-001",
+        "PLAN-002"
+      ],
+      "question": "哲学的判断と実行可能な規則",
+      "required_evidence": [
+        "変更前後の対象・範囲・リスクを限定した計画",
+        "必要な承認",
+        "同一条件の正常系・負対照・独立確認"
+      ],
+      "adoption": false
+    },
+    {
+      "proposal_id": "S3-005",
+      "title": "提案文と実行指示の境界の負対照",
+      "status": "UNAPPROVED",
+      "rule_ids": [
+        "PLAN-001",
+        "PLAN-002"
+      ],
+      "question": "自発的な提案と無断操作",
+      "required_evidence": [
+        "変更前後の対象・範囲・リスクを限定した計画",
+        "必要な承認",
+        "同一条件の正常系・負対照・独立確認"
+      ],
+      "adoption": false
+    },
+    {
+      "proposal_id": "S3-006",
+      "title": "期間外・重複・不明時の非実行を合成検証",
+      "status": "UNAPPROVED",
+      "rule_ids": [
+        "PLAN-001",
+        "PLAN-002"
+      ],
+      "question": "余暇と安全・資源制約",
+      "required_evidence": [
+        "変更前後の対象・範囲・リスクを限定した計画",
+        "必要な承認",
+        "同一条件の正常系・負対照・独立確認"
+      ],
+      "adoption": false
+    },
+    {
+      "proposal_id": "S3-007",
+      "title": "版と採用差分の管理方法を検討",
+      "status": "UNAPPROVED",
+      "rule_ids": [
+        "PLAN-001",
+        "PLAN-002"
+      ],
+      "question": "継続学習と規則の安定性",
+      "required_evidence": [
+        "変更前後の対象・範囲・リスクを限定した計画",
+        "必要な承認",
+        "同一条件の正常系・負対照・独立確認"
+      ],
+      "adoption": false
+    }
+  ],
+  "scenarios": [
+    {
+      "scenario_id": "CASE-001",
+      "name": "実装依頼を受ける",
+      "status": "DESIGN_ONLY",
+      "steps": [
+        "状況認識: 対象mainと既存Issue/PRを取得",
+        "資料と依頼の範囲を特定",
+        "変更候補を生成",
+        "公開と操作の権限・優先任務を確認",
+        "許可された最小変更を選択",
+        "実装し検査、承認対象は保留",
+        "結果と未確認を記録"
+      ],
+      "public_evidence": [],
+      "not_proven": [
+        "この記述だけで現行実装・自律性・心理効果・全業務の適合を認定しない。"
+      ]
+    },
+    {
+      "scenario_id": "CASE-002",
+      "name": "独立レビューで不具合を発見する",
+      "status": "DESIGN_ONLY",
+      "steps": [
+        "状況認識: 指摘の対象HEADと再現条件を読む",
+        "原文・引用・検査結果を照合",
+        "修正か反証か追加検査を候補化",
+        "既存の修正権限と影響範囲を確認",
+        "根拠付きで修正方針を選ぶ",
+        "同一条件で再検証し独立再確認へ",
+        "元の失敗と新しい結果を別記"
+      ],
+      "public_evidence": [],
+      "not_proven": [
+        "この記述だけで現行実装・自律性・心理効果・全業務の適合を認定しない。"
+      ]
+    },
+    {
+      "scenario_id": "CASE-003",
+      "name": "規則が衝突する",
+      "status": "DESIGN_ONLY",
+      "steps": [
+        "状況認識: 対立する文面と版を固定",
+        "承認者・日時・範囲を取得",
+        "適用可能な候補と保留を列挙",
+        "確認済みの上位制約を守る",
+        "未確定な優先順位を作らない",
+        "衝突する操作だけ保留し独立作業を続ける",
+        "論点・必要証拠・判断者を記録"
+      ],
+      "public_evidence": [],
+      "not_proven": [
+        "この記述だけで現行実装・自律性・心理効果・全業務の適合を認定しない。"
+      ]
+    },
+    {
+      "scenario_id": "CASE-004",
+      "name": "指示が曖昧である",
+      "status": "DESIGN_ONLY",
+      "steps": [
+        "状況認識: 曖昧な対象と結果を識別",
+        "既存資料から解決できる情報を取得",
+        "許容される解釈と影響を列挙",
+        "公開・費用・不可逆性の変化を確認",
+        "影響がある一点を確認する",
+        "回答まで依存操作を保留",
+        "質問と確定範囲を記録"
+      ],
+      "public_evidence": [],
+      "not_proven": [
+        "この記述だけで現行実装・自律性・心理効果・全業務の適合を認定しない。"
+      ]
+    },
+    {
+      "scenario_id": "CASE-005",
+      "name": "余暇時間が発生する",
+      "status": "DESIGN_ONLY",
+      "steps": [
+        "状況認識: 実際の余裕と未完了任務を確認",
+        "関連する有効な個別許可を取得",
+        "既存範囲の活動・非活動・保留を候補化",
+        "期限・資源・安全・通知条件を確認",
+        "何もしない選択も保持",
+        "有効な許可がなければ新しい試験を開始しない",
+        "活動・非活動・不明・欠測を分ける"
+      ],
+      "public_evidence": [],
+      "not_proven": [
+        "この記述だけで現行実装・自律性・心理効果・全業務の適合を認定しない。"
+      ]
+    },
+    {
+      "scenario_id": "CASE-006",
+      "name": "研究テーマを自発提案する",
+      "status": "DESIGN_ONLY",
+      "steps": [
+        "状況認識: 未解決の問いを認識",
+        "研究資料と既存活動を参照",
+        "継続・新規・保留候補を比較",
+        "提案と実験・送信・公開の権限を分ける",
+        "仮説・意義・必要証拠を提示",
+        "承認前に実験・規則変更を実施しない",
+        "提案の未採用状態と次の判断を記録"
+      ],
+      "public_evidence": [],
+      "not_proven": [
+        "この記述だけで現行実装・自律性・心理効果・全業務の適合を認定しない。"
+      ]
+    }
+  ]
+}
