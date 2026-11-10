@@ -50,3 +50,18 @@ VALID / OUT_OF_SCOPE / NOT_YET_EFFECTIVE / EXPIRED / REVOKED / NO_RECORD / INSUF
 ## 安全・検証限界
 
 実サービス書込みを試験しない。合成データのみCIへ渡す。境界試験の成功は任意の入力で誤VALIDゼロを数学的証明しない。自由記述の意味理解、権限真正性、隠れた履歴、全実運用記録、全秘密不存在は証明しない。既存全ファイルSHA照合と変更パス制限を行う。マージ・正式ルール改訂・権限変更・実運用導入は対象外。
+
+## Issue #17 境界補強（2026-11-11 JST）
+
+入力schemaは1.0を保全。出力schemaを1.1とし、input_schema_versionを併記する。厳密な出力消費側は1.1対応が必要。既存decision/consistencyの意味は維持し、実行を主張し日時がnullの場合だけexecutionを不足オブジェクトとする（未実行のHOLD等は従来のnull）。
+
+- decisionとexecutionを個別評価。実行日時欠落は `INSUFFICIENT_EVIDENCE` / `MISSING_EXECUTION_AT` であり、判断VALIDから代用しない。
+- `consistency` は記録欄の矛盾だけ。`evidence_completeness` はモデル評価に必要な欄の不足一覧。`history_authenticity` は常にUNKNOWN。`history_coverage` は入力者の主張であり独立認証ではない。
+- `overall` はPARTIALを維持する。全履歴・実承認の真正性や運用受入を認定しない。実行許可は一切発行しない。
+- AMENDは直前の適用イベントの期限より**前**に効力を持つ場合だけ継続変更として評価する。期限と同時または後の場合は `AMEND_AT_OR_AFTER_EXPIRY` / INSUFFICIENT_EVIDENCE。後続AMENDでこの欠落を消さない。新規承認は別IDのGRANTで表す。
+- 遡及的変更・CORRECTは引き続き不足、取消後変更はCONFLICT。期限nullはschema1.0の明示的無期限を維持し、キー欠落とは区別する。承認versionは出典版のラベルでありイベント版の真正性を認定しない。
+- 将来の非遡及AMENDは適用前の評価を遡って変えない。これは研究上の保守モデルであり法的な変更・延長の一般解ではない。
+
+`python stage3/tools/compare_boundaries.py` は固定main 3733a7e7に対する3反例の旧結果と新結果を保存する。既存CASE-001、既知実行、期限の前/同時/後、別ID再承認、時差、欠測、取消後等を検査する。Stage4・実運用接続は本修正に含めない。
+
+独立監査でUTC正規化が表現範囲を越える年端（0001年/9999年）を追加確認。従来のOverflowErrorによる非構造化終了をValueErrorへ正規化し、CLIはINSUFFICIENT_EVIDENCE・exit2を返す。元の反例と修正後結果は `evidence/issue17/utc-overflow-review.json` に保全。誤VALIDの発生ではなく入力エラー契約のP3修正。

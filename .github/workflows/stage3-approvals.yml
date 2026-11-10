@@ -34,6 +34,7 @@ jobs:
           mkdir -p "$EVIDENCE_DIR"
           test "$(git rev-parse HEAD)" = "$EXPECTED_HEAD"
           python -m unittest discover -s stage3/tools -v 2>&1 | tee "$EVIDENCE_DIR/stage3-unit.log"
+          python stage3/tools/compare_boundaries.py | tee "$EVIDENCE_DIR/issue17-before-after.json"
           python stage3/tools/approval.py stage3/synthetic.json | tee "$EVIDENCE_DIR/synthetic-result.json"
           python -m unittest discover -s stage2/tools -v 2>&1 | tee "$EVIDENCE_DIR/unit.log"
           python -m unittest discover -s stage1/tools -v 2>&1 | tee "$EVIDENCE_DIR/stage1-regression.log"

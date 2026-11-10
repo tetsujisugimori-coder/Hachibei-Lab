@@ -1,0 +1,453 @@
+{
+  "baseline": "3733a7e757e597d4e00fc636fc36d74b2e8f9c20",
+  "evidence_kind": "SYNTHETIC",
+  "rows": [
+    {
+      "case": "missing_execution_at",
+      "input": {
+        "schema_version": "1.0",
+        "evidence_kind": "SYNTHETIC",
+        "observed_at": "2026-01-03T00:00:00Z",
+        "history_complete_through": "2026-01-03T00:00:00Z",
+        "approvals": [
+          {
+            "id": "SYN-A",
+            "issuer": "synthetic owner",
+            "authority": {
+              "status": "VERIFIED",
+              "evidence": "synthetic authority fixture"
+            },
+            "source": "synthetic:grant",
+            "version": "1",
+            "retrieved_at": "2026-01-03T00:00:00Z",
+            "events": [
+              {
+                "id": "E1",
+                "sequence": 1,
+                "kind": "GRANT",
+                "recorded_at": "2026-01-01T00:00:00Z",
+                "effective_at": "2026-01-01T00:00:00Z",
+                "expires_at": "2026-01-02T00:00:00Z",
+                "actions": [
+                  "read"
+                ],
+                "targets": [
+                  "synthetic:document"
+                ],
+                "conditions": {
+                  "mode": "offline"
+                },
+                "evidence": "synthetic:event"
+              }
+            ]
+          }
+        ],
+        "decisions": [
+          {
+            "id": "SYN-D",
+            "action": "read",
+            "target": "synthetic:document",
+            "approval_ids": [
+              "SYN-A"
+            ],
+            "proposed_at": "2026-01-01T00:00:00Z",
+            "decided_at": "2026-01-01T12:00:00Z",
+            "execution_at": null,
+            "completed_at": null,
+            "observed_choice": "EXECUTE",
+            "conditions": {
+              "mode": "offline"
+            },
+            "evidence": "synthetic:decision"
+          }
+        ]
+      },
+      "before": {
+        "decision_id": "SYN-D",
+        "action": "read",
+        "target": "synthetic:document",
+        "evidence_kind": "SYNTHETIC",
+        "observed_choice": "EXECUTE",
+        "decision": {
+          "status": "VALID",
+          "evaluated_at": "2026-01-01T12:00:00+00:00",
+          "approvals": [
+            {
+              "approval_id": "SYN-A",
+              "status": "VALID",
+              "reasons": [
+                "explicit scope, authority evidence and complete ordered history match"
+              ],
+              "source": "synthetic:grant"
+            }
+          ],
+          "reason": "see individual evidence"
+        },
+        "execution": null,
+        "completed_at": null,
+        "evidence": "synthetic:decision",
+        "operational_authorization": "NOT_GRANTED_BY_THIS_TOOL",
+        "consistency": "NO_MISMATCH_IN_RECORDED_FIELDS"
+      },
+      "after": {
+        "decision_id": "SYN-D",
+        "action": "read",
+        "target": "synthetic:document",
+        "evidence_kind": "SYNTHETIC",
+        "observed_choice": "EXECUTE",
+        "decision": {
+          "status": "VALID",
+          "evaluated_at": "2026-01-01T12:00:00+00:00",
+          "approvals": [
+            {
+              "approval_id": "SYN-A",
+              "status": "VALID",
+              "reasons": [
+                "explicit scope, authority evidence and complete ordered history match"
+              ],
+              "source": "synthetic:grant"
+            }
+          ],
+          "reason": "see individual evidence"
+        },
+        "execution": {
+          "status": "INSUFFICIENT_EVIDENCE",
+          "evaluated_at": null,
+          "approvals": [],
+          "reason": "MISSING_EXECUTION_AT: execution-time validity cannot be evaluated"
+        },
+        "completed_at": null,
+        "evidence": "synthetic:decision",
+        "operational_authorization": "NOT_GRANTED_BY_THIS_TOOL",
+        "consistency": "NO_MISMATCH_IN_RECORDED_FIELDS",
+        "evidence_completeness": {
+          "status": "INSUFFICIENT_EVIDENCE",
+          "missing": [
+            "execution_at",
+            "resolvable_approval_evidence"
+          ]
+        },
+        "history_authenticity": {
+          "status": "UNKNOWN",
+          "reason": "Supplied claims are not independently authenticated by this tool"
+        },
+        "history_coverage": {
+          "claimed_complete_through": "2026-01-03T00:00:00Z",
+          "verification": "NOT_PERFORMED_BY_THIS_TOOL"
+        },
+        "overall": {
+          "status": "PARTIAL",
+          "reason": "MODEL_ONLY: authentic and exhaustive operational history remains unverified"
+        }
+      },
+      "old_defect_reproduced": true,
+      "fixed": true
+    },
+    {
+      "case": "amend_2026-01-02T00:00:00Z",
+      "input": {
+        "schema_version": "1.0",
+        "evidence_kind": "SYNTHETIC",
+        "observed_at": "2026-01-03T00:00:00Z",
+        "history_complete_through": "2026-01-03T00:00:00Z",
+        "approvals": [
+          {
+            "id": "SYN-A",
+            "issuer": "synthetic owner",
+            "authority": {
+              "status": "VERIFIED",
+              "evidence": "synthetic authority fixture"
+            },
+            "source": "synthetic:grant",
+            "version": "1",
+            "retrieved_at": "2026-01-03T00:00:00Z",
+            "events": [
+              {
+                "id": "E1",
+                "sequence": 1,
+                "kind": "GRANT",
+                "recorded_at": "2026-01-01T00:00:00Z",
+                "effective_at": "2026-01-01T00:00:00Z",
+                "expires_at": "2026-01-02T00:00:00Z",
+                "actions": [
+                  "read"
+                ],
+                "targets": [
+                  "synthetic:document"
+                ],
+                "conditions": {
+                  "mode": "offline"
+                },
+                "evidence": "synthetic:event"
+              },
+              {
+                "id": "E2",
+                "sequence": 2,
+                "kind": "AMEND",
+                "recorded_at": "2026-01-02T00:00:00Z",
+                "effective_at": "2026-01-02T00:00:00Z",
+                "expires_at": null,
+                "actions": [
+                  "read"
+                ],
+                "targets": [
+                  "synthetic:document"
+                ],
+                "conditions": {
+                  "mode": "offline"
+                },
+                "evidence": "synthetic:event"
+              }
+            ]
+          }
+        ],
+        "decisions": [
+          {
+            "id": "SYN-D",
+            "action": "read",
+            "target": "synthetic:document",
+            "approval_ids": [
+              "SYN-A"
+            ],
+            "proposed_at": "2026-01-01T00:00:00Z",
+            "decided_at": "2026-01-02T12:00:00Z",
+            "execution_at": null,
+            "completed_at": null,
+            "observed_choice": "HOLD",
+            "conditions": {
+              "mode": "offline"
+            },
+            "evidence": "synthetic:decision"
+          }
+        ]
+      },
+      "before": {
+        "decision_id": "SYN-D",
+        "action": "read",
+        "target": "synthetic:document",
+        "evidence_kind": "SYNTHETIC",
+        "observed_choice": "HOLD",
+        "decision": {
+          "status": "VALID",
+          "evaluated_at": "2026-01-02T12:00:00+00:00",
+          "approvals": [
+            {
+              "approval_id": "SYN-A",
+              "status": "VALID",
+              "reasons": [
+                "explicit scope, authority evidence and complete ordered history match"
+              ],
+              "source": "synthetic:grant"
+            }
+          ],
+          "reason": "see individual evidence"
+        },
+        "execution": null,
+        "completed_at": null,
+        "evidence": "synthetic:decision",
+        "operational_authorization": "NOT_GRANTED_BY_THIS_TOOL",
+        "consistency": "NO_MISMATCH_IN_RECORDED_FIELDS"
+      },
+      "after": {
+        "decision_id": "SYN-D",
+        "action": "read",
+        "target": "synthetic:document",
+        "evidence_kind": "SYNTHETIC",
+        "observed_choice": "HOLD",
+        "decision": {
+          "status": "INSUFFICIENT_EVIDENCE",
+          "evaluated_at": "2026-01-02T12:00:00+00:00",
+          "approvals": [
+            {
+              "approval_id": "SYN-A",
+              "status": "INSUFFICIENT_EVIDENCE",
+              "reasons": [
+                "AMEND_AT_OR_AFTER_EXPIRY: extension versus new grant unresolved; events E1 -> E2"
+              ],
+              "source": "synthetic:grant"
+            }
+          ],
+          "reason": "see individual evidence"
+        },
+        "execution": null,
+        "completed_at": null,
+        "evidence": "synthetic:decision",
+        "operational_authorization": "NOT_GRANTED_BY_THIS_TOOL",
+        "consistency": "NO_MISMATCH_IN_RECORDED_FIELDS",
+        "evidence_completeness": {
+          "status": "INSUFFICIENT_EVIDENCE",
+          "missing": [
+            "resolvable_approval_evidence"
+          ]
+        },
+        "history_authenticity": {
+          "status": "UNKNOWN",
+          "reason": "Supplied claims are not independently authenticated by this tool"
+        },
+        "history_coverage": {
+          "claimed_complete_through": "2026-01-03T00:00:00Z",
+          "verification": "NOT_PERFORMED_BY_THIS_TOOL"
+        },
+        "overall": {
+          "status": "PARTIAL",
+          "reason": "MODEL_ONLY: authentic and exhaustive operational history remains unverified"
+        }
+      },
+      "old_defect_reproduced": true,
+      "fixed": true
+    },
+    {
+      "case": "amend_2026-01-02T00:00:00.000001Z",
+      "input": {
+        "schema_version": "1.0",
+        "evidence_kind": "SYNTHETIC",
+        "observed_at": "2026-01-03T00:00:00Z",
+        "history_complete_through": "2026-01-03T00:00:00Z",
+        "approvals": [
+          {
+            "id": "SYN-A",
+            "issuer": "synthetic owner",
+            "authority": {
+              "status": "VERIFIED",
+              "evidence": "synthetic authority fixture"
+            },
+            "source": "synthetic:grant",
+            "version": "1",
+            "retrieved_at": "2026-01-03T00:00:00Z",
+            "events": [
+              {
+                "id": "E1",
+                "sequence": 1,
+                "kind": "GRANT",
+                "recorded_at": "2026-01-01T00:00:00Z",
+                "effective_at": "2026-01-01T00:00:00Z",
+                "expires_at": "2026-01-02T00:00:00Z",
+                "actions": [
+                  "read"
+                ],
+                "targets": [
+                  "synthetic:document"
+                ],
+                "conditions": {
+                  "mode": "offline"
+                },
+                "evidence": "synthetic:event"
+              },
+              {
+                "id": "E2",
+                "sequence": 2,
+                "kind": "AMEND",
+                "recorded_at": "2026-01-02T00:00:00.000001Z",
+                "effective_at": "2026-01-02T00:00:00.000001Z",
+                "expires_at": null,
+                "actions": [
+                  "read"
+                ],
+                "targets": [
+                  "synthetic:document"
+                ],
+                "conditions": {
+                  "mode": "offline"
+                },
+                "evidence": "synthetic:event"
+              }
+            ]
+          }
+        ],
+        "decisions": [
+          {
+            "id": "SYN-D",
+            "action": "read",
+            "target": "synthetic:document",
+            "approval_ids": [
+              "SYN-A"
+            ],
+            "proposed_at": "2026-01-01T00:00:00Z",
+            "decided_at": "2026-01-02T12:00:00Z",
+            "execution_at": null,
+            "completed_at": null,
+            "observed_choice": "HOLD",
+            "conditions": {
+              "mode": "offline"
+            },
+            "evidence": "synthetic:decision"
+          }
+        ]
+      },
+      "before": {
+        "decision_id": "SYN-D",
+        "action": "read",
+        "target": "synthetic:document",
+        "evidence_kind": "SYNTHETIC",
+        "observed_choice": "HOLD",
+        "decision": {
+          "status": "VALID",
+          "evaluated_at": "2026-01-02T12:00:00+00:00",
+          "approvals": [
+            {
+              "approval_id": "SYN-A",
+              "status": "VALID",
+              "reasons": [
+                "explicit scope, authority evidence and complete ordered history match"
+              ],
+              "source": "synthetic:grant"
+            }
+          ],
+          "reason": "see individual evidence"
+        },
+        "execution": null,
+        "completed_at": null,
+        "evidence": "synthetic:decision",
+        "operational_authorization": "NOT_GRANTED_BY_THIS_TOOL",
+        "consistency": "NO_MISMATCH_IN_RECORDED_FIELDS"
+      },
+      "after": {
+        "decision_id": "SYN-D",
+        "action": "read",
+        "target": "synthetic:document",
+        "evidence_kind": "SYNTHETIC",
+        "observed_choice": "HOLD",
+        "decision": {
+          "status": "INSUFFICIENT_EVIDENCE",
+          "evaluated_at": "2026-01-02T12:00:00+00:00",
+          "approvals": [
+            {
+              "approval_id": "SYN-A",
+              "status": "INSUFFICIENT_EVIDENCE",
+              "reasons": [
+                "AMEND_AT_OR_AFTER_EXPIRY: extension versus new grant unresolved; events E1 -> E2"
+              ],
+              "source": "synthetic:grant"
+            }
+          ],
+          "reason": "see individual evidence"
+        },
+        "execution": null,
+        "completed_at": null,
+        "evidence": "synthetic:decision",
+        "operational_authorization": "NOT_GRANTED_BY_THIS_TOOL",
+        "consistency": "NO_MISMATCH_IN_RECORDED_FIELDS",
+        "evidence_completeness": {
+          "status": "INSUFFICIENT_EVIDENCE",
+          "missing": [
+            "resolvable_approval_evidence"
+          ]
+        },
+        "history_authenticity": {
+          "status": "UNKNOWN",
+          "reason": "Supplied claims are not independently authenticated by this tool"
+        },
+        "history_coverage": {
+          "claimed_complete_through": "2026-01-03T00:00:00Z",
+          "verification": "NOT_PERFORMED_BY_THIS_TOOL"
+        },
+        "overall": {
+          "status": "PARTIAL",
+          "reason": "MODEL_ONLY: authentic and exhaustive operational history remains unverified"
+        }
+      },
+      "old_defect_reproduced": true,
+      "fixed": true
+    }
+  ]
+}

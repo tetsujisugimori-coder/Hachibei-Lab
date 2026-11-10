@@ -13,7 +13,10 @@ def instant(value):
         raise ValueError('timestamp requires explicit timezone and seconds')
     if value[-1] != 'Z' and (int(value[-5:-3]) > 23 or int(value[-2:]) > 59):
         raise ValueError('invalid timezone offset components')
-    return datetime.fromisoformat(value.replace('Z', '+00:00')).astimezone(timezone.utc)
+    try:
+        return datetime.fromisoformat(value.replace('Z', '+00:00')).astimezone(timezone.utc)
+    except OverflowError as error:
+        raise ValueError('timestamp outside supported UTC range') from error
 
 
 def exact_keys(obj, required):
@@ -112,6 +115,10 @@ def approval_at(a, d, when, coverage):
     applicable = [e for e in events if instant(e['effective_at']) <= when]
     if not applicable:
         return 'NOT_YET_EFFECTIVE', ['grant not effective']
+    # AMEND cannot revive an expired chain. A separate GRANT ID is required.
+    for previous, current in zip(applicable, applicable[1:]):
+        if current['kind'] == 'AMEND' and previous['expires_at'] is not None and instant(current['effective_at']) >= instant(previous['expires_at']):
+            return 'INSUFFICIENT_EVIDENCE', ['AMEND_AT_OR_AFTER_EXPIRY: extension versus new grant unresolved; events '+previous['id']+' -> '+current['id']]
     e = applicable[-1]
     if e['kind']=='REVOKE':
         return 'REVOKED', ['revocation effective at or before evaluation']
@@ -150,12 +157,31 @@ def evaluate(data):
     for d in data['decisions']:
         decision=at(data,d,instant(d['decided_at']))
         execution=at(data,d,instant(d['execution_at'])) if d['execution_at'] else None
+        missing = []
+        if d['observed_choice'] == 'EXECUTE' and execution is None:
+            missing.append('execution_at')
+            execution = {'status':'INSUFFICIENT_EVIDENCE', 'evaluated_at':None,
+                         'approvals':[], 'reason':'MISSING_EXECUTION_AT: execution-time validity cannot be evaluated'}
+        evaluated = [decision] + ([execution] if execution is not None else [])
+        if any(x['status'] in ('INSUFFICIENT_EVIDENCE','NO_RECORD','CONFLICT') for x in evaluated):
+            missing.append('resolvable_approval_evidence')
+        recorded_execution = d['execution_at'] is not None
+        consistency = ('MISMATCH' if (d['observed_choice']=='EXECUTE' and
+                       (decision['status']!='VALID' or recorded_execution and execution['status']!='VALID')) or
+                       (recorded_execution and d['observed_choice'] in ('DECLINE','REFUSE','HOLD')) else
+                       'UNKNOWN' if d['observed_choice']=='UNKNOWN' else 'NO_MISMATCH_IN_RECORDED_FIELDS')
+        completeness = 'INSUFFICIENT_EVIDENCE' if missing or d['observed_choice']=='UNKNOWN' else 'SUFFICIENT_FOR_MODEL_EVALUATION'
         rows.append({'decision_id':d['id'],'action':d['action'],'target':d['target'],
                      'evidence_kind':data['evidence_kind'],'observed_choice':d['observed_choice'],
                      'decision':decision,'execution':execution,'completed_at':d['completed_at'],
                      'evidence':d['evidence'], 'operational_authorization':'NOT_GRANTED_BY_THIS_TOOL',
-                     'consistency':'MISMATCH' if (d['observed_choice']=='EXECUTE' and (decision['status']!='VALID' or execution and execution['status']!='VALID')) or (execution and d['observed_choice'] in ('DECLINE','REFUSE','HOLD')) else 'UNKNOWN' if d['observed_choice']=='UNKNOWN' else 'NO_MISMATCH_IN_RECORDED_FIELDS'})
-    return {'schema_version':'1.0','results':rows,'limits':['Authority and history completeness are supplied evidence claims, not authenticated by this engine.','No external operations performed.','A valid decision does not imply valid authority at later execution.']}
+                     'consistency':consistency,
+                     'evidence_completeness':{'status':completeness,'missing':missing},
+                     'history_authenticity':{'status':'UNKNOWN','reason':'Supplied claims are not independently authenticated by this tool'},
+                     'history_coverage':{'claimed_complete_through':data['history_complete_through'],'verification':'NOT_PERFORMED_BY_THIS_TOOL'},
+                     'overall':{'status':'PARTIAL','reason':'MODEL_ONLY: authentic and exhaustive operational history remains unverified'}})
+
+    return {'schema_version':'1.1','input_schema_version':'1.0','results':rows,'limits':['Authority and history completeness are supplied evidence claims, not authenticated by this engine.','No external operations performed.','A valid decision does not imply valid authority at later execution.']}
 
 
 def explain(result):

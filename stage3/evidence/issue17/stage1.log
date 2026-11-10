@@ -1,0 +1,32 @@
+test_duplicate_id (test_inventory.InventoryTests.test_duplicate_id) ... ok
+test_false_current (test_inventory.InventoryTests.test_false_current) ... ok
+test_forged_hash (test_inventory.InventoryTests.test_forged_hash) ... ok
+test_invented_coverage (test_inventory.InventoryTests.test_invented_coverage) ... ok
+test_invented_version (test_inventory.InventoryTests.test_invented_version) ... ok
+test_missing_domain (test_inventory.InventoryTests.test_missing_domain) ... ok
+test_missing_required (test_inventory.InventoryTests.test_missing_required) ... ok
+test_plan_as_original (test_inventory.InventoryTests.test_plan_as_original) ... ok
+test_private_claim_public (test_inventory.InventoryTests.test_private_claim_public) ... ok
+test_private_row (test_inventory.InventoryTests.test_private_row) ... ok
+test_timestamp_as_revision (test_inventory.InventoryTests.test_timestamp_as_revision) ... ok
+test_unknown_origin (test_inventory.InventoryTests.test_unknown_origin) ... ok
+test_valid_fixture (test_inventory.InventoryTests.test_valid_fixture) ... ok
+test_wrong_domain_count (test_inventory.InventoryTests.test_wrong_domain_count) ... ok
+test_changed_original_is_rejected (test_inventory.SafetyTests.test_changed_original_is_rejected) ... ok
+test_code_is_not_exempt_from_scan (test_inventory.SafetyTests.test_code_is_not_exempt_from_scan) ... ok
+test_email (test_inventory.SafetyTests.test_email) ... ok
+test_internal_id (test_inventory.SafetyTests.test_internal_id) ... ok
+test_local_path (test_inventory.SafetyTests.test_local_path) ... ok
+test_old_evidence_is_immutable (test_inventory.SafetyTests.test_old_evidence_is_immutable) ... ok
+test_only_one_ci_path_is_allowed (test_inventory.SafetyTests.test_only_one_ci_path_is_allowed) ... ok
+test_private_page_url (test_inventory.SafetyTests.test_private_page_url) ... ok
+test_public_text_is_allowed (test_inventory.SafetyTests.test_public_text_is_allowed) ... ok
+test_query_url (test_inventory.SafetyTests.test_query_url) ... ok
+test_readme_change_outside_scope (test_inventory.SafetyTests.test_readme_change_outside_scope) ... ok
+test_source_code_change_outside_scope (test_inventory.SafetyTests.test_source_code_change_outside_scope) ... ok
+test_workflow_is_also_scanned (test_inventory.SafetyTests.test_workflow_is_also_scanned) ... ok
+
+----------------------------------------------------------------------
+Ran 27 tests in 0.192s
+
+OK
