@@ -152,12 +152,22 @@ def evaluate(data):
                      'evidence_kind':data['evidence_kind'],'observed_choice':d['observed_choice'],
                      'decision':decision,'execution':execution,'completed_at':d['completed_at'],
                      'evidence':d['evidence'], 'operational_authorization':'NOT_GRANTED_BY_THIS_TOOL',
-                     'consistency':'MISMATCH' if d['observed_choice']=='EXECUTE' and (decision['status']!='VALID' or execution and execution['status']!='VALID') else 'UNKNOWN' if d['observed_choice']=='UNKNOWN' else 'NO_MISMATCH_IN_RECORDED_FIELDS'})
+                     'consistency':'MISMATCH' if (d['observed_choice']=='EXECUTE' and (decision['status']!='VALID' or execution and execution['status']!='VALID')) or (execution and d['observed_choice'] in ('DECLINE','REFUSE','HOLD')) else 'UNKNOWN' if d['observed_choice']=='UNKNOWN' else 'NO_MISMATCH_IN_RECORDED_FIELDS'})
     return {'schema_version':'1.0','results':rows,'limits':['Authority and history completeness are supplied evidence claims, not authenticated by this engine.','No external operations performed.','A valid decision does not imply valid authority at later execution.']}
 
 
 def explain(result):
-    return '\n'.join(f"{r['decision_id']} {r['action']} {r['target']}: decision={r['decision']['status']}; execution={r['execution']['status'] if r['execution'] else 'NOT_OBSERVED'}; evidence={r['evidence']}\n" + '\n'.join(f"  {a['approval_id']}: {a['status']} ({'; '.join(a['reasons'])}); source={a['source']}" for a in r['decision']['approvals']) for r in result['results'])
+    lines=[]
+    for r in result['results']:
+        lines.append(f"{r['decision_id']} {r['action']} {r['target']}: choice={r['observed_choice']}; consistency={r['consistency']}; evidence={r['evidence']}")
+        for phase in ('decision', 'execution'):
+            item=r[phase]
+            if not item:
+                lines.append(f"  {phase}: NOT_OBSERVED")
+                continue
+            lines.append(f"  {phase}: {item['status']} at {item['evaluated_at']}; {item['reason']}")
+            lines.extend(f"    {a['approval_id']}: {a['status']} ({'; '.join(a['reasons'])}); source={a['source']}" for a in item['approvals'])
+    return '\n'.join(lines)
 
 
 if __name__=='__main__':

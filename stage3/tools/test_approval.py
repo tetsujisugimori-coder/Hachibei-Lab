@@ -90,4 +90,8 @@ class ApprovalTests(unittest.TestCase):
     def test_stage2_case_ids(self):
         root=Path(__file__).resolve().parents[2];mapping=json.loads((root/'stage3/case-map.json').read_text());text=(root/'stage2/behavior-model.md').read_text();self.assertEqual(len(mapping),6)
         for row in mapping:self.assertIn(row['stage2_case'],text);self.assertEqual(row['kind'],'DESIGN_ONLY')
+    def test_execution_despite_hold(self):
+        d=fixture();d['decisions'][0]['execution_at']='2026-01-01T13:00:00Z';self.assertEqual(evaluate(d)['results'][0]['consistency'],'MISMATCH')
+    def test_execution_reason_explained(self):
+        d=fixture();event(d,when='2026-01-01T13:00:00Z');d['decisions'][0]['execution_at']='2026-01-01T14:00:00Z';self.assertIn('revocation effective',explain(evaluate(d)))
     def test_fixture_json(self): self.assertEqual(state(json.loads((Path(__file__).parents[1]/'synthetic.json').read_text())),'VALID')
