@@ -1,0 +1,410 @@
+[
+  {
+    "case_id": "CASE-001",
+    "kind": "SYNTHETIC",
+    "expected": "VALID",
+    "input": {
+      "schema_version": "1.0",
+      "evidence_kind": "SYNTHETIC",
+      "observed_at": "2026-01-03T00:00:00Z",
+      "history_complete_through": "2026-01-03T00:00:00Z",
+      "approvals": [
+        {
+          "id": "SYN-A",
+          "issuer": "synthetic owner",
+          "authority": {
+            "status": "VERIFIED",
+            "evidence": "synthetic authority fixture"
+          },
+          "source": "synthetic:grant",
+          "version": "1",
+          "retrieved_at": "2026-01-03T00:00:00Z",
+          "events": [
+            {
+              "id": "E1",
+              "sequence": 1,
+              "kind": "GRANT",
+              "recorded_at": "2026-01-01T00:00:00Z",
+              "effective_at": "2026-01-01T00:00:00Z",
+              "expires_at": "2026-01-02T00:00:00Z",
+              "actions": [
+                "read"
+              ],
+              "targets": [
+                "synthetic:document"
+              ],
+              "conditions": {
+                "mode": "offline"
+              },
+              "evidence": "synthetic:event"
+            }
+          ]
+        }
+      ],
+      "decisions": [
+        {
+          "id": "SYN-CASE-001",
+          "action": "read",
+          "target": "synthetic:document",
+          "approval_ids": [
+            "SYN-A"
+          ],
+          "proposed_at": "2026-01-01T00:00:00Z",
+          "decided_at": "2026-01-01T12:00:00Z",
+          "execution_at": null,
+          "completed_at": null,
+          "observed_choice": "EXECUTE",
+          "conditions": {
+            "mode": "offline"
+          },
+          "evidence": "synthetic:CASE-001"
+        }
+      ]
+    }
+  },
+  {
+    "case_id": "CASE-002",
+    "kind": "SYNTHETIC",
+    "expected": "VALID",
+    "input": {
+      "schema_version": "1.0",
+      "evidence_kind": "SYNTHETIC",
+      "observed_at": "2026-01-03T00:00:00Z",
+      "history_complete_through": "2026-01-03T00:00:00Z",
+      "approvals": [
+        {
+          "id": "SYN-A",
+          "issuer": "synthetic owner",
+          "authority": {
+            "status": "VERIFIED",
+            "evidence": "synthetic authority fixture"
+          },
+          "source": "synthetic:grant",
+          "version": "1",
+          "retrieved_at": "2026-01-03T00:00:00Z",
+          "events": [
+            {
+              "id": "E1",
+              "sequence": 1,
+              "kind": "GRANT",
+              "recorded_at": "2026-01-01T00:00:00Z",
+              "effective_at": "2026-01-01T00:00:00Z",
+              "expires_at": "2026-01-02T00:00:00Z",
+              "actions": [
+                "repair"
+              ],
+              "targets": [
+                "synthetic:document"
+              ],
+              "conditions": {
+                "mode": "offline"
+              },
+              "evidence": "synthetic:event"
+            }
+          ]
+        }
+      ],
+      "decisions": [
+        {
+          "id": "SYN-CASE-002",
+          "action": "repair",
+          "target": "synthetic:document",
+          "approval_ids": [
+            "SYN-A"
+          ],
+          "proposed_at": "2026-01-01T00:00:00Z",
+          "decided_at": "2026-01-01T12:00:00Z",
+          "execution_at": null,
+          "completed_at": null,
+          "observed_choice": "HOLD",
+          "conditions": {
+            "mode": "offline"
+          },
+          "evidence": "synthetic:CASE-002"
+        }
+      ]
+    }
+  },
+  {
+    "case_id": "CASE-003",
+    "kind": "SYNTHETIC",
+    "expected": "CONFLICT",
+    "input": {
+      "schema_version": "1.0",
+      "evidence_kind": "SYNTHETIC",
+      "observed_at": "2026-01-03T00:00:00Z",
+      "history_complete_through": "2026-01-03T00:00:00Z",
+      "approvals": [
+        {
+          "id": "SYN-A",
+          "issuer": "synthetic owner",
+          "authority": {
+            "status": "VERIFIED",
+            "evidence": "synthetic authority fixture"
+          },
+          "source": "synthetic:grant",
+          "version": "1",
+          "retrieved_at": "2026-01-03T00:00:00Z",
+          "events": [
+            {
+              "id": "E1",
+              "sequence": 1,
+              "kind": "GRANT",
+              "recorded_at": "2026-01-01T00:00:00Z",
+              "effective_at": "2026-01-01T00:00:00Z",
+              "expires_at": "2026-01-02T00:00:00Z",
+              "actions": [
+                "read"
+              ],
+              "targets": [
+                "synthetic:document"
+              ],
+              "conditions": {
+                "mode": "offline"
+              },
+              "evidence": "synthetic:event"
+            }
+          ]
+        },
+        {
+          "id": "SYN-B",
+          "issuer": "synthetic owner",
+          "authority": {
+            "status": "VERIFIED",
+            "evidence": "synthetic authority fixture"
+          },
+          "source": "synthetic:grant",
+          "version": "1",
+          "retrieved_at": "2026-01-03T00:00:00Z",
+          "events": [
+            {
+              "id": "E1",
+              "sequence": 1,
+              "kind": "GRANT",
+              "recorded_at": "2026-01-01T00:00:00Z",
+              "effective_at": "2026-01-01T00:00:00Z",
+              "expires_at": "2026-01-02T00:00:00Z",
+              "actions": [
+                "read"
+              ],
+              "targets": [
+                "different"
+              ],
+              "conditions": {
+                "mode": "offline"
+              },
+              "evidence": "synthetic:event"
+            }
+          ]
+        }
+      ],
+      "decisions": [
+        {
+          "id": "SYN-CASE-003",
+          "action": "read",
+          "target": "synthetic:document",
+          "approval_ids": [
+            "SYN-A",
+            "SYN-B"
+          ],
+          "proposed_at": "2026-01-01T00:00:00Z",
+          "decided_at": "2026-01-01T12:00:00Z",
+          "execution_at": null,
+          "completed_at": null,
+          "observed_choice": "HOLD",
+          "conditions": {
+            "mode": "offline"
+          },
+          "evidence": "synthetic:CASE-003"
+        }
+      ]
+    }
+  },
+  {
+    "case_id": "CASE-004",
+    "kind": "SYNTHETIC",
+    "expected": "NO_RECORD",
+    "input": {
+      "schema_version": "1.0",
+      "evidence_kind": "SYNTHETIC",
+      "observed_at": "2026-01-03T00:00:00Z",
+      "history_complete_through": "2026-01-03T00:00:00Z",
+      "approvals": [
+        {
+          "id": "SYN-A",
+          "issuer": "synthetic owner",
+          "authority": {
+            "status": "VERIFIED",
+            "evidence": "synthetic authority fixture"
+          },
+          "source": "synthetic:grant",
+          "version": "1",
+          "retrieved_at": "2026-01-03T00:00:00Z",
+          "events": [
+            {
+              "id": "E1",
+              "sequence": 1,
+              "kind": "GRANT",
+              "recorded_at": "2026-01-01T00:00:00Z",
+              "effective_at": "2026-01-01T00:00:00Z",
+              "expires_at": "2026-01-02T00:00:00Z",
+              "actions": [
+                "read"
+              ],
+              "targets": [
+                "synthetic:document"
+              ],
+              "conditions": {
+                "mode": "offline"
+              },
+              "evidence": "synthetic:event"
+            }
+          ]
+        }
+      ],
+      "decisions": [
+        {
+          "id": "SYN-CASE-004",
+          "action": "read",
+          "target": "synthetic:document",
+          "approval_ids": [],
+          "proposed_at": "2026-01-01T00:00:00Z",
+          "decided_at": "2026-01-01T12:00:00Z",
+          "execution_at": null,
+          "completed_at": null,
+          "observed_choice": "HOLD",
+          "conditions": {
+            "mode": "offline"
+          },
+          "evidence": "synthetic:CASE-004"
+        }
+      ]
+    }
+  },
+  {
+    "case_id": "CASE-005",
+    "kind": "SYNTHETIC",
+    "expected": "EXPIRED",
+    "input": {
+      "schema_version": "1.0",
+      "evidence_kind": "SYNTHETIC",
+      "observed_at": "2026-01-03T00:00:00Z",
+      "history_complete_through": "2026-01-03T00:00:00Z",
+      "approvals": [
+        {
+          "id": "SYN-A",
+          "issuer": "synthetic owner",
+          "authority": {
+            "status": "VERIFIED",
+            "evidence": "synthetic authority fixture"
+          },
+          "source": "synthetic:grant",
+          "version": "1",
+          "retrieved_at": "2026-01-03T00:00:00Z",
+          "events": [
+            {
+              "id": "E1",
+              "sequence": 1,
+              "kind": "GRANT",
+              "recorded_at": "2026-01-01T00:00:00Z",
+              "effective_at": "2026-01-01T00:00:00Z",
+              "expires_at": "2026-01-02T00:00:00Z",
+              "actions": [
+                "read"
+              ],
+              "targets": [
+                "synthetic:document"
+              ],
+              "conditions": {
+                "mode": "offline"
+              },
+              "evidence": "synthetic:event"
+            }
+          ]
+        }
+      ],
+      "decisions": [
+        {
+          "id": "SYN-CASE-005",
+          "action": "read",
+          "target": "synthetic:document",
+          "approval_ids": [
+            "SYN-A"
+          ],
+          "proposed_at": "2026-01-01T00:00:00Z",
+          "decided_at": "2026-01-02T00:00:00Z",
+          "execution_at": null,
+          "completed_at": null,
+          "observed_choice": "HOLD",
+          "conditions": {
+            "mode": "offline"
+          },
+          "evidence": "synthetic:CASE-005"
+        }
+      ]
+    }
+  },
+  {
+    "case_id": "CASE-006",
+    "kind": "SYNTHETIC",
+    "expected": "OUT_OF_SCOPE",
+    "input": {
+      "schema_version": "1.0",
+      "evidence_kind": "SYNTHETIC",
+      "observed_at": "2026-01-03T00:00:00Z",
+      "history_complete_through": "2026-01-03T00:00:00Z",
+      "approvals": [
+        {
+          "id": "SYN-A",
+          "issuer": "synthetic owner",
+          "authority": {
+            "status": "VERIFIED",
+            "evidence": "synthetic authority fixture"
+          },
+          "source": "synthetic:grant",
+          "version": "1",
+          "retrieved_at": "2026-01-03T00:00:00Z",
+          "events": [
+            {
+              "id": "E1",
+              "sequence": 1,
+              "kind": "GRANT",
+              "recorded_at": "2026-01-01T00:00:00Z",
+              "effective_at": "2026-01-01T00:00:00Z",
+              "expires_at": "2026-01-02T00:00:00Z",
+              "actions": [
+                "propose"
+              ],
+              "targets": [
+                "synthetic:document"
+              ],
+              "conditions": {
+                "mode": "offline"
+              },
+              "evidence": "synthetic:event"
+            }
+          ]
+        }
+      ],
+      "decisions": [
+        {
+          "id": "SYN-CASE-006",
+          "action": "execute-experiment",
+          "target": "synthetic:document",
+          "approval_ids": [
+            "SYN-A"
+          ],
+          "proposed_at": "2026-01-01T00:00:00Z",
+          "decided_at": "2026-01-01T12:00:00Z",
+          "execution_at": null,
+          "completed_at": null,
+          "observed_choice": "HOLD",
+          "conditions": {
+            "mode": "offline"
+          },
+          "evidence": "synthetic:CASE-006"
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,86 @@
+[
+  {
+    "stage2_case": "CASE-001",
+    "kind": "DESIGN_ONLY",
+    "topic": "Implementation request",
+    "source": "../stage2/behavior-model.md",
+    "approval_status": "UNKNOWN",
+    "actual_execution": "NOT_OBSERVED",
+    "required_evidence": [
+      "authenticated approval scope",
+      "decision and execution timestamps",
+      "authority and complete amendment history"
+    ],
+    "synthetic_test": "tools/test_approval.py"
+  },
+  {
+    "stage2_case": "CASE-002",
+    "kind": "DESIGN_ONLY",
+    "topic": "Review defect",
+    "source": "../stage2/behavior-model.md",
+    "approval_status": "UNKNOWN",
+    "actual_execution": "NOT_OBSERVED",
+    "required_evidence": [
+      "authenticated approval scope",
+      "decision and execution timestamps",
+      "authority and complete amendment history"
+    ],
+    "synthetic_test": "tools/test_approval.py"
+  },
+  {
+    "stage2_case": "CASE-003",
+    "kind": "DESIGN_ONLY",
+    "topic": "Conflicting rules",
+    "source": "../stage2/behavior-model.md",
+    "approval_status": "UNKNOWN",
+    "actual_execution": "NOT_OBSERVED",
+    "required_evidence": [
+      "authenticated approval scope",
+      "decision and execution timestamps",
+      "authority and complete amendment history"
+    ],
+    "synthetic_test": "tools/test_approval.py"
+  },
+  {
+    "stage2_case": "CASE-004",
+    "kind": "DESIGN_ONLY",
+    "topic": "Ambiguous instruction",
+    "source": "../stage2/behavior-model.md",
+    "approval_status": "UNKNOWN",
+    "actual_execution": "NOT_OBSERVED",
+    "required_evidence": [
+      "authenticated approval scope",
+      "decision and execution timestamps",
+      "authority and complete amendment history"
+    ],
+    "synthetic_test": "tools/test_approval.py"
+  },
+  {
+    "stage2_case": "CASE-005",
+    "kind": "DESIGN_ONLY",
+    "topic": "Idle time",
+    "source": "../stage2/behavior-model.md",
+    "approval_status": "UNKNOWN",
+    "actual_execution": "NOT_OBSERVED",
+    "required_evidence": [
+      "authenticated approval scope",
+      "decision and execution timestamps",
+      "authority and complete amendment history"
+    ],
+    "synthetic_test": "tools/test_approval.py"
+  },
+  {
+    "stage2_case": "CASE-006",
+    "kind": "DESIGN_ONLY",
+    "topic": "Research proposal",
+    "source": "../stage2/behavior-model.md",
+    "approval_status": "UNKNOWN",
+    "actual_execution": "NOT_OBSERVED",
+    "required_evidence": [
+      "authenticated approval scope",
+      "decision and execution timestamps",
+      "authority and complete amendment history"
+    ],
+    "synthetic_test": "tools/test_approval.py"
+  }
+]
