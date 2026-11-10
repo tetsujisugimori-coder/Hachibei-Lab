@@ -1,0 +1,52 @@
+name: Stage 2 research relationships
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    paths:
+      - 'stage2/**'
+      - '.github/workflows/stage2-relations.yml'
+permissions:
+  contents: read
+jobs:
+  public-relations:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      EXPECTED_HEAD: ${{ github.event.pull_request.head.sha }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install jsonschema==4.26.0
+      - name: Validate exact public commit
+        id: checks
+        env:
+          EVIDENCE_DIR: ${{ runner.temp }}/stage2-evidence
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$EVIDENCE_DIR"
+          test "$(git rev-parse HEAD)" = "$EXPECTED_HEAD"
+          python -m unittest discover -s stage2/tools -v 2>&1 | tee "$EVIDENCE_DIR/unit.log"
+          python -m unittest discover -s stage1/tools -v 2>&1 | tee "$EVIDENCE_DIR/stage1-regression.log"
+          python stage2/tools/validate_relations.py | tee "$EVIDENCE_DIR/validation.json"
+          git diff --check e485df5718d6324c1ad2592d61833f5217c56d57...HEAD 2>&1 | tee "$EVIDENCE_DIR/diff-check.log"
+          git diff --check
+      - name: Bind evidence
+        if: always()
+        env:
+          EVIDENCE_DIR: ${{ runner.temp }}/stage2-evidence
+          CHECK_OUTCOME: ${{ steps.checks.outcome }}
+        run: python stage2/tools/bind_evidence.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: stage2-public-evidence-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/stage2-evidence/
+          if-no-files-found: error
