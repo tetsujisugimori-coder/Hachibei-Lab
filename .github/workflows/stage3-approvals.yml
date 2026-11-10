@@ -1,0 +1,54 @@
+name: Stage 3 approval validity
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    paths:
+      - 'stage3/**'
+      - '.github/workflows/stage3-approvals.yml'
+permissions:
+  contents: read
+jobs:
+  approval-validity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      EXPECTED_HEAD: ${{ github.event.pull_request.head.sha }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install jsonschema==4.26.0
+      - name: Validate exact public commit
+        id: checks
+        env:
+          EVIDENCE_DIR: ${{ runner.temp }}/stage3-evidence
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$EVIDENCE_DIR"
+          test "$(git rev-parse HEAD)" = "$EXPECTED_HEAD"
+          python -m unittest discover -s stage3/tools -v 2>&1 | tee "$EVIDENCE_DIR/stage3-unit.log"
+          python stage3/tools/approval.py stage3/synthetic.json | tee "$EVIDENCE_DIR/synthetic-result.json"
+          python -m unittest discover -s stage2/tools -v 2>&1 | tee "$EVIDENCE_DIR/unit.log"
+          python -m unittest discover -s stage1/tools -v 2>&1 | tee "$EVIDENCE_DIR/stage1-regression.log"
+          python stage3/tools/check_repository.py | tee "$EVIDENCE_DIR/validation.json"
+          git diff --check 8cf43cfa5d53cda13178ed7cf02dd5a747a40dc9...HEAD 2>&1 | tee "$EVIDENCE_DIR/diff-check.log"
+          git diff --check
+      - name: Bind evidence
+        if: always()
+        env:
+          EVIDENCE_DIR: ${{ runner.temp }}/stage3-evidence
+          CHECK_OUTCOME: ${{ steps.checks.outcome }}
+        run: python stage3/tools/bind_evidence.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: stage3-approval-evidence-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/stage3-evidence/
+          if-no-files-found: error

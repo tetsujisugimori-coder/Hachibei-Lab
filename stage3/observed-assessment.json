@@ -1,0 +1,18 @@
+{
+  "checked_at": "2026-11-10T03:35:00Z",
+  "kind": "OBSERVED",
+  "sources": [
+    "https://github.com/tetsujisugimori-coder/Hachibei-Lab/pull/3",
+    "https://github.com/tetsujisugimori-coder/Hachibei-Lab/pull/14",
+    "https://github.com/tetsujisugimori-coder/Hachibei-Lab/actions/runs/42728379832"
+  ],
+  "observed_events": "Public submission, review, CI and merge metadata exist; metadata are not decision timestamps.",
+  "decision_time": "UNKNOWN",
+  "authenticated_approval_scope": "UNKNOWN",
+  "complete_revocation_history": "UNKNOWN",
+  "applicable_authority": "UNKNOWN",
+  "operational_validity": "UNKNOWN",
+  "operational_coverage": "UNKNOWN",
+  "research_judgement": "PARTIAL",
+  "private_material_published": false
+}
