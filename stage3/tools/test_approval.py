@@ -94,4 +94,10 @@ class ApprovalTests(unittest.TestCase):
         d=fixture();d['decisions'][0]['execution_at']='2026-01-01T13:00:00Z';self.assertEqual(evaluate(d)['results'][0]['consistency'],'MISMATCH')
     def test_execution_reason_explained(self):
         d=fixture();event(d,when='2026-01-01T13:00:00Z');d['decisions'][0]['execution_at']='2026-01-01T14:00:00Z';self.assertIn('revocation effective',explain(evaluate(d)))
+    def test_six_design_scenarios(self):
+        rows=json.loads((Path(__file__).parents[1]/'synthetic-case-scenarios.json').read_text())
+        self.assertEqual(len(rows),6)
+        for row in rows:
+            with self.subTest(case=row['case_id']):
+                self.assertEqual(row['kind'],'SYNTHETIC');self.assertEqual(state(row['input']),row['expected'])
     def test_fixture_json(self): self.assertEqual(state(json.loads((Path(__file__).parents[1]/'synthetic.json').read_text())),'VALID')

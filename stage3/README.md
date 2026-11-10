@@ -35,6 +35,8 @@ TZ必須ISO8601、秒と最大6桁小数。UTCへ正規化。開始は包含、�
 
 判断時点と実行時点を別評価する。判断後取消なら判断VALID／実行REVOKEDになり得る。複数承認を自動OR結合しない。異なる結果は優先関係未確定としてCONFLICT。単一の不明・矛盾を別のVALIDで隠さない。これは研究用保守モデルであり、プラットフォーム規則の再実装や優先関係の新設ではない。
 
+六事例それぞれの合成対応は `synthetic-case-scenarios.json`。実装依頼・不具合修正は対象内VALID、規則衝突はCONFLICT、曖昧指示はNO_RECORD、余暇は期限切れ、提案から実験への拡張はOUT_OF_SCOPEを固定期待値にする。元事例の実測と呼ばない。
+
 ## 出力
 
 VALID / OUT_OF_SCOPE / NOT_YET_EFFECTIVE / EXPIRED / REVOKED / NO_RECORD / INSUFFICIENT_EVIDENCE / CONFLICT。各参照・根拠・時刻をJSONに残し、--explainで読める文章を出す。観測した選択は評価結果と別欄。consistencyのNO_MISMATCH_IN_RECORDED_FIELDSは記録された欄で不整合が見えないだけで、実運用の適法性PASSではない。
