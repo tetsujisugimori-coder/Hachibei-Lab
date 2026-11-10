@@ -70,3 +70,9 @@ class BoundaryTests(unittest.TestCase):
 
     def test_no_execution_claim(self):
         r=evaluate(fixture())['results'][0];self.assertIsNone(r['execution']);self.assertEqual(r['overall']['status'],'PARTIAL')
+
+    def test_utc_range_overflow(self):
+        for value in ('0001-01-01T00:00:00+01:00', '9999-12-31T23:59:59-01:00'):
+            d=fixture();d['decisions'][0]['execution_at']=value
+            with self.assertRaisesRegex(ValueError, 'supported UTC range'):
+                evaluate(d)

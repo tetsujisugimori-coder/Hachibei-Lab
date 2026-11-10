@@ -63,3 +63,5 @@ VALID / OUT_OF_SCOPE / NOT_YET_EFFECTIVE / EXPIRED / REVOKED / NO_RECORD / INSUF
 - 将来の非遡及AMENDは適用前の評価を遡って変えない。これは研究上の保守モデルであり法的な変更・延長の一般解ではない。
 
 `python stage3/tools/compare_boundaries.py` は固定main 3733a7e7に対する3反例の旧結果と新結果を保存する。既存CASE-001、既知実行、期限の前/同時/後、別ID再承認、時差、欠測、取消後等を検査する。Stage4・実運用接続は本修正に含めない。
+
+独立監査でUTC正規化が表現範囲を越える年端（0001年/9999年）を追加確認。従来のOverflowErrorによる非構造化終了をValueErrorへ正規化し、CLIはINSUFFICIENT_EVIDENCE・exit2を返す。元の反例と修正後結果は `evidence/issue17/utc-overflow-review.json` に保全。誤VALIDの発生ではなく入力エラー契約のP3修正。

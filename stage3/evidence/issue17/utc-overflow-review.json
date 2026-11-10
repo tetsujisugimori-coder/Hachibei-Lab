@@ -1,0 +1,37 @@
+{
+  "kind": "SYNTHETIC",
+  "rows": [
+    {
+      "before": {
+        "exception": "OverflowError",
+        "message": "date value out of range"
+      },
+      "after": {
+        "exception": "ValueError",
+        "message": "timestamp outside supported UTC range"
+      },
+      "value": "0001-01-01T00:00:00+01:00",
+      "cli_exit": 2,
+      "cli_output": {
+        "status": "INSUFFICIENT_EVIDENCE",
+        "input_error": "timestamp outside supported UTC range"
+      }
+    },
+    {
+      "before": {
+        "exception": "OverflowError",
+        "message": "date value out of range"
+      },
+      "after": {
+        "exception": "ValueError",
+        "message": "timestamp outside supported UTC range"
+      },
+      "value": "9999-12-31T23:59:59-01:00",
+      "cli_exit": 2,
+      "cli_output": {
+        "status": "INSUFFICIENT_EVIDENCE",
+        "input_error": "timestamp outside supported UTC range"
+      }
+    }
+  ]
+}

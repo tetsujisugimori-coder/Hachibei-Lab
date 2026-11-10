@@ -13,7 +13,10 @@ def instant(value):
         raise ValueError('timestamp requires explicit timezone and seconds')
     if value[-1] != 'Z' and (int(value[-5:-3]) > 23 or int(value[-2:]) > 59):
         raise ValueError('invalid timezone offset components')
-    return datetime.fromisoformat(value.replace('Z', '+00:00')).astimezone(timezone.utc)
+    try:
+        return datetime.fromisoformat(value.replace('Z', '+00:00')).astimezone(timezone.utc)
+    except OverflowError as error:
+        raise ValueError('timestamp outside supported UTC range') from error
 
 
 def exact_keys(obj, required):
