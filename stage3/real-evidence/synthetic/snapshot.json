@@ -1,0 +1,77 @@
+{
+  "evidence_kind": "SYNTHETIC",
+  "expectation": {
+    "action": "synthetic:merge",
+    "actor": "synthetic actor",
+    "approver": "synthetic actor",
+    "target": "synthetic:target"
+  },
+  "model": null,
+  "observed_at": "2026-01-03T00:00:00Z",
+  "pages": [
+    {
+      "cursor": null,
+      "next_cursor": "synthetic:page2",
+      "record_ids": [
+        "SYN-0",
+        "SYN-1"
+      ],
+      "reported_total": null,
+      "retrieved_at": "2026-01-03T00:00:00Z"
+    },
+    {
+      "cursor": "synthetic:page2",
+      "next_cursor": null,
+      "record_ids": [],
+      "reported_total": null,
+      "retrieved_at": "2026-01-03T00:00:00Z"
+    }
+  ],
+  "records": [
+    {
+      "action": "synthetic:merge",
+      "actor": "synthetic actor",
+      "bytes_base64": "eyJraW5kIjoiUkVWSUVXIiwic3RhdGUiOiJDT01NRU5URUQiLCJzeW50aGV0aWMiOnRydWV9",
+      "id": "SYN-0",
+      "kind": "REVIEW",
+      "native_id": "synthetic:record:0",
+      "previous_id": null,
+      "recorded_at": "2026-01-01T00:00:00Z",
+      "representation": "SOURCE_BYTES",
+      "retrieved_at": "2026-01-03T00:00:00Z",
+      "revision": "1",
+      "sha256": "d96871a96923b0a48d8aba3c6f458dc9db27d94c3f11c98b5a1ac24a05655d25",
+      "state": "COMMENTED",
+      "target": "synthetic:target"
+    },
+    {
+      "action": "synthetic:merge",
+      "actor": "synthetic actor",
+      "bytes_base64": "eyJraW5kIjoiRVhFQ1VUSU9OIiwic3RhdGUiOiJNRVJHRUQiLCJzeW50aGV0aWMiOnRydWV9",
+      "id": "SYN-1",
+      "kind": "EXECUTION",
+      "native_id": "synthetic:record:1",
+      "previous_id": null,
+      "recorded_at": "2026-01-01T00:00:00Z",
+      "representation": "SOURCE_BYTES",
+      "retrieved_at": "2026-01-03T00:00:00Z",
+      "revision": "1",
+      "sha256": "6d7645629e85d2002fc09c16211c68c3a13b48262543fa21c50e87ea53b053cf",
+      "state": "MERGED",
+      "target": "synthetic:target"
+    }
+  ],
+  "schema_version": "1.0",
+  "source": {
+    "access_scope": "synthetic query only",
+    "acquisition": "synthetic offline fixture",
+    "controller": "synthetic controller",
+    "deletions_visible": "UNKNOWN",
+    "from_origin": true,
+    "revisions_visible": "UNKNOWN"
+  },
+  "window": {
+    "end": "2026-01-03T00:00:00Z",
+    "start": "2026-01-01T00:00:00Z"
+  }
+}
