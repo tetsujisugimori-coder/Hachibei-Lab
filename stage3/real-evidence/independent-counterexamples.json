@@ -1,0 +1,25 @@
+{
+  "before_commit": "3f2bf01f4bd55254aa1e3bc3f1391a853b4254ff",
+  "cases": [
+    {
+      "after": "REJECTED",
+      "before": "ACCEPTED",
+      "case": "invalid_optional_model_validate"
+    },
+    {
+      "after_exit": 0,
+      "before_and_after_operation": "HOLD",
+      "before_exit": 0,
+      "case": "synthetic_decisions_1000"
+    },
+    {
+      "after_exit": 2,
+      "before_and_after_operation": "HOLD",
+      "before_exit": 0,
+      "case": "synthetic_decisions_1001"
+    }
+  ],
+  "evidence_kind": "SYNTHETIC",
+  "finding": "P2_OPTIONAL_MODEL_INPUT_CONTRACT",
+  "status": "PASS"
+}

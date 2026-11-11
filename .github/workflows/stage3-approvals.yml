@@ -42,6 +42,11 @@ jobs:
           python -m unittest discover -s stage2/tools -v 2>&1 | tee "$EVIDENCE_DIR/unit.log"
           python -m unittest discover -s stage1/tools -v 2>&1 | tee "$EVIDENCE_DIR/stage1-regression.log"
           python stage3/tools/check_repository.py | tee "$EVIDENCE_DIR/validation.json"
+          python stage3/tools/observed_evidence.py < stage3/real-evidence/synthetic/snapshot.json | tee "$EVIDENCE_DIR/observed-synthetic.json"
+          cmp stage3/real-evidence/synthetic/expected.json "$EVIDENCE_DIR/observed-synthetic.json"
+          python stage3/tools/check_observed_repository.py | tee "$EVIDENCE_DIR/observed-public-boundary.json"
+          python stage3/real-evidence/compare_review.py | tee "$EVIDENCE_DIR/observed-independent-before-after.json"
+          cmp stage3/real-evidence/independent-counterexamples.json "$EVIDENCE_DIR/observed-independent-before-after.json"
           git diff --check 8cf43cfa5d53cda13178ed7cf02dd5a747a40dc9...HEAD 2>&1 | tee "$EVIDENCE_DIR/diff-check.log"
           git diff --check
       - name: Bind evidence

@@ -1,0 +1,37 @@
+{
+  "evidence_kind": "SYNTHETIC",
+  "review_kind": "AUTHOR_ADVERSARIAL_CHECK_NOT_INDEPENDENT_REVIEW",
+  "before_commit": "2f337b51b2602040f6e9617c34114b932f35d7ec",
+  "cases": [
+    {
+      "case": "approval_actor_missing",
+      "before_correspondence": "CLAIMED",
+      "after_correspondence": "UNKNOWN",
+      "before_and_after_operation": "HOLD"
+    },
+    {
+      "case": "execution_action_missing",
+      "before_correspondence": "CLAIMED",
+      "after_correspondence": "UNKNOWN",
+      "before_and_after_operation": "HOLD"
+    },
+    {
+      "case": "approval_recorded_after_execution",
+      "before_correspondence": "CLAIMED",
+      "after_correspondence": "UNKNOWN",
+      "before_and_after_operation": "HOLD"
+    },
+    {
+      "case": "approval_state_unknown",
+      "before_correspondence": "CLAIMED",
+      "after_correspondence": "UNKNOWN",
+      "before_and_after_operation": "HOLD"
+    },
+    {
+      "case": "execution_state_unknown",
+      "before_correspondence": "CLAIMED",
+      "after_correspondence": "UNKNOWN",
+      "before_and_after_operation": "HOLD"
+    }
+  ]
+}
