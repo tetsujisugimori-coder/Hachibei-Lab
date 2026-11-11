@@ -138,6 +138,7 @@ def assess(snapshot):
     records = snapshot['records']
     expected = snapshot['expectation']
     correspondence = 'UNKNOWN'
+    relevant_complete = []
     original_checks, representation_checks = [], []
     revision_values = {}
     for record in records:
@@ -151,6 +152,8 @@ def assess(snapshot):
             actor = expected['approver' if record['kind'] == 'EXPLICIT_APPROVAL' else 'actor']
             pairs = [(record['actor'], actor), (record['target'], expected['target']),
                      (record['action'], expected['action'])]
+            states_known = record['state'] in ('EXPLICIT', 'MERGED', 'EXECUTED')
+            relevant_complete.append(states_known and all(a is not None and b is not None for a, b in pairs))
             if any(a is not None and b is not None and a != b for a, b in pairs):
                 correspondence = 'CONFLICT'; conflicts = True
             elif all(a is not None and b is not None for a, b in pairs) and correspondence != 'CONFLICT':
@@ -160,9 +163,16 @@ def assess(snapshot):
         if key in revision_values and revision_values[key] != semantic:
             conflicts = True
         revision_values[key] = semantic
-    # A lone execution cannot establish approval-to-action correlation.
-    if correspondence == 'CLAIMED' and not all(any(r['kind'] == kind for r in records)
-                                              for kind in ('EXPLICIT_APPROVAL', 'EXECUTION')):
+    # A partial approval or lone execution cannot establish correspondence.
+    approvals = [r for r in records if r['kind'] == 'EXPLICIT_APPROVAL']
+    executions = [r for r in records if r['kind'] == 'EXECUTION']
+    order = 'UNKNOWN'
+    if approvals and executions:
+        order = 'CLAIMED'
+        if any(instant(a['recorded_at']) > instant(e['recorded_at']) for a in approvals for e in executions):
+            order = 'RECORDED_AFTER_EXECUTION'
+    if correspondence == 'CLAIMED' and (not approvals or not executions or not all(relevant_complete)
+                                        or order == 'RECORDED_AFTER_EXECUTION'):
         correspondence = 'UNKNOWN'
     def combined(checks):
         return 'CONFLICT' if 'CONFLICT' in checks else 'MATCH' if checks and all(c == 'MATCH' for c in checks) else 'NOT_TESTED'
@@ -194,7 +204,7 @@ def assess(snapshot):
         'deletion_history': 'UNKNOWN', 'history_coverage': 'UNKNOWN',
         'change_signal': 'CLAIMED' if any(present(k) for k in ('AMENDMENT', 'REVOCATION', 'DELETION')) else 'UNKNOWN',
         'page_traversal': foundation['sources'][0]['page_traversal'],
-        'approval_action_correspondence': correspondence,
+        'approval_action_correspondence': correspondence, 'approval_execution_order': order,
         'foundation_status': foundation['status'],
         'model_mapping': 'NO_SEMANTIC_BINDINGS',
         'model_evaluation': 'NOT_EVALUABLE' if snapshot['model'] is None else 'CONDITIONAL_ONLY',

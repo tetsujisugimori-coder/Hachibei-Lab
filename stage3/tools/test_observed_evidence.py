@@ -99,6 +99,31 @@ class ObservedEvidenceTests(unittest.TestCase):
         self.data['expectation'] = dict.fromkeys(self.data['expectation'])
         self.assertEqual(self.result()['approval_action_correspondence'], 'UNKNOWN')
 
+    def test_partial_approval_cannot_borrow_complete_execution(self):
+        self.add_explicit()['actor'] = None
+        self.assertEqual(self.result()['approval_action_correspondence'], 'UNKNOWN')
+
+    def test_partial_execution_cannot_borrow_complete_approval(self):
+        self.data['records'][1]['action'] = None
+        self.add_explicit()
+        self.assertEqual(self.result()['approval_action_correspondence'], 'UNKNOWN')
+
+    def test_post_execution_approval_not_retroactive(self):
+        self.add_explicit()['recorded_at'] = '2026-01-02T00:00:00Z'
+        r = self.result()
+        self.assertEqual(r['approval_execution_order'], 'RECORDED_AFTER_EXECUTION')
+        self.assertEqual(r['approval_action_correspondence'], 'UNKNOWN')
+        self.assertEqual(r['validity_period'], 'UNKNOWN')
+
+    def test_unknown_approval_state_not_correlated(self):
+        self.add_explicit()['state'] = 'UNKNOWN'
+        self.assertEqual(self.result()['approval_action_correspondence'], 'UNKNOWN')
+
+    def test_unknown_execution_state_not_correlated(self):
+        self.add_explicit()
+        self.data['records'][1]['state'] = 'UNKNOWN'
+        self.assertEqual(self.result()['approval_action_correspondence'], 'UNKNOWN')
+
     def test_source_digest_match_not_authenticity(self):
         r = self.result()
         self.assertEqual(r['source_original_integrity'], 'MATCH')

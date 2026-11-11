@@ -30,7 +30,7 @@ GitHub記録上のreview対象HEADとmergeの技術的対応は観測された�
 - COMMENTED/APPROVED/mergeからGRANTを生成しない。本人の明示承認の有効期間、条件、判断時刻が未取得の場合、無期限やmerge時刻で補完しない。承認モデルへの意味論bindingはNO_SEMANTIC_BINDINGS、モデル判定はNOT_EVALUABLE。
 - optional `model` を与えた場合は既存`approval.evaluate`を実行する。そのVALID等はCONDITIONAL_ONLYに隔離され、証拠の真正性や権限へ昇格しない。モデルの全文・識別子・件数は出力しない。
 - 原本byteの指定とSHA-256がある場合でも、ハッシュMATCHは供給されたbyteと供給されたdigestの比較だけ。SOURCE_BYTESという入力者分類、正規化の意味的一致、原本真正性、永続保全を認証しない。一部の原本が欠落すれば全体MATCHを返さない。
-- source/actor/scope欄の一致はCLAIMEDまで。期待actor/target/actionとの矛盾はCONFLICT。変更・取消・削除があっても有効なgrant履歴を創作しない。
+- source/actor/scope欄の一致はCLAIMEDまで。期待actor/target/actionとの矛盾はCONFLICT。一方の不足をもう一方の完全な欄で補わず、実行後に記録された承認を遡及対応させない。変更・取消・削除があっても有効なgrant履歴を創作しない。
 
 ## 入出力契約
 
@@ -67,3 +67,9 @@ CIへ渡すのは`synthetic/`のみ。実入力をコマンド引数、shell履�
 次工程は、保管先の明示承認と私有範囲/保持の確認後、原本を新規取得しappend-onlyに保全・再読戻し照合すること。そのうえで承認時点の本人性と権限、承認条件と有効期間、変更/取消/削除、判断/実行時刻を別々に検証する。既存の観測を原本へ格上げしない。
 
 今回の成果に対する限定マージ推奨はNO。基盤実装・合成試験成功、独立レビュー、CIの結果は別途PRに報告するが、保全を含む実証拠受入条件の不足を残す。正式規則・設定・実権限・既存承認履歴は不変。自動マージ・実運用接続は行わない。
+
+## 追加の著者反例と環境制約
+
+初期commitに対する追加の著者確認で、承認側のactor欠測、実行側のaction欠測、実行後の承認記録、承認/実行state不明がある場合にも対応関係をCLAIMEDと表示し得た。権限付与は前後ともHOLDだったが、現在は不足をUNKNOWNとして維持する。合成before/afterを`correspondence-counterexamples.json`に残す。この著者確認を独立レビューとは呼ばない。
+
+追加回帰の途中、共有一時領域の容量不足により既存fixture書込みでErrno28となった試行がある。元失敗ログを上書きせず、共有領域を削除・移動しなかった。新設した作業用合成TMPDIRに変更して再検証した。これは実原本の保管先承認や保全完了を意味しない。製品assertion失敗とは区別する。

@@ -1,6 +1,7 @@
 {
   "acquisition": "PARTIAL",
   "approval_action_correspondence": "UNKNOWN",
+  "approval_execution_order": "UNKNOWN",
   "authenticated_access_scope": "UNKNOWN",
   "authenticity": "UNKNOWN",
   "authority_at_approval": "UNKNOWN",
