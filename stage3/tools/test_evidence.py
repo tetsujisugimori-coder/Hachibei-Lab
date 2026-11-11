@@ -141,6 +141,25 @@ class EvidenceTests(unittest.TestCase):
         self.ledger['records'].append(r)
         self.assertIn('CONTRADICTORY_EVENT_CONTENT', self.codes())
 
+    def test_unbound_conflicting_approval_and_decision(self):
+        for index, field, changed in ((0, 'issuer', 'different issuer'), (2, 'observed_choice', 'EXECUTE')):
+            with self.subTest(index=index):
+                ledger = copy.deepcopy(self.ledger)
+                r = copy.deepcopy(ledger['records'][index])
+                r.update(id='SYN-ALT', native_id='synthetic:alternate', artifact='alternate.json', original_artifact='alternate.json')
+                value = json.loads((self.root / ledger['records'][index]['artifact']).read_bytes())
+                value[field] = changed
+                raw = canonical(value)
+                (self.root / 'alternate.json').write_bytes(raw)
+                r.update(sha256=digest(raw), original_sha256=digest(raw))
+                ledger['records'].append(r)
+                page = ledger['sources'][0]['collection']['pages'][0]
+                page['record_ids'].append(r['id']); page['reported_total'] = 4
+                refresh_pages(ledger, self.root)
+                result = audit(ledger, self.root, self.model)
+                self.assertEqual(result['status'], 'CONFLICT')
+                self.assertIn('CONTRADICTORY_' + r['role'] + '_CONTENT', {f['code'] for f in result['findings']})
+
     def test_unsafe_paths(self):
         for name in ('../secret', '/etc/passwd', 'dir/../../secret', 'dir\\secret'):
             with self.subTest(name=name):
@@ -310,8 +329,24 @@ class EvidenceTests(unittest.TestCase):
             strict_json('{"id":1,"id":2}')
 
     def test_nonfinite_json_rejected(self):
-        with self.assertRaises(ValueError):
-            strict_json('{"id":NaN}')
+        for value in ('NaN', 'Infinity', '-Infinity', '1e999', '-1e999'):
+            with self.subTest(value=value), self.assertRaises(ValueError):
+                strict_json('{"id":' + value + '}')
+
+    def test_surrogate_json_rejected(self):
+        for raw in ('{"id":"\\ud800"}', '{"\\udfff":0}', '["\\ud800"]'):
+            with self.subTest(raw=raw), self.assertRaises(UnicodeError):
+                strict_json(raw)
+        self.assertEqual(strict_json('"\\ud83d\\ude00"'), '\U0001f600')
+
+    def test_cli_surrogate_sanitized(self):
+        tool = Path(__file__).with_name('evidence.py')
+        self.ledger['sources'][0]['id'] = '\ud800'
+        (self.root / 'ledger.json').write_text(json.dumps(self.ledger))
+        p = subprocess.run([sys.executable, str(tool), 'ledger.json', '--root', str(self.root)], capture_output=True, text=True)
+        self.assertEqual(p.returncode, 2)
+        self.assertEqual(p.stderr, '')
+        self.assertEqual(json.loads(p.stdout)['input_error'], 'INVALID_OR_UNREADABLE_INPUT')
 
     def test_cli_output(self):
         tool = Path(__file__).with_name('evidence.py')

@@ -6,6 +6,7 @@ No network access, signature trust provisioning, source mutation or execution.
 import argparse
 import hashlib
 import json
+import math
 import re
 from pathlib import Path
 
@@ -34,12 +35,31 @@ def strict_json(raw):
         return result
     def constant(_):
         raise ValueError('nonfinite JSON value')
-    return json.loads(raw, object_pairs_hook=pairs, parse_constant=constant)
+    def finite_float(value):
+        result = float(value)
+        if not math.isfinite(result):
+            raise ValueError('nonfinite JSON value')
+        return result
+    result = json.loads(raw, object_pairs_hook=pairs, parse_constant=constant,
+                        parse_float=finite_float)
+    def check_unicode(value):
+        if isinstance(value, str):
+            value.encode('utf-8')  # Reject escaped unpaired surrogates as well.
+        elif isinstance(value, dict):
+            for key, item in value.items():
+                check_unicode(key)
+                check_unicode(item)
+        elif isinstance(value, list):
+            for item in value:
+                check_unicode(item)
+    check_unicode(result)
+    return result
 
 
 def text(value):
     if not isinstance(value, str) or not value.strip() or len(value) > 4096:
         raise ValueError('expected bounded nonempty text')
+    value.encode('utf-8')
 
 
 def array(value):
@@ -182,7 +202,7 @@ def audit(ledger, root, model=None):
 
     sources = {s['id']: s for s in ledger['sources']}
     records = {r['id']: r for r in ledger['records']}
-    record_results, payloads, identities, event_claims = [], {}, {}, {}
+    record_results, payloads, identities, semantic_claims = [], {}, {}, {}
     for r in ledger['records']:
         ref = r['id']
         if r['source_id'] not in sources:
@@ -203,14 +223,14 @@ def audit(ledger, root, model=None):
                 payloads[ref] = strict_json(raw)
             except (ValueError, UnicodeError, RecursionError):
                 flag('CONFLICT', 'INVALID_RECORD_JSON', ref)
-        if r['role'] == 'EVENT' and isinstance(payloads.get(ref), dict):
-            event_id = payloads[ref].get('id')
-            if isinstance(event_id, str):
-                key = (r['subject'], event_id, r['revision'])
+        if r['role'] in ('APPROVAL', 'EVENT', 'DECISION') and isinstance(payloads.get(ref), dict):
+            payload_id = payloads[ref].get('id')
+            if isinstance(payload_id, str):
+                key = (r['role'], r['subject'], payload_id, r['revision'])
                 encoded = canonical(payloads[ref])
-                if key in event_claims and event_claims[key] != encoded:
-                    flag('CONFLICT', 'CONTRADICTORY_EVENT_CONTENT', ref)
-                event_claims[key] = encoded
+                if key in semantic_claims and semantic_claims[key] != encoded:
+                    flag('CONFLICT', 'CONTRADICTORY_' + r['role'] + '_CONTENT', ref)
+                semantic_claims[key] = encoded
         key = (r['source_id'], r['native_id'], r['revision'])
         if key in identities:
             prior = identities[key]
@@ -378,12 +398,14 @@ def main():
         ledger = strict_json(artifact(args.root, args.ledger))
         model = strict_json(artifact(args.root, args.model)) if args.model else None
         result = audit(ledger, args.root, model)
+        output = json.dumps(result, ensure_ascii=False, indent=2)
+        output.encode('utf-8')
     except (ValueError, TypeError, KeyError, OSError, UnicodeError, RecursionError):
         # Do not echo file paths or source text in public CI error messages.
         print(json.dumps({'status': 'INSUFFICIENT_EVIDENCE', 'input_error': 'INVALID_OR_UNREADABLE_INPUT',
                           'operational_authorization': 'NOT_GRANTED_BY_THIS_TOOL'}))
         return 2
-    print(json.dumps(result, ensure_ascii=False, indent=2))
+    print(output)
     return 0  # Process success is not evidence acceptance.
 
 

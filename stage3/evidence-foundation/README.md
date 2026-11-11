@@ -19,6 +19,7 @@ Run from the repository root with Python 3.12 or later:
 python -m unittest discover -s stage3/tools -v
 python stage3/tools/evidence.py ledger.json --root stage3/evidence-foundation/synthetic --model model.json
 python stage3/tools/check_repository.py
+python stage3/tools/compare_evidence_reviews.py
 ```
 
 Only synthetic fixtures enter CI. `--root` is the explicit local evidence directory;
@@ -110,3 +111,15 @@ the new synthetic ledger/expected result; preservation and bounded public scans.
 The artifact manifest binds results to HEAD, tree and workflow hash. A bounded scan
 is not proof that every possible secret is absent. Final independent review and CI
 must be reported for the actual final commit, separately from actual-evidence acceptance.
+
+## Independent review corrections
+
+The initial published HEAD `e2a58d1` missed semantic conflicts in unbound alternate
+APPROVAL and DECISION records, although its overall result still withheld authority.
+It also leaked a Python traceback for an escaped unpaired surrogate and accepted
+overflowing JSON exponents as infinity in an unbound OTHER payload. These were
+independently reproduced, then fixed without changing the original approval model.
+`compare_evidence_reviews.py` recreates the four exact synthetic attacks against the
+fixed initial commit and current code. `review-counterexamples.json` retains their
+before/after results. The original review evidence is retained separately; corrected
+tests do not erase the initial defects or assert the absence of every other defect.

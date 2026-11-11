@@ -38,6 +38,7 @@ jobs:
           python stage3/tools/approval.py stage3/synthetic.json | tee "$EVIDENCE_DIR/synthetic-result.json"
           python stage3/tools/evidence.py ledger.json --root stage3/evidence-foundation/synthetic --model model.json | tee "$EVIDENCE_DIR/evidence-foundation.json"
           cmp stage3/evidence-foundation/synthetic/expected.json "$EVIDENCE_DIR/evidence-foundation.json"
+          python stage3/tools/compare_evidence_reviews.py | tee "$EVIDENCE_DIR/evidence-review-before-after.json"
           python -m unittest discover -s stage2/tools -v 2>&1 | tee "$EVIDENCE_DIR/unit.log"
           python -m unittest discover -s stage1/tools -v 2>&1 | tee "$EVIDENCE_DIR/stage1-regression.log"
           python stage3/tools/check_repository.py | tee "$EVIDENCE_DIR/validation.json"
