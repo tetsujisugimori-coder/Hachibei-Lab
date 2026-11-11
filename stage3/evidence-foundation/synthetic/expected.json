@@ -1,0 +1,122 @@
+{
+  "schema_version": "1.0",
+  "evidence_kind": "SYNTHETIC",
+  "status": "INSUFFICIENT_EVIDENCE",
+  "overall": "PARTIAL",
+  "operational_authorization": "NOT_GRANTED_BY_THIS_TOOL",
+  "authenticity": "UNKNOWN",
+  "authority": "UNKNOWN",
+  "history_coverage": "UNKNOWN",
+  "sources": [
+    {
+      "source_id": "SYN-SOURCE",
+      "page_traversal": "CONSISTENT_RECEIPTS",
+      "provenance": "DESCRIBED_NOT_AUTHENTICATED",
+      "authenticity": "UNKNOWN",
+      "authority": "UNKNOWN",
+      "history_coverage": "UNKNOWN",
+      "revisions_visible_claim": "UNKNOWN",
+      "deletions_visible_claim": "UNKNOWN"
+    }
+  ],
+  "records": [
+    {
+      "record_id": "SYN-R0",
+      "byte_integrity": "MATCH",
+      "original_byte_integrity": "MATCH",
+      "content_derivation": "IDENTICAL_BYTES",
+      "authenticity": "UNKNOWN",
+      "authority": "UNKNOWN"
+    },
+    {
+      "record_id": "SYN-R1",
+      "byte_integrity": "MATCH",
+      "original_byte_integrity": "MATCH",
+      "content_derivation": "IDENTICAL_BYTES",
+      "authenticity": "UNKNOWN",
+      "authority": "UNKNOWN"
+    },
+    {
+      "record_id": "SYN-R2",
+      "byte_integrity": "MATCH",
+      "original_byte_integrity": "MATCH",
+      "content_derivation": "IDENTICAL_BYTES",
+      "authenticity": "UNKNOWN",
+      "authority": "UNKNOWN"
+    }
+  ],
+  "model_bindings": "MATCH",
+  "model_assessment": {
+    "schema_version": "1.1",
+    "input_schema_version": "1.0",
+    "results": [
+      {
+        "decision_id": "SYN-D",
+        "action": "read",
+        "target": "synthetic:document",
+        "evidence_kind": "SYNTHETIC",
+        "observed_choice": "HOLD",
+        "decision": {
+          "status": "VALID",
+          "evaluated_at": "2026-01-01T12:00:00+00:00",
+          "approvals": [
+            {
+              "approval_id": "SYN-A",
+              "status": "VALID",
+              "reasons": [
+                "explicit scope, authority evidence and complete ordered history match"
+              ],
+              "source": "synthetic:grant"
+            }
+          ],
+          "reason": "see individual evidence"
+        },
+        "execution": null,
+        "completed_at": null,
+        "evidence": "synthetic:decision",
+        "operational_authorization": "NOT_GRANTED_BY_THIS_TOOL",
+        "consistency": "NO_MISMATCH_IN_RECORDED_FIELDS",
+        "evidence_completeness": {
+          "status": "SUFFICIENT_FOR_MODEL_EVALUATION",
+          "missing": []
+        },
+        "history_authenticity": {
+          "status": "UNKNOWN",
+          "reason": "Supplied claims are not independently authenticated by this tool"
+        },
+        "history_coverage": {
+          "claimed_complete_through": "2026-01-03T00:00:00Z",
+          "verification": "NOT_PERFORMED_BY_THIS_TOOL"
+        },
+        "overall": {
+          "status": "PARTIAL",
+          "reason": "MODEL_ONLY: authentic and exhaustive operational history remains unverified"
+        }
+      }
+    ],
+    "limits": [
+      "Authority and history completeness are supplied evidence claims, not authenticated by this engine.",
+      "No external operations performed.",
+      "A valid decision does not imply valid authority at later execution."
+    ]
+  },
+  "findings": [
+    {
+      "level": "UNKNOWN",
+      "code": "TRUSTED_AUTHENTICATION_NOT_AVAILABLE",
+      "ref": "SYN-SOURCE"
+    },
+    {
+      "level": "UNKNOWN",
+      "code": "EXHAUSTIVE_HISTORY_NOT_PROVEN",
+      "ref": "SYN-SOURCE"
+    }
+  ],
+  "limits": [
+    "Byte equality is not proof of authorship or authority.",
+    "Receipt consistency does not prove source completeness.",
+    "No trusted signature, identity or exhaustive-history verifier is configured.",
+    "Model temporal validity remains conditional on supplied evidence claims.",
+    "Local reports may contain private identifiers; do not publish observed inputs or outputs."
+  ]
+}

@@ -1,0 +1,1 @@
+{"action":"read","approval_ids":["SYN-A"],"completed_at":null,"conditions":{"mode":"offline"},"decided_at":"2026-01-01T12:00:00Z","evidence":"synthetic:decision","execution_at":null,"id":"SYN-D","observed_choice":"HOLD","proposed_at":"2026-01-01T00:00:00Z","target":"synthetic:document"}
