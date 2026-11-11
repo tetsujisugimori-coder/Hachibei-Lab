@@ -1,0 +1,24 @@
+{
+  "schema_version": 2,
+  "measured_run_01": {
+    "note": "Hashes recorded before hardening; runner and report were later changed. run-01 evidence remains unchanged.",
+    "sha256": {
+      "probe/run_probe.py": "6b607d0d33cc14f8104ede11106659841b2d9a8c67dc273942fe1d391cf2e47f",
+      "probe/smoke.cjs": "ea4f827006008efdca4762048a07514bd168f11034777d4a2dfe0b102fa19582",
+      "evidence/tmpdir-run-01.json": "584c25449ef97d801bb154071e29edf847eb518dd22b959d4c103174d7153523",
+      "tmpdir-probe-2026-11-11.md": "6747c75a0f6e431b0623af17f067c66dc4a0ca7f008569915b841cc6f29d690c"
+    }
+  },
+  "current": {
+    "note": "Post-measurement hardening; synthetic tests only, browser smoke not rerun.",
+    "sha256": {
+      "probe/run_probe.py": "0a182443935d37c41d62357a116ccec08707217d848e6a40326f4971753bedd0",
+      "probe/smoke.cjs": "ea4f827006008efdca4762048a07514bd168f11034777d4a2dfe0b102fa19582",
+      "probe/test_probe.py": "bceb916e4e39e445d5869f4f2e759c9bdd7df38300810e087cea568e6a510315",
+      "probe/README.md": "7356daafc3147dc8e8abb2e2ed2cf0e8528c818605b30fa0cffd720f270efdac",
+      "evidence/tmpdir-run-01.json": "584c25449ef97d801bb154071e29edf847eb518dd22b959d4c103174d7153523",
+      "evidence/tmpdir-hardening-tests.txt": "43caa22c013960498cff4750bc85c1d6668034cb144518dc93d98e34f432a4e1",
+      "tmpdir-probe-2026-11-11.md": "fe23e3e85a5aa5070ce4288034a198a3cf20edcefc3d045f2f6e52e2741d2399"
+    }
+  }
+}

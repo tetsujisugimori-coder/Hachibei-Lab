@@ -1,0 +1,57 @@
+test_after_revoke (test_approval.ApprovalTests.test_after_revoke) ... ok
+test_authority_unknown (test_approval.ApprovalTests.test_authority_unknown) ... ok
+test_backdate (test_approval.ApprovalTests.test_backdate) ... ok
+test_before (test_approval.ApprovalTests.test_before) ... ok
+test_before_end (test_approval.ApprovalTests.test_before_end) ... ok
+test_before_revoke (test_approval.ApprovalTests.test_before_revoke) ... ok
+test_bool_not_integer (test_approval.ApprovalTests.test_bool_not_integer) ... ok
+test_condition (test_approval.ApprovalTests.test_condition) ... ok
+test_correction (test_approval.ApprovalTests.test_correction) ... ok
+test_coverage (test_approval.ApprovalTests.test_coverage) ... ok
+test_duplicate_sequence (test_approval.ApprovalTests.test_duplicate_sequence) ... ok
+test_end_exclusive (test_approval.ApprovalTests.test_end_exclusive) ... ok
+test_execution_despite_hold (test_approval.ApprovalTests.test_execution_despite_hold) ... ok
+test_execution_reason_explained (test_approval.ApprovalTests.test_execution_reason_explained) ... ok
+test_execution_revalidation (test_approval.ApprovalTests.test_execution_revalidation) ... ok
+test_explanation (test_approval.ApprovalTests.test_explanation) ... ok
+test_fixture_json (test_approval.ApprovalTests.test_fixture_json) ... ok
+test_gap (test_approval.ApprovalTests.test_gap) ... ok
+test_grant_repeat (test_approval.ApprovalTests.test_grant_repeat) ... ok
+test_invalid_inputs (test_approval.ApprovalTests.test_invalid_inputs) ... ok
+test_missing_history (test_approval.ApprovalTests.test_missing_history) ... ok
+test_multiple_approvals (test_approval.ApprovalTests.test_multiple_approvals) ... ok
+test_no_expiry (test_approval.ApprovalTests.test_no_expiry) ... ok
+test_no_records (test_approval.ApprovalTests.test_no_records) ... ok
+test_no_references (test_approval.ApprovalTests.test_no_references) ... ok
+test_no_side_effect_input (test_approval.ApprovalTests.test_no_side_effect_input) ... ok
+test_reject_corrupt_nullable_timestamps (test_approval.ApprovalTests.test_reject_corrupt_nullable_timestamps) ... ok
+test_reject_invalid_offset_components (test_approval.ApprovalTests.test_reject_invalid_offset_components) ... ok
+test_reverse_order (test_approval.ApprovalTests.test_reverse_order) ... ok
+test_revoke (test_approval.ApprovalTests.test_revoke) ... ok
+test_revoke_boundary (test_approval.ApprovalTests.test_revoke_boundary) ... ok
+test_scope (test_approval.ApprovalTests.test_scope) ... ok
+test_shrink (test_approval.ApprovalTests.test_shrink) ... ok
+test_six_design_scenarios (test_approval.ApprovalTests.test_six_design_scenarios) ... ok
+test_stage2_case_ids (test_approval.ApprovalTests.test_stage2_case_ids) ... ok
+test_start_inclusive (test_approval.ApprovalTests.test_start_inclusive) ... ok
+test_timestamp_rejects (test_approval.ApprovalTests.test_timestamp_rejects) ... ok
+test_timezone (test_approval.ApprovalTests.test_timezone) ... ok
+test_valid (test_approval.ApprovalTests.test_valid) ... ok
+test_amend_expiry_matrix (test_boundaries.BoundaryTests.test_amend_expiry_matrix) ... ok
+test_backdated_extension (test_boundaries.BoundaryTests.test_backdated_extension) ... ok
+test_case001 (test_boundaries.BoundaryTests.test_case001) ... ok
+test_invalid_chain_cannot_be_repaired_by_amend (test_boundaries.BoundaryTests.test_invalid_chain_cannot_be_repaired_by_amend) ... ok
+test_known_execution (test_boundaries.BoundaryTests.test_known_execution) ... ok
+test_late_amend_does_not_rewrite_past (test_boundaries.BoundaryTests.test_late_amend_does_not_rewrite_past) ... ok
+test_missing_execution (test_boundaries.BoundaryTests.test_missing_execution) ... ok
+test_missing_period_vs_explicit_unbounded (test_boundaries.BoundaryTests.test_missing_period_vs_explicit_unbounded) ... ok
+test_no_execution_claim (test_boundaries.BoundaryTests.test_no_execution_claim) ... ok
+test_recorded_before_but_effective_at_expiry (test_boundaries.BoundaryTests.test_recorded_before_but_effective_at_expiry) ... ok
+test_regrant_new_identity (test_boundaries.BoundaryTests.test_regrant_new_identity) ... ok
+test_timezone_boundary (test_boundaries.BoundaryTests.test_timezone_boundary) ... ok
+test_utc_range_overflow (test_boundaries.BoundaryTests.test_utc_range_overflow) ... ok
+
+----------------------------------------------------------------------
+Ran 52 tests in 0.008s
+
+OK
