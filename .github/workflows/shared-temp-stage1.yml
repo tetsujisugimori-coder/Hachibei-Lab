@@ -1,0 +1,28 @@
+name: Shared temporary storage Stage 1
+on:
+  pull_request:
+    paths:
+      - 'research/shared-temp-stage1/**'
+      - '.github/workflows/shared-temp-stage1.yml'
+permissions:
+  contents: read
+jobs:
+  metadata-contract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify independently reviewed source identity
+        run: |
+          echo '58e868f5bed3a8c42756a12b01a4f9a7d1c1ad0ad124133303298e5abe90afe1  research/shared-temp-stage1/tools/diagnose.py' | sha256sum -c -
+          echo 'baa61e6d7874578ff0ca1130122e63a6e4b5298279cbc31e866a3b5a1a0dec48  research/shared-temp-stage1/tests/test_diagnose.py' | sha256sum -c -
+      - name: Mocked read-only contracts
+        run: python -B -m unittest discover -s research/shared-temp-stage1/tests -v
+      - name: Capacity-only runner smoke (no recursive scan)
+        run: python -B research/shared-temp-stage1/tools/diagnose.py snapshot --path .
