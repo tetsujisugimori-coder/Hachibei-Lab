@@ -1,0 +1,1 @@
+{"actions":["read"],"conditions":{"mode":"offline"},"effective_at":"2026-01-01T00:00:00Z","evidence":"synthetic:event","expires_at":"2026-01-02T00:00:00Z","id":"E1","kind":"GRANT","recorded_at":"2026-01-01T00:00:00Z","sequence":1,"targets":["synthetic:document"]}

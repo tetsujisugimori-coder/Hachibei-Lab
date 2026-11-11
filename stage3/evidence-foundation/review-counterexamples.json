@@ -1,0 +1,40 @@
+{
+  "baseline": "e2a58d17955a912bd3912572cb92439b2a874c17",
+  "evidence_kind": "SYNTHETIC",
+  "rows": [
+    {
+      "case": "CONTRADICTORY_APPROVAL_CONTENT",
+      "changed_field": "issuer",
+      "synthetic_value": "different issuer",
+      "before": "INSUFFICIENT_EVIDENCE",
+      "after": "CONFLICT",
+      "old_defect_reproduced": true,
+      "fixed": true
+    },
+    {
+      "case": "CONTRADICTORY_DECISION_CONTENT",
+      "changed_field": "observed_choice",
+      "synthetic_value": "REFUSE",
+      "before": "INSUFFICIENT_EVIDENCE",
+      "after": "CONFLICT",
+      "old_defect_reproduced": true,
+      "fixed": true
+    },
+    {
+      "case": "NONFINITE_EXPONENT",
+      "synthetic_payload": "{\"x\":1e999}",
+      "before": "INSUFFICIENT_EVIDENCE",
+      "after": "CONFLICT",
+      "old_defect_reproduced": true,
+      "fixed": true
+    },
+    {
+      "case": "UNPAIRED_SURROGATE",
+      "synthetic_input": "source ID contains escaped U+D800",
+      "before_exit": 1,
+      "after_exit": 2,
+      "old_defect_reproduced": true,
+      "fixed": true
+    }
+  ]
+}
