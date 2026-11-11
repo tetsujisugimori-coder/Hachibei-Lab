@@ -10,7 +10,7 @@ import binascii
 import json
 import sys
 
-from approval import exact_keys, instant
+from approval import exact_keys, instant, validate as validate_model
 from evidence import MAX_BYTES, MAX_ITEMS, audit, canonical, digest, nullable_text, sha, strict_json, text
 
 KINDS = ('REVIEW', 'EXECUTION', 'EXPLICIT_APPROVAL', 'AMENDMENT', 'REVOCATION', 'DELETION', 'OTHER')
@@ -76,6 +76,18 @@ def validate(snapshot):
             base64.b64decode(raw, validate=True)
         if record['representation'] == 'NOT_OBTAINED' and (raw is not None or record['sha256'] is not None):
             raise ValueError('absent bytes cannot have digest')
+    if snapshot['model'] is not None:
+        # The wrapper's validate contract covers optional model input as well.
+        # Keep the existing model validator unchanged; add wrapper size limits.
+        validate_model(snapshot['model'])
+        pending = [snapshot['model']]
+        while pending:
+            value = pending.pop()
+            if isinstance(value, list):
+                sequence(value)
+                pending.extend(value)
+            elif isinstance(value, dict):
+                pending.extend(value.values())
     for page in snapshot['pages']:
         exact_keys(page, 'cursor next_cursor retrieved_at record_ids reported_total')
         nullable_text(page['cursor']); nullable_text(page['next_cursor'])

@@ -73,3 +73,9 @@ CIへ渡すのは`synthetic/`のみ。実入力をコマンド引数、shell履�
 初期commitに対する追加の著者確認で、承認側のactor欠測、実行側のaction欠測、実行後の承認記録、承認/実行state不明がある場合にも対応関係をCLAIMEDと表示し得た。権限付与は前後ともHOLDだったが、現在は不足をUNKNOWNとして維持する。合成before/afterを`correspondence-counterexamples.json`に残す。この著者確認を独立レビューとは呼ばない。
 
 追加回帰の途中、共有一時領域の容量不足により既存fixture書込みでErrno28となった試行がある。元失敗ログを上書きせず、共有領域を削除・移動しなかった。新設した作業用合成TMPDIRに変更して再検証した。これは実原本の保管先承認や保全完了を意味しない。製品assertion失敗とは区別する。
+
+## 独立レビューで指摘された入力契約
+
+独立レビューでP2を確認した。初期wrapperの`validate`がoptional modelを検査せず、不正modelを直接validateできた。またmodel内のarrayがwrapperの1,000要素上限の対象外で、1,001件の合成decisionもCLI exit0となった。実運用はHOLDのままだったが、入力契約と文書に不一致があった。
+
+現在はwrapperのvalidateから既存承認モデルのvalidateを呼び、model内の全arrayにも同じ上限を適用する。元の承認検証器は変更しない。approvals、decisions、events、actions、targets、approval_idsの1,000/1,001境界、不正model、CLIの固定語彙エラーを検査する。`compare_review.py`は固定の修正前commitと現在コードに同じ合成反例を与え、RED/GREENと正常な上限値の維持を再現する。`independent-counterexamples.json`をCIで照合する。原指摘は修正後も消去しない。

@@ -9,7 +9,7 @@ from pathlib import Path
 from unittest.mock import patch
 
 from evidence import canonical, digest
-from observed_evidence import assess, build_ledger
+from observed_evidence import assess, build_ledger, validate
 from test_approval import fixture as model_fixture
 
 
@@ -218,6 +218,45 @@ class ObservedEvidenceTests(unittest.TestCase):
         self.assertEqual(r['foundation_status'], 'INSUFFICIENT_EVIDENCE')
         self.assertEqual(r['model_mapping'], 'NO_SEMANTIC_BINDINGS')
         self.assertEqual(r['operation'], 'HOLD')
+
+    def test_validate_rejects_invalid_optional_model(self):
+        self.data['model'] = {'invalid': 'synthetic-model-canary'}
+        with self.assertRaises(ValueError): validate(self.data)
+
+    def test_optional_model_array_boundaries(self):
+        for field in ('approvals', 'decisions', 'events', 'actions', 'targets', 'approval_ids'):
+            for size in (1000, 1001):
+                with self.subTest(field=field, size=size):
+                    self.data = fixture(); m = model_fixture(); self.data['model'] = m
+                    if field in ('approvals', 'decisions'):
+                        original = m[field][0]
+                        m[field] = [dict(copy.deepcopy(original), id='SYN-ITEM-' + str(i)) for i in range(size)]
+                    elif field == 'events':
+                        original = m['approvals'][0]['events'][0]
+                        m['approvals'][0]['events'] = [dict(copy.deepcopy(original), id='SYN-EVENT-' + str(i), sequence=i+1) for i in range(size)]
+                    elif field in ('actions', 'targets'):
+                        m['approvals'][0]['events'][0][field] = ['synthetic:item:' + str(i) for i in range(size)]
+                    else:
+                        m['decisions'][0]['approval_ids'] = ['SYN-REF-' + str(i) for i in range(size)]
+                    if size == 1000:
+                        validate(self.data)
+                    else:
+                        with self.assertRaises(ValueError): validate(self.data)
+
+    def test_optional_model_cli_boundary_and_safe_error(self):
+        path = Path(__file__).with_name('observed_evidence.py')
+        for size in (1000, 1001):
+            self.data = fixture(); m = model_fixture(); self.data['model'] = m
+            original = m['decisions'][0]
+            m['decisions'] = [dict(copy.deepcopy(original), id='SYN-DECISION-' + str(i)) for i in range(size)]
+            p = subprocess.run([sys.executable, str(path)], input=canonical(self.data), capture_output=True)
+            self.assertEqual(p.stderr, b'')
+            self.assertEqual(p.returncode, 0 if size == 1000 else 2)
+            result = json.loads(p.stdout)
+            self.assertEqual(result['operation'], 'HOLD')
+            self.assertNotIn(b'SYN-DECISION', p.stdout)
+            if size == 1001:
+                self.assertEqual(result['input_error'], 'INVALID_OR_UNREADABLE_INPUT')
 
     def test_other_mapping_does_not_fabricate_approval_or_decision(self):
         ledger, model = build_ledger(self.data)
