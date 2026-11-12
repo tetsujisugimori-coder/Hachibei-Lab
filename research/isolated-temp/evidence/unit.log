@@ -1,0 +1,18 @@
+test_bad_json (test_runner.Contracts.test_bad_json) ... ok
+test_complete (test_runner.Contracts.test_complete) ... ok
+test_existing (test_runner.Contracts.test_existing) ... ok
+test_low_space (test_runner.Contracts.test_low_space) ... ok
+test_missing (test_runner.Contracts.test_missing) ... ok
+test_missing_dom (test_runner.Contracts.test_missing_dom) ... ok
+test_missing_evidence (test_runner.Contracts.test_missing_evidence) ... ok
+test_nonzero (test_runner.Contracts.test_nonzero) ... ok
+test_relative (test_runner.Contracts.test_relative) ... ok
+test_reordered (test_runner.Contracts.test_reordered) ... ok
+test_shared (test_runner.Contracts.test_shared) ... ok
+test_timeout (test_runner.Contracts.test_timeout) ... ok
+test_wrong_values (test_runner.Contracts.test_wrong_values) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.003s
+
+OK
