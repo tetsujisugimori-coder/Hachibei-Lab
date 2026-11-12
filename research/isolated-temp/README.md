@@ -25,7 +25,7 @@ Chromium sandboxを有効のまま起動し、ローカル固定HTMLを読み取
 出力のPASSは限定probeの完遂のみ。全ファイル追跡、永続性、quota、製品受入ではない。
 manifestは256files、各8MiB、総32MiB上限。上限到達はBLOCKED。
 process観測は見えるPID namespaceだけで、全host/残存子孫の不存在は証明しない。
-45秒timeoutはNode子の終了に限定され、全子孫停止保証ではない。timeout時は追加試験をせず残存確認を別途行う。
+後続修正版は所有process groupにTERM/KILLを送信し終了・残存を記録する。逃避した子孫やホスト全体はUNKNOWN。45秒、各出力1MiB、走査時間5秒・深さ8・項目256・各8MiB/総32MiBを上限とする。走査は別helperを期限で停止する。kernel D状態など停止不能は非PASSとし、全ホスト保証はしない。
 保存失敗時は非ゼロ終了し、result欠落を成功と扱わない。
 
 ## 証拠と版
@@ -33,3 +33,7 @@ process観測は見えるPID namespaceだけで、全host/残存子孫の不存�
 今回の実ブラウザ試行は初版スクリプトで1回のみ、BLOCKED。
 独立レビュー修正後の最終版はmock/unitでのみ検証し、実ブラウザは再実行していない。
 公開ログはマスク加工物。非公開原票とはhashを区別する。
+
+後続の修正・保存状況は [FOLLOWUP.md](FOLLOWUP.md) を参照。上記初回の実行結果は履歴として維持する。
+
+保存result.jsonは常にPENDINGの暫定票。completion.json公開後、runner.read_completion(root)で3原票のSHA一致とcandidate結果を照合する。result単独やcompletion.candidate.jsonを成功として扱わない。
