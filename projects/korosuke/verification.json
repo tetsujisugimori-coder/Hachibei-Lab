@@ -1,0 +1,119 @@
+{
+  "scope": "new headless reopens; not mechanical acceptance",
+  "overall": "PARTIAL",
+  "merge_recommendation": "NO",
+  "cad": {
+    "FreeCAD_version": [
+      "1",
+      "0",
+      "0",
+      "",
+      "https://code.launchpad.net/~vcs-imports/freecad/trunk",
+      "2026/08/25 11:49:11"
+    ],
+    "records": [
+      {
+        "package": "korosuke-stage1b-private",
+        "file": "robot-drawings.FCStd",
+        "sha256": "9a0889204a6560ff7c55b5aa6801374e1864b2437ed7a4245784a8dc09ee80cd",
+        "objects": 81,
+        "shape_objects": 60,
+        "all_valid": true,
+        "solids": 60,
+        "reopened": true
+      },
+      {
+        "package": "korosuke-stage1b-private",
+        "file": "robot.FCStd",
+        "sha256": "b48ef8ec3c07e67def53b26157611e35f31c63a3955fad9a895ba988132e86a4",
+        "objects": 60,
+        "shape_objects": 60,
+        "all_valid": true,
+        "solids": 60,
+        "reopened": true
+      },
+      {
+        "package": "korosuke-stage1b-private",
+        "file": "robot.step",
+        "sha256": "f38c0ec90586f6288408abda92f2f802a1df120ab3ef2226ebf67885d9c00702",
+        "all_valid": true,
+        "solids": 60,
+        "reopened": true
+      },
+      {
+        "package": "korosuke-stage2",
+        "file": "robot-drawings.FCStd",
+        "sha256": "34e2618f07b84e7e77075328e882a14e06363abbf67f2a0c8c70945b12042df9",
+        "objects": 443,
+        "shape_objects": 399,
+        "all_valid": true,
+        "solids": 330,
+        "reopened": true
+      },
+      {
+        "package": "korosuke-stage2",
+        "file": "robot-stage2.FCStd",
+        "sha256": "f1a9f2c7d176eb625a33b29eb2ccd8e84d234b6fc34f7c828502b996d76c8023",
+        "objects": 163,
+        "shape_objects": 163,
+        "all_valid": true,
+        "solids": 165,
+        "reopened": true
+      },
+      {
+        "package": "korosuke-stage2",
+        "file": "robot-stage2.step",
+        "sha256": "bed8eece917a8b47dfafa003460ac2f2bf5490b2a934d2d498e57b39f027adc2",
+        "all_valid": true,
+        "solids": 165,
+        "reopened": true
+      }
+    ],
+    "manifest_checks": [
+      {
+        "package": "korosuke-stage1b-private",
+        "files": 115,
+        "mismatches": []
+      },
+      {
+        "package": "korosuke-stage2",
+        "files": 184,
+        "mismatches": []
+      }
+    ]
+  },
+  "blender": {
+    "version": "4.3.2",
+    "records": [
+      {
+        "file": "korosuke-stage1b-private/blender/robot.blend",
+        "reopened": true,
+        "meshes": 60
+      },
+      {
+        "file": "korosuke-stage1b-private/web/robot.glb",
+        "reopened": true,
+        "meshes": 60
+      },
+      {
+        "file": "korosuke-stage2-private/korosuke-stage2/blender/robot-stage2.blend",
+        "reopened": true,
+        "meshes": 163
+      },
+      {
+        "file": "korosuke-stage2-private/korosuke-stage2/blender/robot-stage2.glb",
+        "reopened": true,
+        "meshes": 163
+      }
+    ]
+  },
+  "kicad": {
+    "version": "9.0.2",
+    "schematic_export_netlist_exit": 0,
+    "pcb_reopen": "NOT_TESTED"
+  },
+  "gui": "NOT_TESTED",
+  "github_actions": "NOT_CONFIGURED",
+  "dynamic_collision_rerun": "NOT_TESTED; historical evidence retained",
+  "archive_controls": "normal and byte-corruption controls passed"
+}
