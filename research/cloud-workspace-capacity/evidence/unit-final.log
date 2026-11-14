@@ -1,0 +1,42 @@
+test_ahead (test_capacity_guard.Preservation.test_ahead) ... ok
+test_changed_untracked (test_capacity_guard.Preservation.test_changed_untracked) ... ok
+test_clean_cached_not_remote_proof (test_capacity_guard.Preservation.test_clean_cached_not_remote_proof) ... ok
+test_complete_local_artifacts (test_capacity_guard.Preservation.test_complete_local_artifacts) ... ok
+test_dirty (test_capacity_guard.Preservation.test_dirty) ... ok
+test_live_file_and_hardlink_are_not_backup (test_capacity_guard.Preservation.test_live_file_and_hardlink_are_not_backup) ... ok
+test_local_upstream_is_not_submission (test_capacity_guard.Preservation.test_local_upstream_is_not_submission) ... ok
+test_missing_untracked (test_capacity_guard.Preservation.test_missing_untracked) ... ok
+test_no_upstream (test_capacity_guard.Preservation.test_no_upstream) ... ok
+test_non_git (test_capacity_guard.Preservation.test_non_git) ... ok
+test_same_status_changed_content (test_capacity_guard.Preservation.test_same_status_changed_content) ... ok
+test_subdirectory (test_capacity_guard.Preservation.test_subdirectory) ... ok
+test_submodule (test_capacity_guard.Preservation.test_submodule) ... ok
+test_tampered_bundle (test_capacity_guard.Preservation.test_tampered_bundle) ... ok
+test_untracked_symlink (test_capacity_guard.Preservation.test_untracked_symlink) ... ok
+test_wrong_head (test_capacity_guard.Preservation.test_wrong_head) ... ok
+test_background_descendant_stopped_on_parent_exit (test_capacity_guard.Runner.test_background_descendant_stopped_on_parent_exit) ... ok
+test_cli_options_after_action (test_capacity_guard.Runner.test_cli_options_after_action) ... ok
+test_event_log_is_bounded (test_capacity_guard.Runner.test_event_log_is_bounded) ... ok
+test_invalid_interval (test_capacity_guard.Runner.test_invalid_interval) ... ok
+test_log_failure_kills_child (test_capacity_guard.Runner.test_log_failure_kills_child) ... ok
+test_midrun_stop_only_owned_process (test_capacity_guard.Runner.test_midrun_stop_only_owned_process) ... ok
+test_nested_run_mount_mismatch (test_capacity_guard.Runner.test_nested_run_mount_mismatch) ... ok
+test_reject_paths (test_capacity_guard.Runner.test_reject_paths) ... ok
+test_repo_device_mismatch (test_capacity_guard.Runner.test_repo_device_mismatch) ... ok
+test_scoped_environment_exit (test_capacity_guard.Runner.test_scoped_environment_exit) ... ok
+test_signal_stops_owned_child (test_capacity_guard.Runner.test_signal_stops_owned_child) ... ok
+test_spawn_failure (test_capacity_guard.Runner.test_spawn_failure) ... ok
+test_stop_never_starts (test_capacity_guard.Runner.test_stop_never_starts) ... ok
+test_unknown_never_starts (test_capacity_guard.Runner.test_unknown_never_starts) ... ok
+test_unpreserved_never_starts (test_capacity_guard.Runner.test_unpreserved_never_starts) ... ok
+test_boundaries (test_capacity_guard.Thresholds.test_boundaries) ... ok
+test_independent_policies (test_capacity_guard.Thresholds.test_independent_policies) ... ok
+test_inode_unavailable (test_capacity_guard.Thresholds.test_inode_unavailable) ... ok
+test_invalid_policy (test_capacity_guard.Thresholds.test_invalid_policy) ... ok
+test_missing_path_unknown (test_capacity_guard.Thresholds.test_missing_path_unknown) ... ok
+test_same_device_not_sum (test_capacity_guard.Thresholds.test_same_device_not_sum) ... ok
+
+----------------------------------------------------------------------
+Ran 37 tests in 2.673s
+
+OK

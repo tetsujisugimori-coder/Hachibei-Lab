@@ -1,0 +1,58 @@
+name: Cloud capacity guard
+on:
+  pull_request:
+    paths:
+      - 'research/cloud-workspace-capacity/**'
+      - '.github/workflows/cloud-capacity-guard.yml'
+permissions:
+  contents: read
+jobs:
+  synthetic-guard:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      CAPACITY_TEST_ROOT: ${{ github.workspace }}/capacity-ci/fixtures
+      PROBE_TEST_ROOT: ${{ github.workspace }}/capacity-ci/probe-fixtures
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Synthetic guard tests, no filling or shared deletion
+        id: tests
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p capacity-ci
+          python -m unittest discover -s research/cloud-workspace-capacity/tests -v 2>&1 | tee capacity-ci/unit.log
+          python -m unittest discover -s research/cloud-workspace-capacity/probe -v 2>&1 | tee capacity-ci/probe-hardening.log
+          python -m compileall -q research/cloud-workspace-capacity/tools research/cloud-workspace-capacity/probe
+          git diff --check
+      - name: Bind exact HEAD and source hashes
+        if: always()
+        env:
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha }}
+          TEST_OUTCOME: ${{ steps.tests.outcome }}
+        run: |
+          python - <<'PY'
+          import hashlib,json,os,pathlib,subprocess
+          p=pathlib.Path('capacity-ci');p.mkdir(exist_ok=True)
+          head=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip()
+          assert head==os.environ['EXPECTED_HEAD']
+          files=[f for f in pathlib.Path('research/cloud-workspace-capacity').rglob('*') if f.is_file() and '__pycache__' not in str(f)]
+          data={'head':head,'run':os.environ['GITHUB_RUN_ID'],'attempt':os.environ['GITHUB_RUN_ATTEMPT'],'outcome':os.environ['TEST_OUTCOME'],'evidence_kind':'SYNTHETIC_GUARD_TESTS','browser_smoke':'NOT_RUN','source_sha256':{str(f):hashlib.sha256(f.read_bytes()).hexdigest() for f in files}}
+          (p/'identity.json').write_text(json.dumps(data,indent=2)+'\n')
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: capacity-guard-${{ github.event.pull_request.head.sha }}-${{ github.run_attempt }}
+          path: |
+            capacity-ci/unit.log
+            capacity-ci/identity.json
+            capacity-ci/probe-hardening.log
+          if-no-files-found: error
