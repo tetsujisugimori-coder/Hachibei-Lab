@@ -1,0 +1,34 @@
+test_ambiguous_mount_stack (test_diagnose.Tests.test_ambiguous_mount_stack) ... ok
+test_compare_requires_explicit_utc (test_diagnose.Tests.test_compare_requires_explicit_utc) ... ok
+test_delta (test_diagnose.Tests.test_delta) ... ok
+test_depth_limit (test_diagnose.Tests.test_depth_limit) ... ok
+test_device_boundary (test_diagnose.Tests.test_device_boundary) ... ok
+test_different_target_sets (test_diagnose.Tests.test_different_target_sets) ... ok
+test_duplicate_volumes (test_diagnose.Tests.test_duplicate_volumes) ... ok
+test_empty (test_diagnose.Tests.test_empty) ... ok
+test_entry_limit (test_diagnose.Tests.test_entry_limit) ... ok
+test_environment_mismatch (test_diagnose.Tests.test_environment_mismatch) ... ok
+test_file_sizes_owner_time (test_diagnose.Tests.test_file_sizes_owner_time) ... ok
+test_hardlink_once (test_diagnose.Tests.test_hardlink_once) ... ok
+test_inode_zero (test_diagnose.Tests.test_inode_zero) ... ok
+test_invalid_capacity (test_diagnose.Tests.test_invalid_capacity) ... ok
+test_malformed_snapshots (test_diagnose.Tests.test_malformed_snapshots) ... ok
+test_missing_identity (test_diagnose.Tests.test_missing_identity) ... ok
+test_mount_longest_and_stack (test_diagnose.Tests.test_mount_longest_and_stack) ... ok
+test_mount_mismatch (test_diagnose.Tests.test_mount_mismatch) ... ok
+test_no_mount_no_scan (test_diagnose.Tests.test_no_mount_no_scan) ... ok
+test_permission_error (test_diagnose.Tests.test_permission_error) ... ok
+test_root_symlink (test_diagnose.Tests.test_root_symlink) ... ok
+test_same_device_bind_mount_boundary (test_diagnose.Tests.test_same_device_bind_mount_boundary) ... ok
+test_scandir_and_fstat_errors (test_diagnose.Tests.test_scandir_and_fstat_errors) ... ok
+test_scandir_iteration_error (test_diagnose.Tests.test_scandir_iteration_error) ... ok
+test_stat_error (test_diagnose.Tests.test_stat_error) ... ok
+test_symlink_never_followed (test_diagnose.Tests.test_symlink_never_followed) ... ok
+test_time_limit (test_diagnose.Tests.test_time_limit) ... ok
+test_volume_missing (test_diagnose.Tests.test_volume_missing) ... ok
+test_zero_interval (test_diagnose.Tests.test_zero_interval) ... ok
+
+----------------------------------------------------------------------
+Ran 29 tests in 0.017s
+
+OK
