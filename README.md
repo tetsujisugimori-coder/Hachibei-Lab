@@ -15,3 +15,5 @@ dot 八兵衛の管理用のリポジトリ
 
 
 [C05/C06 本人追加指示の通常作業追跡（H02）](research/dot-capabilities/natural-handoff-20261115/REPORT.md)：初期文書を固定した準備。本人追加指示待ち、実証は未実施。
+
+[Stage H03 別スレッド間の情報伝達境界](research/dot-capabilities/h03-20261115/REPORT.md)：明示提示前後の限定観測。自動共有と取得経路の排他性はUNKNOWN。
