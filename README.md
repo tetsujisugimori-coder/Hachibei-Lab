@@ -13,3 +13,5 @@ dot 八兵衛の管理用のリポジトリ
 
 [C05/C06 引継ぎ・途中追加指示の限定確認](research/dot-capabilities/handoff-20261115/REPORT.md)：明示入力・受領申告・資料版・成果物反映を分けた1事例と記録テンプレート。
 
+
+[C05/C06 本人追加指示の通常作業追跡（H02）](research/dot-capabilities/natural-handoff-20261115/REPORT.md)：初期文書を固定した準備。本人追加指示待ち、実証は未実施。
