@@ -1,0 +1,37 @@
+name: H04 synthetic route validation
+on:
+  pull_request:
+    paths: ['research/dot-capabilities/h04-20261116/**', '.github/workflows/h04-research.yml']
+permissions:
+  contents: read
+jobs:
+  synthetic:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+      - name: Synthetic tests and immutable evidence
+        shell: bash
+        run: |
+          mkdir h04-evidence
+          python3 -m unittest discover -s research/dot-capabilities/h04-20261116 -v > h04-evidence/tests.log 2>&1
+          python3 -m unittest discover -s research/dot-capabilities/h03-20261115 -v > h04-evidence/h03-regression.log 2>&1
+          python3 - <<'PY'
+          import hashlib,json,pathlib,subprocess
+          p=pathlib.Path('h04-evidence')
+          source=pathlib.Path('research/dot-capabilities/h04-20261116')
+          for f in source.iterdir():
+              if f.is_file(): (p/f.name).write_bytes(f.read_bytes())
+          identity={'head':subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),'tree':subprocess.check_output(['git','rev-parse','HEAD^{tree}'],text=True).strip(),'mode':'synthetic','real_experiment':'NOT_TESTED'}
+          (p/'identity.json').write_text(json.dumps(identity,indent=2)+'\n')
+          manifest={f.name:{'bytes':f.stat().st_size,'sha256':hashlib.sha256(f.read_bytes()).hexdigest()} for f in sorted(p.iterdir()) if f.is_file()}
+          (p/'manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: h04-synthetic-${{ github.run_id }}
+          path: h04-evidence/
+          if-no-files-found: error
