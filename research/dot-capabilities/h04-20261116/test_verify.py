@@ -37,13 +37,19 @@ def cases():
     return result
 
 class Controls(unittest.TestCase):
-    pass
+    def test_route_catalog_matches_validator(self):
+        ledger = json.loads(pathlib.Path(__file__).with_name('ROUTES.json').read_text(encoding='utf-8'))
+        self.assertEqual(ledger['schema'], 'H04-route-ledger/1')
+        self.assertCountEqual([row['route'] for row in ledger['routes']], ROUTES)
 
 def make_test(raw,reason):
     def test(self):
         r=validate(raw)
         self.assertEqual(r['format'],'FAIL' if reason else 'PASS')
         self.assertEqual(r['reasons'],[reason] if reason else [])
+        self.assertEqual(r['content'],'NOT_TESTED' if reason else 'PASS')
+        self.assertEqual(r['revision'],'NOT_TESTED' if reason else 'PASS')
+        self.assertEqual(r['real_experiment'],'NOT_TESTED')
         self.assertEqual(r['acquisition_route'],'UNKNOWN')
         self.assertEqual(r['automatic_sharing'],'UNKNOWN')
     return test
