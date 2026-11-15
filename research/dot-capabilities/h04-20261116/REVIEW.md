@@ -2,7 +2,7 @@
 
 作成担当とは別の担当がコード、合成入力、仕様、経路台帳、将来実験設計を直接読取り、再実行した。GitHubの別アカウントによる承認ではない。2026-11-16 JST。
 
-## 対象版
+## 初回独立レビュー対象版（P3追補前）
 
 - verify.py SHA-256 `1487407f30e9ed8feb26c0b6a8e1ae573aa557ea8724b0b3b54ae32d04cae226`
 - test_verify.py SHA-256 `f613bce82ebcf5ff7b9c6a1eea39c877552acdbd3b3e802adad9d08916d0dfee`
@@ -10,6 +10,15 @@
 - ROUTES.json SHA-256 `b284de9705aa5853b1879fbe0965c31b32a1b211ba2f568869ed6366c015c240`
 - B-DESIGN.md SHA-256 `420e50a70fdc7b6be3e550b07dd76789108fd68eee306c5735f272762389bd3a`
 - README.md SHA-256 `4154dc52048966ebb4122723c96ae7f3f6c12ae5135dc0c7851c284f2b860c2b`
+
+この節のSHA-256は初回独立レビュー時点の原票であり、P3追補後の最新版ハッシュではない。初回審査の対象記録を上書きせず保持する。
+
+## P3追補（初回レビュー後、2026-11-16 JST）
+
+- P3-01：合成正常・異常の各対照について `content` / `revision` / `real_experiment` を直接検査するアサーションを追加。経路・自動共有のUNKNOWN維持も従前どおり検査。
+- P3-02：`ROUTES.json` の宣言schemaと経路7件を `verify.py` の `ROUTES` 定義に照合するテストを追加。
+- 追補コミット `82ff4b76aa9dc1e6df7e4120250c64c5bffc35fc` で変更されたコードは `test_verify.py` のみ。検証器本体とH03原票は不変。これは初回独立レビューのハッシュ対象版とは別の追補である。
+- この追補の正式CI・レビュー・原ZIPの保全状態については、追補後HEADを指定してPR上で個別判定する。初回の独立再取得証拠を追補後の原ZIPへ流用しない。
 
 ## 指摘と同一反例の再確認
 
