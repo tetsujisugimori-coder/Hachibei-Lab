@@ -1,6 +1,8 @@
 """Issue #45: deterministic, *synthetic-only* exposure screening. No IO or access control."""
 import hashlib
 SCHEMA = "H04-45-synthetic/1"
+FIXTURE_CANARY = "SYNTHETIC-H04-45-NEVER-REAL"
+FIXTURE_LOCATOR = "synthetic://not-a-real-place/case45"
 SURFACES = (
     "b0_prompt", "b0_history", "memory", "space", "search",
     "shared_files", "handoff", "public_git",
@@ -19,9 +21,8 @@ def evaluate(value):
         if value["schema"] != SCHEMA or value["mode"] != "synthetic":
             return _failed("SYNTHETIC_ONLY")
         canary, locator = value["canary"], value["locator"]
-        if (type(canary) is not str or not canary.startswith("SYNTHETIC-")
-                or not 16 <= len(canary) <= 100 or type(locator) is not str
-                or not locator.startswith("synthetic://") or not 12 <= len(locator) <= 200):
+        if (type(canary) is not str or canary != FIXTURE_CANARY
+                or type(locator) is not str or locator != FIXTURE_LOCATOR):
             return _failed("CANARY_TYPE_SCOPE")
         captures = value["captures"]
         if type(captures) is not dict or set(captures) != set(SURFACES):
