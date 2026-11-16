@@ -1,0 +1,139 @@
+{
+  "schema": "H04B-preparation/1",
+  "mode": "preparation",
+  "aim": "exclusive_route",
+  "conditions": {
+    "owner_approval": {
+      "status": "BLOCKED",
+      "evidence": []
+    },
+    "authorized_new_threads": {
+      "status": "UNKNOWN",
+      "evidence": []
+    },
+    "answer_isolation": {
+      "status": "UNKNOWN",
+      "evidence": []
+    },
+    "preregistered_scoring": {
+      "status": "UNKNOWN",
+      "evidence": []
+    },
+    "contamination_excluded": {
+      "status": "UNKNOWN",
+      "evidence": []
+    },
+    "technical_controls": {
+      "status": "UNKNOWN",
+      "evidence": []
+    },
+    "stop_and_custody": {
+      "status": "UNKNOWN",
+      "evidence": []
+    },
+    "b0_b1_independence": {
+      "status": "UNKNOWN",
+      "evidence": []
+    },
+    "b1_after_b0": {
+      "status": "UNKNOWN",
+      "evidence": []
+    }
+  },
+  "routes": [
+    {
+      "route": "history",
+      "available": "UNKNOWN",
+      "authorized": "UNKNOWN",
+      "requested": "UNKNOWN",
+      "accepted": "UNKNOWN",
+      "applied": "UNKNOWN",
+      "checked": "UNKNOWN",
+      "measured": "UNKNOWN",
+      "self_report": "未測定。禁止文章を技術遮断の証拠にしない。",
+      "evidence": [],
+      "alternative_excluded": "UNKNOWN"
+    },
+    {
+      "route": "transfer",
+      "available": "UNKNOWN",
+      "authorized": "UNKNOWN",
+      "requested": "UNKNOWN",
+      "accepted": "UNKNOWN",
+      "applied": "UNKNOWN",
+      "checked": "UNKNOWN",
+      "measured": "UNKNOWN",
+      "self_report": "未測定。禁止文章を技術遮断の証拠にしない。",
+      "evidence": [],
+      "alternative_excluded": "UNKNOWN"
+    },
+    {
+      "route": "memory",
+      "available": "UNKNOWN",
+      "authorized": "UNKNOWN",
+      "requested": "UNKNOWN",
+      "accepted": "UNKNOWN",
+      "applied": "UNKNOWN",
+      "checked": "UNKNOWN",
+      "measured": "UNKNOWN",
+      "self_report": "未測定。禁止文章を技術遮断の証拠にしない。",
+      "evidence": [],
+      "alternative_excluded": "UNKNOWN"
+    },
+    {
+      "route": "shared",
+      "available": "UNKNOWN",
+      "authorized": "UNKNOWN",
+      "requested": "UNKNOWN",
+      "accepted": "UNKNOWN",
+      "applied": "UNKNOWN",
+      "checked": "UNKNOWN",
+      "measured": "UNKNOWN",
+      "self_report": "未測定。禁止文章を技術遮断の証拠にしない。",
+      "evidence": [],
+      "alternative_excluded": "UNKNOWN"
+    },
+    {
+      "route": "search",
+      "available": "UNKNOWN",
+      "authorized": "UNKNOWN",
+      "requested": "UNKNOWN",
+      "accepted": "UNKNOWN",
+      "applied": "UNKNOWN",
+      "checked": "UNKNOWN",
+      "measured": "UNKNOWN",
+      "self_report": "未測定。禁止文章を技術遮断の証拠にしない。",
+      "evidence": [],
+      "alternative_excluded": "UNKNOWN"
+    },
+    {
+      "route": "handoff",
+      "available": "UNKNOWN",
+      "authorized": "UNKNOWN",
+      "requested": "UNKNOWN",
+      "accepted": "UNKNOWN",
+      "applied": "UNKNOWN",
+      "checked": "UNKNOWN",
+      "measured": "UNKNOWN",
+      "self_report": "未測定。禁止文章を技術遮断の証拠にしない。",
+      "evidence": [],
+      "alternative_excluded": "UNKNOWN"
+    },
+    {
+      "route": "unidentified",
+      "available": "UNKNOWN",
+      "authorized": "UNKNOWN",
+      "requested": "UNKNOWN",
+      "accepted": "UNKNOWN",
+      "applied": "UNKNOWN",
+      "checked": "UNKNOWN",
+      "measured": "UNKNOWN",
+      "self_report": "未測定。禁止文章を技術遮断の証拠にしない。",
+      "evidence": [],
+      "alternative_excluded": "UNKNOWN"
+    }
+  ],
+  "b0_exposure": "UNKNOWN",
+  "b0_b1_distinct": "UNKNOWN",
+  "answer_distinct": "UNKNOWN"
+}

@@ -19,3 +19,5 @@ dot 八兵衛の管理用のリポジトリ
 [Stage H03 別スレッド間の情報伝達境界](research/dot-capabilities/h03-20261115/REPORT.md)：明示提示前後の限定観測。自動共有と取得経路の排他性はUNKNOWN。
 
 [Stage H04-A/C 取得経路基盤・形式検証](research/dot-capabilities/h04-20261116/README.md)：合成検査のみ。実経路・自動共有はUNKNOWN、H04-B実験未実施。
+
+[H04-B 非通信の開始条件基盤](research/dot-capabilities/h04b-20261116/README.md)：準備と合成検査のみ。実験開始BLOCKED、共有・取得経路UNKNOWN。
