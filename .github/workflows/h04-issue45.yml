@@ -1,0 +1,33 @@
+name: H04 Issue45 synthetic access and contamination preflight
+on:
+  pull_request:
+    paths:
+      - 'research/dot-capabilities/h04-issue45-20261116/**'
+      - 'research/dot-capabilities/h04b-20261116/gate.py'
+      - '.github/workflows/h04-issue45.yml'
+permissions:
+  contents: read
+jobs:
+  synthetic:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+      - name: Offline synthetic negative controls
+        env:
+          PYTHONDONTWRITEBYTECODE: '1'
+        run: |
+          mkdir -p issue45-evidence
+          python3 -m unittest discover -s research/dot-capabilities/h04-issue45-20261116 -p 'test_*.py' -v > issue45-evidence/test.log 2>&1
+          cat issue45-evidence/test.log
+          python3 -m unittest discover -s research/dot-capabilities/h04b-20261116 -p 'test_*.py' -v > issue45-evidence/h04b-regression.log 2>&1
+          cat issue45-evidence/h04b-regression.log
+          printf '%s\n' "scope: synthetic_only" "experiment: NOT_TESTED" "execution_allowed: false" > issue45-evidence/scope.txt
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: h04-issue45-synthetic-${{ github.run_id }}
+          path: issue45-evidence/
+          if-no-files-found: error
