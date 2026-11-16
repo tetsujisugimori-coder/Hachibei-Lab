@@ -1,0 +1,54 @@
+name: H04 Issue45 synthetic access and contamination preflight
+on:
+  pull_request:
+    paths:
+      - 'research/dot-capabilities/h04-issue45-20261116/**'
+      - 'research/dot-capabilities/h04b-20261116/gate.py'
+      - '.github/workflows/h04-issue45.yml'
+permissions:
+  contents: read
+jobs:
+  synthetic:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+      - name: Offline synthetic negative controls
+        env:
+          PYTHONDONTWRITEBYTECODE: '1'
+        run: |
+          mkdir -p issue45-evidence
+          python3 -m unittest discover -s research/dot-capabilities/h04-issue45-20261116 -p 'test_*.py' -v > issue45-evidence/test.log 2>&1
+          cat issue45-evidence/test.log
+          python3 -m unittest discover -s research/dot-capabilities/h04b-20261116 -p 'test_*.py' -v > issue45-evidence/h04b-regression.log 2>&1
+          cat issue45-evidence/h04b-regression.log
+          printf '%s\n' "scope: synthetic_only" "experiment: NOT_TESTED" "execution_allowed: false" > issue45-evidence/scope.txt
+          mkdir -p issue45-evidence/source
+          cp research/dot-capabilities/h04-issue45-20261116/*.py issue45-evidence/source/
+          cp research/dot-capabilities/h04-issue45-20261116/*.md issue45-evidence/source/
+          cp research/dot-capabilities/h04b-20261116/gate.py issue45-evidence/source/h04b-gate.py
+          cp .github/workflows/h04-issue45.yml issue45-evidence/source/workflow-h04-issue45.yml
+          python3 - <<'PY'
+          import hashlib,json,pathlib,subprocess
+          p=pathlib.Path('issue45-evidence')
+          identity={
+              'head':subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),
+              'tree':subprocess.check_output(['git','rev-parse','HEAD^{tree}'],text=True).strip(),
+              'mode':'synthetic_only','real_experiment':'NOT_TESTED'
+          }
+          (p/'identity.json').write_text(json.dumps(identity,indent=2)+'\n')
+          manifest={}
+          for f in sorted(p.rglob('*')):
+              if f.is_file() and f.name != 'manifest.json':
+                  b=f.read_bytes()
+                  manifest[str(f.relative_to(p))]={'bytes':len(b),'sha256':hashlib.sha256(b).hexdigest()}
+          (p/'manifest.json').write_text(json.dumps(manifest,indent=2,sort_keys=True)+'\n')
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: h04-issue45-synthetic-${{ github.run_id }}
+          path: issue45-evidence/
+          if-no-files-found: error
