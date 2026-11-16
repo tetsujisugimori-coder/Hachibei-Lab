@@ -29,6 +29,7 @@ jobs:
           cp research/dot-capabilities/h04-issue45-20261116/*.py issue45-evidence/source/
           cp research/dot-capabilities/h04-issue45-20261116/*.md issue45-evidence/source/
           cp research/dot-capabilities/h04b-20261116/gate.py issue45-evidence/source/h04b-gate.py
+          cp .github/workflows/h04-issue45.yml issue45-evidence/source/workflow-h04-issue45.yml
           python3 - <<'PY'
           import hashlib,json,pathlib,subprocess
           p=pathlib.Path('issue45-evidence')
