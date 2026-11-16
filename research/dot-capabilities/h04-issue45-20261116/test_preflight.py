@@ -53,6 +53,8 @@ class PreflightTests(unittest.TestCase):
             lambda d:d["captures"]["space"].update(text=42),
             lambda d:d["captures"]["memory"].update(status="UNKNOWN",text=CANARY),
             lambda d:d.update(canary="ACTUAL-SECRET"),
+            lambda d:d.update(canary="SYNTHETIC-BUT-NOT-APPROVED"),
+            lambda d:d.update(locator="synthetic://different-place"),
             lambda d:d.update(locator="https://example.com/private"),
             lambda d:d.update(captures=False),
         ]
