@@ -1,0 +1,41 @@
+name: H04B preparation synthetic gate
+on:
+  pull_request:
+    paths: ['research/dot-capabilities/h04b-20261116/**', '.github/workflows/h04b-preparation.yml']
+permissions:
+  contents: read
+jobs:
+  readiness:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+      - name: Synthetic gate and unchanged prior contracts
+        env:
+          PYTHONDONTWRITEBYTECODE: '1'
+        run: |
+          mkdir h04b-evidence
+          python3 -m unittest discover -s research/dot-capabilities/h04b-20261116 -v > h04b-evidence/tests.log 2>&1
+          python3 -m unittest discover -s research/dot-capabilities/h04-20261116 -v > h04b-evidence/h04-regression.log 2>&1
+          python3 -m unittest discover -s research/dot-capabilities/h03-20261115 -v > h04b-evidence/h03-regression.log 2>&1
+          python3 - <<'PY'
+          import hashlib,json,pathlib,subprocess,sys
+          src=pathlib.Path('research/dot-capabilities/h04b-20261116');sys.path.insert(0,str(src))
+          from test_gate import cases
+          from gate import decide,parse
+          p=pathlib.Path('h04b-evidence')
+          for f in src.iterdir():
+              if f.is_file(): (p/f.name).write_bytes(f.read_bytes())
+          (p/'cases.json').write_text(json.dumps([dict(name=n,input=d,expected_contract=c,expected_gate=g,expected_reason=r,actual=decide(d)) for n,d,c,g,r in cases()],ensure_ascii=False,indent=2)+'\n')
+          (p/'readiness-result.json').write_text(json.dumps(parse((src/'READINESS.json').read_bytes()),indent=2)+'\n')
+          (p/'identity.json').write_text(json.dumps({'head':subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),'tree':subprocess.check_output(['git','rev-parse','HEAD^{tree}'],text=True).strip(),'experiment':'NOT_TESTED'},indent=2)+'\n')
+          (p/'manifest.json').write_text(json.dumps({f.name:{'bytes':f.stat().st_size,'sha256':hashlib.sha256(f.read_bytes()).hexdigest()} for f in sorted(p.iterdir()) if f.is_file()},indent=2)+'\n')
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: h04b-preparation-${{ github.run_id }}
+          path: h04b-evidence/
+          if-no-files-found: error
