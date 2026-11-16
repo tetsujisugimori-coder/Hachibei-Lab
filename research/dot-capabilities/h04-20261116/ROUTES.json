@@ -1,0 +1,159 @@
+{
+  "schema": "H04-route-ledger/1",
+  "routes": [
+    {
+      "route": "history",
+      "name": "同一スレッド履歴",
+      "definition": "現在会話の明示された履歴",
+      "availability_conditions": "認可された機能・対象・アクセス条件が必要。今回は未測定。",
+      "permission_setting": "UNKNOWN",
+      "technical_restriction": "UNKNOWN",
+      "requested": "NOT_TESTED",
+      "accepted": "NOT_TESTED",
+      "applied": "UNKNOWN",
+      "verification_method": "認可済み設定原票と適用検査を別途照合。禁止文章だけでは不可。",
+      "observable_records": "現在会話の明示された履歴",
+      "self_report": "証拠と分離して保存。単独で確定不可。",
+      "measured": "NOT_TESTED",
+      "unknowns": [
+        "実適用",
+        "排他的取得経路",
+        "内部動作"
+      ],
+      "judgment": "UNKNOWN",
+      "provenance": "H04設計台帳。実測原票ではない。"
+    },
+    {
+      "route": "transfer",
+      "name": "明示転送",
+      "definition": "送信操作と受信原票の対応",
+      "availability_conditions": "認可された機能・対象・アクセス条件が必要。今回は未測定。",
+      "permission_setting": "UNKNOWN",
+      "technical_restriction": "UNKNOWN",
+      "requested": "NOT_TESTED",
+      "accepted": "NOT_TESTED",
+      "applied": "UNKNOWN",
+      "verification_method": "認可済み設定原票と適用検査を別途照合。禁止文章だけでは不可。",
+      "observable_records": "送信操作と受信原票の対応",
+      "self_report": "証拠と分離して保存。単独で確定不可。",
+      "measured": "NOT_TESTED",
+      "unknowns": [
+        "実適用",
+        "排他的取得経路",
+        "内部動作"
+      ],
+      "judgment": "UNKNOWN",
+      "provenance": "H04設計台帳。実測原票ではない。"
+    },
+    {
+      "route": "memory",
+      "name": "Memory",
+      "definition": "認可された参照機能",
+      "availability_conditions": "認可された機能・対象・アクセス条件が必要。今回は未測定。",
+      "permission_setting": "UNKNOWN",
+      "technical_restriction": "UNKNOWN",
+      "requested": "NOT_TESTED",
+      "accepted": "NOT_TESTED",
+      "applied": "UNKNOWN",
+      "verification_method": "認可済み設定原票と適用検査を別途照合。禁止文章だけでは不可。",
+      "observable_records": "認可された参照機能",
+      "self_report": "証拠と分離して保存。単独で確定不可。",
+      "measured": "NOT_TESTED",
+      "unknowns": [
+        "実適用",
+        "排他的取得経路",
+        "内部動作"
+      ],
+      "judgment": "UNKNOWN",
+      "provenance": "H04設計台帳。実測原票ではない。"
+    },
+    {
+      "route": "shared",
+      "name": "Space・共有資料",
+      "definition": "資料の読取権限と参照原票",
+      "availability_conditions": "認可された機能・対象・アクセス条件が必要。今回は未測定。",
+      "permission_setting": "UNKNOWN",
+      "technical_restriction": "UNKNOWN",
+      "requested": "NOT_TESTED",
+      "accepted": "NOT_TESTED",
+      "applied": "UNKNOWN",
+      "verification_method": "認可済み設定原票と適用検査を別途照合。禁止文章だけでは不可。",
+      "observable_records": "資料の読取権限と参照原票",
+      "self_report": "証拠と分離して保存。単独で確定不可。",
+      "measured": "NOT_TESTED",
+      "unknowns": [
+        "実適用",
+        "排他的取得経路",
+        "内部動作"
+      ],
+      "judgment": "UNKNOWN",
+      "provenance": "H04設計台帳。実測原票ではない。"
+    },
+    {
+      "route": "search",
+      "name": "検索",
+      "definition": "検索要求・取得結果",
+      "availability_conditions": "認可された機能・対象・アクセス条件が必要。今回は未測定。",
+      "permission_setting": "UNKNOWN",
+      "technical_restriction": "UNKNOWN",
+      "requested": "NOT_TESTED",
+      "accepted": "NOT_TESTED",
+      "applied": "UNKNOWN",
+      "verification_method": "認可済み設定原票と適用検査を別途照合。禁止文章だけでは不可。",
+      "observable_records": "検索要求・取得結果",
+      "self_report": "証拠と分離して保存。単独で確定不可。",
+      "measured": "NOT_TESTED",
+      "unknowns": [
+        "実適用",
+        "排他的取得経路",
+        "内部動作"
+      ],
+      "judgment": "UNKNOWN",
+      "provenance": "H04設計台帳。実測原票ではない。"
+    },
+    {
+      "route": "handoff",
+      "name": "担当間引継ぎ",
+      "definition": "指定担当への明示入力",
+      "availability_conditions": "認可された機能・対象・アクセス条件が必要。今回は未測定。",
+      "permission_setting": "UNKNOWN",
+      "technical_restriction": "UNKNOWN",
+      "requested": "NOT_TESTED",
+      "accepted": "NOT_TESTED",
+      "applied": "UNKNOWN",
+      "verification_method": "認可済み設定原票と適用検査を別途照合。禁止文章だけでは不可。",
+      "observable_records": "指定担当への明示入力",
+      "self_report": "証拠と分離して保存。単独で確定不可。",
+      "measured": "NOT_TESTED",
+      "unknowns": [
+        "実適用",
+        "排他的取得経路",
+        "内部動作"
+      ],
+      "judgment": "UNKNOWN",
+      "provenance": "H04設計台帳。実測原票ではない。"
+    },
+    {
+      "route": "unidentified",
+      "name": "未特定",
+      "definition": "他の経路を排除できない取得",
+      "availability_conditions": "認可された機能・対象・アクセス条件が必要。今回は未測定。",
+      "permission_setting": "UNKNOWN",
+      "technical_restriction": "UNKNOWN",
+      "requested": "NOT_TESTED",
+      "accepted": "NOT_TESTED",
+      "applied": "UNKNOWN",
+      "verification_method": "認可済み設定原票と適用検査を別途照合。禁止文章だけでは不可。",
+      "observable_records": "他の経路を排除できない取得",
+      "self_report": "証拠と分離して保存。単独で確定不可。",
+      "measured": "NOT_TESTED",
+      "unknowns": [
+        "実適用",
+        "排他的取得経路",
+        "内部動作"
+      ],
+      "judgment": "UNKNOWN",
+      "provenance": "H04設計台帳。実測原票ではない。"
+    }
+  ]
+}
