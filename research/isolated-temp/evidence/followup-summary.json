@@ -1,0 +1,97 @@
+{
+  "tested_head": "5c428a0ab131827d01e4234902a56091c6fc46e8",
+  "tested_tree": "9c064973849ae894aa0fcd5351bdc1e47a1e5b9a",
+  "start_utc": "2026-11-12T21:11:41.123351+00:00",
+  "end_utc": "2026-11-12T21:11:41.949489+00:00",
+  "runner_exit": 2,
+  "node_exit": 2,
+  "browser_signal": "SIGABRT",
+  "browser": "BLOCKED",
+  "dom": "NOT_TESTED",
+  "reason": "socket() failed: Operation not permitted (1); root cause UNKNOWN",
+  "parent_unchanged": true,
+  "capacity_shared_before": {
+    "device": 39,
+    "available": 5237850112,
+    "free_inodes": 1278751
+  },
+  "capacity_shared_after": {
+    "device": 39,
+    "available": 5237850112,
+    "free_inodes": 1278751
+  },
+  "dedicated_observed_files": [
+    {
+      "path": "temp/probe.txt",
+      "bytes": 17,
+      "sha256": "5327bc5593c0515740851fada86b3919e00672aade9b648f58d78e3bbbac9496"
+    },
+    {
+      "path": "temp/node-cache/v24.22.1-x64-964aae3f-1000/4b2feb18",
+      "bytes": 769444,
+      "sha256": "5193d60032ed724616c65737c94a86d12738b0ba3d8af71bb3492b74e182f695"
+    },
+    {
+      "path": "temp/node-cache/v24.22.1-x64-964aae3f-1000/8f3656cc",
+      "bytes": 369756,
+      "sha256": "c3f321aabe6712c99a387255cad66a72605cac87fa160bbaab3c9cb4142ef1c4"
+    },
+    {
+      "path": "temp/node-cache/v24.22.1-x64-964aae3f-1000/aa75c1ee",
+      "bytes": 3876,
+      "sha256": "b7f7443dab6cd5c75ef225648f4218764d462475ee481d70d151ebb150fac85c"
+    },
+    {
+      "path": "temp/node-cache/v24.22.1-x64-964aae3f-1000/af668792",
+      "bytes": 820,
+      "sha256": "4c6a1a02b171ff96f217626c2c8f2368783d0318ee80d43bdc942705c059be9d"
+    },
+    {
+      "path": "temp/node-cache/v24.22.1-x64-964aae3f-1000/6b76ee8c",
+      "bytes": 1900,
+      "sha256": "430f28c07fc0d03b235e786eb8774271991b57228706867b8063bef76da45d6b"
+    },
+    {
+      "path": "temp/node-cache/v24.22.1-x64-964aae3f-1000/3a1bb343",
+      "bytes": 940,
+      "sha256": "c372ac7b074ec8e67d5ca24162ac4411ae55997107ff134de529f05f2a0d68dc"
+    }
+  ],
+  "process_events": [
+    {
+      "event": "started",
+      "elapsed": 3.904900040652137e-05,
+      "pid": 6,
+      "pgid": 6
+    },
+    {
+      "event": "stop_requested",
+      "elapsed": 0.8078146990010282,
+      "reason": [
+        "POST_EXIT_GROUP_CHECK"
+      ]
+    },
+    {
+      "event": "parent_reaped",
+      "elapsed": 0.8079538609999872,
+      "code": 2
+    },
+    {
+      "event": "residual_check",
+      "elapsed": 0.8079660360017442,
+      "result": "OWNED_GROUP_ABSENT",
+      "scope": "owned group in current PID namespace; escaped descendants UNKNOWN"
+    }
+  ],
+  "raw_stdout_sha256": "3181538562265b2824f75e1647ae88db6735fb0d64b2adf6f940879150a75c63",
+  "raw_stderr_sha256": "ea07965f8dbc29f22082aeb248f47ffa49c0305933b2e35c61c95ea7fb8d341d",
+  "original18": {
+    "count": 18,
+    "bytes": 1163952,
+    "matched": 18
+  },
+  "windows": "PENDING",
+  "external_backup": "UNKNOWN",
+  "quota": "UNKNOWN",
+  "publication": "sanitized summary, not raw original"
+}

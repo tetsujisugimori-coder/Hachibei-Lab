@@ -1,0 +1,22 @@
+name: Isolated Temp contracts
+on:
+  pull_request:
+    paths:
+      - 'research/isolated-temp/**'
+      - '.github/workflows/isolated-temp.yml'
+permissions:
+  contents: read
+jobs:
+  contracts:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+      - name: Synthetic contracts (not a Chromium runtime acceptance)
+        run: |
+          python3 -B -m unittest discover -s research/isolated-temp/tests -v
+          python3 -B -m unittest discover -s research/shared-temp-stage1/tests -v
+          node --check research/isolated-temp/tools/probe.cjs

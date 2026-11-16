@@ -1,0 +1,89 @@
+{
+  "start_utc": "2026-11-12T19:02:44.318817+00:00",
+  "end_utc": "2026-11-12T19:02:45.154806+00:00",
+  "command": [
+    "node",
+    "<WORKSPACE>/hachibei-temp-stage3/repo/research/isolated-temp/tools/probe.cjs"
+  ],
+  "exit_code": 2,
+  "result": "BLOCKED",
+  "parent_env_before": {
+    "TMPDIR": "/tmp",
+    "TMP": null,
+    "TEMP": null,
+    "NODE_COMPILE_CACHE": null,
+    "XDG_CACHE_HOME": "<HOME>/.cache"
+  },
+  "parent_env_after": {
+    "TMPDIR": "/tmp",
+    "TMP": null,
+    "TEMP": null,
+    "NODE_COMPILE_CACHE": null,
+    "XDG_CACHE_HOME": "<HOME>/.cache"
+  },
+  "parent_unchanged": true,
+  "capacity_before": {
+    "/tmp": {
+      "device": 39,
+      "available": 5237850112,
+      "free_inodes": 1278751
+    },
+    "<WORKSPACE>/hachibei-temp-stage3": {
+      "device": 27,
+      "available": 61986422784,
+      "free_inodes": 4144273
+    }
+  },
+  "capacity_after": {
+    "/tmp": {
+      "device": 39,
+      "available": 5237850112,
+      "free_inodes": 1278751
+    },
+    "<WORKSPACE>/hachibei-temp-stage3": {
+      "device": 27,
+      "available": 61985226752,
+      "free_inodes": 4144259
+    }
+  },
+  "files": [
+    {
+      "path": "temp/probe.txt",
+      "bytes": 17,
+      "sha256": "5327bc5593c0515740851fada86b3919e00672aade9b648f58d78e3bbbac9496"
+    },
+    {
+      "path": "temp/node-cache/v24.22.1-x64-964aae3f-1000/4b2feb18",
+      "bytes": 769396,
+      "sha256": "c7354aadf7d9b9ce7179b3d032fabe8cce0d81fee35ae5b23875aa273c909cea"
+    },
+    {
+      "path": "temp/node-cache/v24.22.1-x64-964aae3f-1000/8f3656cc",
+      "bytes": 369772,
+      "sha256": "028cb0a4e7a3c2394d9d2ae9460a0b162f8677626d5ee4c6bd2649dc7e6653e0"
+    },
+    {
+      "path": "temp/node-cache/v24.22.1-x64-964aae3f-1000/aa75c1ee",
+      "bytes": 3812,
+      "sha256": "3386efe7ddad690aa688d3b935aee281829ea90cd4f2200612bc6a4f964d1a4e"
+    },
+    {
+      "path": "temp/node-cache/v24.22.1-x64-964aae3f-1000/af668792",
+      "bytes": 820,
+      "sha256": "a0f5a4e49813eb5e322ab21c4d6012b3313042be457e211fecf05e350e81c1bd"
+    },
+    {
+      "path": "temp/node-cache/v24.22.1-x64-964aae3f-1000/6b76ee8c",
+      "bytes": 1900,
+      "sha256": "c5f4886cd40711328631754de98d058d8dcd76558296f3d75f20c697181b6dd1"
+    },
+    {
+      "path": "temp/node-cache/v24.22.1-x64-964aae3f-1000/3a1bb343",
+      "bytes": 940,
+      "sha256": "d465f01fa5af8a624f0a1ca28ec036ced8194d69d73f63aaf629544099c1e648"
+    }
+  ],
+  "quota_independence": "UNKNOWN",
+  "untracked_browser_files": "UNKNOWN",
+  "process_scope": "PID namespace only"
+}

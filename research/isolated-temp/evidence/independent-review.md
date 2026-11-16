@@ -1,0 +1,10 @@
+# 独立コードレビュー（commit前）
+
+実装担当とは別のworkerによる読取・mock検証。
+初回P2：phaseだけのfalse PASS、親env不一致のJSON整合、timeout原stderr欠落/未観測process。
+修正後13unit＋独立8ケース成功、同じfalse PASS反例2件はBLOCKEDへRED→GREEN。
+runner SHA256 5d84a1de501ea4b91c6f86688009662e9a9aa7106fd316d2fb96e0a916586ef5
+probe SHA256 386a977d41c84f54147e96ce6cb1d0c68096f2497159fa69479f692e007da43e
+上記は独立担当が実際に確認した版。最終commit identityは別途照合。
+残るP3：directory走査時間・stdout/stderr captureに独立byte上限なし。小規模既知fixture限定。
+未解決P1/P2なし（限定code/docレビュー）。browser完遂・Windows永続保全・正式CIを意味しない。
