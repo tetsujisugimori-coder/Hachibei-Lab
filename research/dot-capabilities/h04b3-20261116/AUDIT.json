@@ -1,0 +1,580 @@
+{
+  "schema": "H04B3-audit/1",
+  "scope": "preparation",
+  "routes": {
+    "history": {
+      "available": {
+        "status": "UNKNOWN",
+        "observed_at": "2026-11-16T12:41:40.479676+00:00",
+        "actor": "H04-B3 preparation reviewer",
+        "environment": "read-only public repository records; no experimental threads",
+        "evidence": [
+          "PLAN.md#evidence-register"
+        ],
+        "reason": "実B0/B1未作成・未測定。一般機能の存在や既存資料のみで当該経路の実適用を認定しない。"
+      },
+      "authorized": {
+        "status": "BLOCKED",
+        "observed_at": "2026-11-16T12:41:40.479676+00:00",
+        "actor": "H04-B3 preparation reviewer",
+        "environment": "read-only public repository records; no experimental threads",
+        "evidence": [
+          "PLAN.md#evidence-register"
+        ],
+        "reason": "実験開始・実スレッド通信は本工程の許可外。未発行であり拒否の実測ではない。"
+      },
+      "requested": {
+        "status": "BLOCKED",
+        "observed_at": "2026-11-16T12:41:40.479676+00:00",
+        "actor": "H04-B3 preparation reviewer",
+        "environment": "read-only public repository records; no experimental threads",
+        "evidence": [
+          "PLAN.md#evidence-register"
+        ],
+        "reason": "実験開始・実スレッド通信は本工程の許可外。未発行であり拒否の実測ではない。"
+      },
+      "accepted": {
+        "status": "UNKNOWN",
+        "observed_at": "2026-11-16T12:41:40.479676+00:00",
+        "actor": "H04-B3 preparation reviewer",
+        "environment": "read-only public repository records; no experimental threads",
+        "evidence": [
+          "PLAN.md#evidence-register"
+        ],
+        "reason": "実B0/B1未作成・未測定。一般機能の存在や既存資料のみで当該経路の実適用を認定しない。"
+      },
+      "applied": {
+        "status": "UNKNOWN",
+        "observed_at": "2026-11-16T12:41:40.479676+00:00",
+        "actor": "H04-B3 preparation reviewer",
+        "environment": "read-only public repository records; no experimental threads",
+        "evidence": [
+          "PLAN.md#evidence-register"
+        ],
+        "reason": "実B0/B1未作成・未測定。一般機能の存在や既存資料のみで当該経路の実適用を認定しない。"
+      },
+      "verified": {
+        "status": "UNKNOWN",
+        "observed_at": "2026-11-16T12:41:40.479676+00:00",
+        "actor": "H04-B3 preparation reviewer",
+        "environment": "read-only public repository records; no experimental threads",
+        "evidence": [
+          "PLAN.md#evidence-register"
+        ],
+        "reason": "実B0/B1未作成・未測定。一般機能の存在や既存資料のみで当該経路の実適用を認定しない。"
+      },
+      "measured": {
+        "status": "UNKNOWN",
+        "observed_at": "2026-11-16T12:41:40.479676+00:00",
+        "actor": "H04-B3 preparation reviewer",
+        "environment": "read-only public repository records; no experimental threads",
+        "evidence": [
+          "PLAN.md#evidence-register"
+        ],
+        "reason": "実B0/B1未作成・未測定。一般機能の存在や既存資料のみで当該経路の実適用を認定しない。"
+      },
+      "alternative_excluded": {
+        "status": "UNKNOWN",
+        "observed_at": "2026-11-16T12:41:40.479676+00:00",
+        "actor": "H04-B3 preparation reviewer",
+        "environment": "read-only public repository records; no experimental threads",
+        "evidence": [
+          "PLAN.md#evidence-register"
+        ],
+        "reason": "未知の経路を含む候補集合の完全性、B0への混入不存在を証明できない。"
+      }
+    },
+    "transfer": {
+      "available": {
+        "status": "UNKNOWN",
+        "observed_at": "2026-11-16T12:41:40.479676+00:00",
+        "actor": "H04-B3 preparation reviewer",
+        "environment": "read-only public repository records; no experimental threads",
+        "evidence": [
+          "PLAN.md#evidence-register"
+        ],
+        "reason": "実B0/B1未作成・未測定。一般機能の存在や既存資料のみで当該経路の実適用を認定しない。"
+      },
+      "authorized": {
+        "status": "BLOCKED",
+        "observed_at": "2026-11-16T12:41:40.479676+00:00",
+        "actor": "H04-B3 preparation reviewer",
+        "environment": "read-only public repository records; no experimental threads",
+        "evidence": [
+          "PLAN.md#evidence-register"
+        ],
+        "reason": "実験開始・実スレッド通信は本工程の許可外。未発行であり拒否の実測ではない。"
+      },
+      "requested": {
+        "status": "BLOCKED",
+        "observed_at": "2026-11-16T12:41:40.479676+00:00",
+        "actor": "H04-B3 preparation reviewer",
+        "environment": "read-only public repository records; no experimental threads",
+        "evidence": [
+          "PLAN.md#evidence-register"
+        ],
+        "reason": "実験開始・実スレッド通信は本工程の許可外。未発行であり拒否の実測ではない。"
+      },
+      "accepted": {
+        "status": "UNKNOWN",
+        "observed_at": "2026-11-16T12:41:40.479676+00:00",
+        "actor": "H04-B3 preparation reviewer",
+        "environment": "read-only public repository records; no experimental threads",
+        "evidence": [
+          "PLAN.md#evidence-register"
+        ],
+        "reason": "実B0/B1未作成・未測定。一般機能の存在や既存資料のみで当該経路の実適用を認定しない。"
+      },
+      "applied": {
+        "status": "UNKNOWN",
+        "observed_at": "2026-11-16T12:41:40.479676+00:00",
+        "actor": "H04-B3 preparation reviewer",
+        "environment": "read-only public repository records; no experimental threads",
+        "evidence": [
+          "PLAN.md#evidence-register"
+        ],
+        "reason": "実B0/B1未作成・未測定。一般機能の存在や既存資料のみで当該経路の実適用を認定しない。"
+      },
+      "verified": {
+        "status": "UNKNOWN",
+        "observed_at": "2026-11-16T12:41:40.479676+00:00",
+        "actor": "H04-B3 preparation reviewer",
+        "environment": "read-only public repository records; no experimental threads",
+        "evidence": [
+          "PLAN.md#evidence-register"
+        ],
+        "reason": "実B0/B1未作成・未測定。一般機能の存在や既存資料のみで当該経路の実適用を認定しない。"
+      },
+      "measured": {
+        "status": "UNKNOWN",
+        "observed_at": "2026-11-16T12:41:40.479676+00:00",
+        "actor": "H04-B3 preparation reviewer",
+        "environment": "read-only public repository records; no experimental threads",
+        "evidence": [
+          "PLAN.md#evidence-register"
+        ],
+        "reason": "実B0/B1未作成・未測定。一般機能の存在や既存資料のみで当該経路の実適用を認定しない。"
+      },
+      "alternative_excluded": {
+        "status": "UNKNOWN",
+        "observed_at": "2026-11-16T12:41:40.479676+00:00",
+        "actor": "H04-B3 preparation reviewer",
+        "environment": "read-only public repository records; no experimental threads",
+        "evidence": [
+          "PLAN.md#evidence-register"
+        ],
+        "reason": "未知の経路を含む候補集合の完全性、B0への混入不存在を証明できない。"
+      }
+    },
+    "memory": {
+      "available": {
+        "status": "UNKNOWN",
+        "observed_at": "2026-11-16T12:41:40.479676+00:00",
+        "actor": "H04-B3 preparation reviewer",
+        "environment": "read-only public repository records; no experimental threads",
+        "evidence": [
+          "PLAN.md#evidence-register"
+        ],
+        "reason": "実B0/B1未作成・未測定。一般機能の存在や既存資料のみで当該経路の実適用を認定しない。"
+      },
+      "authorized": {
+        "status": "BLOCKED",
+        "observed_at": "2026-11-16T12:41:40.479676+00:00",
+        "actor": "H04-B3 preparation reviewer",
+        "environment": "read-only public repository records; no experimental threads",
+        "evidence": [
+          "PLAN.md#evidence-register"
+        ],
+        "reason": "実験開始・実スレッド通信は本工程の許可外。未発行であり拒否の実測ではない。"
+      },
+      "requested": {
+        "status": "BLOCKED",
+        "observed_at": "2026-11-16T12:41:40.479676+00:00",
+        "actor": "H04-B3 preparation reviewer",
+        "environment": "read-only public repository records; no experimental threads",
+        "evidence": [
+          "PLAN.md#evidence-register"
+        ],
+        "reason": "実験開始・実スレッド通信は本工程の許可外。未発行であり拒否の実測ではない。"
+      },
+      "accepted": {
+        "status": "UNKNOWN",
+        "observed_at": "2026-11-16T12:41:40.479676+00:00",
+        "actor": "H04-B3 preparation reviewer",
+        "environment": "read-only public repository records; no experimental threads",
+        "evidence": [
+          "PLAN.md#evidence-register"
+        ],
+        "reason": "実B0/B1未作成・未測定。一般機能の存在や既存資料のみで当該経路の実適用を認定しない。"
+      },
+      "applied": {
+        "status": "UNKNOWN",
+        "observed_at": "2026-11-16T12:41:40.479676+00:00",
+        "actor": "H04-B3 preparation reviewer",
+        "environment": "read-only public repository records; no experimental threads",
+        "evidence": [
+          "PLAN.md#evidence-register"
+        ],
+        "reason": "実B0/B1未作成・未測定。一般機能の存在や既存資料のみで当該経路の実適用を認定しない。"
+      },
+      "verified": {
+        "status": "UNKNOWN",
+        "observed_at": "2026-11-16T12:41:40.479676+00:00",
+        "actor": "H04-B3 preparation reviewer",
+        "environment": "read-only public repository records; no experimental threads",
+        "evidence": [
+          "PLAN.md#evidence-register"
+        ],
+        "reason": "実B0/B1未作成・未測定。一般機能の存在や既存資料のみで当該経路の実適用を認定しない。"
+      },
+      "measured": {
+        "status": "UNKNOWN",
+        "observed_at": "2026-11-16T12:41:40.479676+00:00",
+        "actor": "H04-B3 preparation reviewer",
+        "environment": "read-only public repository records; no experimental threads",
+        "evidence": [
+          "PLAN.md#evidence-register"
+        ],
+        "reason": "実B0/B1未作成・未測定。一般機能の存在や既存資料のみで当該経路の実適用を認定しない。"
+      },
+      "alternative_excluded": {
+        "status": "UNKNOWN",
+        "observed_at": "2026-11-16T12:41:40.479676+00:00",
+        "actor": "H04-B3 preparation reviewer",
+        "environment": "read-only public repository records; no experimental threads",
+        "evidence": [
+          "PLAN.md#evidence-register"
+        ],
+        "reason": "未知の経路を含む候補集合の完全性、B0への混入不存在を証明できない。"
+      }
+    },
+    "shared": {
+      "available": {
+        "status": "UNKNOWN",
+        "observed_at": "2026-11-16T12:41:40.479676+00:00",
+        "actor": "H04-B3 preparation reviewer",
+        "environment": "read-only public repository records; no experimental threads",
+        "evidence": [
+          "PLAN.md#evidence-register"
+        ],
+        "reason": "実B0/B1未作成・未測定。一般機能の存在や既存資料のみで当該経路の実適用を認定しない。"
+      },
+      "authorized": {
+        "status": "BLOCKED",
+        "observed_at": "2026-11-16T12:41:40.479676+00:00",
+        "actor": "H04-B3 preparation reviewer",
+        "environment": "read-only public repository records; no experimental threads",
+        "evidence": [
+          "PLAN.md#evidence-register"
+        ],
+        "reason": "実験開始・実スレッド通信は本工程の許可外。未発行であり拒否の実測ではない。"
+      },
+      "requested": {
+        "status": "BLOCKED",
+        "observed_at": "2026-11-16T12:41:40.479676+00:00",
+        "actor": "H04-B3 preparation reviewer",
+        "environment": "read-only public repository records; no experimental threads",
+        "evidence": [
+          "PLAN.md#evidence-register"
+        ],
+        "reason": "実験開始・実スレッド通信は本工程の許可外。未発行であり拒否の実測ではない。"
+      },
+      "accepted": {
+        "status": "UNKNOWN",
+        "observed_at": "2026-11-16T12:41:40.479676+00:00",
+        "actor": "H04-B3 preparation reviewer",
+        "environment": "read-only public repository records; no experimental threads",
+        "evidence": [
+          "PLAN.md#evidence-register"
+        ],
+        "reason": "実B0/B1未作成・未測定。一般機能の存在や既存資料のみで当該経路の実適用を認定しない。"
+      },
+      "applied": {
+        "status": "UNKNOWN",
+        "observed_at": "2026-11-16T12:41:40.479676+00:00",
+        "actor": "H04-B3 preparation reviewer",
+        "environment": "read-only public repository records; no experimental threads",
+        "evidence": [
+          "PLAN.md#evidence-register"
+        ],
+        "reason": "実B0/B1未作成・未測定。一般機能の存在や既存資料のみで当該経路の実適用を認定しない。"
+      },
+      "verified": {
+        "status": "UNKNOWN",
+        "observed_at": "2026-11-16T12:41:40.479676+00:00",
+        "actor": "H04-B3 preparation reviewer",
+        "environment": "read-only public repository records; no experimental threads",
+        "evidence": [
+          "PLAN.md#evidence-register"
+        ],
+        "reason": "実B0/B1未作成・未測定。一般機能の存在や既存資料のみで当該経路の実適用を認定しない。"
+      },
+      "measured": {
+        "status": "UNKNOWN",
+        "observed_at": "2026-11-16T12:41:40.479676+00:00",
+        "actor": "H04-B3 preparation reviewer",
+        "environment": "read-only public repository records; no experimental threads",
+        "evidence": [
+          "PLAN.md#evidence-register"
+        ],
+        "reason": "実B0/B1未作成・未測定。一般機能の存在や既存資料のみで当該経路の実適用を認定しない。"
+      },
+      "alternative_excluded": {
+        "status": "UNKNOWN",
+        "observed_at": "2026-11-16T12:41:40.479676+00:00",
+        "actor": "H04-B3 preparation reviewer",
+        "environment": "read-only public repository records; no experimental threads",
+        "evidence": [
+          "PLAN.md#evidence-register"
+        ],
+        "reason": "未知の経路を含む候補集合の完全性、B0への混入不存在を証明できない。"
+      }
+    },
+    "search": {
+      "available": {
+        "status": "UNKNOWN",
+        "observed_at": "2026-11-16T12:41:40.479676+00:00",
+        "actor": "H04-B3 preparation reviewer",
+        "environment": "read-only public repository records; no experimental threads",
+        "evidence": [
+          "PLAN.md#evidence-register"
+        ],
+        "reason": "実B0/B1未作成・未測定。一般機能の存在や既存資料のみで当該経路の実適用を認定しない。"
+      },
+      "authorized": {
+        "status": "BLOCKED",
+        "observed_at": "2026-11-16T12:41:40.479676+00:00",
+        "actor": "H04-B3 preparation reviewer",
+        "environment": "read-only public repository records; no experimental threads",
+        "evidence": [
+          "PLAN.md#evidence-register"
+        ],
+        "reason": "実験開始・実スレッド通信は本工程の許可外。未発行であり拒否の実測ではない。"
+      },
+      "requested": {
+        "status": "BLOCKED",
+        "observed_at": "2026-11-16T12:41:40.479676+00:00",
+        "actor": "H04-B3 preparation reviewer",
+        "environment": "read-only public repository records; no experimental threads",
+        "evidence": [
+          "PLAN.md#evidence-register"
+        ],
+        "reason": "実験開始・実スレッド通信は本工程の許可外。未発行であり拒否の実測ではない。"
+      },
+      "accepted": {
+        "status": "UNKNOWN",
+        "observed_at": "2026-11-16T12:41:40.479676+00:00",
+        "actor": "H04-B3 preparation reviewer",
+        "environment": "read-only public repository records; no experimental threads",
+        "evidence": [
+          "PLAN.md#evidence-register"
+        ],
+        "reason": "実B0/B1未作成・未測定。一般機能の存在や既存資料のみで当該経路の実適用を認定しない。"
+      },
+      "applied": {
+        "status": "UNKNOWN",
+        "observed_at": "2026-11-16T12:41:40.479676+00:00",
+        "actor": "H04-B3 preparation reviewer",
+        "environment": "read-only public repository records; no experimental threads",
+        "evidence": [
+          "PLAN.md#evidence-register"
+        ],
+        "reason": "実B0/B1未作成・未測定。一般機能の存在や既存資料のみで当該経路の実適用を認定しない。"
+      },
+      "verified": {
+        "status": "UNKNOWN",
+        "observed_at": "2026-11-16T12:41:40.479676+00:00",
+        "actor": "H04-B3 preparation reviewer",
+        "environment": "read-only public repository records; no experimental threads",
+        "evidence": [
+          "PLAN.md#evidence-register"
+        ],
+        "reason": "実B0/B1未作成・未測定。一般機能の存在や既存資料のみで当該経路の実適用を認定しない。"
+      },
+      "measured": {
+        "status": "UNKNOWN",
+        "observed_at": "2026-11-16T12:41:40.479676+00:00",
+        "actor": "H04-B3 preparation reviewer",
+        "environment": "read-only public repository records; no experimental threads",
+        "evidence": [
+          "PLAN.md#evidence-register"
+        ],
+        "reason": "実B0/B1未作成・未測定。一般機能の存在や既存資料のみで当該経路の実適用を認定しない。"
+      },
+      "alternative_excluded": {
+        "status": "UNKNOWN",
+        "observed_at": "2026-11-16T12:41:40.479676+00:00",
+        "actor": "H04-B3 preparation reviewer",
+        "environment": "read-only public repository records; no experimental threads",
+        "evidence": [
+          "PLAN.md#evidence-register"
+        ],
+        "reason": "未知の経路を含む候補集合の完全性、B0への混入不存在を証明できない。"
+      }
+    },
+    "handoff": {
+      "available": {
+        "status": "UNKNOWN",
+        "observed_at": "2026-11-16T12:41:40.479676+00:00",
+        "actor": "H04-B3 preparation reviewer",
+        "environment": "read-only public repository records; no experimental threads",
+        "evidence": [
+          "PLAN.md#evidence-register"
+        ],
+        "reason": "実B0/B1未作成・未測定。一般機能の存在や既存資料のみで当該経路の実適用を認定しない。"
+      },
+      "authorized": {
+        "status": "BLOCKED",
+        "observed_at": "2026-11-16T12:41:40.479676+00:00",
+        "actor": "H04-B3 preparation reviewer",
+        "environment": "read-only public repository records; no experimental threads",
+        "evidence": [
+          "PLAN.md#evidence-register"
+        ],
+        "reason": "実験開始・実スレッド通信は本工程の許可外。未発行であり拒否の実測ではない。"
+      },
+      "requested": {
+        "status": "BLOCKED",
+        "observed_at": "2026-11-16T12:41:40.479676+00:00",
+        "actor": "H04-B3 preparation reviewer",
+        "environment": "read-only public repository records; no experimental threads",
+        "evidence": [
+          "PLAN.md#evidence-register"
+        ],
+        "reason": "実験開始・実スレッド通信は本工程の許可外。未発行であり拒否の実測ではない。"
+      },
+      "accepted": {
+        "status": "UNKNOWN",
+        "observed_at": "2026-11-16T12:41:40.479676+00:00",
+        "actor": "H04-B3 preparation reviewer",
+        "environment": "read-only public repository records; no experimental threads",
+        "evidence": [
+          "PLAN.md#evidence-register"
+        ],
+        "reason": "実B0/B1未作成・未測定。一般機能の存在や既存資料のみで当該経路の実適用を認定しない。"
+      },
+      "applied": {
+        "status": "UNKNOWN",
+        "observed_at": "2026-11-16T12:41:40.479676+00:00",
+        "actor": "H04-B3 preparation reviewer",
+        "environment": "read-only public repository records; no experimental threads",
+        "evidence": [
+          "PLAN.md#evidence-register"
+        ],
+        "reason": "実B0/B1未作成・未測定。一般機能の存在や既存資料のみで当該経路の実適用を認定しない。"
+      },
+      "verified": {
+        "status": "UNKNOWN",
+        "observed_at": "2026-11-16T12:41:40.479676+00:00",
+        "actor": "H04-B3 preparation reviewer",
+        "environment": "read-only public repository records; no experimental threads",
+        "evidence": [
+          "PLAN.md#evidence-register"
+        ],
+        "reason": "実B0/B1未作成・未測定。一般機能の存在や既存資料のみで当該経路の実適用を認定しない。"
+      },
+      "measured": {
+        "status": "UNKNOWN",
+        "observed_at": "2026-11-16T12:41:40.479676+00:00",
+        "actor": "H04-B3 preparation reviewer",
+        "environment": "read-only public repository records; no experimental threads",
+        "evidence": [
+          "PLAN.md#evidence-register"
+        ],
+        "reason": "実B0/B1未作成・未測定。一般機能の存在や既存資料のみで当該経路の実適用を認定しない。"
+      },
+      "alternative_excluded": {
+        "status": "UNKNOWN",
+        "observed_at": "2026-11-16T12:41:40.479676+00:00",
+        "actor": "H04-B3 preparation reviewer",
+        "environment": "read-only public repository records; no experimental threads",
+        "evidence": [
+          "PLAN.md#evidence-register"
+        ],
+        "reason": "未知の経路を含む候補集合の完全性、B0への混入不存在を証明できない。"
+      }
+    },
+    "unidentified": {
+      "available": {
+        "status": "UNKNOWN",
+        "observed_at": "2026-11-16T12:41:40.479676+00:00",
+        "actor": "H04-B3 preparation reviewer",
+        "environment": "read-only public repository records; no experimental threads",
+        "evidence": [
+          "PLAN.md#evidence-register"
+        ],
+        "reason": "実B0/B1未作成・未測定。一般機能の存在や既存資料のみで当該経路の実適用を認定しない。"
+      },
+      "authorized": {
+        "status": "BLOCKED",
+        "observed_at": "2026-11-16T12:41:40.479676+00:00",
+        "actor": "H04-B3 preparation reviewer",
+        "environment": "read-only public repository records; no experimental threads",
+        "evidence": [
+          "PLAN.md#evidence-register"
+        ],
+        "reason": "実験開始・実スレッド通信は本工程の許可外。未発行であり拒否の実測ではない。"
+      },
+      "requested": {
+        "status": "BLOCKED",
+        "observed_at": "2026-11-16T12:41:40.479676+00:00",
+        "actor": "H04-B3 preparation reviewer",
+        "environment": "read-only public repository records; no experimental threads",
+        "evidence": [
+          "PLAN.md#evidence-register"
+        ],
+        "reason": "実験開始・実スレッド通信は本工程の許可外。未発行であり拒否の実測ではない。"
+      },
+      "accepted": {
+        "status": "UNKNOWN",
+        "observed_at": "2026-11-16T12:41:40.479676+00:00",
+        "actor": "H04-B3 preparation reviewer",
+        "environment": "read-only public repository records; no experimental threads",
+        "evidence": [
+          "PLAN.md#evidence-register"
+        ],
+        "reason": "実B0/B1未作成・未測定。一般機能の存在や既存資料のみで当該経路の実適用を認定しない。"
+      },
+      "applied": {
+        "status": "UNKNOWN",
+        "observed_at": "2026-11-16T12:41:40.479676+00:00",
+        "actor": "H04-B3 preparation reviewer",
+        "environment": "read-only public repository records; no experimental threads",
+        "evidence": [
+          "PLAN.md#evidence-register"
+        ],
+        "reason": "実B0/B1未作成・未測定。一般機能の存在や既存資料のみで当該経路の実適用を認定しない。"
+      },
+      "verified": {
+        "status": "UNKNOWN",
+        "observed_at": "2026-11-16T12:41:40.479676+00:00",
+        "actor": "H04-B3 preparation reviewer",
+        "environment": "read-only public repository records; no experimental threads",
+        "evidence": [
+          "PLAN.md#evidence-register"
+        ],
+        "reason": "実B0/B1未作成・未測定。一般機能の存在や既存資料のみで当該経路の実適用を認定しない。"
+      },
+      "measured": {
+        "status": "UNKNOWN",
+        "observed_at": "2026-11-16T12:41:40.479676+00:00",
+        "actor": "H04-B3 preparation reviewer",
+        "environment": "read-only public repository records; no experimental threads",
+        "evidence": [
+          "PLAN.md#evidence-register"
+        ],
+        "reason": "実B0/B1未作成・未測定。一般機能の存在や既存資料のみで当該経路の実適用を認定しない。"
+      },
+      "alternative_excluded": {
+        "status": "UNKNOWN",
+        "observed_at": "2026-11-16T12:41:40.479676+00:00",
+        "actor": "H04-B3 preparation reviewer",
+        "environment": "read-only public repository records; no experimental threads",
+        "evidence": [
+          "PLAN.md#evidence-register"
+        ],
+        "reason": "未知の経路を含む候補集合の完全性、B0への混入不存在を証明できない。"
+      }
+    }
+  }
+}
