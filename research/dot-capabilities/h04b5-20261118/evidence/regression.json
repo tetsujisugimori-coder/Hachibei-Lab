@@ -1,0 +1,162 @@
+[
+  {
+    "path": "research/dot-capabilities/h03-20261115/test_verify.py",
+    "command": [
+      "python",
+      "-m",
+      "unittest",
+      "test_verify.py"
+    ],
+    "start": "2026-11-18T11:39:43.263216+00:00",
+    "end": "2026-11-18T11:39:43.372223+00:00",
+    "stdout": "",
+    "stderr": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.000s\n\nOK\n",
+    "exit_code": 0,
+    "timeout": 60,
+    "retries": 0
+  },
+  {
+    "path": "research/dot-capabilities/h04-20261116/test_verify.py",
+    "command": [
+      "python",
+      "-m",
+      "unittest",
+      "test_verify.py"
+    ],
+    "start": "2026-11-18T11:39:43.372241+00:00",
+    "end": "2026-11-18T11:39:43.447661+00:00",
+    "stdout": "",
+    "stderr": ".............................\n----------------------------------------------------------------------\nRan 29 tests in 0.003s\n\nOK\n",
+    "exit_code": 0,
+    "timeout": 60,
+    "retries": 0
+  },
+  {
+    "path": "research/dot-capabilities/h04-issue45-20261116/test_gate_regression.py",
+    "command": [
+      "python",
+      "-m",
+      "unittest",
+      "test_gate_regression.py"
+    ],
+    "start": "2026-11-18T11:39:43.447680+00:00",
+    "end": "2026-11-18T11:39:43.577664+00:00",
+    "stdout": "",
+    "stderr": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.022s\n\nOK\n",
+    "exit_code": 0,
+    "timeout": 60,
+    "retries": 0
+  },
+  {
+    "path": "research/dot-capabilities/h04-issue45-20261116/test_preflight.py",
+    "command": [
+      "python",
+      "-m",
+      "unittest",
+      "test_preflight.py"
+    ],
+    "start": "2026-11-18T11:39:43.577684+00:00",
+    "end": "2026-11-18T11:39:43.696080+00:00",
+    "stdout": "",
+    "stderr": "......\n----------------------------------------------------------------------\nRan 6 tests in 0.001s\n\nOK\n",
+    "exit_code": 0,
+    "timeout": 60,
+    "retries": 0
+  },
+  {
+    "path": "research/dot-capabilities/h04b-20261116/test_gate.py",
+    "command": [
+      "python",
+      "-m",
+      "unittest",
+      "test_gate.py"
+    ],
+    "start": "2026-11-18T11:39:43.696097+00:00",
+    "end": "2026-11-18T11:39:43.766306+00:00",
+    "stdout": "",
+    "stderr": "..........................................\n----------------------------------------------------------------------\nRan 42 tests in 0.003s\n\nOK\n",
+    "exit_code": 0,
+    "timeout": 60,
+    "retries": 0
+  },
+  {
+    "path": "research/dot-capabilities/h04b2-20261116/test_application_gate.py",
+    "command": [
+      "python",
+      "-m",
+      "unittest",
+      "test_application_gate.py"
+    ],
+    "start": "2026-11-18T11:39:43.766328+00:00",
+    "end": "2026-11-18T11:39:43.849568+00:00",
+    "stdout": "",
+    "stderr": "............\n----------------------------------------------------------------------\nRan 12 tests in 0.018s\n\nOK\n",
+    "exit_code": 0,
+    "timeout": 60,
+    "retries": 0
+  },
+  {
+    "path": "research/dot-capabilities/h04b3-20261116/test_audit.py",
+    "command": [
+      "python",
+      "-m",
+      "unittest",
+      "test_audit.py"
+    ],
+    "start": "2026-11-18T11:39:43.849586+00:00",
+    "end": "2026-11-18T11:39:43.941131+00:00",
+    "stdout": "",
+    "stderr": "...........\n----------------------------------------------------------------------\nRan 11 tests in 0.023s\n\nOK\n",
+    "exit_code": 0,
+    "timeout": 60,
+    "retries": 0
+  },
+  {
+    "path": "research/dot-capabilities/h04b4-20261117/test_verify_plan.py",
+    "command": [
+      "python",
+      "-m",
+      "unittest",
+      "test_verify_plan.py"
+    ],
+    "start": "2026-11-18T11:39:43.941151+00:00",
+    "end": "2026-11-18T11:39:44.018820+00:00",
+    "stdout": "",
+    "stderr": ".\n----------------------------------------------------------------------\nRan 1 test in 0.001s\n\nOK\n",
+    "exit_code": 0,
+    "timeout": 60,
+    "retries": 0
+  },
+  {
+    "path": "research/dot-capabilities/h04b5-20261118/test_archive.py",
+    "command": [
+      "python",
+      "-m",
+      "unittest",
+      "test_archive.py"
+    ],
+    "start": "2026-11-18T11:39:44.018840+00:00",
+    "end": "2026-11-18T11:39:44.092016+00:00",
+    "stdout": "",
+    "stderr": ".\n----------------------------------------------------------------------\nRan 1 test in 0.004s\n\nOK\n",
+    "exit_code": 0,
+    "timeout": 60,
+    "retries": 0
+  },
+  {
+    "path": "research/dot-capabilities/h04b5-20261118/test_sequence.py",
+    "command": [
+      "python",
+      "-m",
+      "unittest",
+      "test_sequence.py"
+    ],
+    "start": "2026-11-18T11:39:44.092035+00:00",
+    "end": "2026-11-18T11:39:44.154262+00:00",
+    "stdout": "",
+    "stderr": "......\n----------------------------------------------------------------------\nRan 6 tests in 0.000s\n\nOK\n",
+    "exit_code": 0,
+    "timeout": 60,
+    "retries": 0
+  }
+]

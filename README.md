@@ -21,3 +21,5 @@ dot 八兵衛の管理用のリポジトリ
 [Stage H04-A/C 取得経路基盤・形式検証](research/dot-capabilities/h04-20261116/README.md)：合成検査のみ。実経路・自動共有はUNKNOWN、H04-B実験未実施。
 
 [H04-B 非通信の開始条件基盤](research/dot-capabilities/h04b-20261116/README.md)：準備と合成検査のみ。実験開始BLOCKED、共有・取得経路UNKNOWN。
+
+[H04-B5 実施環境・証拠取得方式](research/dot-capabilities/h04b5-20261118/PLAN.md)：設計・無害合成検査。方式B未採用、実験開始BLOCKED、実経路排他性UNKNOWN。

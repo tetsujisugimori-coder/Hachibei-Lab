@@ -1,0 +1,15 @@
+{
+  "actor": "review B",
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "-m",
+    "unittest",
+    "test_sequence",
+    "test_archive"
+  ],
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": ".......\n----------------------------------------------------------------------\nRan 7 tests in 0.004s\n\nOK\n",
+  "timeout": 30,
+  "retries": 0
+}

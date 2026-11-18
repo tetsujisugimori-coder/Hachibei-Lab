@@ -1,0 +1,12 @@
+{
+  "cases_sha256": "9a76a1336fce81b1cce2cf44f1f1e0dc3b01e7c963739aecd67fff403fb1e5ea",
+  "fixed_before_checker": true,
+  "fixed_at": "2026-11-18T11:36:37.765029+00:00",
+  "original_path": "evidence/cases-original.json",
+  "revision": {
+    "path": "cases.json",
+    "sha256": "a6db0e8f7d3b51eeadfb5546add4eca2a71fbb9ea1c8650fd03bdb3011c3a254",
+    "reason": "Review requires actor/executed; same 35 expected outputs, original input retained",
+    "fixed_before_checker": false
+  }
+}

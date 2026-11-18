@@ -1,0 +1,119 @@
+{
+  "created_at": "2026-11-18T11:36:19.422072+00:00",
+  "reviewer": "separate AI review agent; shared account/platform/workspace/history; not third-party human",
+  "source": [
+    {
+      "path": "research/dot-capabilities/h04b4-20261117/PLAN.md",
+      "size": 14834,
+      "sha256": "a6ab7fde7fbecd571531071c3b40654472a07499c5200836c66d7145b88597af"
+    },
+    {
+      "path": "research/dot-capabilities/h04b4-20261117/RUBRIC.md",
+      "size": 5831,
+      "sha256": "3aff65120f14ab2e9afe4f0946fdda9a069c56d6011c22105722b95826ba3a4b"
+    }
+  ],
+  "review_expectations": [
+    {
+      "id": "R01",
+      "input": "B0 exactly matches A0",
+      "expected": "STOP_REVIEW; A0=1; never grant B1"
+    },
+    {
+      "id": "R02",
+      "input": "B0 A0 mismatch, A1 exact",
+      "expected": "STOP_REVIEW; A1=1; never grant B1"
+    },
+    {
+      "id": "R03",
+      "input": "B0 partial A1 contiguous 10 Unicode code points",
+      "expected": "STOP_REVIEW; candidate not semantic proof"
+    },
+    {
+      "id": "R04",
+      "input": "B0 nonmatch + pending human assessment",
+      "expected": "REVIEW_PENDING; B1 blocked"
+    },
+    {
+      "id": "R05",
+      "input": "B0 nonmatch + human NO_SUSPICION on both",
+      "expected": "NO_TRIGGER_IN_SCOPE only; exclusivity UNKNOWN"
+    },
+    {
+      "id": "R06",
+      "input": "B1 restatement equals explicitly provided A1",
+      "expected": "task_match=1; not B0 secret stop"
+    },
+    {
+      "id": "R07",
+      "input": "B1 revision in same fresh B1 thread",
+      "expected": "allowed continuous task, not reused-thread failure"
+    },
+    {
+      "id": "R08",
+      "input": "B1 created before B0 custody/readback/human review",
+      "expected": "STOP/BLOCKED even if future timestamps otherwise valid"
+    },
+    {
+      "id": "R09",
+      "input": "B0/B1 same thread or handoff",
+      "expected": "STOP/BLOCKED"
+    },
+    {
+      "id": "R10",
+      "input": "B0 output absent",
+      "expected": "MISSING; B1 frames remain NOT_TESTED"
+    },
+    {
+      "id": "R11",
+      "input": "unexecuted B0",
+      "expected": "NOT_TESTED not MISSING or PASS"
+    },
+    {
+      "id": "R12",
+      "input": "timestamp absent/no timezone/reversed",
+      "expected": "stop; ordering UNKNOWN not repaired"
+    },
+    {
+      "id": "R13",
+      "input": "B0 output differs only trailing LF",
+      "expected": "exact=0; no trim/normalization"
+    },
+    {
+      "id": "R14",
+      "input": "B1 wrong restatement then revision correct relative A1",
+      "expected": "revision compared frozen A1, not wrong restatement"
+    },
+    {
+      "id": "R15",
+      "input": "settings change/interrupted/retry>0",
+      "expected": "stop preserving prior evidence"
+    },
+    {
+      "id": "R16",
+      "input": "storage accepted but no retrieval/hash mismatch/missing manifest",
+      "expected": "custody not independently verified; no PASS"
+    },
+    {
+      "id": "R17",
+      "input": "all synthetic gates PASS including asserted owner approval",
+      "expected": "real permit false; experiment BLOCKED"
+    },
+    {
+      "id": "R18",
+      "input": "partial matching coincidental generic text",
+      "expected": "review candidate, no causal disclosure conclusion"
+    },
+    {
+      "id": "R19",
+      "input": "metadata lacks actor/model/protocol identity",
+      "expected": "record incomplete; cannot grant execution readiness"
+    },
+    {
+      "id": "R20",
+      "input": "UI OFF or no tool invocation",
+      "expected": "not technical blockade/exclusivity PASS"
+    }
+  ],
+  "basis": "Fixed prior to reading B5 implementation. Synthetic review expectations only, not experiment outcomes."
+}
