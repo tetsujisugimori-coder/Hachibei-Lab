@@ -1,0 +1,194 @@
+{
+  "schema": "H04-B5-20261119-supplemental-v3",
+  "purpose": "P3: versioned registration of corrected content, preserving immutable old manifest",
+  "scope": "relative to research/dot-capabilities/h04b5-20261118; current payload only; excludes this supplement, README and original manifest file itself",
+  "content_head": "88e10cb6db25499a3d048dcbf939ef8d1da41a10",
+  "content_tree": "133e2c4b392fc7efaf293453373842b3373d5e0c",
+  "original_head": "64dc4c42649db8ab2a6bf0155f1f8f0f10d4a0c3",
+  "preceding_review_head": "986873e84682954c2e38723fbfeb782f0d2d5771",
+  "original_manifest": {
+    "path": "manifest.json",
+    "git_blob": "5f080cc98cd77088215d16cf211ef8290853f956",
+    "sha256": "60ef0624406f55ddcd38f6b795ac9b117c6c2d835ff3440e739b136c0c49cd7a",
+    "size": 4948,
+    "legacy_files": 32,
+    "immutable": true
+  },
+  "file_count": 33,
+  "source": "original 32-entry manifest plus GitHub bytes from corrected 5 files, including 1 new test",
+  "files": [
+    {
+      "path": "archive.py",
+      "size": 1331,
+      "sha256": "56500782000028fd730f2c03eabebee5618b31028a05180da76b881120aeafa0"
+    },
+    {
+      "path": "cases.json",
+      "size": 46191,
+      "sha256": "a6db0e8f7d3b51eeadfb5546add4eca2a71fbb9ea1c8650fd03bdb3011c3a254"
+    },
+    {
+      "path": "check.py",
+      "size": 4866,
+      "sha256": "2d13912f5a74a8895d73824979dfb865e1d130c59fbab9cb4e90046e203324c7",
+      "git_blob": "7099f1e4f00c46e3daed22531f0330ff8a606f4f"
+    },
+    {
+      "path": "CUSTODY.md",
+      "size": 1654,
+      "sha256": "bc6a1f29dc866332c2dfc2807183a54c9533706e28f5eafcb40b6f5c45c34a6a"
+    },
+    {
+      "path": "ENVIRONMENTS.md",
+      "size": 7464,
+      "sha256": "953c88e3f1ebde0128655034d58e7388e555b6bd8f0daaa607fff5dbe9263046"
+    },
+    {
+      "path": "EVIDENCE.md",
+      "size": 2648,
+      "sha256": "adc54bc28ae583824b69c5226881b00b5123ebbed829781e0ebbb1733ce53f29"
+    },
+    {
+      "path": "evidence/additional-oracle.json",
+      "size": 8698,
+      "sha256": "c05e597e733cd6e5686b39b4290d563e2ab26aecbed8b602d941fa7fa97ff0ec"
+    },
+    {
+      "path": "evidence/additional-results.json",
+      "size": 13740,
+      "sha256": "0eec3df968405b2b2db8a32f074f7adf53b52d7d69cb8915cb88ad43d91c5dba"
+    },
+    {
+      "path": "evidence/cases-original.json",
+      "size": 43745,
+      "sha256": "9a76a1336fce81b1cce2cf44f1f1e0dc3b01e7c963739aecd67fff403fb1e5ea"
+    },
+    {
+      "path": "evidence/check-before-review.py",
+      "size": 3949,
+      "sha256": "13bc8e45d71d896fd92b3cc298520de49c8a2298b8789fe40f97fcd0a35b5064"
+    },
+    {
+      "path": "evidence/final-synthetic.json",
+      "size": 32188,
+      "sha256": "202f0911ee8f8426a928bc734220acba9456d96908a55c48d469fd3591c1c3d1"
+    },
+    {
+      "path": "evidence/first-synthetic.json",
+      "size": 32188,
+      "sha256": "625ec66c2db3778f02df2be480b92030cb33e8c7886bdcc794e5c13924be7252"
+    },
+    {
+      "path": "evidence/INITIAL-REVIEW.md",
+      "size": 2054,
+      "sha256": "5f778b3a3f998e23d8d6d71957983153ac0ee390ed05ec72d452ad281dd4e439"
+    },
+    {
+      "path": "evidence/PREIMPLEMENTATION-EXPECTATIONS.json",
+      "size": 3644,
+      "sha256": "28c6ca36e0c8fc98665b04fb5b858b0ad17376cc63f3d6a227407f6dec834a6e"
+    },
+    {
+      "path": "evidence/recheck-additional-oracle.json",
+      "size": 1210,
+      "sha256": "10186e6bf791e5287e220fda002ef4b80100952807db714e988a66345e1b9a54"
+    },
+    {
+      "path": "evidence/recheck-existing35.json",
+      "size": 37260,
+      "sha256": "8440516e0055c82889176b7accd63bc7a69224f710f3f547e47d3f93afa59f32"
+    },
+    {
+      "path": "evidence/recheck-results.json",
+      "size": 16667,
+      "sha256": "082f6be136641ab78ae73429e6faa4d822b21f5de9eda4e2e14b03faafb11c41"
+    },
+    {
+      "path": "evidence/recheck-sequence_archive.json",
+      "size": 384,
+      "sha256": "6f496c7db637781f4fcb1b1b8501d2117578790991171f938c22066439576087"
+    },
+    {
+      "path": "evidence/regression.json",
+      "size": 4821,
+      "sha256": "b8976b635fa0cdd41c1a4f9450c1b1932a87018b22387ecdf25459b899a8c18f"
+    },
+    {
+      "path": "GATES.md",
+      "size": 1439,
+      "sha256": "4013da1bb89c1bdd2217cb290aa3cbd52434e30ab03b431d7dd758b0d9de6b29"
+    },
+    {
+      "path": "HANDOFF.md",
+      "size": 1383,
+      "sha256": "1c0a9157388d6d5d349c1e64353401b9532a5c5c6d21c0d553933654b2517dc0"
+    },
+    {
+      "path": "INDEPENDENT-REVIEW.md",
+      "size": 5039,
+      "sha256": "4e3bb5e6c1a46c5b7936255e6abde7c09113949bb8fce4dd3fa56801286c593e",
+      "git_blob": "b9075a0079f8c175885acee51594af12df07bada"
+    },
+    {
+      "path": "PLAN.md",
+      "size": 2076,
+      "sha256": "603270bcc75adf6fae7e928ec5ccdb829fe5cabdd55867126b64594fd565260b"
+    },
+    {
+      "path": "preregistration.json",
+      "size": 484,
+      "sha256": "2e5de219cb310410f1e8ab7345983333c8c76abff71e5503eca1e2f8575fac88"
+    },
+    {
+      "path": "PROCEDURE.md",
+      "size": 2755,
+      "sha256": "c20ab12b501fefceb764c7c9e280a03395c51e19ecc53271972ed4165a13215a"
+    },
+    {
+      "path": "RESULTS.md",
+      "size": 2363,
+      "sha256": "7418a4e20ff26d5a666d94577ee3bd5eb60dd63d24e12dc8eee8ef0f46070654",
+      "git_blob": "4bf38e459ae8b1ae4053bde34083ff0f9767ca0f"
+    },
+    {
+      "path": "ROUTES.md",
+      "size": 5322,
+      "sha256": "1483b40c7e01af6a8290d5dfdc5d750a8079c4365df705734ab86e971e0e22b8"
+    },
+    {
+      "path": "run_cases.py",
+      "size": 1667,
+      "sha256": "0b4fc190e57d9267599a416209c94d131fcffe7bd3ad5efca6a8bf9a51d4efa1"
+    },
+    {
+      "path": "SCORING.md",
+      "size": 3097,
+      "sha256": "b0275ee53dfeb04b8736a123fbac77f6e9771bb447eda25cdefe8e4d006956ae",
+      "git_blob": "d4b6d14a0830c67360f03fa915c81d62ff09c91e"
+    },
+    {
+      "path": "sequence.py",
+      "size": 565,
+      "sha256": "db48fd566006e51be747ad766b5349935f6c563a540fa68933557e80f697d089"
+    },
+    {
+      "path": "test_archive.py",
+      "size": 1112,
+      "sha256": "b261d9369d9ce84f3351b99af5be17e7718d07a5623adc3dd5029eacb4c3cd9e"
+    },
+    {
+      "path": "test_review_guard.py",
+      "size": 4812,
+      "sha256": "2d2576647747b6d9b5063898eb8d6d1468e1d6c6162cd5500573d12ce2d5f845",
+      "git_blob": "9c39de315bd41bd066d0206f437c44953431890d"
+    },
+    {
+      "path": "test_sequence.py",
+      "size": 692,
+      "sha256": "32c46ca04ace4e0013088d7be477ef805053d3c7961ff2fdd0da7453e8319eae"
+    }
+  ],
+  "limits": "manifest does not prove independent execution or persistent storage; evidence ZIP requires separate storage readback",
+  "experiment_start": "BLOCKED",
+  "route_exclusivity": "UNKNOWN"
+}
