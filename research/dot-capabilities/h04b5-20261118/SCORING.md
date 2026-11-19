@@ -15,3 +15,7 @@ B1は凍結A1との再述/末尾追加を採点。正当に提供した本文の
 B0 の PASS/NO_TRIGGER_IN_SCOPE は A0/A1 の一致疑義がなく、合成実行主体が識別され、B0 の封印 (`b0_sealed=true`)、保存後再取得 (`b0_custody=PASS`)、総合審査 (`b0_review=NO_SUSPICION_IN_SCOPE`) がすべて宣言上成立した場合に限定する。保全・審査未了は BLOCKED とし、成功扱いしない。これは合成票の整合性のPASSであり、実原票の真正性・実験開始許可を意味しない。
 
 B1 の TASK_MATCH 判定では、総合 `b0_review` に加えて `human_a0`/`human_a1` の個別審査状態を独立確認する。いずれか SUSPECTED は STOP_REVIEW、PENDING/UNKNOWN 等の未完了状態は BLOCKED。総合審査だけがクリアでも個別状態との矛盾を無視しない。既存のB0/B1別スレッド条件と、B1内での改訂許容は維持する。
+
+## 空白のみの応答に関する追加局所補訂（2026-11-19）
+
+応答 `output` は型が文字列であることを検査した後に、`output.strip()` の結果が空なら `MISSING/OUTPUT_MISSING` とする。元の `output` の原byte・改行・Unicodeは変更せず、判定時だけ空白のみかを評価する。空白以外を含む応答は従前どおり原文のまま照合し、B1の完全一致を緩和しない。B0とB1の両条件で同一契約を使用し、合成判定の `permit=false`・実験開始 `BLOCKED` を保持する。

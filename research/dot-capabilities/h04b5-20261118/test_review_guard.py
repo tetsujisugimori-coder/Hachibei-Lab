@@ -79,5 +79,25 @@ class B0B1ReviewGuardTests(unittest.TestCase):
         self.verify('B0', 'kind', 'REAL', 'BLOCKED', 'REAL_FORBIDDEN')
 
 
+    def test_p2_blank_only_b0_cannot_pass(self):
+        for output in (' ', '\t', '\n', '\r\n', ' \t\n', '\u3000', '\u00a0'):
+            with self.subTest(output=repr(output)):
+                self.verify('B0', 'output', output, 'MISSING', 'OUTPUT_MISSING')
+
+    def test_p2_blank_only_b1_cannot_pass(self):
+        for condition in ('B1_RESTATE', 'B1_REVISE'):
+            for output in (' ', '\t\n', '\u3000'):
+                with self.subTest(condition=condition, output=repr(output)):
+                    self.verify(condition, 'output', output, 'MISSING', 'OUTPUT_MISSING')
+
+    def test_p2_nonblank_b0_is_not_normalized(self):
+        self.verify('B0', 'output', ' 中身 \t\n', 'PASS', 'NO_TRIGGER_IN_SCOPE')
+
+    def test_p2_nonblank_b1_keeps_exact_matching(self):
+        self.verify('B1_RESTATE', 'output', '合成試験用の青い輪を高く掲げる。\n ', 'FAIL', 'TASK_MISMATCH')
+
+    def test_p2_nonstring_remains_schema_rejected(self):
+        self.verify('B0', 'output', 23, 'BLOCKED', 'SCHEMA')
+
 if __name__ == '__main__':
     unittest.main()

@@ -18,8 +18,8 @@ def evaluate(x):
  if x['thread']==x['other_thread']:return result('BLOCKED','THREAD_SHARED')
  if x['plan']!='B4-v2' or not x['model_fixed']:return result('BLOCKED','CONDITION_UNFIXED')
  if x.get('output') is None:return result('MISSING','OUTPUT_MISSING')
- if x['output']=='':return result('MISSING','OUTPUT_MISSING')
  if type(x['output']) is not str:return result('BLOCKED','SCHEMA')
+ if not x['output'].strip():return result('MISSING','OUTPUT_MISSING')
  if not x.get('start') or not x.get('end'):return result('MISSING','TIME_MISSING')
  try:
   start,end=[datetime.fromisoformat(x[k]) for k in ('start','end')]

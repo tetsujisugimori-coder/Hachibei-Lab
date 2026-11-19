@@ -25,3 +25,11 @@ R01〜R05はT02〜T09/T01、R06〜R07はT26/T27とX09、R08はsequence順序お�
 初回独立審査の P2-01/P2-02/P3-01 CLOSED は当時の履歴として維持する。その後の追加レビュー（GitHub review 5956419797）により、**別件**として P2「B1総合審査とA0/A1個別審査の矛盾」、P3「B0保全/審査未完了でもPASS」の2件を検出。旧判定を新発見の修正済み根拠へ流用しない。
 
 `check.py` に B1 の個別審査ガードと B0 の保全・審査ガードを追加。`test_review_guard.py` に正常2件、故障/境界11件の非通信反例を追加した。作業用ローカルコピーで Python unittest 13/13 成功、構文コンパイル成功。提出版の別担当による独立再実行・正式CIは未確認として別途記録する。固定35件と旧原票、旧期待値は変更しない。研究の方式B未採用、実験開始BLOCKED、経路排他性UNKNOWN。
+
+## 2026-11-19 独立再審査の新規指摘と局所補訂
+
+GitHub review [5967414872](https://github.com/tetsujisugimori-coder/Hachibei-Lab/pull/54#pullrequestreview-5967414872) にて、新規 P2-H04B5-BLANK（空白・タブ・改行のみのB0応答を誤PASS）と、新規 P3（旧manifestが修正後HEADの証拠ではないこと）が記録された。旧P2/P3のCLOSEDはそのまま保持し、今回の2件を別管理とする。前HEAD `986873e84682954c2e38723fbfeb782f0d2d5771` の判定は総合PARTIAL・限定受入HOLD・マージNOだった。
+
+P2コードを `check.py` で局所補訂。型チェックの後に空白だけの応答をMISSINGとし、原文は変更しない。 `test_review_guard.py` にB0/B1の空白と非空・異なる型の境界ケースを追加。新HEADでの独立再実行・新規原票の保存後再取得は別工程で判断し、未完了時にCLOSEDとはしない。
+
+P3の旧 `manifest.json` と旧ZIPは履歴原本として不変。新規の版付き追補manifestが対象に含めるファイル/除外ファイル・適用HEADを明示する。旧manfiestを新HEADの全収録証拠とみなさない。
