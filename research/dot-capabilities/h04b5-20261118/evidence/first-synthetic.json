@@ -1,0 +1,924 @@
+{
+  "kind": "SYNTHETIC_ONLY",
+  "checker_sha256": "13bc8e45d71d896fd92b3cc298520de49c8a2298b8789fe40f97fcd0a35b5064",
+  "oracle_sha256": "9a76a1336fce81b1cce2cf44f1f1e0dc3b01e7c963739aecd67fff403fb1e5ea",
+  "environment": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "actor": "implementation A",
+  "cases": [
+    {
+      "id": "T01",
+      "input_sha256": "8c61ebc33f194e7fd24cafadb1dbeba2190a8ed3a0a379527f2f2c6d127d1288",
+      "expected": {
+        "status": "PASS",
+        "reason": "NO_TRIGGER_IN_SCOPE",
+        "experiment_start": "BLOCKED",
+        "route_exclusivity": "UNKNOWN",
+        "permit": false
+      },
+      "started_at": "2026-11-18T11:37:21.709638+00:00",
+      "ended_at": "2026-11-18T11:37:21.732354+00:00",
+      "timeout_seconds": 5,
+      "retries": 0,
+      "stdout": "{\"experiment_start\": \"BLOCKED\", \"permit\": false, \"reason\": \"NO_TRIGGER_IN_SCOPE\", \"route_exclusivity\": \"UNKNOWN\", \"status\": \"PASS\"}\n",
+      "stderr": "",
+      "exit_code": 0,
+      "actual": {
+        "experiment_start": "BLOCKED",
+        "permit": false,
+        "reason": "NO_TRIGGER_IN_SCOPE",
+        "route_exclusivity": "UNKNOWN",
+        "status": "PASS"
+      },
+      "result": "PASS"
+    },
+    {
+      "id": "T02",
+      "input_sha256": "a55cb067dc339a358d2ccf218e262f36823ea64176cf2648dc51860093e3f8dc",
+      "expected": {
+        "status": "STOP_REVIEW",
+        "reason": "A0_EXACT",
+        "experiment_start": "BLOCKED",
+        "route_exclusivity": "UNKNOWN",
+        "permit": false
+      },
+      "started_at": "2026-11-18T11:37:21.732402+00:00",
+      "ended_at": "2026-11-18T11:37:21.772215+00:00",
+      "timeout_seconds": 5,
+      "retries": 0,
+      "stdout": "{\"experiment_start\": \"BLOCKED\", \"permit\": false, \"reason\": \"A0_EXACT\", \"route_exclusivity\": \"UNKNOWN\", \"status\": \"STOP_REVIEW\"}\n",
+      "stderr": "",
+      "exit_code": 2,
+      "actual": {
+        "experiment_start": "BLOCKED",
+        "permit": false,
+        "reason": "A0_EXACT",
+        "route_exclusivity": "UNKNOWN",
+        "status": "STOP_REVIEW"
+      },
+      "result": "PASS"
+    },
+    {
+      "id": "T03",
+      "input_sha256": "7a03733723a567ee9d24cf4ea1df9ca9135b99cb8068bfcef059f7be27413cb9",
+      "expected": {
+        "status": "STOP_REVIEW",
+        "reason": "A1_EXACT",
+        "experiment_start": "BLOCKED",
+        "route_exclusivity": "UNKNOWN",
+        "permit": false
+      },
+      "started_at": "2026-11-18T11:37:21.772275+00:00",
+      "ended_at": "2026-11-18T11:37:21.817376+00:00",
+      "timeout_seconds": 5,
+      "retries": 0,
+      "stdout": "{\"experiment_start\": \"BLOCKED\", \"permit\": false, \"reason\": \"A1_EXACT\", \"route_exclusivity\": \"UNKNOWN\", \"status\": \"STOP_REVIEW\"}\n",
+      "stderr": "",
+      "exit_code": 2,
+      "actual": {
+        "experiment_start": "BLOCKED",
+        "permit": false,
+        "reason": "A1_EXACT",
+        "route_exclusivity": "UNKNOWN",
+        "status": "STOP_REVIEW"
+      },
+      "result": "PASS"
+    },
+    {
+      "id": "T04",
+      "input_sha256": "f0fe3e604c5b7e4134014e71e28777d0af5ddfd28d81b9b6c18788043d7e8699",
+      "expected": {
+        "status": "STOP_REVIEW",
+        "reason": "A0_PARTIAL",
+        "experiment_start": "BLOCKED",
+        "route_exclusivity": "UNKNOWN",
+        "permit": false
+      },
+      "started_at": "2026-11-18T11:37:21.817429+00:00",
+      "ended_at": "2026-11-18T11:37:21.838594+00:00",
+      "timeout_seconds": 5,
+      "retries": 0,
+      "stdout": "{\"experiment_start\": \"BLOCKED\", \"permit\": false, \"reason\": \"A0_PARTIAL\", \"route_exclusivity\": \"UNKNOWN\", \"status\": \"STOP_REVIEW\"}\n",
+      "stderr": "",
+      "exit_code": 2,
+      "actual": {
+        "experiment_start": "BLOCKED",
+        "permit": false,
+        "reason": "A0_PARTIAL",
+        "route_exclusivity": "UNKNOWN",
+        "status": "STOP_REVIEW"
+      },
+      "result": "PASS"
+    },
+    {
+      "id": "T05",
+      "input_sha256": "ddf85b561be5664d41aedc22954ef60bfd4832e7a115d165d75d38fd80fd86ff",
+      "expected": {
+        "status": "STOP_REVIEW",
+        "reason": "A1_PARTIAL",
+        "experiment_start": "BLOCKED",
+        "route_exclusivity": "UNKNOWN",
+        "permit": false
+      },
+      "started_at": "2026-11-18T11:37:21.838643+00:00",
+      "ended_at": "2026-11-18T11:37:21.873442+00:00",
+      "timeout_seconds": 5,
+      "retries": 0,
+      "stdout": "{\"experiment_start\": \"BLOCKED\", \"permit\": false, \"reason\": \"A1_PARTIAL\", \"route_exclusivity\": \"UNKNOWN\", \"status\": \"STOP_REVIEW\"}\n",
+      "stderr": "",
+      "exit_code": 2,
+      "actual": {
+        "experiment_start": "BLOCKED",
+        "permit": false,
+        "reason": "A1_PARTIAL",
+        "route_exclusivity": "UNKNOWN",
+        "status": "STOP_REVIEW"
+      },
+      "result": "PASS"
+    },
+    {
+      "id": "T06",
+      "input_sha256": "2d319ab3954ab07cf713a77154211e9102e66566f8c6cd008cda2884dabde05a",
+      "expected": {
+        "status": "STOP_REVIEW",
+        "reason": "A0_SEMANTIC",
+        "experiment_start": "BLOCKED",
+        "route_exclusivity": "UNKNOWN",
+        "permit": false
+      },
+      "started_at": "2026-11-18T11:37:21.873490+00:00",
+      "ended_at": "2026-11-18T11:37:21.924869+00:00",
+      "timeout_seconds": 5,
+      "retries": 0,
+      "stdout": "{\"experiment_start\": \"BLOCKED\", \"permit\": false, \"reason\": \"A0_SEMANTIC\", \"route_exclusivity\": \"UNKNOWN\", \"status\": \"STOP_REVIEW\"}\n",
+      "stderr": "",
+      "exit_code": 2,
+      "actual": {
+        "experiment_start": "BLOCKED",
+        "permit": false,
+        "reason": "A0_SEMANTIC",
+        "route_exclusivity": "UNKNOWN",
+        "status": "STOP_REVIEW"
+      },
+      "result": "PASS"
+    },
+    {
+      "id": "T07",
+      "input_sha256": "ccf099b31d48539485a5d0732045f9c85846ab4e557cfcf55acefb1d2b62bc15",
+      "expected": {
+        "status": "STOP_REVIEW",
+        "reason": "A1_SEMANTIC",
+        "experiment_start": "BLOCKED",
+        "route_exclusivity": "UNKNOWN",
+        "permit": false
+      },
+      "started_at": "2026-11-18T11:37:21.925423+00:00",
+      "ended_at": "2026-11-18T11:37:21.955553+00:00",
+      "timeout_seconds": 5,
+      "retries": 0,
+      "stdout": "{\"experiment_start\": \"BLOCKED\", \"permit\": false, \"reason\": \"A1_SEMANTIC\", \"route_exclusivity\": \"UNKNOWN\", \"status\": \"STOP_REVIEW\"}\n",
+      "stderr": "",
+      "exit_code": 2,
+      "actual": {
+        "experiment_start": "BLOCKED",
+        "permit": false,
+        "reason": "A1_SEMANTIC",
+        "route_exclusivity": "UNKNOWN",
+        "status": "STOP_REVIEW"
+      },
+      "result": "PASS"
+    },
+    {
+      "id": "T08",
+      "input_sha256": "19766b53ac6d47b2c8249aaf376f3fe8b1eaf1e8005ddd6127b397707a5824c7",
+      "expected": {
+        "status": "UNKNOWN",
+        "reason": "HUMAN_REVIEW_PENDING",
+        "experiment_start": "BLOCKED",
+        "route_exclusivity": "UNKNOWN",
+        "permit": false
+      },
+      "started_at": "2026-11-18T11:37:21.955615+00:00",
+      "ended_at": "2026-11-18T11:37:21.984367+00:00",
+      "timeout_seconds": 5,
+      "retries": 0,
+      "stdout": "{\"experiment_start\": \"BLOCKED\", \"permit\": false, \"reason\": \"HUMAN_REVIEW_PENDING\", \"route_exclusivity\": \"UNKNOWN\", \"status\": \"UNKNOWN\"}\n",
+      "stderr": "",
+      "exit_code": 2,
+      "actual": {
+        "experiment_start": "BLOCKED",
+        "permit": false,
+        "reason": "HUMAN_REVIEW_PENDING",
+        "route_exclusivity": "UNKNOWN",
+        "status": "UNKNOWN"
+      },
+      "result": "PASS"
+    },
+    {
+      "id": "T09",
+      "input_sha256": "e1e20e088936fb5aab5d570c53cbaa6839acd8c183e9ac74882bdea0b8a8a3b0",
+      "expected": {
+        "status": "UNKNOWN",
+        "reason": "HUMAN_REVIEW_PENDING",
+        "experiment_start": "BLOCKED",
+        "route_exclusivity": "UNKNOWN",
+        "permit": false
+      },
+      "started_at": "2026-11-18T11:37:21.984434+00:00",
+      "ended_at": "2026-11-18T11:37:22.004777+00:00",
+      "timeout_seconds": 5,
+      "retries": 0,
+      "stdout": "{\"experiment_start\": \"BLOCKED\", \"permit\": false, \"reason\": \"HUMAN_REVIEW_PENDING\", \"route_exclusivity\": \"UNKNOWN\", \"status\": \"UNKNOWN\"}\n",
+      "stderr": "",
+      "exit_code": 2,
+      "actual": {
+        "experiment_start": "BLOCKED",
+        "permit": false,
+        "reason": "HUMAN_REVIEW_PENDING",
+        "route_exclusivity": "UNKNOWN",
+        "status": "UNKNOWN"
+      },
+      "result": "PASS"
+    },
+    {
+      "id": "T10",
+      "input_sha256": "aae4e460b2769178c84ef9759995e15904d3534bda7494f27285ba1afba5ffa7",
+      "expected": {
+        "status": "BLOCKED",
+        "reason": "THREAD_REUSE",
+        "experiment_start": "BLOCKED",
+        "route_exclusivity": "UNKNOWN",
+        "permit": false
+      },
+      "started_at": "2026-11-18T11:37:22.004886+00:00",
+      "ended_at": "2026-11-18T11:37:22.025571+00:00",
+      "timeout_seconds": 5,
+      "retries": 0,
+      "stdout": "{\"experiment_start\": \"BLOCKED\", \"permit\": false, \"reason\": \"THREAD_REUSE\", \"route_exclusivity\": \"UNKNOWN\", \"status\": \"BLOCKED\"}\n",
+      "stderr": "",
+      "exit_code": 2,
+      "actual": {
+        "experiment_start": "BLOCKED",
+        "permit": false,
+        "reason": "THREAD_REUSE",
+        "route_exclusivity": "UNKNOWN",
+        "status": "BLOCKED"
+      },
+      "result": "PASS"
+    },
+    {
+      "id": "T11",
+      "input_sha256": "352a940baf3b24beddf507370b51b8f6431465d417abc16b53728a845418632e",
+      "expected": {
+        "status": "BLOCKED",
+        "reason": "THREAD_SHARED",
+        "experiment_start": "BLOCKED",
+        "route_exclusivity": "UNKNOWN",
+        "permit": false
+      },
+      "started_at": "2026-11-18T11:37:22.025615+00:00",
+      "ended_at": "2026-11-18T11:37:22.076252+00:00",
+      "timeout_seconds": 5,
+      "retries": 0,
+      "stdout": "{\"experiment_start\": \"BLOCKED\", \"permit\": false, \"reason\": \"THREAD_SHARED\", \"route_exclusivity\": \"UNKNOWN\", \"status\": \"BLOCKED\"}\n",
+      "stderr": "",
+      "exit_code": 2,
+      "actual": {
+        "experiment_start": "BLOCKED",
+        "permit": false,
+        "reason": "THREAD_SHARED",
+        "route_exclusivity": "UNKNOWN",
+        "status": "BLOCKED"
+      },
+      "result": "PASS"
+    },
+    {
+      "id": "T12",
+      "input_sha256": "c424a0326dcc8a0ecd8790ed8a61b1a916c48e3359cf14ab6832200c217ffabf",
+      "expected": {
+        "status": "STOP_REVIEW",
+        "reason": "PREINFO_EXPOSED",
+        "experiment_start": "BLOCKED",
+        "route_exclusivity": "UNKNOWN",
+        "permit": false
+      },
+      "started_at": "2026-11-18T11:37:22.076302+00:00",
+      "ended_at": "2026-11-18T11:37:22.097209+00:00",
+      "timeout_seconds": 5,
+      "retries": 0,
+      "stdout": "{\"experiment_start\": \"BLOCKED\", \"permit\": false, \"reason\": \"PREINFO_EXPOSED\", \"route_exclusivity\": \"UNKNOWN\", \"status\": \"STOP_REVIEW\"}\n",
+      "stderr": "",
+      "exit_code": 2,
+      "actual": {
+        "experiment_start": "BLOCKED",
+        "permit": false,
+        "reason": "PREINFO_EXPOSED",
+        "route_exclusivity": "UNKNOWN",
+        "status": "STOP_REVIEW"
+      },
+      "result": "PASS"
+    },
+    {
+      "id": "T13",
+      "input_sha256": "1369791bebaf83329d4a41abf6efe4ad3715e61bb4751644d3d9af017ab468f9",
+      "expected": {
+        "status": "MISSING",
+        "reason": "OUTPUT_MISSING",
+        "experiment_start": "BLOCKED",
+        "route_exclusivity": "UNKNOWN",
+        "permit": false
+      },
+      "started_at": "2026-11-18T11:37:22.097329+00:00",
+      "ended_at": "2026-11-18T11:37:22.117693+00:00",
+      "timeout_seconds": 5,
+      "retries": 0,
+      "stdout": "{\"experiment_start\": \"BLOCKED\", \"permit\": false, \"reason\": \"OUTPUT_MISSING\", \"route_exclusivity\": \"UNKNOWN\", \"status\": \"MISSING\"}\n",
+      "stderr": "",
+      "exit_code": 2,
+      "actual": {
+        "experiment_start": "BLOCKED",
+        "permit": false,
+        "reason": "OUTPUT_MISSING",
+        "route_exclusivity": "UNKNOWN",
+        "status": "MISSING"
+      },
+      "result": "PASS"
+    },
+    {
+      "id": "T14",
+      "input_sha256": "7ea578e8c63a975d7cd2371e9be674aebbef2705054acc34be6039b290f4918a",
+      "expected": {
+        "status": "MISSING",
+        "reason": "TIME_MISSING",
+        "experiment_start": "BLOCKED",
+        "route_exclusivity": "UNKNOWN",
+        "permit": false
+      },
+      "started_at": "2026-11-18T11:37:22.117758+00:00",
+      "ended_at": "2026-11-18T11:37:22.139381+00:00",
+      "timeout_seconds": 5,
+      "retries": 0,
+      "stdout": "{\"experiment_start\": \"BLOCKED\", \"permit\": false, \"reason\": \"TIME_MISSING\", \"route_exclusivity\": \"UNKNOWN\", \"status\": \"MISSING\"}\n",
+      "stderr": "",
+      "exit_code": 2,
+      "actual": {
+        "experiment_start": "BLOCKED",
+        "permit": false,
+        "reason": "TIME_MISSING",
+        "route_exclusivity": "UNKNOWN",
+        "status": "MISSING"
+      },
+      "result": "PASS"
+    },
+    {
+      "id": "T15",
+      "input_sha256": "cebe9ed8731417071c3a8d4fb7f4b34a964fb2b14278d161fabd48c723a47da5",
+      "expected": {
+        "status": "BLOCKED",
+        "reason": "TIME_ORDER",
+        "experiment_start": "BLOCKED",
+        "route_exclusivity": "UNKNOWN",
+        "permit": false
+      },
+      "started_at": "2026-11-18T11:37:22.139437+00:00",
+      "ended_at": "2026-11-18T11:37:22.165913+00:00",
+      "timeout_seconds": 5,
+      "retries": 0,
+      "stdout": "{\"experiment_start\": \"BLOCKED\", \"permit\": false, \"reason\": \"TIME_ORDER\", \"route_exclusivity\": \"UNKNOWN\", \"status\": \"BLOCKED\"}\n",
+      "stderr": "",
+      "exit_code": 2,
+      "actual": {
+        "experiment_start": "BLOCKED",
+        "permit": false,
+        "reason": "TIME_ORDER",
+        "route_exclusivity": "UNKNOWN",
+        "status": "BLOCKED"
+      },
+      "result": "PASS"
+    },
+    {
+      "id": "T16",
+      "input_sha256": "522b60fff53f99c8ab6440a347c3738c1507bbbca997aa07355ebad103048b7c",
+      "expected": {
+        "status": "STOP_REVIEW",
+        "reason": "DEADLINE",
+        "experiment_start": "BLOCKED",
+        "route_exclusivity": "UNKNOWN",
+        "permit": false
+      },
+      "started_at": "2026-11-18T11:37:22.166054+00:00",
+      "ended_at": "2026-11-18T11:37:22.198690+00:00",
+      "timeout_seconds": 5,
+      "retries": 0,
+      "stdout": "{\"experiment_start\": \"BLOCKED\", \"permit\": false, \"reason\": \"DEADLINE\", \"route_exclusivity\": \"UNKNOWN\", \"status\": \"STOP_REVIEW\"}\n",
+      "stderr": "",
+      "exit_code": 2,
+      "actual": {
+        "experiment_start": "BLOCKED",
+        "permit": false,
+        "reason": "DEADLINE",
+        "route_exclusivity": "UNKNOWN",
+        "status": "STOP_REVIEW"
+      },
+      "result": "PASS"
+    },
+    {
+      "id": "T17",
+      "input_sha256": "6e01689c09189852248f0a62ae409ff95b190699cceb3ea701060198dda27e32",
+      "expected": {
+        "status": "STOP_REVIEW",
+        "reason": "SETTINGS_CHANGED",
+        "experiment_start": "BLOCKED",
+        "route_exclusivity": "UNKNOWN",
+        "permit": false
+      },
+      "started_at": "2026-11-18T11:37:22.198760+00:00",
+      "ended_at": "2026-11-18T11:37:22.227999+00:00",
+      "timeout_seconds": 5,
+      "retries": 0,
+      "stdout": "{\"experiment_start\": \"BLOCKED\", \"permit\": false, \"reason\": \"SETTINGS_CHANGED\", \"route_exclusivity\": \"UNKNOWN\", \"status\": \"STOP_REVIEW\"}\n",
+      "stderr": "",
+      "exit_code": 2,
+      "actual": {
+        "experiment_start": "BLOCKED",
+        "permit": false,
+        "reason": "SETTINGS_CHANGED",
+        "route_exclusivity": "UNKNOWN",
+        "status": "STOP_REVIEW"
+      },
+      "result": "PASS"
+    },
+    {
+      "id": "T18",
+      "input_sha256": "957d16e3e849dc833e82b6868e05d5bec94ff83c67dd6c0c7f073050be914a76",
+      "expected": {
+        "status": "STOP_REVIEW",
+        "reason": "INTERRUPTED",
+        "experiment_start": "BLOCKED",
+        "route_exclusivity": "UNKNOWN",
+        "permit": false
+      },
+      "started_at": "2026-11-18T11:37:22.228049+00:00",
+      "ended_at": "2026-11-18T11:37:22.249127+00:00",
+      "timeout_seconds": 5,
+      "retries": 0,
+      "stdout": "{\"experiment_start\": \"BLOCKED\", \"permit\": false, \"reason\": \"INTERRUPTED\", \"route_exclusivity\": \"UNKNOWN\", \"status\": \"STOP_REVIEW\"}\n",
+      "stderr": "",
+      "exit_code": 2,
+      "actual": {
+        "experiment_start": "BLOCKED",
+        "permit": false,
+        "reason": "INTERRUPTED",
+        "route_exclusivity": "UNKNOWN",
+        "status": "STOP_REVIEW"
+      },
+      "result": "PASS"
+    },
+    {
+      "id": "T19",
+      "input_sha256": "22950a141f94a4da21b4dfe6368957f985735b018ee983379c4a3f20efaff96f",
+      "expected": {
+        "status": "STOP_REVIEW",
+        "reason": "RETRY_FORBIDDEN",
+        "experiment_start": "BLOCKED",
+        "route_exclusivity": "UNKNOWN",
+        "permit": false
+      },
+      "started_at": "2026-11-18T11:37:22.249302+00:00",
+      "ended_at": "2026-11-18T11:37:22.268867+00:00",
+      "timeout_seconds": 5,
+      "retries": 0,
+      "stdout": "{\"experiment_start\": \"BLOCKED\", \"permit\": false, \"reason\": \"RETRY_FORBIDDEN\", \"route_exclusivity\": \"UNKNOWN\", \"status\": \"STOP_REVIEW\"}\n",
+      "stderr": "",
+      "exit_code": 2,
+      "actual": {
+        "experiment_start": "BLOCKED",
+        "permit": false,
+        "reason": "RETRY_FORBIDDEN",
+        "route_exclusivity": "UNKNOWN",
+        "status": "STOP_REVIEW"
+      },
+      "result": "PASS"
+    },
+    {
+      "id": "T20",
+      "input_sha256": "221d24133c23c969abc4ca151629164756a14896ae3266310bad3237b9280b14",
+      "expected": {
+        "status": "FAIL",
+        "reason": "INTEGRITY",
+        "experiment_start": "BLOCKED",
+        "route_exclusivity": "UNKNOWN",
+        "permit": false
+      },
+      "started_at": "2026-11-18T11:37:22.268906+00:00",
+      "ended_at": "2026-11-18T11:37:22.290971+00:00",
+      "timeout_seconds": 5,
+      "retries": 0,
+      "stdout": "{\"experiment_start\": \"BLOCKED\", \"permit\": false, \"reason\": \"INTEGRITY\", \"route_exclusivity\": \"UNKNOWN\", \"status\": \"FAIL\"}\n",
+      "stderr": "",
+      "exit_code": 2,
+      "actual": {
+        "experiment_start": "BLOCKED",
+        "permit": false,
+        "reason": "INTEGRITY",
+        "route_exclusivity": "UNKNOWN",
+        "status": "FAIL"
+      },
+      "result": "PASS"
+    },
+    {
+      "id": "T21",
+      "input_sha256": "6579d77f72559c0b22b21003c3997dbbbd51a2d97397b18f296cbd8851e13cd4",
+      "expected": {
+        "status": "BLOCKED",
+        "reason": "RETRIEVAL",
+        "experiment_start": "BLOCKED",
+        "route_exclusivity": "UNKNOWN",
+        "permit": false
+      },
+      "started_at": "2026-11-18T11:37:22.291024+00:00",
+      "ended_at": "2026-11-18T11:37:22.315236+00:00",
+      "timeout_seconds": 5,
+      "retries": 0,
+      "stdout": "{\"experiment_start\": \"BLOCKED\", \"permit\": false, \"reason\": \"RETRIEVAL\", \"route_exclusivity\": \"UNKNOWN\", \"status\": \"BLOCKED\"}\n",
+      "stderr": "",
+      "exit_code": 2,
+      "actual": {
+        "experiment_start": "BLOCKED",
+        "permit": false,
+        "reason": "RETRIEVAL",
+        "route_exclusivity": "UNKNOWN",
+        "status": "BLOCKED"
+      },
+      "result": "PASS"
+    },
+    {
+      "id": "T22",
+      "input_sha256": "4ee8ffb179e60c4238c9c3349368d4b596c4f7c0437ee3f7304def5be774398d",
+      "expected": {
+        "status": "MISSING",
+        "reason": "EVIDENCE_INCOMPLETE",
+        "experiment_start": "BLOCKED",
+        "route_exclusivity": "UNKNOWN",
+        "permit": false
+      },
+      "started_at": "2026-11-18T11:37:22.315289+00:00",
+      "ended_at": "2026-11-18T11:37:22.337127+00:00",
+      "timeout_seconds": 5,
+      "retries": 0,
+      "stdout": "{\"experiment_start\": \"BLOCKED\", \"permit\": false, \"reason\": \"EVIDENCE_INCOMPLETE\", \"route_exclusivity\": \"UNKNOWN\", \"status\": \"MISSING\"}\n",
+      "stderr": "",
+      "exit_code": 2,
+      "actual": {
+        "experiment_start": "BLOCKED",
+        "permit": false,
+        "reason": "EVIDENCE_INCOMPLETE",
+        "route_exclusivity": "UNKNOWN",
+        "status": "MISSING"
+      },
+      "result": "PASS"
+    },
+    {
+      "id": "T23",
+      "input_sha256": "011762bb00a834006ae5b42de57a3397be2fd2734c3a6b1457e374cf311c206a",
+      "expected": {
+        "status": "MISSING",
+        "reason": "RAW_TEXT_UNAVAILABLE",
+        "experiment_start": "BLOCKED",
+        "route_exclusivity": "UNKNOWN",
+        "permit": false
+      },
+      "started_at": "2026-11-18T11:37:22.337230+00:00",
+      "ended_at": "2026-11-18T11:37:22.358919+00:00",
+      "timeout_seconds": 5,
+      "retries": 0,
+      "stdout": "{\"experiment_start\": \"BLOCKED\", \"permit\": false, \"reason\": \"RAW_TEXT_UNAVAILABLE\", \"route_exclusivity\": \"UNKNOWN\", \"status\": \"MISSING\"}\n",
+      "stderr": "",
+      "exit_code": 2,
+      "actual": {
+        "experiment_start": "BLOCKED",
+        "permit": false,
+        "reason": "RAW_TEXT_UNAVAILABLE",
+        "route_exclusivity": "UNKNOWN",
+        "status": "MISSING"
+      },
+      "result": "PASS"
+    },
+    {
+      "id": "T24",
+      "input_sha256": "daee0c657858be15f8aa957d1dc3c063f444ae57e2316dc8ad134ae14099a177",
+      "expected": {
+        "status": "BLOCKED",
+        "reason": "REAL_FORBIDDEN",
+        "experiment_start": "BLOCKED",
+        "route_exclusivity": "UNKNOWN",
+        "permit": false
+      },
+      "started_at": "2026-11-18T11:37:22.358964+00:00",
+      "ended_at": "2026-11-18T11:37:22.382005+00:00",
+      "timeout_seconds": 5,
+      "retries": 0,
+      "stdout": "{\"experiment_start\": \"BLOCKED\", \"permit\": false, \"reason\": \"REAL_FORBIDDEN\", \"route_exclusivity\": \"UNKNOWN\", \"status\": \"BLOCKED\"}\n",
+      "stderr": "",
+      "exit_code": 2,
+      "actual": {
+        "experiment_start": "BLOCKED",
+        "permit": false,
+        "reason": "REAL_FORBIDDEN",
+        "route_exclusivity": "UNKNOWN",
+        "status": "BLOCKED"
+      },
+      "result": "PASS"
+    },
+    {
+      "id": "T25",
+      "input_sha256": "935ea644d4d3ef0308a26048da086d722bff4be651a0d86a84a4a1789437204c",
+      "expected": {
+        "status": "BLOCKED",
+        "reason": "CONDITION_UNFIXED",
+        "experiment_start": "BLOCKED",
+        "route_exclusivity": "UNKNOWN",
+        "permit": false
+      },
+      "started_at": "2026-11-18T11:37:22.382067+00:00",
+      "ended_at": "2026-11-18T11:37:22.407226+00:00",
+      "timeout_seconds": 5,
+      "retries": 0,
+      "stdout": "{\"experiment_start\": \"BLOCKED\", \"permit\": false, \"reason\": \"CONDITION_UNFIXED\", \"route_exclusivity\": \"UNKNOWN\", \"status\": \"BLOCKED\"}\n",
+      "stderr": "",
+      "exit_code": 2,
+      "actual": {
+        "experiment_start": "BLOCKED",
+        "permit": false,
+        "reason": "CONDITION_UNFIXED",
+        "route_exclusivity": "UNKNOWN",
+        "status": "BLOCKED"
+      },
+      "result": "PASS"
+    },
+    {
+      "id": "T26",
+      "input_sha256": "b5b0f702440d16b950e83a46e95d0ee78994e28d5914aaac83c0a1a4791eb739",
+      "expected": {
+        "status": "PASS",
+        "reason": "TASK_MATCH",
+        "experiment_start": "BLOCKED",
+        "route_exclusivity": "UNKNOWN",
+        "permit": false
+      },
+      "started_at": "2026-11-18T11:37:22.407294+00:00",
+      "ended_at": "2026-11-18T11:37:22.431674+00:00",
+      "timeout_seconds": 5,
+      "retries": 0,
+      "stdout": "{\"experiment_start\": \"BLOCKED\", \"permit\": false, \"reason\": \"TASK_MATCH\", \"route_exclusivity\": \"UNKNOWN\", \"status\": \"PASS\"}\n",
+      "stderr": "",
+      "exit_code": 0,
+      "actual": {
+        "experiment_start": "BLOCKED",
+        "permit": false,
+        "reason": "TASK_MATCH",
+        "route_exclusivity": "UNKNOWN",
+        "status": "PASS"
+      },
+      "result": "PASS"
+    },
+    {
+      "id": "T27",
+      "input_sha256": "476c0dfbfb811afb3fc2fc9b4e58550cf504730b21a423953dd326306b1f8f05",
+      "expected": {
+        "status": "PASS",
+        "reason": "TASK_MATCH",
+        "experiment_start": "BLOCKED",
+        "route_exclusivity": "UNKNOWN",
+        "permit": false
+      },
+      "started_at": "2026-11-18T11:37:22.431840+00:00",
+      "ended_at": "2026-11-18T11:37:22.459017+00:00",
+      "timeout_seconds": 5,
+      "retries": 0,
+      "stdout": "{\"experiment_start\": \"BLOCKED\", \"permit\": false, \"reason\": \"TASK_MATCH\", \"route_exclusivity\": \"UNKNOWN\", \"status\": \"PASS\"}\n",
+      "stderr": "",
+      "exit_code": 0,
+      "actual": {
+        "experiment_start": "BLOCKED",
+        "permit": false,
+        "reason": "TASK_MATCH",
+        "route_exclusivity": "UNKNOWN",
+        "status": "PASS"
+      },
+      "result": "PASS"
+    },
+    {
+      "id": "T28",
+      "input_sha256": "99d20c6cc065e218ce1a744e7b08744db33951f6ee9fdcf4ef175e5dc9254bc2",
+      "expected": {
+        "status": "FAIL",
+        "reason": "TASK_MISMATCH",
+        "experiment_start": "BLOCKED",
+        "route_exclusivity": "UNKNOWN",
+        "permit": false
+      },
+      "started_at": "2026-11-18T11:37:22.459068+00:00",
+      "ended_at": "2026-11-18T11:37:22.483497+00:00",
+      "timeout_seconds": 5,
+      "retries": 0,
+      "stdout": "{\"experiment_start\": \"BLOCKED\", \"permit\": false, \"reason\": \"TASK_MISMATCH\", \"route_exclusivity\": \"UNKNOWN\", \"status\": \"FAIL\"}\n",
+      "stderr": "",
+      "exit_code": 2,
+      "actual": {
+        "experiment_start": "BLOCKED",
+        "permit": false,
+        "reason": "TASK_MISMATCH",
+        "route_exclusivity": "UNKNOWN",
+        "status": "FAIL"
+      },
+      "result": "PASS"
+    },
+    {
+      "id": "T29",
+      "input_sha256": "c9feb822bd16c2f9399029ec2b709c5fc25cdb53d4f497fc98788430132d1d7a",
+      "expected": {
+        "status": "BLOCKED",
+        "reason": "B0_NOT_SEALED",
+        "experiment_start": "BLOCKED",
+        "route_exclusivity": "UNKNOWN",
+        "permit": false
+      },
+      "started_at": "2026-11-18T11:37:22.483543+00:00",
+      "ended_at": "2026-11-18T11:37:22.508506+00:00",
+      "timeout_seconds": 5,
+      "retries": 0,
+      "stdout": "{\"experiment_start\": \"BLOCKED\", \"permit\": false, \"reason\": \"B0_NOT_SEALED\", \"route_exclusivity\": \"UNKNOWN\", \"status\": \"BLOCKED\"}\n",
+      "stderr": "",
+      "exit_code": 2,
+      "actual": {
+        "experiment_start": "BLOCKED",
+        "permit": false,
+        "reason": "B0_NOT_SEALED",
+        "route_exclusivity": "UNKNOWN",
+        "status": "BLOCKED"
+      },
+      "result": "PASS"
+    },
+    {
+      "id": "T30",
+      "input_sha256": "7adf71d1626539eaa4395a012ac24540b74c53eefd1a303a44473dcea24a1a75",
+      "expected": {
+        "status": "BLOCKED",
+        "reason": "B0_REVIEW_PENDING",
+        "experiment_start": "BLOCKED",
+        "route_exclusivity": "UNKNOWN",
+        "permit": false
+      },
+      "started_at": "2026-11-18T11:37:22.508581+00:00",
+      "ended_at": "2026-11-18T11:37:22.529629+00:00",
+      "timeout_seconds": 5,
+      "retries": 0,
+      "stdout": "{\"experiment_start\": \"BLOCKED\", \"permit\": false, \"reason\": \"B0_REVIEW_PENDING\", \"route_exclusivity\": \"UNKNOWN\", \"status\": \"BLOCKED\"}\n",
+      "stderr": "",
+      "exit_code": 2,
+      "actual": {
+        "experiment_start": "BLOCKED",
+        "permit": false,
+        "reason": "B0_REVIEW_PENDING",
+        "route_exclusivity": "UNKNOWN",
+        "status": "BLOCKED"
+      },
+      "result": "PASS"
+    },
+    {
+      "id": "T31",
+      "input_sha256": "1c65760e80b2408b4e2f601a01ba17f1d83393457aa36337c59b2c7838e28318",
+      "expected": {
+        "status": "BLOCKED",
+        "reason": "B0_CUSTODY",
+        "experiment_start": "BLOCKED",
+        "route_exclusivity": "UNKNOWN",
+        "permit": false
+      },
+      "started_at": "2026-11-18T11:37:22.529698+00:00",
+      "ended_at": "2026-11-18T11:37:22.549381+00:00",
+      "timeout_seconds": 5,
+      "retries": 0,
+      "stdout": "{\"experiment_start\": \"BLOCKED\", \"permit\": false, \"reason\": \"B0_CUSTODY\", \"route_exclusivity\": \"UNKNOWN\", \"status\": \"BLOCKED\"}\n",
+      "stderr": "",
+      "exit_code": 2,
+      "actual": {
+        "experiment_start": "BLOCKED",
+        "permit": false,
+        "reason": "B0_CUSTODY",
+        "route_exclusivity": "UNKNOWN",
+        "status": "BLOCKED"
+      },
+      "result": "PASS"
+    },
+    {
+      "id": "T32",
+      "input_sha256": "a43b9792bfdf9c27cb93c23c528cd40db8a0d3da242c670bfec26538e9efaf36",
+      "expected": {
+        "status": "BLOCKED",
+        "reason": "TIME_INVALID",
+        "experiment_start": "BLOCKED",
+        "route_exclusivity": "UNKNOWN",
+        "permit": false
+      },
+      "started_at": "2026-11-18T11:37:22.549427+00:00",
+      "ended_at": "2026-11-18T11:37:22.570907+00:00",
+      "timeout_seconds": 5,
+      "retries": 0,
+      "stdout": "{\"experiment_start\": \"BLOCKED\", \"permit\": false, \"reason\": \"TIME_INVALID\", \"route_exclusivity\": \"UNKNOWN\", \"status\": \"BLOCKED\"}\n",
+      "stderr": "",
+      "exit_code": 2,
+      "actual": {
+        "experiment_start": "BLOCKED",
+        "permit": false,
+        "reason": "TIME_INVALID",
+        "route_exclusivity": "UNKNOWN",
+        "status": "BLOCKED"
+      },
+      "result": "PASS"
+    },
+    {
+      "id": "T33",
+      "input_sha256": "cb03fba64dcc252ba620feabb6f402c26f183481a299e64e5f3ba072888c48a0",
+      "expected": {
+        "status": "BLOCKED",
+        "reason": "SCORING_MISSING",
+        "experiment_start": "BLOCKED",
+        "route_exclusivity": "UNKNOWN",
+        "permit": false
+      },
+      "started_at": "2026-11-18T11:37:22.571003+00:00",
+      "ended_at": "2026-11-18T11:37:22.592225+00:00",
+      "timeout_seconds": 5,
+      "retries": 0,
+      "stdout": "{\"experiment_start\": \"BLOCKED\", \"permit\": false, \"reason\": \"SCORING_MISSING\", \"route_exclusivity\": \"UNKNOWN\", \"status\": \"BLOCKED\"}\n",
+      "stderr": "",
+      "exit_code": 2,
+      "actual": {
+        "experiment_start": "BLOCKED",
+        "permit": false,
+        "reason": "SCORING_MISSING",
+        "route_exclusivity": "UNKNOWN",
+        "status": "BLOCKED"
+      },
+      "result": "PASS"
+    },
+    {
+      "id": "T34",
+      "input_sha256": "7a0d9e042812554757c2874bb0ee040069c8fbe3251bddf2840dcdb243eb1778",
+      "expected": {
+        "status": "PASS",
+        "reason": "NO_TRIGGER_IN_SCOPE",
+        "experiment_start": "BLOCKED",
+        "route_exclusivity": "UNKNOWN",
+        "permit": false
+      },
+      "started_at": "2026-11-18T11:37:22.592291+00:00",
+      "ended_at": "2026-11-18T11:37:22.614372+00:00",
+      "timeout_seconds": 5,
+      "retries": 0,
+      "stdout": "{\"experiment_start\": \"BLOCKED\", \"permit\": false, \"reason\": \"NO_TRIGGER_IN_SCOPE\", \"route_exclusivity\": \"UNKNOWN\", \"status\": \"PASS\"}\n",
+      "stderr": "",
+      "exit_code": 0,
+      "actual": {
+        "experiment_start": "BLOCKED",
+        "permit": false,
+        "reason": "NO_TRIGGER_IN_SCOPE",
+        "route_exclusivity": "UNKNOWN",
+        "status": "PASS"
+      },
+      "result": "PASS"
+    },
+    {
+      "id": "T35",
+      "input_sha256": "7b5650888333b014f6a555d77ecc1941cd9b4797e336150638a0c77a5dd9a5ba",
+      "expected": {
+        "status": "UNKNOWN",
+        "reason": "HUMAN_REVIEW_PENDING",
+        "experiment_start": "BLOCKED",
+        "route_exclusivity": "UNKNOWN",
+        "permit": false
+      },
+      "started_at": "2026-11-18T11:37:22.614436+00:00",
+      "ended_at": "2026-11-18T11:37:22.634495+00:00",
+      "timeout_seconds": 5,
+      "retries": 0,
+      "stdout": "{\"experiment_start\": \"BLOCKED\", \"permit\": false, \"reason\": \"HUMAN_REVIEW_PENDING\", \"route_exclusivity\": \"UNKNOWN\", \"status\": \"UNKNOWN\"}\n",
+      "stderr": "",
+      "exit_code": 2,
+      "actual": {
+        "experiment_start": "BLOCKED",
+        "permit": false,
+        "reason": "HUMAN_REVIEW_PENDING",
+        "route_exclusivity": "UNKNOWN",
+        "status": "UNKNOWN"
+      },
+      "result": "PASS"
+    }
+  ],
+  "pass": 35,
+  "total": 35,
+  "experiment_start": "BLOCKED",
+  "permit": false
+}
