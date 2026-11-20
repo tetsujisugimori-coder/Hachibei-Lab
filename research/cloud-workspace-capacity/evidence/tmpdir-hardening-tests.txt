@@ -1,0 +1,8 @@
+test_normal_exit_group_cleanup (__main__.ProbeSafety.test_normal_exit_group_cleanup) ... ok
+test_paths (__main__.ProbeSafety.test_paths) ... ok
+test_timeout_group_cleanup (__main__.ProbeSafety.test_timeout_group_cleanup) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.604s
+
+OK

@@ -1,0 +1,62 @@
+{
+  "capacity": {
+    "observed_at": "2026-11-11T00:47:21.010544+00:00",
+    "volumes": {
+      "shared_tmp": {
+        "path": "/tmp",
+        "device": 39,
+        "mount_point": "/tmp",
+        "filesystem_type": "tmpfs",
+        "total_bytes": 5225709568,
+        "available_bytes": 0,
+        "disk_used_percent": 100.0,
+        "total_inodes": 1275808,
+        "available_inodes": 1238466,
+        "inode_used_percent": 2.926929443928867,
+        "disk": "STOP",
+        "inode": "OK",
+        "state": "STOP"
+      },
+      "workspace": {
+        "path": "WORKSPACE",
+        "device": 27,
+        "mount_point": "/workspace",
+        "filesystem_type": "overlay",
+        "total_bytes": 67586535424,
+        "available_bytes": 11507179520,
+        "disk_used_percent": 82.05753949360131,
+        "total_inodes": 4194304,
+        "available_inodes": 3622339,
+        "inode_used_percent": 13.63670825958252,
+        "disk": "WARN",
+        "inode": "OK",
+        "state": "WARN"
+      }
+    },
+    "same_device": false,
+    "state": "STOP"
+  },
+  "preservation": {
+    "state": "NEEDS_PRESERVATION",
+    "note": "implementation was uncommitted at measurement; repo details not published"
+  },
+  "policy": {
+    "shared_tmp": {
+      "warn_percent": 80,
+      "stop_percent": 95,
+      "warn_bytes": 1073741824,
+      "stop_bytes": 268435456,
+      "warn_inodes": 10000,
+      "stop_inodes": 1000
+    },
+    "workspace": {
+      "warn_percent": 80,
+      "stop_percent": 95,
+      "warn_bytes": 1073741824,
+      "stop_bytes": 268435456,
+      "warn_inodes": 10000,
+      "stop_inodes": 1000
+    }
+  },
+  "auto_delete": false
+}

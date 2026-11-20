@@ -1,0 +1,169 @@
+{
+  "schema_version": 1,
+  "started_utc": "2026-11-11T00:38:58.017405+00:00",
+  "scope": "synthetic offline smoke; no restart or complete cache isolation claim",
+  "script_sha256": "ea4f827006008efdca4762048a07514bd168f11034777d4a2dfe0b102fa19582",
+  "pre": {
+    "workspace": {
+      "total_bytes": 67586535424,
+      "available_bytes": 14410805248,
+      "free_bytes": 17863553024,
+      "inodes": 4194304,
+      "free_inodes": 3634796
+    },
+    "shared_tmp": {
+      "total_bytes": 5225709568,
+      "available_bytes": 0,
+      "free_bytes": 0,
+      "inodes": 1275808,
+      "free_inodes": 1238467
+    }
+  },
+  "shared_pre": {
+    "browser-cache": {
+      "exists": true,
+      "entries": 551,
+      "logical_bytes": 1230615891,
+      "allocated_bytes": 1231667200,
+      "metadata_sha256": "c83a8df978a55d867031b73ae71464f7e3f0f71bb19b47b8a8b59b92d75c9bd1"
+    },
+    "default-npm-cache": {
+      "exists": true,
+      "entries": 1586,
+      "logical_bytes": 297328380,
+      "allocated_bytes": 298921984,
+      "metadata_sha256": "0d51e3bf4803e688f5d86c47237f78ed79c18b774a032d59d270b815b84b3002"
+    },
+    "shared-node-cache": {
+      "exists": true,
+      "entries": 18979,
+      "logical_bytes": 114521432,
+      "allocated_bytes": 157745152,
+      "metadata_sha256": "722a91d0325ebc45dad139aea6e2d33b528895f5b9ab5834049eb38502583e11"
+    }
+  },
+  "commands": [
+    {
+      "argv": [
+        "node",
+        "--version"
+      ],
+      "exit_code": 0,
+      "status": "PASS",
+      "output": "v24.22.1\n"
+    },
+    {
+      "argv": [
+        "npm",
+        "--version"
+      ],
+      "exit_code": 0,
+      "status": "PASS",
+      "output": "npm warn Unknown env config \"http-proxy\". This will stop working in the next major version of npm.\n11.9.0\n"
+    },
+    {
+      "argv": [
+        "npm",
+        "config",
+        "get",
+        "cache"
+      ],
+      "exit_code": 0,
+      "status": "PASS",
+      "output": "npm warn Unknown env config \"http-proxy\". This will stop working in the next major version of npm.\nRUN_ROOT/npm-cache\n"
+    },
+    {
+      "argv": [
+        "npm",
+        "run",
+        "build",
+        "--offline"
+      ],
+      "exit_code": 0,
+      "status": "PASS",
+      "output": "npm warn Unknown env config \"http-proxy\". This will stop working in the next major version of npm.\n\n> capacity-probe@1.0.0 build\n> node smoke.cjs build\n\n{\"status\":\"PASS\",\"stage\":\"build\",\"node\":\"v24.22.1\",\"tmpdir\":\"RUN_ROOT/tmp\",\"build\":\"synthetic Node file build, not an application bundler\"}\n"
+    },
+    {
+      "argv": [
+        "node",
+        "smoke.cjs",
+        "chromium"
+      ],
+      "exit_code": 1,
+      "status": "FAILED",
+      "output": "browserType.launch: Target page, context or browser has been closed\nBrowser logs:\n\n<launching> /tmp/castle2d-browsers/chromium-1194/chrome-linux/chrome --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-extensions --disable-features=AcceptCHFrame,AvoidUnnecessaryBeforeUnloadCheckSync,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,Translate,AutoDeElevate,RenderDocument,OptimizationHints --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --enable-automation --disable-infobars --disable-search-engine-choice-screen --disable-sync --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --user-data-dir=RUN_ROOT/tmp/playwright_chromiumdev_profile-esa6gR --remote-debugging-pipe --no-startup-window\n<launched> pid=66\n[pid=66][err] [66:66:1111/093900.628929:FATAL:chrome/browser/process_singleton_posix.cc:292] Check failed: . socket() failed: Operation not permitted (1)\n[pid=66][err] [1111/093900.629563:ERROR:third_party/crashpad/crashpad/util/linux/scoped_ptrace_attach.cc:27] ptrace: Operation not permitted (1)\nCall log:\n\u001b[2m  - <launching> /tmp/castle2d-browsers/chromium-1194/chrome-linux/chrome --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-extensions --disable-features=AcceptCHFrame,AvoidUnnecessaryBeforeUnloadCheckSync,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,Translate,AutoDeElevate,RenderDocument,OptimizationHints --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --enable-automation --disable-infobars --disable-search-engine-choice-screen --disable-sync --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --user-data-dir=RUN_ROOT/tmp/playwright_chromiumdev_profile-esa6gR --remote-debugging-pipe --no-startup-window\u001b[22m\n\u001b[2m  - <launched> pid=66\u001b[22m\n\u001b[2m  - [pid=66][err] [66:66:1111/093900.628929:FATAL:chrome/browser/process_singleton_posix.cc:292] Check failed: . socket() failed: Operation not permitted (1)\u001b[22m\n\u001b[2m  - [pid=66][err] [1111/093900.629563:ERROR:third_party/crashpad/crashpad/util/linux/scoped_ptrace_attach.cc:27] ptrace: Operation not permitted (1)\u001b[22m\n\u001b[2m  - [pid=66] <gracefully close start>\u001b[22m\n\u001b[2m  - [pid=66] <kill>\u001b[22m\n\u001b[2m  - [pid=66] <will force kill>\u001b[22m\n\u001b[2m  - [pid=66] <process did exit: exitCode=null, signal=SIGABRT>\u001b[22m\n\u001b[2m  - [pid=66] starting temporary directories cleanup\u001b[22m\n\u001b[2m  - [pid=66] finished temporary directories cleanup\u001b[22m\n\u001b[2m  - [pid=66] <gracefully close end>\u001b[22m\n\n    at RUN_ROOT/smoke.cjs:21:40\n    at Object.<anonymous> (RUN_ROOT/smoke.cjs:30:3)\n"
+    },
+    {
+      "argv": [
+        "node",
+        "smoke.cjs",
+        "webkit"
+      ],
+      "exit_code": 1,
+      "status": "FAILED",
+      "output": "browserType.launch: Target page, context or browser has been closed\nBrowser logs:\n\n<launching> /tmp/castle2d-browsers/webkit-2215/pw_run.sh --inspector-pipe --headless --no-startup-window\n<launched> pid=87\n[pid=87][err] /tmp/castle2d-browsers/webkit-2215/minibrowser-wpe/bin/MiniBrowser: error while loading shared libraries: libwoff2dec.so.1.0.2: cannot open shared object file: No such file or directory\nCall log:\n\u001b[2m  - <launching> /tmp/castle2d-browsers/webkit-2215/pw_run.sh --inspector-pipe --headless --no-startup-window\u001b[22m\n\u001b[2m  - <launched> pid=87\u001b[22m\n\u001b[2m  - [pid=87][err] /tmp/castle2d-browsers/webkit-2215/minibrowser-wpe/bin/MiniBrowser: error while loading shared libraries: libwoff2dec.so.1.0.2: cannot open shared object file: No such file or directory\u001b[22m\n\u001b[2m  - [pid=87] <gracefully close start>\u001b[22m\n\u001b[2m  - [pid=87] <kill>\u001b[22m\n\u001b[2m  - [pid=87] <will force kill>\u001b[22m\n\u001b[2m  - [pid=87] exception while trying to kill process: Error: kill ESRCH\u001b[22m\n\u001b[2m  - [pid=87] <process did exit: exitCode=127, signal=null>\u001b[22m\n\u001b[2m  - [pid=87] starting temporary directories cleanup\u001b[22m\n\u001b[2m  - [pid=87] finished temporary directories cleanup\u001b[22m\n\u001b[2m  - [pid=87] <gracefully close end>\u001b[22m\n\n    at RUN_ROOT/smoke.cjs:21:40\n    at Object.<anonymous> (RUN_ROOT/smoke.cjs:30:3)\n"
+    }
+  ],
+  "post": {
+    "workspace": {
+      "total_bytes": 67586535424,
+      "available_bytes": 14406004736,
+      "free_bytes": 17858752512,
+      "inodes": 4194304,
+      "free_inodes": 3634064
+    },
+    "shared_tmp": {
+      "total_bytes": 5225709568,
+      "available_bytes": 0,
+      "free_bytes": 0,
+      "inodes": 1275808,
+      "free_inodes": 1238467
+    }
+  },
+  "shared_post": {
+    "browser-cache": {
+      "exists": true,
+      "entries": 551,
+      "logical_bytes": 1230615891,
+      "allocated_bytes": 1231667200,
+      "metadata_sha256": "c83a8df978a55d867031b73ae71464f7e3f0f71bb19b47b8a8b59b92d75c9bd1"
+    },
+    "default-npm-cache": {
+      "exists": true,
+      "entries": 1586,
+      "logical_bytes": 297328380,
+      "allocated_bytes": 298921984,
+      "metadata_sha256": "0d51e3bf4803e688f5d86c47237f78ed79c18b774a032d59d270b815b84b3002"
+    },
+    "shared-node-cache": {
+      "exists": true,
+      "entries": 18979,
+      "logical_bytes": 114521432,
+      "allocated_bytes": 157745152,
+      "metadata_sha256": "722a91d0325ebc45dad139aea6e2d33b528895f5b9ab5834049eb38502583e11"
+    }
+  },
+  "owned": {
+    "exists": true,
+    "entries": 740,
+    "logical_bytes": 3271289,
+    "allocated_bytes": 4833280,
+    "metadata_sha256": "0576c4918daa419c77b20a04a7bc47e81e19ac526c749518f316a196613ed6f7"
+  },
+  "finished_utc": "2026-11-11T00:39:01.883350+00:00",
+  "shared_metadata_unchanged": {
+    "browser-cache": true,
+    "default-npm-cache": true,
+    "shared-node-cache": true
+  },
+  "artifact_sha256": {
+    "command-5.log": "4a44d873990028301d6011ff2841178ac4131b19d0a287faa0afc2d147730274",
+    "package.json": "139a9b3792cfa31bb4b8199b968b82aafa4fb10ddbfb0f57bd69c70173c020a3",
+    "command-3.log": "930996757da88e2f95f55678dbcf4ec52c1bec1cb61878e092d26a236f2923d3",
+    "command-4.log": "0905934ae242e09f9dbe4e7cbbc5ce49ce4953d958cbfe868009ba60710fae32",
+    "command-2.log": "84d8ae0fe1a3050cc2a811bca1bb8f206e28c874f58bd13d80f86ba1052cfaee",
+    "command-1.log": "f5fe5bbad5278f95efb25ccd38c5fefb9993c56ae54638fa6964d1cd5f6e4fe5",
+    "smoke.cjs": "ea4f827006008efdca4762048a07514bd168f11034777d4a2dfe0b102fa19582",
+    "command-0.log": "249baf635bb43877fcb9422efa1a4904b702d0ddf14d3949b7cd0950d5229c81"
+  }
+}
